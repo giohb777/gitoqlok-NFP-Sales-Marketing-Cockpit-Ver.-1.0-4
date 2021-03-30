@@ -1,0 +1,2579 @@
+{
+  "qProperty": {
+    "qInfo": {
+      "qId": "a3a025ce-e2d2-4397-8506-d3a049f352ea",
+      "qType": "sheet"
+    },
+    "qMetaDef": {
+      "title": "EYC Analysis",
+      "description": ""
+    },
+    "rank": 162.25,
+    "thumbnail": {
+      "qStaticContentUrlDef": {
+        "qUrl": "/appcontent/b2efed29-9d63-459b-ad4f-19fd09702031/BLUE ICON.png"
+      }
+    },
+    "columns": 24,
+    "rows": 12,
+    "cells": [
+      {
+        "name": "039817f1-a246-4851-87c9-bfd143510f54",
+        "type": "filterpane",
+        "col": 0,
+        "row": 0,
+        "colspan": 1,
+        "rowspan": 1,
+        "bounds": {
+          "y": 0,
+          "x": 0,
+          "width": 4.166666666666666,
+          "height": 8.333333333333332
+        }
+      },
+      {
+        "name": "e08038a5-c3f0-4187-a59f-dff81f5887f4",
+        "type": "filterpane",
+        "col": 1,
+        "row": 0,
+        "colspan": 1,
+        "rowspan": 1,
+        "bounds": {
+          "y": 0,
+          "x": 4.166666666666666,
+          "width": 4.166666666666666,
+          "height": 8.333333333333332
+        }
+      },
+      {
+        "name": "4d3eef9a-9360-4751-bca8-d05046a51181",
+        "type": "filterpane",
+        "col": 2,
+        "row": 0,
+        "colspan": 1,
+        "rowspan": 1,
+        "bounds": {
+          "y": 0,
+          "x": 8.333333333333332,
+          "width": 4.166666666666666,
+          "height": 8.333333333333332
+        }
+      },
+      {
+        "name": "f9a76fb2-a35e-4d1e-aab6-44f80166a0d5",
+        "type": "swr-sense-navigation",
+        "col": 22,
+        "row": 0,
+        "colspan": 2,
+        "rowspan": 1,
+        "bounds": {
+          "y": 0,
+          "x": 91.66666666666666,
+          "width": 8.333333333333332,
+          "height": 8.333333333333332
+        }
+      },
+      {
+        "name": "a42318c8-29eb-40ef-a1af-fca4b0808aca",
+        "type": "qssidemenu",
+        "col": 20,
+        "row": 0,
+        "colspan": 2,
+        "rowspan": 1,
+        "bounds": {
+          "y": 0,
+          "x": 83.33333333333334,
+          "width": 8.333333333333332,
+          "height": 8.333333333333332
+        }
+      },
+      {
+        "name": "14a03fea-70ca-499b-962a-a6a2e687251b",
+        "type": "variable",
+        "col": 5,
+        "row": 0,
+        "colspan": 3,
+        "rowspan": 1,
+        "bounds": {
+          "y": 0,
+          "x": 20.833333333333336,
+          "width": 12.5,
+          "height": 8.333333333333332
+        }
+      },
+      {
+        "name": "5e401f06-24bf-40fc-8f5d-0e8a2c1025bb",
+        "type": "variable",
+        "col": 8,
+        "row": 0,
+        "colspan": 3,
+        "rowspan": 1,
+        "bounds": {
+          "y": 0,
+          "x": 33.33333333333333,
+          "width": 12.5,
+          "height": 8.333333333333332
+        }
+      },
+      {
+        "name": "9432c7e5-fa57-4a49-8ea2-3222b2345d82",
+        "type": "variable",
+        "col": 11,
+        "row": 0,
+        "colspan": 3,
+        "rowspan": 1,
+        "bounds": {
+          "y": 0,
+          "x": 45.83333333333333,
+          "width": 12.5,
+          "height": 8.333333333333332
+        }
+      },
+      {
+        "name": "5d251a85-42b6-47fa-83b1-3b1d5914567b",
+        "type": "variable",
+        "col": 14,
+        "row": 0,
+        "colspan": 3,
+        "rowspan": 1,
+        "bounds": {
+          "y": 0,
+          "x": 58.333333333333336,
+          "width": 12.5,
+          "height": 8.333333333333332
+        }
+      },
+      {
+        "name": "064c8bb1-4cf5-4664-a64e-9db8d0615f14",
+        "type": "variable",
+        "col": 17,
+        "row": 0,
+        "colspan": 3,
+        "rowspan": 1,
+        "bounds": {
+          "y": 0,
+          "x": 70.83333333333334,
+          "width": 12.5,
+          "height": 8.333333333333332
+        }
+      },
+      {
+        "name": "edxVYs",
+        "type": "pivot-table",
+        "col": 0,
+        "row": 1,
+        "colspan": 24,
+        "rowspan": 11,
+        "bounds": {
+          "y": 8.333333333333332,
+          "x": 0,
+          "width": 100,
+          "height": 91.66666666666666
+        }
+      },
+      {
+        "name": "ymVJQB",
+        "type": "variable",
+        "col": 3,
+        "row": 0,
+        "colspan": 2,
+        "rowspan": 1,
+        "bounds": {
+          "y": 0,
+          "x": 12.5,
+          "width": 8.333333333333332,
+          "height": 8.333333333333332
+        }
+      }
+    ],
+    "navPoints": []
+  },
+  "qChildren": [
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "064c8bb1-4cf5-4664-a64e-9db8d0615f14",
+          "qType": "variable"
+        },
+        "qMetaDef": {
+          "title": "Var Business Units",
+          "tags": []
+        },
+        "showTitles": true,
+        "title": "Dimension 5",
+        "subtitle": "",
+        "footnote": "",
+        "showDetails": false,
+        "variableName": "v_Selected_Dimension_Five",
+        "style": "qlik",
+        "width": "fill",
+        "customwidth": "10",
+        "render": "s",
+        "alternatives": [
+          {
+            "value": "",
+            "label": "",
+            "cId": "CQaMymT"
+          },
+          {
+            "value": "1",
+            "label": "Application",
+            "cId": "jwhGfY"
+          },
+          {
+            "value": "2",
+            "label": "Building Block",
+            "cId": "kxEMZBb"
+          },
+          {
+            "value": "3",
+            "label": "Business Unit Location",
+            "cId": "HbxPcbJ"
+          },
+          {
+            "value": "4",
+            "label": "Business Unit Type",
+            "cId": "JTPn"
+          },
+          {
+            "value": "5",
+            "label": "Business Unit",
+            "cId": "qKyeRf"
+          },
+          {
+            "value": "6",
+            "label": "Customer Account",
+            "cId": "pcHPzN"
+          },
+          {
+            "value": "7",
+            "label": "Customer Area",
+            "cId": "BnJtWh"
+          },
+          {
+            "value": "8",
+            "label": "Customer Country",
+            "cId": "xYa"
+          },
+          {
+            "value": "9",
+            "label": "Customer Group",
+            "cId": "rxQP"
+          },
+          {
+            "value": "10",
+            "label": "Customer Key Account LV2",
+            "cId": "SfPmYZ"
+          },
+          {
+            "value": "11",
+            "label": "Customer Key Account",
+            "cId": "JtUDRzJ"
+          },
+          {
+            "value": "12",
+            "label": "Customer Sector",
+            "cId": "bMuyyb"
+          },
+          {
+            "value": "13",
+            "label": "Customer Statistics Group",
+            "cId": "dXXbZ"
+          },
+          {
+            "value": "14",
+            "label": "Customer Unit",
+            "cId": "CMjpQvb"
+          },
+          {
+            "value": "15",
+            "label": "Customer",
+            "cId": "dJFEdt"
+          },
+          {
+            "value": "16",
+            "label": "General Manager",
+            "cId": "pfSjbz"
+          },
+          {
+            "value": "17",
+            "label": "Geographical State",
+            "cId": "WjUWEj"
+          },
+          {
+            "value": "18",
+            "label": "Invoice Number",
+            "cId": "PjgncLj"
+          },
+          {
+            "value": "19",
+            "label": "Item Name",
+            "cId": "vBqdLvU"
+          },
+          {
+            "value": "20",
+            "label": "Item Number",
+            "cId": "KGMRph"
+          },
+          {
+            "value": "21",
+            "label": "Market Sector",
+            "cId": "JpawJN"
+          },
+          {
+            "value": "22",
+            "label": "Marketing Manager",
+            "cId": "LPpbDXK"
+          },
+          {
+            "value": "23",
+            "label": "Order Number",
+            "cId": "EuRbbA"
+          },
+          {
+            "value": "24",
+            "label": "Product Line",
+            "cId": "AcEKVyq"
+          },
+          {
+            "value": "25",
+            "label": "Product Manager",
+            "cId": "jdkj"
+          },
+          {
+            "value": "26",
+            "label": "Product Style Line",
+            "cId": "TQnzWE"
+          },
+          {
+            "value": "27",
+            "label": "Salesman Level1",
+            "cId": "fkmCteg"
+          },
+          {
+            "value": "28",
+            "label": "Salesman Level2",
+            "cId": "PunhtBE"
+          },
+          {
+            "value": "29",
+            "label": "Salesman Level3",
+            "cId": "pJwR"
+          },
+          {
+            "value": "30",
+            "label": "Salesman",
+            "cId": "RfJeV"
+          },
+          {
+            "value": "31",
+            "label": "Style",
+            "cId": "GUfBd"
+          },
+          {
+            "value": "32",
+            "label": "Customer Chain",
+            "cId": "cBpPpp"
+          },
+          {
+            "value": "33",
+            "label": "Customer Continent",
+            "cId": "pHGzd"
+          },
+          {
+            "value": "34",
+            "label": "Customer Territory",
+            "cId": "WPbNpC"
+          }
+        ],
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "rangelabel": false,
+        "visualization": "variable",
+        "variableValue": {
+          "qStringExpression": {
+            "qExpr": "=v_Selected_Dimension_Five"
+          }
+        },
+        "version": "2.2.0",
+        "extensionMeta": {
+          "translationKey": "",
+          "icon": "puzzle",
+          "iconChar": "g",
+          "isLibraryItem": true,
+          "visible": true,
+          "name": "Variable",
+          "description": "Variable extension",
+          "template": "variable",
+          "isThirdParty": true,
+          "version": "2.3.1",
+          "type": "visualization",
+          "author": "Erik Wetterberg"
+        },
+        "masterVersion": 0.96,
+        "metadata": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "5d251a85-42b6-47fa-83b1-3b1d5914567b",
+          "qType": "variable"
+        },
+        "qMetaDef": {
+          "title": "Var Business Units",
+          "tags": []
+        },
+        "showTitles": true,
+        "title": "Dimension 4",
+        "subtitle": "",
+        "footnote": "",
+        "showDetails": false,
+        "variableName": "v_Selected_Dimension_Four",
+        "style": "qlik",
+        "width": "fill",
+        "customwidth": "10",
+        "render": "s",
+        "alternatives": [
+          {
+            "value": "",
+            "label": "",
+            "cId": "CQaMymT"
+          },
+          {
+            "value": "1",
+            "label": "Application",
+            "cId": "jwhGfY"
+          },
+          {
+            "value": "2",
+            "label": "Building Block",
+            "cId": "kxEMZBb"
+          },
+          {
+            "value": "3",
+            "label": "Business Unit Location",
+            "cId": "HbxPcbJ"
+          },
+          {
+            "value": "4",
+            "label": "Business Unit Type",
+            "cId": "JTPn"
+          },
+          {
+            "value": "5",
+            "label": "Business Unit",
+            "cId": "qKyeRf"
+          },
+          {
+            "value": "6",
+            "label": "Customer Account",
+            "cId": "pcHPzN"
+          },
+          {
+            "value": "7",
+            "label": "Customer Area",
+            "cId": "BnJtWh"
+          },
+          {
+            "value": "8",
+            "label": "Customer Country",
+            "cId": "xYa"
+          },
+          {
+            "value": "9",
+            "label": "Customer Group",
+            "cId": "rxQP"
+          },
+          {
+            "value": "10",
+            "label": "Customer Key Account LV2",
+            "cId": "SfPmYZ"
+          },
+          {
+            "value": "11",
+            "label": "Customer Key Account",
+            "cId": "JtUDRzJ"
+          },
+          {
+            "value": "12",
+            "label": "Customer Sector",
+            "cId": "bMuyyb"
+          },
+          {
+            "value": "13",
+            "label": "Customer Statistics Group",
+            "cId": "dXXbZ"
+          },
+          {
+            "value": "14",
+            "label": "Customer Unit",
+            "cId": "CMjpQvb"
+          },
+          {
+            "value": "15",
+            "label": "Customer",
+            "cId": "dJFEdt"
+          },
+          {
+            "value": "16",
+            "label": "General Manager",
+            "cId": "pfSjbz"
+          },
+          {
+            "value": "17",
+            "label": "Geographical State",
+            "cId": "WjUWEj"
+          },
+          {
+            "value": "18",
+            "label": "Invoice Number",
+            "cId": "PjgncLj"
+          },
+          {
+            "value": "19",
+            "label": "Item Name",
+            "cId": "vBqdLvU"
+          },
+          {
+            "value": "20",
+            "label": "Item Number",
+            "cId": "KGMRph"
+          },
+          {
+            "value": "21",
+            "label": "Market Sector",
+            "cId": "JpawJN"
+          },
+          {
+            "value": "22",
+            "label": "Marketing Manager",
+            "cId": "LPpbDXK"
+          },
+          {
+            "value": "23",
+            "label": "Order Number",
+            "cId": "EuRbbA"
+          },
+          {
+            "value": "24",
+            "label": "Product Line",
+            "cId": "AcEKVyq"
+          },
+          {
+            "value": "25",
+            "label": "Product Manager",
+            "cId": "jdkj"
+          },
+          {
+            "value": "26",
+            "label": "Product Style Line",
+            "cId": "TQnzWE"
+          },
+          {
+            "value": "27",
+            "label": "Salesman Level1",
+            "cId": "fkmCteg"
+          },
+          {
+            "value": "28",
+            "label": "Salesman Level2",
+            "cId": "PunhtBE"
+          },
+          {
+            "value": "29",
+            "label": "Salesman Level3",
+            "cId": "pJwR"
+          },
+          {
+            "value": "30",
+            "label": "Salesman",
+            "cId": "RfJeV"
+          },
+          {
+            "value": "31",
+            "label": "Style",
+            "cId": "GUfBd"
+          },
+          {
+            "value": "32",
+            "label": "Customer Chain",
+            "cId": "KcwjW"
+          },
+          {
+            "value": "33",
+            "label": "Customer Continent",
+            "cId": "KPYGwSd"
+          },
+          {
+            "value": "34",
+            "label": "Customer Territory",
+            "cId": "nkUJpFd"
+          }
+        ],
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "rangelabel": false,
+        "visualization": "variable",
+        "variableValue": {
+          "qStringExpression": {
+            "qExpr": "=v_Selected_Dimension_Four"
+          }
+        },
+        "version": "2.2.0",
+        "extensionMeta": {
+          "translationKey": "",
+          "icon": "puzzle",
+          "iconChar": "g",
+          "isLibraryItem": true,
+          "visible": true,
+          "name": "Variable",
+          "description": "Variable extension",
+          "template": "variable",
+          "isThirdParty": true,
+          "version": "2.3.1",
+          "type": "visualization",
+          "author": "Erik Wetterberg"
+        },
+        "masterVersion": 0.96,
+        "metadata": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "9432c7e5-fa57-4a49-8ea2-3222b2345d82",
+          "qType": "variable"
+        },
+        "qMetaDef": {
+          "title": "Var Business Units",
+          "tags": []
+        },
+        "showTitles": true,
+        "title": "Dimension 3",
+        "subtitle": "",
+        "footnote": "",
+        "showDetails": false,
+        "variableName": "v_Selected_Dimension_Three",
+        "style": "qlik",
+        "width": "fill",
+        "customwidth": "10",
+        "render": "s",
+        "alternatives": [
+          {
+            "value": "",
+            "label": "",
+            "cId": "CQaMymT"
+          },
+          {
+            "value": "1",
+            "label": "Application",
+            "cId": "jwhGfY"
+          },
+          {
+            "value": "2",
+            "label": "Building Block",
+            "cId": "kxEMZBb"
+          },
+          {
+            "value": "3",
+            "label": "Business Unit Location",
+            "cId": "HbxPcbJ"
+          },
+          {
+            "value": "4",
+            "label": "Business Unit Type",
+            "cId": "JTPn"
+          },
+          {
+            "value": "5",
+            "label": "Business Unit",
+            "cId": "qKyeRf"
+          },
+          {
+            "value": "6",
+            "label": "Customer Account",
+            "cId": "pcHPzN"
+          },
+          {
+            "value": "7",
+            "label": "Customer Area",
+            "cId": "BnJtWh"
+          },
+          {
+            "value": "8",
+            "label": "Customer Country",
+            "cId": "xYa"
+          },
+          {
+            "value": "9",
+            "label": "Customer Group",
+            "cId": "rxQP"
+          },
+          {
+            "value": "10",
+            "label": "Customer Key Account LV2",
+            "cId": "SfPmYZ"
+          },
+          {
+            "value": "11",
+            "label": "Customer Key Account",
+            "cId": "JtUDRzJ"
+          },
+          {
+            "value": "12",
+            "label": "Customer Sector",
+            "cId": "bMuyyb"
+          },
+          {
+            "value": "13",
+            "label": "Customer Statistics Group",
+            "cId": "dXXbZ"
+          },
+          {
+            "value": "14",
+            "label": "Customer Unit",
+            "cId": "CMjpQvb"
+          },
+          {
+            "value": "15",
+            "label": "Customer",
+            "cId": "dJFEdt"
+          },
+          {
+            "value": "16",
+            "label": "General Manager",
+            "cId": "pfSjbz"
+          },
+          {
+            "value": "17",
+            "label": "Geographical State",
+            "cId": "WjUWEj"
+          },
+          {
+            "value": "18",
+            "label": "Invoice Number",
+            "cId": "PjgncLj"
+          },
+          {
+            "value": "19",
+            "label": "Item Name",
+            "cId": "vBqdLvU"
+          },
+          {
+            "value": "20",
+            "label": "Item Number",
+            "cId": "KGMRph"
+          },
+          {
+            "value": "21",
+            "label": "Market Sector",
+            "cId": "JpawJN"
+          },
+          {
+            "value": "22",
+            "label": "Marketing Manager",
+            "cId": "LPpbDXK"
+          },
+          {
+            "value": "23",
+            "label": "Order Number",
+            "cId": "EuRbbA"
+          },
+          {
+            "value": "24",
+            "label": "Product Line",
+            "cId": "AcEKVyq"
+          },
+          {
+            "value": "25",
+            "label": "Product Manager",
+            "cId": "jdkj"
+          },
+          {
+            "value": "26",
+            "label": "Product Style Line",
+            "cId": "TQnzWE"
+          },
+          {
+            "value": "27",
+            "label": "Salesman Level1",
+            "cId": "fkmCteg"
+          },
+          {
+            "value": "28",
+            "label": "Salesman Level2",
+            "cId": "PunhtBE"
+          },
+          {
+            "value": "29",
+            "label": "Salesman Level3",
+            "cId": "pJwR"
+          },
+          {
+            "value": "30",
+            "label": "Salesman",
+            "cId": "RfJeV"
+          },
+          {
+            "value": "31",
+            "label": "Style",
+            "cId": "GUfBd"
+          },
+          {
+            "value": "32",
+            "label": "Customer Chain",
+            "cId": "HWzggm"
+          },
+          {
+            "value": "33",
+            "label": "Customer Continent",
+            "cId": "sEDchP"
+          },
+          {
+            "value": "34",
+            "label": "Customer Territory",
+            "cId": "RpkEyb"
+          }
+        ],
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "rangelabel": false,
+        "visualization": "variable",
+        "variableValue": {
+          "qStringExpression": {
+            "qExpr": "=v_Selected_Dimension_Three"
+          }
+        },
+        "version": "2.2.0",
+        "extensionMeta": {
+          "translationKey": "",
+          "icon": "puzzle",
+          "iconChar": "g",
+          "isLibraryItem": true,
+          "visible": true,
+          "name": "Variable",
+          "description": "Variable extension",
+          "template": "variable",
+          "isThirdParty": true,
+          "version": "2.3.1",
+          "type": "visualization",
+          "author": "Erik Wetterberg"
+        },
+        "masterVersion": 0.96,
+        "metadata": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "039817f1-a246-4851-87c9-bfd143510f54",
+          "qType": "filterpane"
+        },
+        "qMetaDef": {},
+        "qChildListDef": {
+          "qData": {
+            "info": "/qInfo"
+          }
+        },
+        "showTitles": false,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "showDetails": false,
+        "visualization": "filterpane"
+      },
+      "qChildren": [
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "fbd35e17-7eb3-4f5d-aabf-0c31c2ae5629",
+              "qType": "listbox"
+            },
+            "qMetaDef": {},
+            "qListObjectDef": {
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                  "Year"
+                ],
+                "qFieldLabels": [
+                  "Year"
+                ],
+                "qSortCriterias": [
+                  {
+                    "qSortByState": 1,
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true,
+                "cId": "cHCWPK"
+              },
+              "qFrequencyMode": "N",
+              "qShowAlternatives": true,
+              "qInitialDataFetch": [],
+              "qExpressions": [],
+              "qOtherTotalSpec": {}
+            },
+            "showTitles": true,
+            "title": "Year",
+            "subtitle": "",
+            "footnote": "",
+            "visualization": "listbox"
+          },
+          "qChildren": []
+        }
+      ]
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "e08038a5-c3f0-4187-a59f-dff81f5887f4",
+          "qType": "filterpane"
+        },
+        "qMetaDef": {},
+        "qChildListDef": {
+          "qData": {
+            "info": "/qInfo"
+          }
+        },
+        "showTitles": false,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "showDetails": false,
+        "visualization": "filterpane"
+      },
+      "qChildren": [
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "86d94eb0-c0c9-4daa-8fec-887416079287",
+              "qType": "listbox"
+            },
+            "qMetaDef": {},
+            "qListObjectDef": {
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                  "Month"
+                ],
+                "qFieldLabels": [
+                  "Month"
+                ],
+                "qSortCriterias": [
+                  {
+                    "qSortByState": 1,
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true,
+                "cId": "jTJwgpa"
+              },
+              "qFrequencyMode": "N",
+              "qShowAlternatives": true,
+              "qInitialDataFetch": [],
+              "qExpressions": [],
+              "qOtherTotalSpec": {}
+            },
+            "showTitles": true,
+            "title": "Month",
+            "subtitle": "",
+            "footnote": "",
+            "visualization": "listbox"
+          },
+          "qChildren": []
+        }
+      ]
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "4d3eef9a-9360-4751-bca8-d05046a51181",
+          "qType": "filterpane"
+        },
+        "qMetaDef": {},
+        "qChildListDef": {
+          "qData": {
+            "info": "/qInfo"
+          }
+        },
+        "showTitles": false,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "showDetails": false,
+        "visualization": "filterpane"
+      },
+      "qChildren": [
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "ac2a277c-2a98-4de8-8c57-fac56e08d337",
+              "qType": "listbox"
+            },
+            "qMetaDef": {},
+            "qListObjectDef": {
+              "qLibraryId": "AWqVgs",
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [],
+                "qFieldLabels": [],
+                "qSortCriterias": [
+                  {
+                    "qSortByState": 1,
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true,
+                "cId": "PYNnKx"
+              },
+              "qFrequencyMode": "N",
+              "qShowAlternatives": true,
+              "qInitialDataFetch": [],
+              "qExpressions": [],
+              "qOtherTotalSpec": {}
+            },
+            "showTitles": true,
+            "title": "Currency",
+            "subtitle": "",
+            "footnote": "",
+            "visualization": "listbox"
+          },
+          "qChildren": []
+        }
+      ]
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "f9a76fb2-a35e-4d1e-aab6-44f80166a0d5",
+          "qType": "swr-sense-navigation"
+        },
+        "qMetaDef": {},
+        "showTitles": false,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "showDetails": false,
+        "props": {
+          "buttonLabel": "MENU",
+          "buttonStyle": "danger",
+          "fullWidth": true,
+          "buttonAlign": "center",
+          "isButtonMultiLine": true,
+          "buttonIcon": "plus-circle",
+          "action": "gotoSheet",
+          "sheetId": "",
+          "selectedSheet": "1f56234b-4be2-40d1-98f4-fb9bc2e7032d",
+          "selectedStory": "",
+          "websiteUrl": "",
+          "isActionsBefore": false,
+          "actionBefore1": "none",
+          "field1": "",
+          "variable1": "",
+          "value1": "",
+          "value1Desc": null,
+          "bookmark1": "",
+          "softlock1": false,
+          "actionBefore2": "none",
+          "field2": "",
+          "variable2": "",
+          "value2": "",
+          "value2Desc": "",
+          "bookmark2": "",
+          "softlock2": false
+        },
+        "visualization": "swr-sense-navigation",
+        "version": "0.8.1",
+        "extensionMeta": {
+          "name": "Sheet Navigation & Actions",
+          "description": "Sense Sheet Navigation + Actions visualization extension for Qlik Sense.",
+          "icon": "extension",
+          "type": "visualization",
+          "version": "0.8.1",
+          "preview": "swr-sense-navigation.png",
+          "author": "Stefan Walther",
+          "license": "MIT",
+          "homepage": "http://github.com/stefanwalther/sense-navigation",
+          "keywords": "qlik-sense, visualization",
+          "repository": "https://github.com/stefanwalther/sense-navigation",
+          "dependencies": {
+            "qlik-sense": ">=2.1.1"
+          },
+          "previewIconURL": "../extensions/swr-sense-navigation/swr-sense-navigation.png",
+          "template": "swr-sense-navigation",
+          "isLibraryItem": true,
+          "isThirdParty": true,
+          "templateIconClassName": "icon-puzzle"
+        }
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "5e401f06-24bf-40fc-8f5d-0e8a2c1025bb",
+          "qType": "variable"
+        },
+        "qMetaDef": {
+          "title": "Var Business Units",
+          "tags": []
+        },
+        "showTitles": true,
+        "title": "Dimension 2",
+        "subtitle": "",
+        "footnote": "",
+        "showDetails": false,
+        "variableName": "v_Selected_Dimension_Two",
+        "style": "qlik",
+        "width": "fill",
+        "customwidth": "10",
+        "render": "s",
+        "alternatives": [
+          {
+            "value": "",
+            "label": "",
+            "cId": "CQaMymT"
+          },
+          {
+            "value": "1",
+            "label": "Application",
+            "cId": "jwhGfY"
+          },
+          {
+            "value": "2",
+            "label": "Building Block",
+            "cId": "kxEMZBb"
+          },
+          {
+            "value": "3",
+            "label": "Business Unit Location",
+            "cId": "HbxPcbJ"
+          },
+          {
+            "value": "4",
+            "label": "Business Unit Type",
+            "cId": "JTPn"
+          },
+          {
+            "value": "5",
+            "label": "Business Unit",
+            "cId": "qKyeRf"
+          },
+          {
+            "value": "6",
+            "label": "Customer Account",
+            "cId": "pcHPzN"
+          },
+          {
+            "value": "7",
+            "label": "Customer Area",
+            "cId": "BnJtWh"
+          },
+          {
+            "value": "8",
+            "label": "Customer Country",
+            "cId": "xYa"
+          },
+          {
+            "value": "9",
+            "label": "Customer Group",
+            "cId": "rxQP"
+          },
+          {
+            "value": "10",
+            "label": "Customer Key Account LV2",
+            "cId": "SfPmYZ"
+          },
+          {
+            "value": "11",
+            "label": "Customer Key Account",
+            "cId": "JtUDRzJ"
+          },
+          {
+            "value": "12",
+            "label": "Customer Sector",
+            "cId": "bMuyyb"
+          },
+          {
+            "value": "13",
+            "label": "Customer Statistics Group",
+            "cId": "dXXbZ"
+          },
+          {
+            "value": "14",
+            "label": "Customer Unit",
+            "cId": "CMjpQvb"
+          },
+          {
+            "value": "15",
+            "label": "Customer",
+            "cId": "dJFEdt"
+          },
+          {
+            "value": "16",
+            "label": "General Manager",
+            "cId": "pfSjbz"
+          },
+          {
+            "value": "17",
+            "label": "Geographical State",
+            "cId": "WjUWEj"
+          },
+          {
+            "value": "18",
+            "label": "Invoice Number",
+            "cId": "PjgncLj"
+          },
+          {
+            "value": "19",
+            "label": "Item Name",
+            "cId": "vBqdLvU"
+          },
+          {
+            "value": "20",
+            "label": "Item Number",
+            "cId": "KGMRph"
+          },
+          {
+            "value": "21",
+            "label": "Market Sector",
+            "cId": "JpawJN"
+          },
+          {
+            "value": "22",
+            "label": "Marketing Manager",
+            "cId": "LPpbDXK"
+          },
+          {
+            "value": "23",
+            "label": "Order Number",
+            "cId": "EuRbbA"
+          },
+          {
+            "value": "24",
+            "label": "Product Line",
+            "cId": "AcEKVyq"
+          },
+          {
+            "value": "25",
+            "label": "Product Manager",
+            "cId": "jdkj"
+          },
+          {
+            "value": "26",
+            "label": "Product Style Line",
+            "cId": "TQnzWE"
+          },
+          {
+            "value": "27",
+            "label": "Salesman Level1",
+            "cId": "fkmCteg"
+          },
+          {
+            "value": "28",
+            "label": "Salesman Level2",
+            "cId": "PunhtBE"
+          },
+          {
+            "value": "29",
+            "label": "Salesman Level3",
+            "cId": "pJwR"
+          },
+          {
+            "value": "30",
+            "label": "Salesman",
+            "cId": "RfJeV"
+          },
+          {
+            "value": "31",
+            "label": "Style",
+            "cId": "GUfBd"
+          },
+          {
+            "value": "32",
+            "label": "Customer Chain",
+            "cId": "yckGc"
+          },
+          {
+            "value": "33",
+            "label": "Customer Continent",
+            "cId": "JkmPEw"
+          },
+          {
+            "value": "34",
+            "label": "Customer Territory",
+            "cId": "TbsUf"
+          }
+        ],
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "rangelabel": false,
+        "visualization": "variable",
+        "variableValue": {
+          "qStringExpression": {
+            "qExpr": "=v_Selected_Dimension_Two"
+          }
+        },
+        "version": "2.2.0",
+        "extensionMeta": {
+          "translationKey": "",
+          "icon": "puzzle",
+          "iconChar": "g",
+          "isLibraryItem": true,
+          "visible": true,
+          "name": "Variable",
+          "description": "Variable extension",
+          "template": "variable",
+          "isThirdParty": true,
+          "version": "2.3.1",
+          "type": "visualization",
+          "author": "Erik Wetterberg"
+        },
+        "masterVersion": 0.96,
+        "metadata": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "a42318c8-29eb-40ef-a1af-fca4b0808aca",
+          "qType": "qssidemenu"
+        },
+        "qExtendsId": "3354b4ab-db63-40bc-af18-66084d787913",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "14a03fea-70ca-499b-962a-a6a2e687251b",
+          "qType": "variable"
+        },
+        "qMetaDef": {
+          "title": "Var Business Units",
+          "tags": []
+        },
+        "showTitles": true,
+        "title": "Dimension 1",
+        "subtitle": "",
+        "footnote": "",
+        "showDetails": false,
+        "variableName": "v_Selected_Dimension_One_H",
+        "style": "qlik",
+        "width": "fill",
+        "customwidth": "10",
+        "render": "s",
+        "alternatives": [
+          {
+            "value": "",
+            "label": "",
+            "cId": "CQaMymT"
+          },
+          {
+            "value": "1",
+            "label": "Application",
+            "cId": "jwhGfY"
+          },
+          {
+            "value": "2",
+            "label": "Building Block",
+            "cId": "kxEMZBb"
+          },
+          {
+            "value": "3",
+            "label": "Business Unit Location",
+            "cId": "HbxPcbJ"
+          },
+          {
+            "value": "4",
+            "label": "Business Unit Type",
+            "cId": "JTPn"
+          },
+          {
+            "value": "5",
+            "label": "Business Unit",
+            "cId": "qKyeRf"
+          },
+          {
+            "value": "6",
+            "label": "Customer Account",
+            "cId": "pcHPzN"
+          },
+          {
+            "value": "7",
+            "label": "Customer Area",
+            "cId": "BnJtWh"
+          },
+          {
+            "value": "8",
+            "label": "Customer Country",
+            "cId": "xYa"
+          },
+          {
+            "value": "9",
+            "label": "Customer Group",
+            "cId": "rxQP"
+          },
+          {
+            "value": "10",
+            "label": "Customer Key Account LV2",
+            "cId": "SfPmYZ"
+          },
+          {
+            "value": "11",
+            "label": "Customer Key Account",
+            "cId": "JtUDRzJ"
+          },
+          {
+            "value": "12",
+            "label": "Customer Sector",
+            "cId": "bMuyyb"
+          },
+          {
+            "value": "13",
+            "label": "Customer Statistics Group",
+            "cId": "dXXbZ"
+          },
+          {
+            "value": "14",
+            "label": "Customer Unit",
+            "cId": "CMjpQvb"
+          },
+          {
+            "value": "15",
+            "label": "Customer",
+            "cId": "dJFEdt"
+          },
+          {
+            "value": "16",
+            "label": "General Manager",
+            "cId": "pfSjbz"
+          },
+          {
+            "value": "17",
+            "label": "Geographical State",
+            "cId": "WjUWEj"
+          },
+          {
+            "value": "18",
+            "label": "Invoice Number",
+            "cId": "PjgncLj"
+          },
+          {
+            "value": "19",
+            "label": "Item Name",
+            "cId": "vBqdLvU"
+          },
+          {
+            "value": "20",
+            "label": "Item Number",
+            "cId": "KGMRph"
+          },
+          {
+            "value": "21",
+            "label": "Market Sector",
+            "cId": "JpawJN"
+          },
+          {
+            "value": "22",
+            "label": "Marketing Manager",
+            "cId": "LPpbDXK"
+          },
+          {
+            "value": "23",
+            "label": "Order Number",
+            "cId": "EuRbbA"
+          },
+          {
+            "value": "24",
+            "label": "Product Line",
+            "cId": "AcEKVyq"
+          },
+          {
+            "value": "25",
+            "label": "Product Manager",
+            "cId": "jdkj"
+          },
+          {
+            "value": "26",
+            "label": "Product Style Line",
+            "cId": "TQnzWE"
+          },
+          {
+            "value": "27",
+            "label": "Salesman Level1",
+            "cId": "fkmCteg"
+          },
+          {
+            "value": "28",
+            "label": "Salesman Level2",
+            "cId": "PunhtBE"
+          },
+          {
+            "value": "29",
+            "label": "Salesman Level3",
+            "cId": "pJwR"
+          },
+          {
+            "value": "30",
+            "label": "Salesman",
+            "cId": "RfJeV"
+          },
+          {
+            "value": "31",
+            "label": "Style",
+            "cId": "GUfBd"
+          },
+          {
+            "value": "32",
+            "label": "Customer Chain",
+            "cId": "QDknC"
+          },
+          {
+            "value": "33",
+            "label": "Customer Continent",
+            "cId": "pZvZdmy"
+          },
+          {
+            "value": "34",
+            "label": "Customer Territory",
+            "cId": "xzCmyR"
+          }
+        ],
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "rangelabel": false,
+        "visualization": "variable",
+        "variableValue": {
+          "qStringExpression": {
+            "qExpr": "=v_Selected_Dimension_One_H"
+          }
+        },
+        "version": "2.2.0",
+        "extensionMeta": {
+          "translationKey": "",
+          "icon": "puzzle",
+          "iconChar": "g",
+          "isLibraryItem": true,
+          "visible": true,
+          "name": "Variable",
+          "description": "Variable extension",
+          "template": "variable",
+          "isThirdParty": true,
+          "version": "2.3.1",
+          "type": "visualization",
+          "author": "Erik Wetterberg"
+        },
+        "masterVersion": 0.96,
+        "metadata": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "edxVYs",
+          "qType": "pivot-table"
+        },
+        "qMetaDef": {},
+        "qHyperCubeDef": {
+          "qDimensions": [
+            {
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                  "=$(=(Pick\r\n(\n\t$(v_Selected_Dimension_One_H)\n        ,'\"Application\"'\n        ,'\"Building Block\"'\n        ,'\"Business Unit Location\"'\n        ,'\"Business Unit Type\"'\n        ,'\"Business Unit\"'\n        ,'\"Customer Account\"'\n        ,'\"Customer Area\"'\n        ,'\"Customer Country\"'\n        ,'\"Customer Group\"'\n        ,'\"Customer Key Account LV2\"'\n        ,'\"Customer Key Account\"'\n        ,'\"SMM Company Sector\"'  \n        ,'\"Customer Statistics Group\"'\n        ,'\"Customer Unit\"'\n        ,'\"Customer\"'  \n        ,'\"General Manager\"'\n        ,'\"Geographical State\"'\n        ,'\"Invoice Number\"'\n        ,'\"Item Name\"'\n        ,'\"Item Number\"' \n        ,'\"Market Sector\"'\n        ,'\"Marketing Manager\"'\n        ,'\"Order Number\"' \n        ,'\"Product Line\"'\n        ,'\"Product Manager\"'\n        ,'\"Product Style Line\"'\n        ,'\"Salesman Level1\"'\n        ,'\"Salesman Level2\"'\n        ,'\"Salesman Level3\"'\n        ,'\"Salesman\"'\n        ,'\"Style\"'\n        ,'\"Customer Chain\"'\n        ,'\"Customer Continent\"'\n\t\t,'\"Customer Territory\"'\n)))"
+                ],
+                "qFieldLabels": [
+                  "DIM1"
+                ],
+                "qSortCriterias": [
+                  {
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true,
+                "cId": "ngLfE",
+                "othersLabel": "Others"
+              },
+              "qOtherTotalSpec": {
+                "qOtherMode": "OTHER_OFF",
+                "qOtherCounted": {
+                  "qv": "10"
+                },
+                "qOtherLimit": {
+                  "qv": "0"
+                },
+                "qOtherLimitMode": "OTHER_GE_LIMIT",
+                "qForceBadValueKeeping": true,
+                "qApplyEvenWhenPossiblyWrongResult": true,
+                "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                "qTotalMode": "TOTAL_EXPR",
+                "qReferencedExpression": {}
+              },
+              "qOtherLabel": {
+                "qv": "Others"
+              },
+              "qTotalLabel": {
+                "qv": "Totals"
+              },
+              "qCalcCond": {},
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              }
+            },
+            {
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                  "=$(=(Pick\r\n(\n\t$(v_Selected_Dimension_Two)\n        ,'\"Application\"'\n        ,'\"Building Block\"'\n        ,'\"Business Unit Location\"'\n        ,'\"Business Unit Type\"'\n        ,'\"Business Unit\"'\n        ,'\"Customer Account\"'\n        ,'\"Customer Area\"'\n        ,'\"Customer Country\"'\n        ,'\"Customer Group\"'\n        ,'\"Customer Key Account LV2\"'\n        ,'\"Customer Key Account\"'\n        ,'\"SMM Company Sector\"'  \n        ,'\"Customer Statistics Group\"'\n        ,'\"Customer Unit\"'\n        ,'\"Customer\"'  \n        ,'\"General Manager\"'\n        ,'\"Geographical State\"'\n        ,'\"Invoice Number\"'\n        ,'\"Item Name\"'\n        ,'\"Item Number\"' \n        ,'\"Market Sector\"'\n        ,'\"Marketing Manager\"'\n        ,'\"Order Number\"' \n        ,'\"Product Line\"'\n        ,'\"Product Manager\"'\n        ,'\"Product Style Line\"'\n        ,'\"Salesman Level1\"'\n        ,'\"Salesman Level2\"'\n        ,'\"Salesman Level3\"'\n        ,'\"Salesman\"'\n        ,'\"Style\"'\n        ,'\"Customer Chain\"'\n        ,'\"Customer Continent\"'\n        ,'\"Customer Territory\"'\n\n)))"
+                ],
+                "qFieldLabels": [
+                  "DIM2"
+                ],
+                "qSortCriterias": [
+                  {
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true,
+                "cId": "qmsTseE",
+                "othersLabel": "Others"
+              },
+              "qOtherTotalSpec": {
+                "qOtherMode": "OTHER_OFF",
+                "qOtherCounted": {
+                  "qv": "10"
+                },
+                "qOtherLimit": {
+                  "qv": "0"
+                },
+                "qOtherLimitMode": "OTHER_GE_LIMIT",
+                "qForceBadValueKeeping": true,
+                "qApplyEvenWhenPossiblyWrongResult": true,
+                "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                "qTotalMode": "TOTAL_OFF",
+                "qReferencedExpression": {}
+              },
+              "qOtherLabel": {
+                "qv": "Others"
+              },
+              "qTotalLabel": {
+                "qv": "Totals"
+              },
+              "qCalcCond": {},
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              }
+            },
+            {
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                  "=$(=(Pick\r\n(\n\t$(v_Selected_Dimension_Three)\n        ,'\"Application\"'\n        ,'\"Building Block\"'\n        ,'\"Business Unit Location\"'\n        ,'\"Business Unit Type\"'\n        ,'\"Business Unit\"'\n        ,'\"Customer Account\"'\n        ,'\"Customer Area\"'\n        ,'\"Customer Country\"'\n        ,'\"Customer Group\"'\n        ,'\"Customer Key Account LV2\"'\n        ,'\"Customer Key Account\"'\n        ,'\"SMM Company Sector\"'  \n        ,'\"Customer Statistics Group\"'\n        ,'\"Customer Unit\"'\n        ,'\"Customer\"'  \n        ,'\"General Manager\"'\n        ,'\"Geographical State\"'\n        ,'\"Invoice Number\"'\n        ,'\"Item Name\"'\n        ,'\"Item Number\"' \n        ,'\"Market Sector\"'\n        ,'\"Marketing Manager\"'\n        ,'\"Order Number\"' \n        ,'\"Product Line\"'\n        ,'\"Product Manager\"'\n        ,'\"Product Style Line\"'\n        ,'\"Salesman Level1\"'\n        ,'\"Salesman Level2\"'\n        ,'\"Salesman Level3\"'\n        ,'\"Salesman\"'\n        ,'\"Style\"'\n        ,'\"Customer Chain\"'\n        ,'\"Customer Continent\"'\n\t\t,'\"Customer Territory\"'\n\n)))"
+                ],
+                "qFieldLabels": [
+                  "DIM3"
+                ],
+                "qSortCriterias": [
+                  {
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true,
+                "cId": "dDuKu",
+                "othersLabel": "Others"
+              },
+              "qOtherTotalSpec": {
+                "qOtherMode": "OTHER_OFF",
+                "qOtherCounted": {
+                  "qv": "10"
+                },
+                "qOtherLimit": {
+                  "qv": "0"
+                },
+                "qOtherLimitMode": "OTHER_GE_LIMIT",
+                "qForceBadValueKeeping": true,
+                "qApplyEvenWhenPossiblyWrongResult": true,
+                "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                "qTotalMode": "TOTAL_OFF",
+                "qReferencedExpression": {}
+              },
+              "qOtherLabel": {
+                "qv": "Others"
+              },
+              "qTotalLabel": {
+                "qv": "Totals"
+              },
+              "qCalcCond": {},
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              }
+            },
+            {
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                  "=$(=(Pick\r\n(\n\t$(v_Selected_Dimension_Four)\n        ,'\"Application\"'\n        ,'\"Building Block\"'\n        ,'\"Business Unit Location\"'\n        ,'\"Business Unit Type\"'\n        ,'\"Business Unit\"'\n        ,'\"Customer Account\"'\n        ,'\"Customer Area\"'\n        ,'\"Customer Country\"'\n        ,'\"Customer Group\"'\n        ,'\"Customer Key Account LV2\"'\n        ,'\"Customer Key Account\"'\n        ,'\"SMM Company Sector\"'  \n        ,'\"Customer Statistics Group\"'\n        ,'\"Customer Unit\"'\n        ,'\"Customer\"'  \n        ,'\"General Manager\"'\n        ,'\"Geographical State\"'\n        ,'\"Invoice Number\"'\n        ,'\"Item Name\"'\n        ,'\"Item Number\"' \n        ,'\"Market Sector\"'\n        ,'\"Marketing Manager\"'\n        ,'\"Order Number\"' \n        ,'\"Product Line\"'\n        ,'\"Product Manager\"'\n        ,'\"Product Style Line\"'\n        ,'\"Salesman Level1\"'\n        ,'\"Salesman Level2\"'\n        ,'\"Salesman Level3\"'\n        ,'\"Salesman\"'\n        ,'\"Style\"'\n        ,'\"Customer Chain\"'\n        ,'\"Customer Continent\"'\n\t\t,'\"Customer Territory\"'\n\n)))"
+                ],
+                "qFieldLabels": [
+                  "DIM4"
+                ],
+                "qSortCriterias": [
+                  {
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true,
+                "cId": "QqrqAMe",
+                "othersLabel": "Others"
+              },
+              "qOtherTotalSpec": {
+                "qOtherMode": "OTHER_OFF",
+                "qOtherCounted": {
+                  "qv": "10"
+                },
+                "qOtherLimit": {
+                  "qv": "0"
+                },
+                "qOtherLimitMode": "OTHER_GE_LIMIT",
+                "qForceBadValueKeeping": true,
+                "qApplyEvenWhenPossiblyWrongResult": true,
+                "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                "qTotalMode": "TOTAL_OFF",
+                "qReferencedExpression": {}
+              },
+              "qOtherLabel": {
+                "qv": "Others"
+              },
+              "qTotalLabel": {
+                "qv": "Totals"
+              },
+              "qCalcCond": {},
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              }
+            },
+            {
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                  "=$(=(Pick\r\n(\n\t$(v_Selected_Dimension_Five)\n        ,'\"Application\"'\n        ,'\"Building Block\"'\n        ,'\"Business Unit Location\"'\n        ,'\"Business Unit Type\"'\n        ,'\"Business Unit\"'\n        ,'\"Customer Account\"'\n        ,'\"Customer Area\"'\n        ,'\"Customer Country\"'\n        ,'\"Customer Group\"'\n        ,'\"Customer Key Account LV2\"'\n        ,'\"Customer Key Account\"'\n        ,'\"SMM Company Sector\"'  \n        ,'\"Customer Statistics Group\"'\n        ,'\"Customer Unit\"'\n        ,'\"Customer\"'  \n        ,'\"General Manager\"'\n        ,'\"Geographical State\"'\n        ,'\"Invoice Number\"'\n        ,'\"Item Name\"'\n        ,'\"Item Number\"' \n        ,'\"Market Sector\"'\n        ,'\"Marketing Manager\"'\n        ,'\"Order Number\"' \n        ,'\"Product Line\"'\n        ,'\"Product Manager\"'\n        ,'\"Product Style Line\"'\n        ,'\"Salesman Level1\"'\n        ,'\"Salesman Level2\"'\n        ,'\"Salesman Level3\"'\n        ,'\"Salesman\"'\n        ,'\"Style\"'\n        ,'\"Customer Chain\"'\n        ,'\"Customer Continent\"'\n\t\t,'\"Customer Territory\"'\n\n)))"
+                ],
+                "qFieldLabels": [
+                  "DIM5"
+                ],
+                "qSortCriterias": [
+                  {
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true,
+                "cId": "jnKn",
+                "othersLabel": "Others"
+              },
+              "qOtherTotalSpec": {
+                "qOtherMode": "OTHER_OFF",
+                "qOtherCounted": {
+                  "qv": "10"
+                },
+                "qOtherLimit": {
+                  "qv": "0"
+                },
+                "qOtherLimitMode": "OTHER_GE_LIMIT",
+                "qForceBadValueKeeping": true,
+                "qApplyEvenWhenPossiblyWrongResult": true,
+                "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                "qTotalMode": "TOTAL_OFF",
+                "qReferencedExpression": {}
+              },
+              "qOtherLabel": {
+                "qv": "Others"
+              },
+              "qTotalLabel": {
+                "qv": "Totals"
+              },
+              "qCalcCond": {},
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              }
+            },
+            {
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                  "=[%SynHeadersExpectedYearClosingAnalysis]"
+                ],
+                "qFieldLabels": [
+                  "Header"
+                ],
+                "qSortCriterias": [
+                  {
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true,
+                "cId": "WYDGeP",
+                "othersLabel": "Others"
+              },
+              "qOtherTotalSpec": {
+                "qOtherMode": "OTHER_OFF",
+                "qOtherCounted": {
+                  "qv": "10"
+                },
+                "qOtherLimit": {
+                  "qv": "0"
+                },
+                "qOtherLimitMode": "OTHER_GE_LIMIT",
+                "qForceBadValueKeeping": true,
+                "qApplyEvenWhenPossiblyWrongResult": true,
+                "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                "qTotalMode": "TOTAL_OFF",
+                "qReferencedExpression": {}
+              },
+              "qOtherLabel": {
+                "qv": "Others"
+              },
+              "qTotalLabel": {
+                "qv": "Totals"
+              },
+              "qCalcCond": {},
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              }
+            }
+          ],
+          "qMeasures": [
+            {
+              "qDef": {
+                "qLabel": "MT",
+                "qTags": [],
+                "qGrouping": "N",
+                "qDef": " \r\n    Pick\n    (\n        [%SynHeadersExpectedYearClosingAnalysis]\n        ,Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year_LY)} , Quarter=, Month=, [Month Year]=>} [Invoice MT])\n        \n        ,\t(Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=, Month=, [Month Year]=>} [EYC Kg - Forecast] ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=, Month=, [Month Year]=>} [EYC Kg - Invoiced] ))/1000\n        \n        ,Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=, Month=, [Month Year]=>} [Budget MT])\n        \n         ,Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year_Plus1)} , Quarter=, Month=, [Month Year]=>} [Budget MT])\n         \n          , (Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=, Month=, [Month Year]=>} [EYC Kg - Forecast] ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=, Month=, [Month Year]=>} [EYC Kg - Invoiced] ))/1000\n            \n            -Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=, Month=, [Month Year]=>} [Budget MT]) \n        , (Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=, Month=, [Month Year]=>} [EYC Kg - Forecast] ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=, Month=, [Month Year]=>} [EYC Kg - Invoiced] ))/1000\n            \n            -Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year_LY)} , Quarter=, Month=, [Month Year]=>} [Invoice MT])\n         \n    ) ",
+                "qNumFormat": {
+                  "qType": "R",
+                  "qnDec": 2,
+                  "qUseThou": 0,
+                  "qFmt": "#,##0",
+                  "qDec": ".",
+                  "qThou": ","
+                },
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "autoSort": true,
+                "cId": "zsjXvDW",
+                "numFormatFromTemplate": true,
+                "isCustomFormatted": false
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [
+                {
+                  "qExpression": "rgb(239,235,224)",
+                  "qAttribute": true,
+                  "qNumFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  },
+                  "id": "cellBackgroundColor"
+                },
+                {
+                  "qAttribute": true,
+                  "qNumFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  },
+                  "id": "cellForegroundColor"
+                }
+              ],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": []
+              }
+            },
+            {
+              "qDef": {
+                "qLabel": "Net SLS (000)",
+                "qTags": [],
+                "qGrouping": "N",
+                "qDef": " \r\n    Pick\n    (\n        [%SynHeadersExpectedYearClosingAnalysis]\n        ,Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year_LY)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [Invoice Amount USD]*[Currency Average Rate])\n        \n        ,\t(Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Forecast]*[Currency Average Rate] ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Invoiced]*[Currency Average Rate] ))\n        \n        ,Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Month=, [Month Year]=>} [Budget Amount USD]*[Currency Average Rate])\n        \n         ,Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year_Plus1)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [Budget Amount USD]*[Currency Average Rate])\n         \n          , (Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Forecast]*[Currency Average Rate] ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Invoiced]*[Currency Average Rate]  ))\n            \n            -Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [Budget Amount USD]*[Currency Average Rate]) \n        , (Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Forecast]*[Currency Average Rate]  ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Invoiced]*[Currency Average Rate]  ))\n            \n            -Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year_LY)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [Invoice Amount USD]*[Currency Average Rate])\n         \n    )  /1000",
+                "qNumFormat": {
+                  "qType": "F",
+                  "qnDec": 2,
+                  "qUseThou": 0,
+                  "qFmt": "#,##0",
+                  "qDec": ".",
+                  "qThou": ","
+                },
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "autoSort": true,
+                "cId": "mpLj",
+                "numFormatFromTemplate": true,
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                },
+                "isCustomFormatted": false
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [
+                {
+                  "qExpression": "rgb(133,201,232)",
+                  "qAttribute": true,
+                  "qNumFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  },
+                  "id": "cellBackgroundColor"
+                },
+                {
+                  "qAttribute": true,
+                  "qNumFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  },
+                  "id": "cellForegroundColor"
+                }
+              ],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": []
+              }
+            },
+            {
+              "qDef": {
+                "qLabel": "COP (000)",
+                "qTags": [],
+                "qGrouping": "N",
+                "qDef": " \r\n    Pick\n    (\n        [%SynHeadersExpectedYearClosingAnalysis]\n        ,Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year_LY)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [Invoice Amount USD]*[Currency Average Rate])\n        \n        ,\t(Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Forecast]*[Currency Average Rate] ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Invoiced]*[Currency Average Rate] ))\n        \n        ,Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Month=, [Month Year]=>} [Budget Amount USD]*[Currency Average Rate])\n        \n         ,Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year_Plus1)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [Budget Amount USD]*[Currency Average Rate])\n         \n          , (Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Forecast]*[Currency Average Rate] ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Invoiced]*[Currency Average Rate]  ))\n            \n            -Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [Budget Amount USD]*[Currency Average Rate]) \n        , (Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Forecast]*[Currency Average Rate]  ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Invoiced]*[Currency Average Rate]  ))\n            \n            -Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year_LY)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [Invoice Amount USD]*[Currency Average Rate])\n         \n    )  /1000\n    \n    -\n    \n     \n    Pick\n    (\n        [%SynHeadersExpectedYearClosingAnalysis]\n        ,Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year_LY)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [Invoice Cost USD]*[Currency Average Rate])\n        \n        ,\t(Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Cost USD - Forecast]*[Currency Average Rate] ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Cost USD - Invoiced]*[Currency Average Rate] ))\n        \n        ,Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Month=, [Month Year]=>} [Budget Cost USD]*[Currency Average Rate])\n        \n         ,Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year_Plus1)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [Budget Cost USD]*[Currency Average Rate])\n         \n          , (Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Cost USD - Forecast]*[Currency Average Rate] ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Cost USD - Invoiced]*[Currency Average Rate]  ))\n            \n            -Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [Budget Cost USD]*[Currency Average Rate]) \n        , (Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Cost USD - Forecast]*[Currency Average Rate]  ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Cost USD - Invoiced]*[Currency Average Rate]  ))\n            \n            -Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year_LY)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [Invoice Cost USD]*[Currency Average Rate])\n         \n    )  /1000",
+                "qNumFormat": {
+                  "qType": "F",
+                  "qnDec": 2,
+                  "qUseThou": 0,
+                  "qFmt": "#,##0",
+                  "qDec": ".",
+                  "qThou": ","
+                },
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "autoSort": true,
+                "cId": "jcyYFKg",
+                "numFormatFromTemplate": true,
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                },
+                "isCustomFormatted": false
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [
+                {
+                  "qExpression": "rgb(68,119,170)",
+                  "qAttribute": true,
+                  "qNumFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  },
+                  "id": "cellBackgroundColor"
+                },
+                {
+                  "qAttribute": true,
+                  "qNumFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  },
+                  "id": "cellForegroundColor"
+                }
+              ],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": []
+              }
+            },
+            {
+              "qDef": {
+                "qLabel": "ASP/KG",
+                "qTags": [],
+                "qGrouping": "N",
+                "qDef": "  Pick\r\n    (\n        [%SynHeadersExpectedYearClosingAnalysis]\n        ,(Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year_LY)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [Invoice Amount USD]*[Currency Average Rate])/1000)\n        /Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year_LY)} , Quarter=, Month=, [Month Year]=>} [Invoice MT])\n        \n        ,\t((Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Forecast]*[Currency Average Rate] ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Invoiced]*[Currency Average Rate] ))/1000)\n        /\n        ((Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=, Month=, [Month Year]=>} [EYC Kg - Forecast] ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=, Month=, [Month Year]=>} [EYC Kg - Invoiced] ))/1000)\n        \n        ,(Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Month=, [Month Year]=>} [Budget Amount USD]*[Currency Average Rate])/1000)\n        \n        /Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=, Month=, [Month Year]=>} [Budget MT])\n        \n         ,(Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year_Plus1)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [Budget Amount USD]*[Currency Average Rate])/1000)\n         \n         /Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year_Plus1)} , Quarter=, Month=, [Month Year]=>} [Budget MT])\n         \n          , ((Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Forecast]*[Currency Average Rate] ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Invoiced]*[Currency Average Rate] ))/1000)\n        /\n        ((Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=, Month=, [Month Year]=>} [EYC Kg - Forecast] ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=, Month=, [Month Year]=>} [EYC Kg - Invoiced] ))/1000)\n        \n            -(Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Month=, [Month Year]=>} [Budget Amount USD]*[Currency Average Rate])/1000)\n        \n        /Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=, Month=, [Month Year]=>} [Budget MT])\n        \n        ,((Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Forecast]*[Currency Average Rate] ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Invoiced]*[Currency Average Rate] ))/1000)\n        /\n        ((Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=, Month=, [Month Year]=>} [EYC Kg - Forecast] ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=, Month=, [Month Year]=>} [EYC Kg - Invoiced] ))/1000)\n         \n            -(Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year_LY)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [Invoice Amount USD]*[Currency Average Rate])/1000)\n        /Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year_LY)} , Quarter=, Month=, [Month Year]=>} [Invoice MT])\n        \n         \n    ) ",
+                "qNumFormat": {
+                  "qType": "F",
+                  "qnDec": 2,
+                  "qUseThou": 0,
+                  "qFmt": "#,##0.00",
+                  "qDec": ".",
+                  "qThou": ","
+                },
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "autoSort": true,
+                "cId": "fmaYX",
+                "numFormatFromTemplate": true,
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                },
+                "isCustomFormatted": false
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [
+                {
+                  "qAttribute": true,
+                  "qNumFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  }
+                },
+                {
+                  "qAttribute": true,
+                  "qNumFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  }
+                }
+              ],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {
+                  "qv": "$(v_Selected_Dimension_YesNoRatios) = 1"
+                },
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": []
+              }
+            },
+            {
+              "qDef": {
+                "qLabel": "COP/KG",
+                "qTags": [],
+                "qGrouping": "N",
+                "qDef": " \r\n    Pick\n    (\n        [%SynHeadersExpectedYearClosingAnalysis]\n        ,((Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year_LY)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [Invoice Amount USD]*[Currency Average Rate])\n        - Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year_LY)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [Invoice Cost USD]*[Currency Average Rate])\n        )/1000)\n        / Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year_LY)} , Quarter=, Month=, [Month Year]=>} [Invoice MT])\n        \n        ,\t(((Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Forecast]*[Currency Average Rate] ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Invoiced]*[Currency Average Rate] ))\n        - (Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Cost USD - Forecast]*[Currency Average Rate] ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Cost USD - Invoiced]*[Currency Average Rate] ))\n        )/1000)\n        / ((Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=, Month=, [Month Year]=>} [EYC Kg - Forecast] ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=, Month=, [Month Year]=>} [EYC Kg - Invoiced] ))/1000)\n        \n        ,((Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Month=, [Month Year]=>} [Budget Amount USD]*[Currency Average Rate])\n        - Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Month=, [Month Year]=>} [Budget Cost USD]*[Currency Average Rate])\n        ) /1000)\n         / Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=, Month=, [Month Year]=>} [Budget MT])\n        \n         ,((Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year_Plus1)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [Budget Amount USD]*[Currency Average Rate])\n         - Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year_Plus1)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [Budget Cost USD]*[Currency Average Rate])\n          )/1000)\n          /Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year_Plus1)} , Quarter=, Month=, [Month Year]=>} [Budget MT])\n         \n          ,\t(((Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Forecast]*[Currency Average Rate] ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Invoiced]*[Currency Average Rate] ))\n        - (Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Cost USD - Forecast]*[Currency Average Rate] ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Cost USD - Invoiced]*[Currency Average Rate] ))\n        )/1000)\n        / ((Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=, Month=, [Month Year]=>} [EYC Kg - Forecast] ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=, Month=, [Month Year]=>} [EYC Kg - Invoiced] ))/1000)\n        \n        -((Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Month=, [Month Year]=>} [Budget Amount USD]*[Currency Average Rate])\n        - Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Month=, [Month Year]=>} [Budget Cost USD]*[Currency Average Rate]))\n         /1000)\n         / Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=, Month=, [Month Year]=>} [Budget MT])\n        \n        , (((Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Forecast]*[Currency Average Rate] ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Invoiced]*[Currency Average Rate] ))\n        - (Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Cost USD - Forecast]*[Currency Average Rate] ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Cost USD - Invoiced]*[Currency Average Rate] ))\n        )/1000)\n        / ((Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=, Month=, [Month Year]=>} [EYC Kg - Forecast] ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=, Month=, [Month Year]=>} [EYC Kg - Invoiced] ))/1000)\n        -\n        \n        ((Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year_LY)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [Invoice Amount USD]*[Currency Average Rate])\n        - Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year_LY)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [Invoice Cost USD]*[Currency Average Rate])\n        )/1000)\n        / Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year_LY)} , Quarter=, Month=, [Month Year]=>} [Invoice MT])\n        \n        \n        )\n        \n        \n        \n        \n        ",
+                "qNumFormat": {
+                  "qType": "F",
+                  "qnDec": 2,
+                  "qUseThou": 0,
+                  "qFmt": "#,##0.00",
+                  "qDec": ".",
+                  "qThou": ","
+                },
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "autoSort": true,
+                "cId": "PbqngPJ",
+                "numFormatFromTemplate": true,
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                },
+                "isCustomFormatted": false
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [
+                {
+                  "qAttribute": true,
+                  "qNumFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  }
+                },
+                {
+                  "qAttribute": true,
+                  "qNumFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  }
+                }
+              ],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {
+                  "qv": "$(v_Selected_Dimension_YesNoRatios) = 1"
+                },
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": []
+              }
+            },
+            {
+              "qDef": {
+                "qLabel": "COP %",
+                "qTags": [],
+                "qGrouping": "N",
+                "qDef": " \r\n    Pick\n    (\n        [%SynHeadersExpectedYearClosingAnalysis]\n        ,((Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year_LY)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [Invoice Amount USD]*[Currency Average Rate])\n        - Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year_LY)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [Invoice Cost USD]*[Currency Average Rate])\n        )/1000)\n        /(Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year_LY)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [Invoice Amount USD]*[Currency Average Rate])/1000)\n        \n        ,\t(((Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Forecast]*[Currency Average Rate] ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Invoiced]*[Currency Average Rate] ))\n        - (Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Cost USD - Forecast]*[Currency Average Rate] ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Cost USD - Invoiced]*[Currency Average Rate] ))\n        )/1000)\n        /(( (Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Forecast]*[Currency Average Rate] ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Invoiced]*[Currency Average Rate] ))\n        )/1000)\n        ,((Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Month=, [Month Year]=>} [Budget Amount USD]*[Currency Average Rate])\n        - Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Month=, [Month Year]=>} [Budget Cost USD]*[Currency Average Rate])\n        ) /1000)\n         /((Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Month=, [Month Year]=>} [Budget Amount USD]*[Currency Average Rate])\n        )/1000)\n         ,((Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year_Plus1)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [Budget Amount USD]*[Currency Average Rate])\n         - Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year_Plus1)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [Budget Cost USD]*[Currency Average Rate])\n          )/1000)\n          /((Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year_Plus1)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [Budget Amount USD]*[Currency Average Rate])\n         )/1000)\n          ,(((Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Forecast]*[Currency Average Rate] ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Invoiced]*[Currency Average Rate] ))\n        - (Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Cost USD - Forecast]*[Currency Average Rate] ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Cost USD - Invoiced]*[Currency Average Rate] ))\n        )/1000)\n        /(( (Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Forecast]*[Currency Average Rate] ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Invoiced]*[Currency Average Rate] ))\n        )/1000)\n        - ((Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Month=, [Month Year]=>} [Budget Amount USD]*[Currency Average Rate])\n        - Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Month=, [Month Year]=>} [Budget Cost USD]*[Currency Average Rate])\n        ) /1000)\n         /((Sum({$<[Sales Type] = {'Budget'}, [Month ID] =  , Year = {$(v_Max_Year)} , Quarter=,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Month=, [Month Year]=>} [Budget Amount USD]*[Currency Average Rate])\n        )/1000)\n        \n        , (((Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Forecast]*[Currency Average Rate] ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Invoiced]*[Currency Average Rate] ))\n        - (Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Cost USD - Forecast]*[Currency Average Rate] ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Cost USD - Invoiced]*[Currency Average Rate] ))\n        )/1000)\n        /(( (Sum({$<[Sales Type] = {'Forecast'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Forecast]*[Currency Average Rate] ) \n        \t+ Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [EYC Amount USD - Invoiced]*[Currency Average Rate] ))\n        )/1000)\n        -((Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year_LY)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [Invoice Amount USD]*[Currency Average Rate])\n        - Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year_LY)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [Invoice Cost USD]*[Currency Average Rate])\n        )/1000)\n        /(Sum({$<[Sales Type] = {'Net Sales'}, [Month ID] =  , Year = {$(v_Max_Year_LY)} ,[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, Quarter=, Month=, [Month Year]=>} [Invoice Amount USD]*[Currency Average Rate])/1000)\n        \n        )\n        \n        \n        ",
+                "qNumFormat": {
+                  "qType": "F",
+                  "qnDec": 2,
+                  "qUseThou": 0,
+                  "qFmt": "0.00%",
+                  "qDec": ".",
+                  "qThou": ","
+                },
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "autoSort": true,
+                "cId": "mJYzrW",
+                "numFormatFromTemplate": true,
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                },
+                "isCustomFormatted": false
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [
+                {
+                  "qAttribute": true,
+                  "qNumFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  }
+                },
+                {
+                  "qAttribute": true,
+                  "qNumFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  }
+                }
+              ],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {
+                  "qv": "$(v_Selected_Dimension_YesNoRatios) = 1"
+                },
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": []
+              }
+            }
+          ],
+          "qInterColumnSortOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            -1
+          ],
+          "qSuppressZero": true,
+          "qSuppressMissing": true,
+          "qInitialDataFetch": [
+            {
+              "qLeft": 0,
+              "qTop": 0,
+              "qWidth": 50,
+              "qHeight": 50
+            }
+          ],
+          "qReductionMode": "N",
+          "qMode": "P",
+          "qPseudoDimPos": -1,
+          "qNoOfLeftDims": 5,
+          "qMaxStackedCells": 5000,
+          "qShowTotalsAbove": true,
+          "qIndentMode": true,
+          "qCalcCond": {},
+          "qTitle": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qColumnOrder": [],
+          "qExpansionState": [
+            {
+              "qPos": {
+                "qDimName": "Salesman Level1",
+                "qElemNo": [
+                  4
+                ],
+                "qElemValues": [
+                  "BE1haGVyIERhYmJvdXMA"
+                ]
+              }
+            },
+            {
+              "qPos": {
+                "qDimName": "Salesman Level2",
+                "qElemNo": [
+                  8
+                ],
+                "qElemValues": [
+                  "BEZhZHkgSm9zZXBoIFNlaWYA"
+                ]
+              }
+            },
+            {
+              "qPos": {
+                "qDimName": "Salesman Level3",
+                "qElemNo": [],
+                "qElemValues": []
+              }
+            },
+            {
+              "qPos": {
+                "qDimName": "Salesman",
+                "qElemNo": [],
+                "qElemValues": []
+              }
+            },
+            {
+              "qPos": {
+                "qDimName": "Product Line",
+                "qElemNo": [],
+                "qElemValues": []
+              }
+            },
+            {
+              "qPos": {
+                "qDimName": "%SynHeadersExpectedYearClosingAnalysis",
+                "qElemNo": [],
+                "qElemValues": []
+              }
+            }
+          ],
+          "columnWidths": [
+            [
+              296
+            ],
+            [
+              248,
+              224,
+              null,
+              null,
+              null,
+              null
+            ]
+          ],
+          "customErrorMessage": {
+            "calcCond": ""
+          },
+          "qLayoutExclude": {
+            "qHyperCubeDef": {
+              "qDimensions": [],
+              "qMeasures": [],
+              "qInterColumnSortOrder": [],
+              "qInitialDataFetch": [],
+              "qReductionMode": "N",
+              "qMode": "S",
+              "qPseudoDimPos": -1,
+              "qNoOfLeftDims": -1,
+              "qMaxStackedCells": 5000,
+              "qCalcCond": {},
+              "qTitle": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qColumnOrder": [],
+              "qExpansionState": []
+            }
+          }
+        },
+        "search": {
+          "sorting": "auto"
+        },
+        "showTitles": false,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "showDetails": false,
+        "components": [],
+        "visualization": "pivot-table"
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "ymVJQB",
+          "qType": "variable"
+        },
+        "qMetaDef": {},
+        "showTitles": false,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "showDetails": false,
+        "variableName": "v_Selected_Dimension_YesNoRatios",
+        "style": "bootstrap",
+        "width": "fill",
+        "customwidth": "",
+        "render": "b",
+        "alternatives": [
+          {
+            "value": "1",
+            "label": "Ratios",
+            "cId": "jZvhR"
+          },
+          {
+            "value": "2",
+            "label": "No Ratios",
+            "cId": "ZFQmy"
+          }
+        ],
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "rangelabel": false,
+        "visualization": "variable",
+        "variableValue": {
+          "qStringExpression": {
+            "qExpr": "=v_Selected_Dimension_YesNoRatios"
+          }
+        },
+        "version": "2.2.0",
+        "extensionMeta": {
+          "translationKey": "",
+          "icon": "puzzle",
+          "iconChar": "puzzle",
+          "isLibraryItem": true,
+          "visible": true,
+          "name": "Variable",
+          "description": "Variable extension",
+          "template": "variable",
+          "iconPath": "M14.5,9 L13,9 L13,3.3 C13,3.1 12.9,3 12.7,3 L8,3 L8,1.5 C8,0.7 7.3,0 6.5,0 C5.7,0 5,0.7 5,1.5 L5,3 L0.3,3 C0.1,3 0,3.1 0,3.3 L0,9 L1.5,9 C2.3,9 3,9.7 3,10.5 C3,11.3 2.3,12 1.5,12 L0,12 L0,15.7 C0,15.9 0.1,16 0.3,16 L5,16 L5,14.5 C5,13.7 5.7,13 6.5,13 C7.3,13 8,13.7 8,14.5 L8,16 L12.7,16 C12.9,16 13,15.9 13,15.7 L13,12 L14.5,12 C15.3,12 16,11.3 16,10.5 C16,9.7 15.3,9 14.5,9 Z",
+          "isThirdParty": true,
+          "version": "2.3.1",
+          "type": "visualization",
+          "author": "Erik Wetterberg"
+        }
+      },
+      "qChildren": []
+    }
+  ]
+}
