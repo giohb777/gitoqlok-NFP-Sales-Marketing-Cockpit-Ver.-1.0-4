@@ -1,0 +1,267 @@
+///$tab Qwik Table - Self Service
+[Dimensions]:
+LOAD * INLINE [
+Dimensions, DimensionsID
+Business Unit, p1iw2kon1rkduw4ja3ljro
+Month Year, 0pywxei4e1lhod5x4um3mz8
+Month, x2od3jv1nmqmo5pkzg8vlo
+Year, 98pur3lf5rzk88roza9ga
+Division, d5cc2n9erpufa37n37i5u
+BU Type, f7hwkdaxhvnr9qako8bek
+Customer, 5cso4iapuncnonytszug4
+Customer Unit, tso4tqcyjsilsmpw67aecl
+Area, y9fthz4coxpsrnokvpbqt
+Country, f0qsaday2iw58l3rif4kyq
+Building Block, 1h5zyw0kscb73y5jtc9btn
+Structure, z35kqnss4l4vy160dse4d
+Product Sector, jrn0w4iysqswnirjpxawa
+Product Line, 3png7am9tgc4d78h40b86d
+Application, 0t415k1wc2lt5ooismooa
+Product Packed/End Use, 969voi3lwhe9ucqdd82mbc
+Item Name, fjohbop44j7upfpu42mdv
+Item Number, ir4ea7xv32sn5v8hg5gu9i
+Sales Unit, 43xsaka9owzqupggvzz6ic
+Salesman Level1, 7oet5kxf1pxq1guk8hv0wk
+Salesman Level2, 24l28w50ovnsnivpg4ms4
+Salesman Level3, rcz466elcs77d8kjrc9c6
+Salesman, ozbltce4ae8d11yuxnjgi
+Product Details, lfhhbeu5swn9x3udeq803q
+Style Category, h7bo7nfgd3k449szpjc0a
+Customer State, fvo0q5r94lpcvgjzb88te
+Customer Sector, tvhzhjwqfbvld2swx503
+Customer Sub Sector, uc5h09dzru3yykswvnirh
+Customer Account, 8rtt8w5snupam7b5qb55w9
+Invoice Number, n5tqshhjk7sbf5ixzdk6i4
+Customer Insurance Provider, r06rx0cjujgwqfonc29tbe
+Customer CR Number, 50afxze3ftwrc4wccultf
+Customer Blocked Status, kro3cwzwp3dyv2v3fja9q
+Customer Last Invoicing Date, vpbilqgm9xbct8uvklk4ih
+Customer Last Budget Transaction Date, qbe00y2fhx9jm2sz7f9gd
+Statistics Group, bylv0fkc2vgw76qa6g0rz
+Salesman Level4, 1398xb4vza1g4dcvm07dix8
+Order Number, 2c12u2rsmfae0y1z7zu1wr
+Customer Class, 91pdqdbayfcp7ahbr18gr
+Product Sub Sector, m9sa72xuewm8yrfi5tqwsy
+Brand, n6pxf73ipqj8n7epruq8fq
+Plain/Ptd, 695p28pbzf3vzwukm60bks
+Product Manager, otqsb6msa74ow9yxhkmi7
+RMA Reason, tnzxdij1ouxh1wolltp2o
+RMA Number, j2pn4so0o2p2ui6jjbnq9n
+RMA Sales Order, skdo04nn1fmdpe9ykvem3
+RMA Invoice Number, l24tu3a4kej4522nx1cn7z
+RMA Disposition Code, r5ljfv9wgvao72ud9x37h
+Invoice Customer, vzey61bf07eooap82satif
+Invoice Customer Account, odaqcig93tv22n3dhlxg
+Customer Payment Term, 0k0vcxnwgsqacednzoniwgo
+Customer Insurance Payment Term, 5ayrfsf4662wdtnn0ta9fo
+Item Additional Classification, rl07b6mk9ajdhx33y6ep
+Customer Chain, kw4vdy4mcprlhh6x2dn5i
+Customer Source Details,aaaabbbbcccc
+Customer Source Type,ddddddeeeeeeffffff
+SO Order PT,asdasdasdqweqe
+SO Order Insured,retretuyutyfgfhg
+SO Order Insurance Provider,qweqwetreurtyutyutu
+Customer Insurance Account Number,aasdlkjaeioujasdjaskdlj
+Invoice Customer Insurance Account Number,askdjiqweiaksdupsdfj
+External Item ID, uc5h09dzru3yykswvnirf
+Item Creation Year, asdgertwefhghdfghsafsdf
+Customer Category,asdgertwasdefhghdfwqweqwedf
+Customer Parent Category,asdgertwasdasdqweggw
+Order Supplier Name, sdasdttr34535gdfdg
+Order Supplier Country,lkdoaidksdjf3234
+CPB Form Customer Sales Unit,aoadklsdfpoksdkj
+CPB Building Block,oaskuwerjsdfiups
+CPB Product Line,koiekmsdfolmsdsd
+"CP - Person ID", spiudfayg9gyodfvb
+"CP - Person Name", wufosgvistyd8s
+"CP - Person First Name", idufh7f0wyegr926rvsdf7
+"CP - Contact Status", asdlkasdolkjasdkjasd
+"CP - Person Middle Name", dksfsd6w6dw654d4wq
+"CP - Person Last Name", skdjbfdjbmnxccspojosd
+"CP - Person Phone Number", bvzxbmzxbvzmnbv
+"CP - Person Email", gsoihfiwyegf0wg89f
+"CP - Person URL" , sidyg09ppwqpwppwp
+"CP - Person Telex",fioughfuyvsdfsdf
+"CP - Person Fax", 5678ihbnshfgdfgu8
+"CP - Title", s86dtcsxycsd9sgufhhfubij
+"CP - Decision", isydgf87sgtd8fwefs
+"CP - Profession",syufq7w5re7q6wdf,
+"Customer Primary Phone",syufasdgsfgre7q6adwdf,
+"Customer Primary Email",asdfgdghfj5re7q6wdf,
+"Customer Primary URL",ssdfyusdftjjge7q6wdf,
+"Customer Primary Fax",sdwerdfgyjghfglihmhj
+Budget Sales Unit, uygsd8yfgs87fgsuyv
+Forecast Sales Unit, hhsdjjslsaosppsooslohy
+Customer Export Support Function,asdkjaslqekslldlfsdf
+Customer VAT Number, oitoeirtodcnvxisdugsii
+Customer Insurance Premium, siuhw87t7er8g7dfd6g761
+Customer Parent Company,asdlkadlasdlqweasd
+Customer Insurance Coverage (Local Curr), iuhgijdbhbwybgsdhghf
+Item Conversion Carton to KG, ividoghsiuerhagsvgsvch
+Item Conversion Bundle to KG, oashfgsdhgwtqrwtgiudcvu
+]
+;
+[Measures]:
+LOAD * INLINE [
+Measures, MeasuresID
+Actual MT, pymgi9nc5rnwgglxf3eg5
+Actual KG, pymgi9nc5rnwgglxf3eg4
+Actual Sales, 2jw36h6apginj2humigq8
+Actual COP (/1000), goshqw241a7782847dc16b
+Actual COP, goshqw241a7782847dc16f
+Budget MT, 2n4rq4xee0m4qyrwm9mhbn
+Budget MT +1, 2vhdw7ofp5qjwlat0zl22
+Budget Sales, s0fzy1vajtk4m95djjmsk
+Budget Sales +1, vwrn4bpl0pnxjubn1hqqn
+Budget COP, i17dgy1sfyj9p2zp4bog5c
+Budget COP +1, 63hcera80l4tnb3nv999o
+Forecast MT, 7w2pzqfre9wy7hfprfgpma
+Forecast Sales, y0r4i3lyy9cifargpncb1e
+Forecast COP, 8bkac68wcmmtfn4up7tk
+Actual Sales ASP/KG, lvqmv3sgabhcj7hf379m7b
+Actual COP/KG, s9vbux9z2fc0sosa8q3oi
+Actual COP/MT, hvbsviusd987gsdiyvb
+Budget Sales ASP/KG, 3jn732swdittqjjrmqqcd
+Budget COP /KG, 0j1xt4gwpdoze8fm8z3jll
+Forecast Sales ASP/KG, rhedvo27lgfm9076l2zi3h
+Forecast  COP/KG, kr2xsie34h64oz82p7fhm
+Actual/Budget COP Ratio, tf89sdsinan4eu18lqc2k
+Actual/Budget MT Ratio, u9vs1eto3toplw2wpgzi1
+Actual/Budget Sales Ratio, ntkahc2uwjm8p75mzo0hcf
+Actual/Forecast MT Ratio, hbqoq6vdt6g45vok49yt
+Actual/Forecast Sales Ratio, 7crt9v1f08la9nnpvavtzj
+Actual/Forecast COP Ratio, xthnawvec599snih33bp
+Actual Charges, sjfawv04ezq033qsrmnh
+Provisioned Charges, emrj09eizstu355gqolgki
+Sales Unit Qty, inbz5fj06sllvjrqp3v3pa
+Budget Sales +3, 30ltreddfii86ys3nio086
+Budget Sales +2, sxlrpxdp5x0ecg5swxgptj
+Gross Sales, hnskap44m1869z26eosan
+Budget Cost Of Sales, d4qgtiukcnpqh6r9fozs1e
+Budget Cost Of Sales +1, 0bm2jwg5d3bbxmaslchyvlg
+Budget Gross Sales, slkodylcvxkbnlmfdeopa
+Budget Gross Sales +1, 1gq9qnjcmj51j01ic782ip
+Budget Freight Charges, y9sb1t81u9fbb6kzw51g6
+Budget Freight Charges +1, j6rgbpok8rdaisjmmkeg1
+Budge MT +2, d0k5tx4m1ftip27y4kxfph
+Budget MT +3, n5sp2yuoynkuhi5g3ly7
+Budget COP +2, etw3tkerdint2fdw3visz
+Budget COP +3, ywphfv12tf8uooij0wqw8
+Budget Cost Of Sales +2, hwmsjur9cas571pppedmf
+Budget Cost Of Sales +3, ohct3etbdldv83f6rlyjdp
+Budget Gross Sales +2, 46y44oq1zffznd069vl7p
+Budget Gross Sales +3, oah8b67nma7cnv7rgd4ysd
+Budget Freight Charges +2, x45e0sz850gxza8k5yrcba
+Budget Freight Charges +3, vm80kfs2glaepj707el4j
+Budget MT +2, 52xsinr8fn4cs0nleozap
+Actual MT -1, sggb9d5om682q80bwk5bkl
+Actual Sales -1, ya1zvy6vym3jvxxjimyvo
+Actual COP -1, 66jmuoasnct9zjamw54i9
+Budget MT -1, 1e4or7fi9un28y1yzkonj5
+Budget Sales -1, 5drhgdhfjofz1vga2o5pyg
+Budget COP -1, te3yvpgbrzrklv3qzhvgb
+Actual Charges -1, gh3ozwz31qlpfdm3kxdr3i
+Budget Cost Of Sales -1, 5z70jgcoiy7aht4i4aaab
+Budget Gross Sales -1, 6u63ekzh3ju86s34zudr07
+Budget Freight Charges -1, qq707hut455xxxv1tionf
+Budget Sales ASP/KG +1, mu7kw2lq6wo7qvvvc68ck
+Budget Sales ASP/KG +2, v2dn4pmi7weq4m3og9e56o
+Budget Sales ASP/KG +3, r0x5h3mrbwsp4pezrcrz9
+Budget Sales ASP/KG -1, f3l2le5b6wjntbngn90bym
+Budget COP/KG +1, qmt5thxk3ben540x5x2d9l
+Budget COP/KG +2, dj9mqxa5mqpjetdc9do0uk
+Budget COP/KG +3, 92e9u3engc7uj3n7an9zva
+Budget COP/KG -1, a48izm2zp8dm63oyjgpcf
+Actual/Budget COP Ratio -1, 72ohouhq6lfj5nrv7mp13
+Actual/Budget MT Ratio -1, pgy1jciuy5cxfu86irqrc
+Actual/Budget Sales Ratio  -1, 1brfe95br6p6y1ndktnfgb
+Fcst vs Budget Change in MT %, ay1829cjy9kj3ai1368svn
+New Customer, cnjjlfu4rg5lz715xbrpa
+Wonback, jjsnmbnexpixtil242m9e
+GASP  KG , 9an3st5r0kg8w7piqcde6
+Provisioned Cost / KG, lco94e7qihryleana2s67r
+Provisioned Cost / KG, lco94e7qihryleana2s67r
+Actual Shipping Cost / KG, vf30333x8bz196z4b1nn
+COGS, jztq4d8bkspu6f4rzvmula
+UCOGS  KG , ixtj0c8jxh1h8tp8872hw
+UCOGS  KG   Before Variance , xjre3frsd3fu1dwqcidg9
+Forecast Vs Budget MT, igzlz6xbqnqig0zzu05pk
+Forecast Vs Budget AMT, 31kpdwgjffqy8gt0etsmc
+- From Budget MT, jp17wccpozv50ojv6qhq8
++ From Budget MT, zaw0mm6if44uxnb6sey9v
+New Fcst MT, 1c6ueirz32cjpr4eaxrxll
+Sales Impact MT, 8hijq4ajaxyf1rn374mugr
+- From Budget AMT, bdqa4bka4rg5pfjxupvhm
++ From Budget AMT, 9irfi1m65lmjdyvzh641nr
+New Fcst AMT, 0rvr49g4n93e9umfx5tgjsg
+Sales Impact AMT, wuy731dwvtflk0m0y7z9z
+RMA Amount, atmbr9hbst1klo3z9drrg
+RMA Net Weight, sbkvuzjl8571shyn3hw96
+COP vs. Actual Sales, wshys79d9nlkxdnaq7lbg
+Budget COP vs. Budget Sales, hm7l1lg5klfm1tdfnpgukj
+COP vs. Gross Sales, 0409flv25bofyu1ok5ka5xq
+Revised Forecast Full MT, b1jpuobgayso8sl7d80uf
+Revised Forecast Full COP, 85jt9fn76nb35684ptm2xt
+Revised Forecast Full SLS, 7a3bqa5no1spkl55t3egxs
+Revised Forecast Full Gross SLS, 87wgdfuywudyq75dwf
+Revised Forecast SM MT, m9gtcgnpmjrdoca4l6ptli
+Revised Forecast SM COP, gdm35w9ezowda7qh8uuur
+Revised Forecast SM SLS, goydpe95h9l5mjm2dn1v59
+Revised Forecast PM MT, zw9hv5ak7ogh8l2w9c48s
+Revised Forecast PM COP, 5dhe5k5mbf56nftw5chby
+Revised Forecast PM SLS, 4oa27knvu6l487baj2hhgt
+Revised Forecast PM Gross SLS,sdkfhbsd87ftsiyhfvst6fd
+Revised Forecast PM Cost,sfvjysgc7s65dc6sfd6c5sf
+Revised Forecast SMPM MT, 3utlqykdpgy9p1t9nd0r1v
+Revised Forecast SMPM COP, 0bzv0auuqm6k5a1env8qsib
+Revised Forecast SMPM SLS, 0o4uazwed533yh5b5bfcnw
+Balance Amount, 0o4uazwed533yh5b5bfcnz
+Amount Over Due, 0o4uazwed533yh5b5bfcnx
+Avg. Days Overdue, 0o4uazwed533yh5b5bfcna
+Avg Days To Settle, 0o4uazwed533yh5b5bfcnq
+Count Of Items,0o4uazasdasdwed533yqweh5b5bfcnq
+CPB Customer Volume,lasikljsd90kjsfdlkjs
+Real Net Sales, uhdvcysvusycvugibassbcudbgcf
+Actual Sales ASP/Sales Unit, jybs7dfysudjbck
+Budget ASP/Sales Unit, soishdf9sd8fybsd8
+Actual Cost/Sales Unit, uyfsdsuydstdftf
+Budget Cost/Sales Unit, odughs9ds8755d7d5hk
+COP/Sales Unit, lihsd98ysud87tv
+Budget COP/Sales Unit, iusg754fdfdssdfs
+Budget Sales Unit Qty, siugaifhvxmnxauhaoubh
+Actual COP %, lkbnocib0d9fdihfus8
+Budget COP %, kksdkksihndfuninjdi
+Forecast Sales Unit Qty,9e79q8y9qwygicxj
+Forecast ASP/Sales Unit,hxvzytzyizog9a
+Forecast COP/Sales Unit,zis6a767fxcvh
+Forecast Cost/Sales Unit,456789igfdxcvbjf
+Forecast COP%,8dhxhshhsinjvbubfh
+Aging - Collections, ihbsdfiuseiufiwef837373487
+Aging - 0 - 30	, dviyrnfd8frynodrfwiugntn8r
+Aging - 31 - 60, knhkcmjkvckfjldkcvjg
+Aging - 61 - 90, gryhigtfjo8y8g9gftjt8hgtf
+Aging - 91 - 120, fnhyjbvyuklnjbvgghsdfgvsd
+Aging - 121 - 150, begfnyogydinbf
+Aging - 151 - 180, cvhyng8cfmvgjycfm8in
+Aging - Over 180, cfybnysvgyisrgyi
+Aging - Net Balance, ghbhfcjfdfhjdvh
+Aging - Over 90, vbguisncfseryf
+Aging - Over 120, xnyruicgnyisgyseri
+Aging - Over 150, cgnygyciobhjvcyjdety
+EYC - MT,cgnygycwfsfsgfjdety
+EYC - Kg,cgnygyciobhfgjghdty
+EYC - Net Sales,cgnygghsfewrcyjdety
+EYC - Cost Of Sales,sdsfdssggdgfgfgddg
+EYC - COP,cgnygyssdgfsdgjydety
+UCOGS (MT) , hgtf655r6tfhu
+Provisioned Cost / MT, jhyf54365tfhv
+Budget Cost/KG , hg6rrduggjkkl
+Budget Cost/MT , hgggdrffuy6
+Budget Freight Charges/KG , jh76tfrr6rtf 
+Budget Freight Charges/MT , jhug44rdrdfchh
+Under Execution KG , aksjaokqwelkadskjas
+Under Execution SLS , laslsofksjsiskak
+INV + Under Exec KG , ksldofplowjdhdisud
+INV + Under Exec SLS , klalaomdlkjasdpojasdkj
+]
+;

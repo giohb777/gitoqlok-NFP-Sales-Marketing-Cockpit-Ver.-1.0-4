@@ -1,0 +1,193 @@
+///$tab Competitors SalePro
+Sub Competitors_SalePro
+
+//     Upper("Customer Key") as [Customer Key],
+//     Upper(ApplyMap('CustomerSalesman',Upper("Customer Key"),'2.0.No Salesman!No Salesman'))   as "Salesman Key"
+Competitor_BU_Name_Mapping:
+Mapping
+LOAD
+ 
+ "Business Unit ID",
+"Business Unit Security Key Number"
+
+FROM [lib://Folder_IFP_Admin_Group/IFP_EXCEL/Competitors/SM Mapping.xlsx]
+(ooxml, embedded labels, table is [SM Mapping]);
+
+Competitor_BU_Mapping:
+mapping
+LOAD 
+[Competitor Master ID], 
+[Business Unit ID]
+from [lib://Folder_IFP_Admin_Group/QVD\SalePro\mpk_competitor.qvd] (qvd);
+
+
+Sales_Shared_Dimensions_Final:
+  Concatenate
+LOAD 
+'Competitor SalePro' as [Sales Type],
+num ( date(today ()) ) as [Master Calendar Date Num],
+num ( date(today ()) ) as [Currency Conversion Rate Date Num],
+'2.'  & applymap ( 'Competitor_BU_Name_Mapping' , ApplyMap('Competitor_BU_Mapping', [Competitor Master ID] , 'No BU') , 'No BU Name' ) as [Business Unit Key],
+
+[Competitor Master ID], 
+[Competitor Master UID], 
+UPPER([Competitor Name]) as [SalePro Competitor Name], 
+[Competitor Company Profile], 
+[Competitor Headquarter Location], 
+[Competitor Website], 
+[Competitor Logo],   
+[Competitor Established Year], 
+[Competitor Annual Sales Revenue], 
+[Competitor Employees Number],  
+[Competitor Quality], 
+[Competitor Brand Equity], 
+[Competitor Problem Solving Response], 
+[Competitor Market Dominance], 
+[Competitor Comments], 
+[Competitor Mother Company Name], 
+[Competitor Mother Company Profile], 
+[Competitor Mother Company Headquarter Location], 
+[Competitor Mother Company Website],  
+[Competitor Status], 
+[Competitor Seniority],
+[Competitor File],
+[Competitor Master ID - Supplier],
+[Competitor Master ID - Production Lines],
+[Competitor Master ID - Other Locations],
+[Competitor Master ID - News],
+[Competitor Master ID - Mother Other Locations],
+[Competitor Master ID - Market Presence],
+[Competitor Master ID - Marketing Strategy],
+[Competitor Master ID - Contact Manager],
+[Competitor Master ID - Company Communication],
+[Competitor Master ID - Social Media],
+[Competitor Master ID - Certifications],
+[Competitor Master ID - Other Certifications],
+[Salesman ID],
+GeoMakePoint([Competitor HQ Coordinates - Latitude],[Competitor HQ Coordinates - Longitude]) AS [Competitor HQ Location Coordinates]
+
+from [lib://Folder_IFP_Admin_Group/QVD\SalePro\mpk_competitor.qvd] (qvd);
+
+[mpk_salesman]:
+NoConcatenate
+LOAD 
+[Salesman ID], 
+[Salesman Name]
+
+from [lib://Folder_IFP_Admin_Group/QVD\SalePro\mpk_salesman.qvd] (qvd);
+           
+
+
+
+[mpk_competitor_market_presence]:
+NoConcatenate
+//Master Presence , to be linked directly with Competitor Master
+LOAD 
+[Competitor Market Presence Table Line Key], 
+[Competitor Master ID - Market Presence], 
+[Competitor Market Presence],
+"Competitor Market Presence Continent",
+"Competitor Market Presence Territory" 
+
+from [lib://Folder_IFP_Admin_Group/QVD\SalePro\mpk_competitor_market_presence.qvd] (qvd);
+
+
+[mpk_Sectors]:
+NoConcatenate
+LOAD 
+[Sector ID], 
+[Sector Name] 
+
+from [lib://Folder_IFP_Admin_Group/QVD\SalePro\mpk_Sectors.qvd] (qvd);
+
+
+mpk_competitor_Products:
+NoConcatenate
+LOAD 
+[Competitor Customer Product Link Key],
+[Competitor Products Line Key],  
+[Competitor Master ID],
+[Product Parent Type],
+[Prodcut Type], 
+[Sector ID],  
+[Product Qty Sold], 
+[Product Qty Unit], 
+[Product Thickness], 
+[Product Width], 
+[Product Color],
+[Product Printing Number of Colors],
+[Product Embossed], 
+[Product Perforated], 
+[Product Core ID], 
+[Product Business Terms], 
+[Product Incoterms],
+[Product Payment], 
+[Product Price], 
+[Product Currency] 
+
+from  [lib://Folder_IFP_Admin_Group/QVD\SalePro\mpk_competitor_Products.qvd] (qvd);
+
+[mpk_competitor_certification]:
+NoConcatenate
+LOAD 
+[Competitor Certification Table Line ID], 
+[Competitor Master ID - Certifications], 
+[Competitor Certification]
+
+from [lib://Folder_IFP_Admin_Group/QVD\SalePro\mpk_competitor_certification.qvd] (qvd);
+
+
+
+[mpk_competitor_production_line]:
+NoConcatenate
+LOAD 
+[Production Line Table Line ID], 
+[Competitor Master ID - Production Lines],
+[Prodcution Line ID], 
+[Production Line Colors NB], 
+[Production Line Layers NB], 
+[Production Line Brandline Name], 
+[Production Line Ouput Name],
+[Production Line Ouput Unit],
+[Production Line Width], 
+[Production Line Machines NB]
+
+from [lib://Folder_IFP_Admin_Group/QVD\SalePro\mpk_competitor_production_line.qvd] (qvd);
+
+
+[mpk_competitor_manager]:
+NoConcatenate
+LOAD 
+[Competitor Manager Table Line Key], 
+[Competitor Master ID - Contact Manager], 
+[Contact Manager First Name], 
+[Contact Manager Last Name],
+[Contact Manager Full Name],
+[Contact Manager Position],  
+[Contact Manager LinkedIn]
+
+from [lib://Folder_IFP_Admin_Group/QVD\SalePro\mpk_competitor_manager.qvd] (Qvd);
+
+
+mpk_competitor_Products_Customers:
+NoConcatenate
+LOAD 
+[Competitor Customer Product Link Key], 
+[Competitor Customer Name] , 
+[Competitor Customer Country], 
+[Competitor Customer Share Percentage] 
+
+from [lib://Folder_IFP_Admin_Group/QVD\SalePro\mpk_competitor_Products_Customers.qvd] (qvd);
+
+
+
+[mpk_competitor_marketing_strategy]:
+NoConcatenate
+LOAD 
+[Competitor Marketing Strategy Table Line ID], 
+[Competitor Master ID - Marketing Strategy], 
+[Competitor Marketing Srategy]
+
+from [lib://Folder_IFP_Admin_Group/QVD\SalePro\mpk_competitor_marketing_strategy.qvd] (qvd);
+
+end sub

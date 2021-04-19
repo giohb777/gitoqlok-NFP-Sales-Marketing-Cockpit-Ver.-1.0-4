@@ -1,0 +1,57 @@
+///$tab VOC
+sub VOC
+
+BusinessUnitMapping2:
+Mapping
+Load * Inline [
+BusinessUnit,Key
+Compact,2.320
+Modern Sack,2.310
+Modern Tech,2.324
+Multipak,2.212
+NPPC,2.312
+Uniplast,2.222
+UPPC Hygiene,2.211
+UPPC Tech,2.210
+Repro,2.322
+Recom,2.223
+
+];
+
+
+
+CustomerSalesman:
+Mapping 
+LOAD
+    Upper("Customer Key") as Key,
+    "Salesman Key"
+FROM [lib://Folder_IFP_Admin_Group/QVD/AX2012/CustomerSalesmanKey.qvd]
+(qvd);
+
+
+
+Sales_Shared_Dimensions_Final:
+  Concatenate
+LOAD
+    'VOC' as [Sales Type],
+    __KEY_metadata as [VOC __KEY_metadata],
+    __KEY_contact as [VOC __KEY_contact],
+    ApplyMap('BusinessUnitMapping2',"Business Unit",'') as "Business Unit Key",
+     Score as [VOC Score],
+    "Question Type" as [VOC Question Type],
+    "Master Calendar Date Num",  
+    "Master Calendar Date Num" as  [Currency Conversion Rate Date Num],
+    Upper("Customer Key") as [Customer Key],
+    Upper(ApplyMap('CustomerSalesman',Upper("Customer Key"),'2.0.No Salesman!No Salesman'))   as "Salesman Key",
+    [Answer Options] as   [VOC Answer Options],
+    [Survery Title] as  [VOC Survey Title] ,
+    [Reach Answered] as  [VOC Reach Answered],
+    Email as [VOC Email]
+
+FROM [lib://Folder_IFP_Admin_Group/QVD/SurveyMonkey/VOC_TO_QVD.qvd]
+(qvd);
+
+
+
+
+end sub;

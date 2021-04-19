@@ -1,0 +1,2615 @@
+///$tab IFP 
+Sub IFP_QVD
+
+/******************************Invoices******************************/
+/********************************************************************/ 
+
+
+KgToCarton:
+Mapping
+LOAD
+    Upper("Item Key") as Key,
+    KG_TO_CARTON
+FROM [lib://Folder_IFP_Admin_Group/QVD/AX2012/PurchasesInventories/Carton_Unit_Conversion.qvd]
+(qvd);
+
+
+KgToBundle:
+Mapping 
+LOAD
+    "Item Key",
+    "BUNDLE _TO_KG"
+FROM [lib://Folder_IFP_Admin_Group/QVD/AX2012/PurchasesInventories/Bundle_Unit_Conversion.qvd]
+(qvd);
+
+
+
+
+Nap_Pricing:
+NoConcatenate
+LOAD
+    Upper("Item Key" & "Order Customer Key" & "Business Unit Key" & Num(MonthStart("Master Calendar Date")))  as [Nap Pricing Key],
+    "Total WA Cost Price USD",
+    "WA Price USD",
+    "WA Freight Cost USD",
+    "WA Clichee Cost USD",
+    "WA Cylinder Cost USD",
+    "WA Cotribution Value USD",
+    "Total WA Selling Price USD",
+    "Rep Freight Cost USD",
+    "Rep Clichee Cost USD",
+    "Rep Cylinder Cost USD",
+    "Rep Cost USD",
+    "Total Rep Cost Price USD",
+    "Total Repacement Selling Price USD",
+    "Pricing Method",
+    "Total Price Qty"
+    
+FROM [lib://Folder_IFP_Admin_Group/QVD\AX2012\NAP_Pricing_Table.qvd]
+(qvd);
+
+
+
+Invoices_Temp:
+NoConcatenate
+Load   
+  Upper([Item Key] & [Order Customer Key] & [Business Unit Key] & Num(MonthStart([Master Calendar Date])))  as [Nap Pricing Key],
+  [Invoice Key],
+  [Master Calendar Date] as [MSDate],
+  [Order Customer Key] as [OCKey]
+//   ,[Invoice Gen ID]
+//   ,[Invoice Serial NB]
+  ,[Invoice Values Sign]
+  ,[Invoice Process]
+//   ,[Invoice Status]
+  ,[Invoice Number]
+  
+  ,[Invoice Line Number]
+  ,[Invoice Issuing Date]
+  ,[Invoice Creation Date]
+  ,[Invoice Quantity]
+  ,[Invoice Quantity Unit]
+  ,[Invoice Pieces]
+  ,[Invoice Kg]
+  
+    ,ApplyMap('KgToCarton',Upper([Item Key]),0) * [Invoice Kg] as [Invoice Cartons]
+    ,ApplyMap('KgToBundle',Upper([Item Key]),0) * [Invoice Kg] as [Invoice Bundles]
+  
+  ,[Invoice MT]
+  ,[Invoice US Ton]
+  ,[Invoice Lbp]
+  ,[Invoice SQM]
+  ,[Invoice MSF]
+  ,[Invoice Amount USD] As [Invoice Main Amount USD]
+  ,[Invoice Discount Amount USD]
+  ,"Invoice Tolling Amount USD"
+  ,[Invoice Misc Charges By Weight Amount USD]
+  ,[Invoice Misc Charges By Value Amount USD]
+  ,[Invoice Misc Charges Provision By Weight Amount USD]
+  ,[Invoice Misc Charges Provision By Value Amount USD]
+  ,Num([Invoice Amount USD])+Num([Invoice Discount Amount USD])-Num([Invoice Misc Charges Provision By Weight Amount USD]) As [Invoice Amount USD]
+  ,[Invoice Cost USD]
+  ,"Invoice Initial Cost USD"
+   ,left([Invoice Key],5)  & '|' &[Invoice Original Currency Code] as [Invoice Original Currency Code For Aggregation]
+   ,   Num([Invoice Amount USD])+Num([Invoice Discount Amount USD])-Num([Invoice Misc Charges Provision By Weight Amount USD]) + fabs([Invoice Cost USD]) + fabs([Invoice Kg]) as [Invoice Sales Filtering]
+   
+
+  /*
+  ,[Sales Shared Key]
+  ,[Sales Source]
+//   ,[Shipment Key]
+  ,[Order Key]
+  ,[Invoice Customer Key]
+  ,[Order Customer Key]
+  ,[Item Key]
+  ,[Salesman Key]
+  ,[Geographical Mix Key]
+  ,[Currency Conversion Rate Date]
+  ,[Master Calendar Date]
+  ,[Business Unit Key]
+//   ,[Purpose Key]
+//   ,[Payment Term Key]
+  ,[Product Manager Key]
+  */
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Invoices_Merged.qvd]
+(qvd);
+/*********************************************************************/
+/*********************************************************************/
+
+/*****Invoices Affilaites (Concatenated With Invoices)****************/
+/*********************************************************************/
+Invoices_Temp:
+Concatenate
+Load 
+  Upper([Item Key] & [Order Customer Key] & [Business Unit Key] & Num(MonthStart([Master Calendar Date])))  as [Nap Pricing Key],
+  [Invoice Key],
+  [Master Calendar Date] as [MSDate],
+  [Order Customer Key] as [OCKey]
+  ,[Invoice Values Sign]
+  ,[Invoice Process]
+  ,[Invoice Number]
+  ,[Invoice Line Number]
+  ,[Invoice Issuing Date]
+  ,[Invoice Creation Date]
+  ,[Invoice Quantity]
+  ,[Invoice Quantity Unit]
+  ,[Invoice Pieces]
+  ,[Invoice Kg]
+  ,ApplyMap('KgToCarton',Upper([Item Key]),0) * [Invoice Kg] as [Invoice Cartons]
+  ,ApplyMap('KgToBundle',Upper([Item Key]),0) * [Invoice Kg] as [Invoice Bundles]
+  ,[Invoice MT]
+  ,[Invoice US Ton]
+  ,[Invoice Lbp]
+  ,[Invoice SQM]
+  ,[Invoice MSF]
+  ,[Invoice Amount USD] As [Invoice Main Amount USD]
+  ,[Invoice Discount Amount USD]
+  ,0 as "Invoice Tolling Amount USD"
+  ,[Invoice Misc Charges By Weight Amount USD]
+  ,[Invoice Misc Charges By Value Amount USD]
+  ,[Invoice Misc Charges Provision By Weight Amount USD]
+  ,[Invoice Misc Charges Provision By Value Amount USD]
+  ,Num([Invoice Amount USD])+Num([Invoice Discount Amount USD])-Num([Invoice Misc Charges Provision By Weight Amount USD]) As [Invoice Amount USD]
+  ,[Invoice Cost USD]
+  ,"Invoice Initial Cost USD"
+  ,left([Invoice Key],5)  & '|' &[Invoice Original Currency Code] as [Invoice Original Currency Code For Aggregation]
+   ,   Num([Invoice Amount USD])+Num([Invoice Discount Amount USD])-Num([Invoice Misc Charges Provision By Weight Amount USD]) + fabs([Invoice Cost USD]) + fabs([Invoice Kg]) as [Invoice Sales Filtering]
+   
+  /*
+  ,[Sales Shared Key]
+  ,[Sales Source]
+  ,[Order Key]
+  ,[Order Customer Key]
+  ,[Invoice Customer Key]
+  ,[Item Key]
+  ,[Salesman Key]
+  ,[Geographical Mix Key]
+  ,[Currency Conversion Rate Date]
+  ,[Master Calendar Date]
+  ,[Business Unit Key]
+  ,[Product Manager Key]
+  */
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Invoices_Affiliates.qvd]
+(qvd);
+
+
+
+Left Join (Invoices_Temp)
+Load * Resident Nap_Pricing;
+
+
+
+
+
+Invoices:
+NoConcatenate
+LOAD
+     Year([MSDate]) & '-'& [OCKey] as [ScoringTierKeyInvoicing],
+    "Invoice Key",
+    MSDate,
+    OCKey,
+    "Pricing Method" as "NAP Pricing Method",
+    "Invoice Values Sign",
+    "Invoice Process",
+    "Invoice Number", 
+    "Invoice Line Number",
+    "Invoice Issuing Date",
+    "Invoice Creation Date",
+    "Invoice Quantity",
+    "Invoice Quantity Unit",
+    "Invoice Pieces",
+    "Invoice Kg",
+    [Invoice Cartons],
+    [Invoice Bundles],
+    "Invoice MT",
+    "Invoice US Ton",
+    "Invoice Lbp",
+    "Invoice SQM",
+    "Invoice MSF",
+    "Invoice Main Amount USD",
+    "Invoice Tolling Amount USD",
+    "Invoice Discount Amount USD",
+    "Invoice Misc Charges By Weight Amount USD",
+    "Invoice Misc Charges By Value Amount USD",
+    "Invoice Misc Charges Provision By Weight Amount USD",
+    "Invoice Misc Charges Provision By Value Amount USD",
+    "Invoice Amount USD",
+    "Invoice Cost USD",
+    "Invoice Original Currency Code For Aggregation",
+    "Invoice Sales Filtering",
+    
+    IF([MSDate]<MonthStart(Today()),"Invoice MT",0) as [EYC MT - Invoiced],
+    IF([MSDate]<MonthStart(Today()),"Invoice Kg",0) as [EYC Kg - Invoiced],
+    IF([MSDate]<MonthStart(Today()),"Invoice Amount USD",0) as [EYC Amount USD - Invoiced],
+    IF([MSDate]<MonthStart(Today()),"Invoice Cost USD",0) as [EYC Cost USD - Invoiced],    
+    
+    
+    // Pricing Table Merging
+    
+    "Total WA Cost Price USD" 										as "Total WA Cost USD KG",
+    "WA Price USD"  												as "WA Cost USD KG",
+    "WA Freight Cost USD" 											as "WA Freight Cost USD KG",
+    "WA Clichee Cost USD" 											as "WA Clichee Cost USD KG",
+    "WA Cylinder Cost USD" 											as "WA Cylinder Cost USD KG",
+    "WA Cotribution Value USD"										as "Total WA COP Value USD KG",
+    "Total WA Selling Price USD" 									as "Total WA Selling Price USD KG",
+    "Rep Freight Cost USD"  										as "Rep Freight Cost USD KG" , 
+    "Rep Clichee Cost USD" 											as "Rep Clichee Cost USD KG",
+    "Rep Cylinder Cost USD" 										as "Rep Cylinder Cost USD KG",
+    "Rep Cost USD" 													as "Rep Cost USD KG",
+    "Total Rep Cost Price USD" 										as "Total Rep Cost USD KG",
+    "Total Repacement Selling Price USD" 							as "Total Rep Selling Price USD KG",
+    
+    "Total WA Cost Price USD" 			 * [Invoice Kg] 			as "Total WA Cost USD",
+    "WA Price USD"					     * [Invoice Kg] 			as "WA Cost USD",
+    "WA Freight Cost USD" 				 * [Invoice Kg] 			as "WA Freight Cost USD",
+    "WA Clichee Cost USD" 				 * [Invoice Kg] 			as "WA Clichee Cost USD",
+    "WA Cylinder Cost USD" 				 * [Invoice Kg] 			as "WA Cylinder Cost USD",
+    "WA Cotribution Value USD" 			 * [Invoice Kg] 			as "Total WA COP Value USD",
+    "Total WA Selling Price USD" 		 * [Invoice Kg] 			as "Total WA Selling Price USD",
+    "Rep Freight Cost USD" 				 * [Invoice Kg]				as "Rep Freight Cost USD",
+    "Rep Clichee Cost USD" 				 * [Invoice Kg] 			as "Rep Clichee Cost USD",
+    "Rep Cylinder Cost USD" 			 * [Invoice Kg] 			as "Rep Cylinder Cost USD",
+    "Rep Cost USD" 						 * [Invoice Kg] 			as "Rep Cost USD",
+    "Total Rep Cost Price USD" 			 * [Invoice Kg] 			as "Total Rep Cost USD",
+    "Total Repacement Selling Price USD" * [Invoice Kg] 			as "Total Rep Selling Price USD",
+    "Total Price Qty",
+    
+    "Invoice Initial Cost USD"
+    
+ Resident Invoices_Temp;   
+    
+ 
+
+
+
+Drop table Nap_Pricing;
+Drop Table Invoices_Temp;
+
+
+
+
+/*****Balance By Invoice*******************************************************/
+/*********************************************************************/
+
+BalanceByInvoice:
+NoConcatenate
+LOAD 
+    "Invoice Key", 
+    "Gross Invoice Amount BL USD",
+    "Gross Invoice Amount Setteled BL USD",
+    "Gross Invoice Amount Balance BL USD",
+    "Gross Invoice Due Days",
+    "Gross Invoice Due Weeks",
+    "Gross Invoice Overdue Amout BL USD",
+    [Overdue Invoice Payment Terms],
+    [Overdue Invoice Payment Terms Days] ,
+    [Overdue Invoice Number],
+    [Overdue Invoice Comment ID],
+    [Overdue Invoice Comment],
+    [Overdue Invoice Outstanding Reason],
+    [Overdue Invoice Sales Order Number], 
+    "Gross Invoice Due Days - Grace Days",
+    "Gross Invoice Overdue Amout BL USD - Grace Days",
+	if([Overdue Invoice Sales Order Insured] = 2 , 'No' , if([Overdue Invoice Sales Order Insured] = '1' , 'Yes' )) as [Overdue Invoice Sales Order Insured],
+    [Overdue Invoice Age Days], 
+    [Overdue Invoice Aging Bracket - Invoice Date],
+    [Overdue Invoice Aging Bracket - Due Date]
+    
+    
+FROM [lib://Folder_IFP_Admin_Group/QVD\AX2012\BalanceByInvoice.qvd]
+(qvd);
+
+ 
+
+
+
+/*********************************************************************/
+/*********************************************************************/
+
+/*****Shipments*******************************************************/
+/*********************************************************************/
+Shipments:
+NoConcatenate
+Load
+  [Shipment Key]
+  ,[Shipment Process]
+  ,[Shipment Purpose]
+  ,[Shipment Number]
+  ,[Shipment Line Number]
+  ,[Shipment Issuing Date]
+  ,[Shipment Creation Date]
+  ,[Shipment Quantity]
+  ,[Shipment Quantity Unit]
+  ,[Shipment Pieces]
+  ,[Shipment Kg]
+  ,[Shipment MT]
+  ,[Shipment US Ton]
+  ,[Shipment Lbp]
+  ,[Shipment SQM]
+  ,[Shipment MSF]
+  ,[Shipment Amount USD]
+  ,[Shipment Cost USD]
+  /*
+  ,[Sales Shared Key]
+  ,[Sales Source]
+  ,[Order Key]
+  ,[Invoice Customer Key]
+  ,[Order Customer Key]
+  ,[Item Key]
+  ,[Salesman Key]
+  ,[Geographical Mix Key]
+  ,[Currency Conversion Rate Date]
+  ,[Master Calendar Date]
+  ,[Business Unit Key]
+  ,[Product Manager Key]
+  */
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Shipments.qvd]
+(qvd);
+/*********************************************************************/
+/*********************************************************************/
+
+/*****Budgets*********************************************************/
+/*********************************************************************/
+Budgets:
+NoConcatenate
+Load
+ [Budget Key],
+  [Master Calendar Date] as [MSDateBudget],
+  [Customer Key] as [OCKeyBudget]
+  ,[Budget Month]
+  ,[Budget Year]
+  ,[Budget Date]
+  ,[Budget Creation Date]
+  ,[Budget Quantity]
+  ,[Budget Quantity Unit]
+  ,[Budget MT]
+  ,[Budget Kg]
+  ,[Budget Lbp]
+  ,[Budget US Ton]
+  ,[Budget Amount USD]
+  ,[Budget Cost USD]
+  ,[Budget Misc Charges USD]
+
+  /*
+  ,[Sales Shared Key]
+  ,[Sales Source]
+//   ,[Invoice Customer Key]
+//   ,[Order Customer Key]
+  ,[Customer Key]
+  ,[Item Key]
+  ,[Salesman Key]
+  ,[Geographical Mix Key]
+  ,[Currency Conversion Rate Date]
+  ,[Master Calendar Date]
+  ,[Business Unit Key]
+  ,[Forecast Model Key]
+  ,[Product Manager Key]
+  ,[Modify User Key]
+  */
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Budgets.qvd]
+(qvd);
+/*********************************************************************/
+/*********************************************************************/
+
+/*****Forecasts*******************************************************/
+/*********************************************************************/
+Forecasts:
+NoConcatenate
+Load
+  [Forecast Key]
+  ,[Forecast Month]
+  ,[Forecast Year]
+  ,[Forecast Date]
+  ,[Forecast Creation Date]
+  ,[Forecast Quantity]
+  ,[Forecast Quantity Unit]
+  ,[Forecast MT]
+  ,[Forecast Kg]
+  ,[Forecast Lbp]
+  ,[Forecast US Ton]
+  ,[Forecast Amount USD]
+  ,[Forecast Cost USD]
+  ,[Forecast Misc Charges USD]
+	  , IF([Master Calendar Date]>=MonthStart(Today()),"Forecast MT",0) as [EYC MT - Forecast],
+    IF([Master Calendar Date]>=MonthStart(Today()),"Forecast Kg",0) as [EYC Kg - Forecast],
+    IF([Master Calendar Date]>=MonthStart(Today()),"Forecast Amount USD",0) as [EYC Amount USD - Forecast],
+    IF([Master Calendar Date]>=MonthStart(Today()),"Forecast Cost USD",0) as [EYC Cost USD - Forecast]
+    /*
+  ,[Sales Shared Key]
+  ,[Sales Source]
+//   ,[Invoice Customer Key]
+//   ,[Order Customer Key]
+  ,[Customer Key]
+  ,[Item Key]
+  ,[Salesman Key]
+  ,[Geographical Mix Key]
+  ,[Currency Conversion Rate Date]
+  ,[Master Calendar Date]
+  ,[Business Unit Key]
+  ,[Forecast Model Key]
+  ,[Product Manager Key]
+  ,[Modify User Key]
+  */
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Forecasts.qvd]
+(qvd);
+
+ 
+OnHandInventories:
+NoConcatenate
+LOAD 
+    Upper("Item Key") as InventoryItemsKey,
+    "On Hand - Physical Net Weight",
+    "On Hand - Physical Qty"
+FROM [lib://Folder_IFP_Admin_Group/QVD\AX2012\PurchasesInventories\OnHandInventories_1MonthForSales.qvd]
+(qvd);
+
+
+
+
+
+RevisedForecastPerformance:
+NoConcatenate
+Load
+   [Revised Forecast Performace  Key]
+  ,[Revised Forecast Performace  Month]
+  ,[Revised Forecast Performace  Year]
+  ,[Revised Forecast Performace  Date]
+  ,[Revised Forecast Performace  Creation Date]
+  ,[Revised Forecast Performace Line Category]
+  ,[Revised Forecast Performace  Quantity]
+  ,[Revised Forecast Performace  Quantity Unit]
+  ,[Revised Forecast Performace  MT]
+  ,[Revised Forecast Performace Initial MT]
+ 
+ 
+ , if( ([Revised Forecast Performace  MT] - [Revised Forecast Performace Initial MT]) > 0 , ([Revised Forecast Performace  MT] - [Revised Forecast Performace Initial MT]) ,0 ) AS [Revised Forecast Performace Positive MT Variance]
+  
+  
+   , if( ([Revised Forecast Performace  MT] - [Revised Forecast Performace Initial MT]) > 0 ,
+   
+  		(([Revised Forecast Performace  Amount USD] +[Revised Forecast Performace  Misc Charges USD])- 
+        		([Forecast Amount USD Initial]+[Forecast Misc Charges USD Initial])) ,0 ) AS [Revised Forecast Performace Positive AMT Variance]
+  
+  
+  , if( ([Revised Forecast Performace  MT] - [Revised Forecast Performace Initial MT]) < 0 , ([Revised Forecast Performace  MT] - [Revised Forecast Performace Initial MT]) ,0 ) AS [Revised Forecast Performace Negative MT Variance]
+ 
+ 
+                
+                
+                
+                
+ 
+	, if( ([Revised Forecast Performace  MT] - [Revised Forecast Performace Initial MT]) < 0 ,
+  		(([Revised Forecast Performace  Amount USD] +[Revised Forecast Performace  Misc Charges USD])- 
+        		([Forecast Amount USD Initial]+[Forecast Misc Charges USD Initial])) ,0 ) AS [Revised Forecast Performace Negative AMT Variance]
+ 
+  ,[Revised Forecast Performace  Kg]
+  ,[Revised Forecast Performace  Lbp]
+  ,[Revised Forecast Performace  US Ton]
+  ,[Revised Forecast Performace  Amount USD]
+  ,[Revised Forecast Performace  Cost USD]
+  ,[Revised Forecast Performace  Misc Charges USD]
+  ,[Revised Forecast Performace Approved by RU Count]
+  ,[Revised Forecast Performace Approved by BU Count]
+  ,[Revised Forecast Performace Lines Count]
+  ,[Revised Forecast Line IsModified]
+  
+  ,[Forecast Amount USD Initial]
+  ,[Forecast Cost USD Initial]
+  ,[Forecast Misc Charges USD Initial]
+  
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/ForecastRevisionPerformance.qvd]
+(qvd);
+
+
+
+
+
+
+RevisedForecastFull:
+NoConcatenate
+LOAD
+    "Full Revised Forecast Key",
+    "Full Revised Forecast Quantity",
+    "Full Revised Forecast Quantity Unit",
+    "Full Revised Forecast MT",
+    "Full Revised Forecast Kg",
+    "Full Revised Forecast Lbp",
+    "Full Revised Forecast US Ton",
+    "Full Revised Forecast Amount USD",
+    "Full Revised Forecast Cost USD",
+    "Full Revised Forecast Misc Charges USD", 
+    "Full Revised Forecast Marketing Team Approval",
+    "Full Revised Forecast Sales Manager Approval",
+    "Full Revised Forecast Marketing And Sales Approval"
+FROM [lib://Folder_IFP_Admin_Group/QVD\AX2012\Forecasts_Revision_Full.qvd]
+(qvd);
+
+
+
+
+
+
+/*********************************************************************/
+/*********************************************************************/
+
+/*****Forecast Models*************************************************/
+/*********************************************************************/
+Forecast_Models:
+NoConcatenate
+Load
+	[Forecast Model Key]
+    ,[Forecast Model]
+    ,[Forecast Model Description]
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Forecast_Models.qvd]
+(qvd);    
+/*********************************************************************/
+/*********************************************************************/
+
+/*****Forecast Audit**************************************************/
+/*********************************************************************/
+Forecast_Audit:
+NoConcatenate
+Load
+  [Forecast Audit Key]
+  ,[Forecast Audit Month]
+  ,[Forecast Audit Year]
+  ,[Forecast Audit Date]
+  ,[Forecast Audit Creation Date]
+  ,[Forecast Audit Quantity]
+  ,[Forecast Audit Quantity Unit]
+  ,[Forecast Audit MT]
+  ,[Forecast Audit Kg]
+  ,[Forecast Audit Lbp]
+  ,[Forecast Audit US Ton]
+  ,[Forecast Audit Amount USD]
+  ,[Forecast Audit Cost USD]
+  ,[Forecast Audit Misc Charges USD]
+  /*
+  ,[Sales Shared Key]
+  ,[Sales Source]
+  ,[Customer Key]
+  ,[Item Key]
+  ,[Salesman Key]
+  ,[Geographical Mix Key]
+  ,[Currency Conversion Rate Date]
+  ,[Master Calendar Date]
+  ,[Business Unit Key]
+  ,[Forecast Model Key]
+  ,[Product Manager Key]
+  ,[Modify User Key]
+  ,[Revision Log Key]
+  */
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Forecast_Audit.qvd]
+(qvd);  
+/*********************************************************************/
+/*********************************************************************/
+
+
+// SALES ORDERS SUPPLIERS MAPPING
+
+SOVendorNameMapping:
+Mapping
+LOAD
+    Upper("Business Unit Key") & '-' & upper("Order Number") as Key, 
+    "PO-SO Supplier Name"
+FROM [lib://Folder_IFP_Admin_Group/QVD/AX2012/SalesOrderSupplierSource.qvd]
+(qvd);
+
+
+SOVendorCountryMapping:
+Mapping
+LOAD
+    Upper("Business Unit Key") & '-' & upper("Order Number") as Key, 
+    "PO-SO Supplier Country"
+FROM [lib://Folder_IFP_Admin_Group/QVD/AX2012/SalesOrderSupplierSource.qvd]
+(qvd);
+
+
+//////////////////////////////////////
+
+
+
+/*****Orders**********************************************************/
+/*********************************************************************/
+Orders:
+NoConcatenate
+Load
+   [Order Key]
+  ,[Order Sales Type]
+  ,[Order Process]
+  ,[Order Type]
+  ,[Order Number]
+  ,[Order Detail Number]
+  ,[Order Customer PO Number]
+  ,[Order Issuing Date]
+  ,[Order Requested Delivery Date]
+  ,[Order Confirmed Delivery Date]
+  ,[Order Delivery Date]
+  ,[Order Requested Receipt Date]
+  ,[Order Confirmed Receipt Date]
+  ,[Order Confirmation Date]
+  ,[Order Sales Name]
+  ,[Order PT]
+  ,[Order Insurance Provider]
+  ,[Order Insured]
+  ,[Order Insurance Coverage]
+  ,[Order Status]
+  ,[Order Detail Status]
+  ,[Order Quantity]
+  ,[Order Quantity Unit]
+  ,[Order Pieces]
+  ,[Order Kg]
+  ,[Order MT]
+  ,[Order US Ton]
+  ,[Order Lbp]
+  ,[Order SQM]
+  ,[Order MSF]
+  ,[Order Amount USD]
+  ,[Order Cost USD]
+  ,[Sales Order Customer Reference]   as [Order Customer Reference]
+  ,[Sales Order Customer Requisition] as [Order Customer Requisition]
+  ,[Order External Item Number]
+  ,ApplyMap('SOVendorNameMapping',Upper("Business Unit Key") & '-' & Upper([Order Number]),'No Supplier Linked') as [Order Supplier Name]
+  ,ApplyMap('SOVendorCountryMapping',Upper("Business Unit Key") & '-' & Upper([Order Number]),'No Supplier Linked') as [Order Supplier Country]
+  /*
+  ,[Sales Shared Key]
+  ,[Sales Source]
+  ,[Invoice Customer Key]
+  ,[Order Customer Key]
+  ,[Item Key]
+  ,[Salesman Key]  
+  ,[Geographical Mix Key]
+  ,[Currency Conversion Rate Date]
+  ,[Master Calendar Date]
+  ,[Business Unit Key]
+//   ,[Payment Term Key]
+  ,[Product Manager Key]
+  */
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Orders_Merged.qvd]
+(qvd);
+/*********************************************************************/
+/*********************************************************************/
+
+/*****Quotations******************************************************/
+/*********************************************************************/
+Quotations:
+NoConcatenate
+Load
+  [Quotation Key]
+  ,[Quotation Origin]
+  ,[Quotation Process]
+  ,[Quotation Type]
+  ,[Quotation Number]
+  ,[Quotation Detail Number]
+  ,[Quotation Issuing Date]
+  ,[Quotation Requested Delivery Date]
+  ,[Quotation Requested Receipt Date]
+  ,[Quotation Delivery Date]
+  ,[Quotation Confirmation Date]
+  ,[Quotation Status]
+  ,[Quotation Detail Status]
+  ,[Quotation Quantity]
+  ,[Quotation Quantity Unit]
+  ,[Quotation Pieces]
+  ,[Quotation Kg]
+  ,[Quotation MT]
+  ,[Quotation US Ton]
+  ,[Quotation Lbp]
+  ,[Quotation SQM]
+  ,[Quotation MSF]
+  ,[Quotation Amount USD]
+  ,[Quotation Cost USD]
+  ,[Quotation Customer PO Number]
+   , if ([Quotation Status] = 'Confirmed',Interval([Quotation SO Journal Creation Date] - [Quotation Issuing Date],'D'),0) as [Quotation Lead Time]
+  , if ([Quotation Status] = 'Confirmed',Interval([Quotation BU Approval Date] -  [Quotation Issuing Date],'D'),0) as [Quotation Lead Time - BU Approval]
+  , if ([Quotation Status] = 'Confirmed',Interval([Quotation SO Journal Creation Date] - [Quotation BU Approval Date],'D'),0) as [Quotation Lead Time - BU Approval to Journal SO]
+  , if ([Quotation Status] = 'Confirmed',Interval([SO Journal to Open Order] -[Quotation SO Journal Creation Date],'D'),0) as [Quotation Lead Time - SO Journal To Open Order]
+  , if ([Quotation Status] = 'Confirmed',Interval([SO Journal to Open Order] - [Quotation Issuing Date],'D'),0) as [Quotation Lead Time - Quotation To Open Order]
+  
+  /*
+  ,[Sales Shared Key]
+  ,[Sales Source]
+//   ,[Invoice Customer Key]
+//   ,[Order Customer Key]
+  ,[Customer Key]
+  ,[Item Key]
+  ,[Salesman Key]
+  ,[Geographical Mix Key]
+  ,[Currency Conversion Rate Date]
+  ,[Master Calendar Date]
+  ,[Business Unit Key]
+//   ,[Payment Term Key]
+  ,[Product Manager Key]
+  ,[Creator User Key]
+  ,[Modify User Key]
+  */
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Quotations_Merged.qvd]
+(qvd);
+/*********************************************************************/
+/*********************************************************************/
+
+ItemsConversionMapping:
+Mapping
+LOAD
+    Upper("Item Key") as "Item Key",
+    "Item Conversion From Inventory to Selling Factor"
+FROM [lib://Folder_IFP_Admin_Group/QVD/AX2012/Items.qvd]
+(qvd);
+
+
+
+
+
+/*****Backlog Orders**************************************************/
+/*********************************************************************/
+Backlog_Orders:
+NoConcatenate
+Load
+  [Backlog Order Key]
+  ,[Backlog Order Sales Type]
+  ,[Backlog Order Process]
+  ,[Backlog Order Type]
+  ,[Backlog Order Number]
+  ,[Backlog Order Detail Number]
+  ,[Backlog Order Issuing Date]
+  ,[Backlog Order Requested Delivery Date]
+  ,[Backlog Order Confirmed Delivery Date]
+  ,[Backlog Order Delivery Date]
+  ,[Backlog Order Requested Receipt Date]
+  ,[Backlog Order Confirmed Receipt Date]  
+  ,[Backlog Order Expected Date]
+  ,[Backlog Order Confirmation Date]
+  ,[Backlog Order Status]
+  ,[Backlog Order Detail Status]
+  ,[Backlog Order Quantity]
+  ,[Backlog Order Quantity Unit]
+  ,[Backlog Order Pieces]
+  ,[Backlog Order Kg]
+  ,ApplyMap('KgToCarton',Upper([Item Key]),0) * [Backlog Order Kg] as [Backlog Order Kg Cartons]
+  ,ApplyMap('KgToBundle',Upper([Item Key]),0) * [Backlog Order Kg] as [Backlog Order Kg Bundles]
+  ,ApplyMap('ItemsConversionMapping',Upper([Item Key]),0) * [Backlog Order Quantity] as [Backlog Order Quantity Selling]
+  ,[Backlog Order MT]
+  ,[Backlog Order US Ton]
+  ,[Backlog Order Lbp]
+  ,[Backlog Order SQM]
+  ,[Backlog Order MSF]
+  ,[Backlog Order Amount USD]-[Backlog Order Estimated Charges USD] As [Backlog Order Amount USD]
+  ,[Backlog Order Amount USD] as [Gross Backlog Order Amount USD]
+  ,[Backlog Order Cost USD]
+  ,[Backlog Order Estimated Charges USD]
+  ,[Backlog Order Amount USD] As [Backlog Order Main Amount USD]
+  ,[Backlog Order Customer PO Number]
+  ,[Backlog Order Sales Name]
+  ,[Backlog Order PT]
+  ,[Backlog Order Insurance Coverage]
+  ,[Backlog Order Insured]  
+  /*
+  ,[Sales Shared Key]
+  ,[Sales Source]
+  ,[Order Key]
+  ,[Invoice Customer Key]
+  ,[Order Customer Key]
+  ,[Item Key]
+  ,[Salesman Key]
+  ,[Geographical Mix Key]
+  ,[Currency Conversion Rate Date]
+  ,[Master Calendar Date]
+  ,[Business Unit Key]
+//   ,[Payment Term Key]
+  ,[Product Manager Key]
+  */
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Backlog_Orders_Merged.qvd]
+(qvd);
+/*********************************************************************/
+/*********************************************************************/
+
+/*****Customers*******************************************************/
+/*********************************************************************/
+/*****Customers*******************************************************/
+/*********************************************************************/
+
+LIB CONNECT TO 'NAPAX-12-PROD-DEV (indevco_georges.raad)';
+
+
+LastPaymentDateMapping:
+Mapping
+Load 
+    '2.' & Upper(Trim("DATAAREAID")) & '.' & Upper(Trim("ORDERACCOUNT")) As "Last Payment Key",
+    MaxDate as [Last Payment Date];
+SQL
+SELECT DISTINCT DATAAREAID, ORDERACCOUNT, MAX(TRANSDATE) AS MaxDate
+                               FROM            CUSTTRANS		where TRANSTYPE in ('0' ,'15') and YEAR(TRANSDATE) <= YEAR(GETDATE())
+                               GROUP BY DATAAREAID, ORDERACCOUNT;
+
+
+LastInvoiceDateMapping:
+Mapping
+LOAD
+    Upper(Trim("Customer Key")) As "Customer Key",
+    [Max Date] as [Max Invoicing Date]
+From [LIB://Folder_IFP_Admin_Group/QVD/AX2012/CustomersLastInvoicingDate.qvd]
+(qvd);
+
+
+FirstInvoiceDateMapping:
+Mapping
+LOAD
+    Upper(Trim("Customer Key")) As "Customer Key",
+    [Min Date] as [Min Invoicing Date]
+From [LIB://Folder_IFP_Admin_Group/QVD/AX2012/CustomersFirstInvoicingDate.qvd]
+(qvd);
+
+
+LastBudgetDateMapping:
+Mapping
+LOAD
+    Upper(Trim("Customer Key")) As "Customer Key",
+    [Max Date] as [Max Invoicing Date]
+From [LIB://Folder_IFP_Admin_Group/QVD/AX2012/CustomerLastBudgetDate.qvd]
+(qvd);
+
+
+ActiveIn2019_Budgets:
+Mapping
+Load 
+	Distinct
+    Upper(Trim("OCKeyBudget")) As "Customer Key",
+    'Budget 2021' as [Customer Activity Type]
+Resident Budgets  where year([MSDateBudget]) = '2021';
+
+
+ActiveIn2019_Invoicing:
+Mapping
+Load 
+	Distinct
+    Upper(Trim("OCKey")) As "Customer Key",
+    'Invoices 2021' as [Customer Activity Type]
+Resident Invoices  where year([MSDate]) = '2021';
+
+
+ActiveCustomers:
+Mapping
+LOAD
+    "Order Customer Key",
+    "Customers Activity Classification"
+FROM [lib://Folder_IFP_Admin_Group/QVD\AX2012\ActiveCustomersCY.qvd]
+(qvd);
+
+
+
+
+CustomersSourceLink:
+NoConcatenate
+LOAD
+      Upper("Customer Key") as [Customer Source Link Key], 
+    Capitalize("SOURCE TYPE") as [Customer Source Type],
+     Capitalize("SOURCE DETAILS")  as [Customer Source Details],
+    "SOURCE YEAR" as [Customer Source Year],
+    Month("SOURCE MONTH") as [Customer Source Month],
+    Month("SOURCE MONTH") & ' ' & "SOURCE YEAR"  as [Customer Source Date]
+FROM [lib://Folder_IFP_Admin_Group/QVD/AX2012/CustomerSource.qvd]
+(qvd);
+
+
+
+
+ParentCategoryMapping:
+Mapping
+LOAD
+    Upper("Customer CR Number") as KEY, 
+    "Parent Customer Categorization"
+FROM [lib://Folder_IFP_Admin_Group/QVD/AX2012/Customers_CR_Categories.qvd]
+(qvd);
+
+
+ParentCategoryMappingID:
+Mapping
+LOAD
+    Upper("Customer CR Number") as KEY, 
+    "Parent Customer Categorization ID"
+FROM [lib://Folder_IFP_Admin_Group/QVD/AX2012/Customers_CR_Categories.qvd]
+(qvd);
+
+
+ContactDetailsByCustomer:
+NoConcatenate
+LOAD
+    UppeR([Customer Key]) 						       As "Contact Customer Key",
+    "Contact Person ID" 							      As "Contact Person - Person ID",
+    Capitalize("Contact Person Name") 			As "Contact Person - Person Name",
+    Capitalize("Contact Person First Name") 	As "Contact Person - Person First Name",
+    Capitalize("Contact Person Middle Name") 	As "Contact Person - Person Middle Name",
+    Capitalize("Contact Person Last Name") 		As "Contact Person - Person Last Name",
+    "Contact Person Phone Number" 				As "Contact Person - Person Phone Number",
+    "Contact Person Email" 								As "Contact Person - Person Email",
+    "Contact Person URL" 								As "Contact Person - Person URL" ,
+    "Contact Person Telex" 								As "Contact Person - Person Telex",
+    "Contact Person Fax" 								 As "Contact Person - Person Fax",
+    Capitalize("Contact Title") 						As "Contact Person - Title",
+    Capitalize("Contact Desicion") 					As "Contact Person - Desicion",
+    Capitalize("Contact Profession") 			   As "Contact Person - Profession",
+    "Customer Contact Status"
+FROM [lib://Folder_IFP_Admin_Group/QVD/AX2012/ContactDetailsByCustomer.qvd]
+(qvd);
+
+ 
+
+
+
+
+NFPUnit:
+Mapping
+LOAD  
+    Upper("Combination Key") as Key,
+    "NFP Unit" 
+FROM [lib://Folder_IFP_Admin_Group/IFP_EXCEL/Unit Areas.xlsx]
+(ooxml, embedded labels, table is NFPUnitArea);
+
+NFPArea:
+Mapping
+LOAD 
+    Upper("Combination Key") as Key,
+    "NFP Area"
+FROM [lib://Folder_IFP_Admin_Group/IFP_EXCEL/Unit Areas.xlsx]
+(ooxml, embedded labels, table is NFPUnitArea);
+
+
+
+
+
+
+
+Customers:
+NoConcatenate
+Load
+    right ( left ( [Customer Key] ,5 ) , 3  )  & '|' & [Customer Chain] as [Customer Chain for Aggregation]
+    ,UPPER (  [Customer]&' | ' &  [Customer Account]   ) AS  [Customer for Aggregation],
+	UppeR([Customer Key]) As [Contact Customer Key],
+	UppeR([Customer Key]) As [Customer Contact Key],	
+    UppeR([Customer Key]) As [Customer Source Link Key],
+	UppeR([Customer Key]) As [Customer Key],
+    ApplyMap('ActiveCustomers',UPPER(Trim(Upper([Customer Key]))),'Not Active Yet CY') as [Customer Activity Classification],
+    [Customer Selling Type]
+    ,Capitalize(if (   [Customer]= '' , 'No  Customer' ,  [Customer])) as [Customer] 
+    ,if (   [Customer Group]= '' , 'No  Customer Group' ,  [Customer Group]) as [Customer Group]
+    ,[Customer Business Unit]
+    ,if (  [Customer Statistics Group]= '' , 'No Customer Statistics Group' ,  [Customer Statistics Group]) as  [Customer Statistics Group],
+    [Customer Parent Company] as [Customer Parent Company]
+    ,if (wildmatch(Upper([Customer Statistics Group]),'*AFF*') > 0 , 'Affiliates' , 'Normal Customer') as [Customer Aff]
+    
+   , Replace([Customer Key],[Customer Account]&'.','')  & '|' & [Customer Statistics Group] as [Customer Statistics Group for Aggregation]
+     
+    ,[Customer Affiliation Type]
+    ,[Customer Class]
+    ,if ( [Customer Chain] = '' , 'No Chain' , [Customer Chain]) as [Customer Chain]
+    ,if ( [Customer Chain] = '' , 'No Chain' , [Customer Chain]) as [Parent Company]
+    ,[Customer Invoice Account]
+    ,[Customer Key Account LV2]
+    ,Capitalize("Customer Export Support Function") as "Customer Export Support Function"
+    , 
+    
+    
+    if ( [Customer Key Account] <> 'No Key Account' ,
+    			[Customer Key Account],
+       if ( Replace(Replace( Capitalize(ApplyMap('NFPUnit',Upper([Customer Unit]&'|'&[Customer Area]&'|'&[Customer Country]),[Customer Unit])) , 'Petrochemical','No Sales Unit'),'Consumer','No Sales Unit') = [Customer Unit] , 'Sales Unit' , 'Direct Sales'))
+        as [Customer Key Account]
+        
+         
+    		
+    
+    
+    ,[Customer Account]
+    , if ([Customer State] = '' , 'NO STATE' , UPPER([Customer State])) AS  [Customer State]
+    , if ([Customer State] = '' , 'NO STATE' , UPPER([Customer State])) AS  [Geographical State]
+    ,[Customer Salesman]
+    ,[Customer Main Contact]
+    ,[Customer Insurance Premium]
+    ,[Customer Payment Term]
+    ,[Customer Insurance Payment Term]
+    ,[Customer Insurance Account Number]
+    ,[Customer Insurance Provider]
+    ,[Customer Insurance Coverage]
+    
+    
+    ,if (   [Customer Unit]= '' , 'No  Customer Unit' ,  [Customer Unit]) as  [Customer Unit]
+    ,if (   [Customer Area]= '' , 'No  Customer Area' ,  [Customer Area]) as [Customer Area],
+    
+    
+    Replace(Replace( Capitalize(ApplyMap('NFPUnit',Upper([Customer Unit]&'|'&[Customer Area]&'|'&[Customer Country]),[Customer Unit])) , 'Petrochemical','No Sales Unit'),'Consumer','No Sales Unit') as [NFP Customer Unit],
+    Replace(Replace( Capitalize(ApplyMap('NFPArea',Upper([Customer Unit]&'|'&[Customer Area]&'|'&[Customer Country]),[Customer Area])) , 'Petrochemical','No Sales Area'),'Consumer','No Sales Area') as [NFP Customer Area],
+    
+    
+    
+    [Customer Continent] as [Customer Continent], 
+    [Customer Region] as [Customer Territory]
+    
+    
+    ,[Customer Sector - Profile]
+    ,[Customer Sub Sector - Profile]
+    ,if (   [Customer Country]= '' , 'No  Customer Country' ,  [Customer Country]) as [Customer Country]
+    ,left([Customer Key],5)  & '|' & [Customer Country] as [Customer Country For Aggregation]
+    ,[Customer WinBack]
+    ,[Customer MQP Classification]
+    ,[Customer Creation Year]
+    ,[Customer Payment Terms Number Of Days],
+    if([Customer Purchase Behavior] = '', 'Not Defined', [Customer Purchase Behavior]) as  [Customer Purchase Behavior],
+    if([Customer Business RelationShip] = '', 'Not Defined', [Customer Business RelationShip]) as [Customer Business RelationShip],
+    if([Customer Multinational] = '', 'Not Defined', [Customer Multinational]) as [Customer Multinational],
+    if([Customer Relationship] = '', 'Not Defined', [Customer Relationship]) as [Customer Relationship],
+    if([Customer Joint Product] = '', 'Not Defined', [Customer Joint Product]) as [Customer Joint Product],
+    if([Customer Market Dominnace] = '', 'Not Defined', [Customer Market Dominnace]) as [Customer Market Dominnace],
+    if([Customer Product Widening] = '', 'Not Defined', [Customer Product Widening]) as [Customer Product Widening],
+    if([Customer Geog. Proximity] = '', 'Not Defined', [Customer Geog. Proximity]) as [Customer Geog. Proximity],
+    if([Customer Additional Growth] = '', 'Not Defined', [Customer Additional Growth]) as [Customer Additional Growth],
+    [Customer CR Number],
+    [Customer Blocked Status],
+    [Customer Business Unit Credit Limit] as [Customer Credit Limit],
+    [Customer CR Copy Attached],
+    MonthName(ApplyMap('LastInvoiceDateMapping',UPPER(Trim(Upper([Customer Key]))),'No Sales Trans'))   as [Customer Invoicing Last Transaction Date],
+    MonthName(ApplyMap('LastPaymentDateMapping',UPPER(Trim(Upper([Customer Key]))),'No Payment Trans'))   as [Customer Last Payment Date],
+    MonthName(ApplyMap('LastBudgetDateMapping',UPPER(Trim(Upper([Customer Key]))), 'No Buget Trans'))    as [Customer Budget Last Transaction Date],
+    MonthName(ApplyMap('FirstInvoiceDateMapping',UPPER(Trim(Upper([Customer Key]))), 'No Buget Trans'))    as [Customer First Invoicing Date],
+    
+    ApplyMap('LastInvoiceDateMapping',UPPER(Trim(Upper([Customer Key]))),'No Sales Trans')   as [Customer Invoicing Last Transaction Full Date],
+    ApplyMap('LastPaymentDateMapping',UPPER(Trim(Upper([Customer Key]))),'No Payment Trans')   as [Customer Last Payment Full Date],
+    ApplyMap('LastBudgetDateMapping',UPPER(Trim(Upper([Customer Key]))), 'No Buget Trans')   as [Customer Budget Last Transaction Full Date],
+    ApplyMap('FirstInvoiceDateMapping',UPPER(Trim(Upper([Customer Key]))), 'No Buget Trans')    as [Customer First Invoicing Full Date],
+     
+    
+    ApplyMap('ActiveIn2019_Invoicing',UPPER(Trim(Upper([Customer Key]))),ApplyMap('ActiveIn2019_Budgets',UPPER(Trim(Upper([Customer Key]))),'No Sales Trans')) as [Customer is Active this Year],
+    [Customer Situation],
+    [Customer Grace Days],
+    [Customer Collection Letter Course],
+     
+    "Customer Categorization ID Letter",
+    [Customer Categorization],
+    [Customer Categorization ID] ,
+    
+    ApplyMap('ParentCategoryMapping',Upper([Customer CR Number]),'None') as [Customer Parent Categorization],
+    ApplyMap('ParentCategoryMappingID',Upper([Customer CR Number]),'None') as [Customer Parent Categorization ID],
+     
+     "Customer Primary Email",
+     "Customer Primary Telefax",
+     "Customer Primary URL",
+     "Customer Primary Phone",
+     "Customer Currency",
+     "Customer VAT Number"
+     
+//     ,[Area]
+//     ,[State]
+//     ,[Country]
+//     ,[Continent]
+//     ,[Territory] 
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Customers_Merged.qvd]
+(qvd);
+/*********************************************************************/
+/*********************************************************************/
+
+/*****Invoice Customers***********************************************/
+/*********************************************************************/
+Invoice_Customers:
+NoConcatenate
+Load
+	Upper([Customer Key]) As [Invoice Customer Contact Key],
+	Upper([Customer Key]) As [Invoice Customer Key]
+    ,[Customer Selling Type] as [Invoice Customer Selling Type]
+    ,Capitalize([Customer]) As [Invoice Customer]
+    ,[Customer Group] As [Invoice Customer Group]
+    ,[Customer Business Unit] As [Invoice Customer Business Unit]
+    ,[Customer Statistics Group] As [Invoice Customer Statistics Group]
+     ,if (wildmatch(Upper([Customer Statistics Group]),'*AFF*') > 0 , 'Affiliates' , 'Normal Customer') as [Invoice Customer Aff]
+     ,[Customer Parent Company] as [Invoice Customer Parent Company]
+     ,[Customer Affiliation Type] As [Invoice Customer Affiliation Type]
+    ,[Customer Class] As [Invoice Customer Class]
+    ,[Customer Chain] As [Invoice Customer Chain]
+    ,[Customer Invoice Account] As [Invoice Customer Invoice Account]
+    ,[Customer Key Account LV2] As [Invoice Customer Key Account LV2]
+    ,if ( [Customer Key Account] <> 'No Key Account' ,
+    			[Customer Key Account],
+       if ( Replace(Replace( Capitalize(ApplyMap('NFPUnit',Upper([Customer Unit]&'|'&[Customer Area]&'|'&[Customer Country]),[Customer Unit])) , 'Petrochemical','No Sales Unit'),'Consumer','No Sales Unit') = [Customer Unit] , 'Sales Unit' , 'Direct Sales'))
+         As [Invoice Customer Key Account]
+    ,Capitalize("Customer Export Support Function") as "Invoice Customer Export Support Function"    
+    ,[Customer Account] As [Invoice Customer Account]
+    ,[Customer Salesman] As [Invoice Customer Salesman]
+        , if ([Customer State] = '' , 'NO STATE' , UPPER([Customer State])) AS [Invoice Customer State] 
+    ,[Customer Main Contact] As [Invoice Customer Main Contact]
+    ,[Customer Insurance Premium] As [Invoice Customer Insurance Premium]
+    ,[Customer Payment Term] AS [Invoice Customer Payment Term]
+    ,[Customer Insurance Account Number] as [Invoice Customer Insurance Account Number] 
+    ,[Customer Insurance Payment Term] As [Invoice Customer Insurance Payment Term]
+    ,[Customer Insurance Provider] As [Invoice Customer Insurance Provider]
+    ,[Customer Insurance Coverage] As [Invoice Customer Insurance Coverage]
+    ,[Customer Unit] As [Invoice Customer Unit]
+    ,[Customer Area] As [Invoice Customer Area],
+    
+    
+    
+    Replace(Replace( Capitalize(ApplyMap('NFPUnit',Upper([Customer Unit]&'|'&[Customer Area]&'|'&[Customer Country]),[Customer Unit])) , 'Petrochemical','No Sales Unit'),'Consumer','No Sales Unit') as [NFP Invoice Customer Unit],
+    Replace(Replace( Capitalize(ApplyMap('NFPArea',Upper([Customer Unit]&'|'&[Customer Area]&'|'&[Customer Country]),[Customer Area])) , 'Petrochemical','No Sales Area'),'Consumer','No Sales Area') as [NFP Invoice Customer Area],
+    
+    
+     [Customer Continent] as [Invoice Customer Continent], 
+     [Customer Region] as [Invoice Customer Territory]
+    
+    ,[Customer Country] as [Invoice Customer Country]
+    ,[Customer WinBack] as [Invoice Customer WinBack]
+    ,[Customer MQP Classification] as [Invoice Customer MQP Classification]
+    ,[Customer Creation Year] as [Invoice Customer Creation Year]
+    ,[Customer Sector - Profile] as [Invoice Customer Sector - Profile]
+    ,[Customer Sub Sector - Profile] as [Invoice Customer Sub Sector - Profile]
+    ,[Customer Payment Terms Number Of Days] as [Invoice Customer Payment Terms Number Of Days],
+     if([Customer Purchase Behavior] = '', 'Not Defined', [Customer Purchase Behavior]) as  [Invoice Customer Purchase Behavior],
+    if([Customer Business RelationShip] = '', 'Not Defined', [Customer Business RelationShip]) as [Invoice Customer Business RelationShip],
+    if([Customer Multinational] = '', 'Not Defined', [Customer Multinational]) as [Invoice Customer Multinational],
+    if([Customer Relationship] = '', 'Not Defined', [Customer Relationship]) as [Invoice Customer Relationship],
+    if([Customer Joint Product] = '', 'Not Defined', [Customer Joint Product]) as [Invoice Customer Joint Product],
+    if([Customer Market Dominnace] = '', 'Not Defined', [Customer Market Dominnace]) as [Invoice Customer Market Dominnace],
+    if([Customer Product Widening] = '', 'Not Defined', [Customer Product Widening]) as [Invoice Customer Product Widening],
+    if([Customer Geog. Proximity] = '', 'Not Defined', [Customer Geog. Proximity]) as [Invoice Customer Geog. Proximity],
+    if([Customer Additional Growth] = '', 'Not Defined', [Customer Additional Growth]) as [Invoice Customer Additional Growth],
+    [Customer CR Number] as [Invoice Customer CR Number],
+    [Customer Blocked Status] as [Invoice Customer Blocked Status],
+    [Customer Business Unit Credit Limit] as [Invoice Customer Credit Limit],
+    [Customer CR Copy Attached] as [Invoice Customer CR Copy Attached],
+    [Customer Situation] as [Invoice Customer Situation],
+    [Customer Grace Days] as [Invoice Customer Grace Days],
+    [Customer Collection Letter Course] as  [Invoice Customer Collection Letter Course],
+    
+    "Customer Categorization ID Letter" as "Invoice Customer Categorization ID Letter",
+    [Customer Categorization] as [Invoice Customer Categorization],
+    [Customer Categorization ID]  as [Invoice Customer Categorization ID],
+    
+        
+    ApplyMap('ParentCategoryMapping',Upper([Customer CR Number]),'None') as [Invoice Customer Parent Categorization],
+    ApplyMap('ParentCategoryMappingID',Upper([Customer CR Number]),'None') as [Invoice Customer Parent Categorization ID],
+    
+    "Customer Primary Email" 		as "Invoice Customer Primary Email" ,
+    "Customer Primary Telefax" 		as "Invoice Customer Primary Telefax",
+    "Customer Primary URL" 			as "Invoice Customer Primary URL",
+    "Customer Primary Phone"  		as "Invoice Customer Primary Phone",
+     "Customer Currency"			as "Invoice Customer Currency",
+     "Customer VAT Number"		as "Invoice Customer VAT Number"
+    
+//     ,[Area]
+//     ,[State]
+//     ,[Country]
+//     ,[Continent]
+//     ,[Territory] 
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Customers_Merged.qvd]
+(qvd);
+
+
+Customers_Contacts:
+NoConcatenate
+LOAD
+    UppeR([Customer Key]) As [Customer Contact Key],
+    "Contact Person ID",
+    "Contact First Name",
+    "Contact Middle Name",
+    "Contact Last Name",
+    "Contact Title",
+    "Contact Phone",
+    "Contact Email"
+FROM [lib://Folder_IFP_Admin_Group/QVD\AX2012\Customers_Contact_Details.qvd]
+(qvd);
+
+
+Customers_Contacts:
+NoConcatenate
+LOAD
+    UppeR([Customer Key]) As [Invoice Customer Contact Key],
+    "Contact Person ID" 	as "Invoice Customer Contact Person ID",
+    "Contact First Name" 	as "Invoice Customer Contact First Name",
+    "Contact Middle Name" 	as "Invoice Customer Contact Middle Name",
+    "Contact Last Name" 	as "Invoice Customer Contact Last Name",
+    "Contact Title" 		as "Invoice Customer Contact Title",
+    "Contact Phone" 		as "Invoice Customer Contact Phone",
+    "Contact Email" 		as "Invoice Customer Contact Email"
+FROM [lib://Folder_IFP_Admin_Group/QVD\AX2012\Customers_Contact_Details.qvd]
+(qvd);
+ 
+
+/*********************************************************************/
+/*********************************************************************/
+
+/*****Salesmen********************************************************/
+/*********************************************************************/
+Salesmen:
+NoConcatenate
+Load
+   [Salesman Key]
+   ,[Salesman Key] AS [Salesman Grading Key]
+   ,[Salesman] as [Salesman OLD]
+   ,[Salesman Level1] as [Salesman Level1 OLD]  
+   ,[Salesman Level2] as [Salesman Level2 OLD]
+   ,[Salesman Level3] as [Salesman Level3 OLD]
+   ,[Salesman Level4] as [Salesman Level4 OLD]
+   ,trim(Replace(Replace(Replace(Replace([Salesman],'RU:',''),'BU:',''),'DU:',''),'KU:','')) as [Salesman]
+   ,trim(Replace(Replace(Replace(Replace([Salesman Level1],'RU:',''),'BU:',''),'DU:',''),'KU:','')) as [Salesman Level1] 
+   ,trim(Replace(Replace(Replace(Replace([Salesman Level2],'RU:',''),'BU:',''),'DU:',''),'KU:','')) as [Salesman Level2] 
+   ,trim(Replace(Replace(Replace(Replace([Salesman Level3],'RU:',''),'BU:',''),'DU:',''),'KU:','')) as [Salesman Level3] 
+   ,trim(Replace(Replace(Replace(Replace([Salesman Level4],'RU:',''),'BU:',''),'DU:',''),'KU:','')) as [Salesman Level4]  
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Salesmen_Merged.qvd]
+(qvd);
+
+
+LIB CONNECT TO 'NAPAX-12-PROD-DEV (indevco_georges.raad)';
+
+
+
+Grading_Mapping:
+Mapping
+LOAD
+    Upper(Trim("SalesTeamGrading")) As "SalesTeamGrading",
+    "SalesTeamGradingConsolidation" AS [Sales Team Grading Consolidation]
+FROM [lib://Folder_IFP_Admin_Group/IFP_EXCEL/SalesmanList.xlsx]
+(ooxml, embedded labels, table is [Grading]);
+
+
+Grading_Mapping_Number:
+Mapping
+LOAD
+    Upper(Trim("SalesTeamGrading")) As "SalesTeamGrading",
+    "OracleNumber" AS [OracleNumber]
+FROM [lib://Folder_IFP_Admin_Group/IFP_EXCEL/SalesmanList.xlsx]
+(ooxml, embedded labels, table is [Grading]);
+
+
+SalesmenGrading:
+NoConcatenate
+Load
+   UPPER([Salesman Grading Key]) AS [Salesman Grading Key],
+   ApplyMap('Grading_Mapping',UPPER(Trim([Grading Sales Name])),'No Mapping') As [Sales Team Member],
+   ApplyMap('Grading_Mapping_Number',UPPER(Trim([Grading Sales Name])),'No Mapping') As [SalesmanOracleNumber],
+   ;	
+SQL
+SELECT DISTINCT Convert(Varchar,'2') + '.' + '0' + '.' + A.num + '!' + A.Description As [Salesman Grading Key], a.SLSGREADINGELEVL as [Grading Sales Name] FROM (
+SELECT  DISTINCT   REPORTLEVEL1 AS SLSGREADINGELEVL , NUM , Description FROM [NAPAX-12-PROD-DEV].dbo.SALESTEAM
+UNION 
+SELECT  DISTINCT   Reportsto AS SLSGREADINGELEVL , NUM , Description FROM [NAPAX-12-PROD-DEV].dbo.SALESTEAM
+UNION 
+SELECT  DISTINCT   ReportsLevel3 AS SLSGREADINGELEVL , NUM , Description FROM [NAPAX-12-PROD-DEV].dbo.SALESTEAM
+UNION
+SELECT  DISTINCT   Description  AS SLSGREADINGELEVL , NUM , Description FROM [NAPAX-12-PROD-DEV].dbo.SALESTEAM) AS A ORDER BY A.SLSGREADINGELEVL;
+
+
+EmployeesDetails:
+NoConcatenate
+LOAD
+    "Employee Division",
+    "Employee Company",
+    "Employee Businessunit",
+    "Employee Employee_Number" as SalesmanOracleNumber,
+    Capitalize("Employee Name") as "Employee Name",
+    "Employee Employee_Status" as [Employee Status],
+    Capitalize("Employee Employee_Title") as "Employee Title",
+     'G' & "Employee Grade" as [Employee Grade],
+    Capitalize("Employee Citizenship") as "Employee Citizenship"
+FROM [lib://Folder_IFP_Admin_Group/QVD\AX2012\OracleEmployeesPULSE.qvd]
+(qvd);
+
+
+/*********************************************************************/
+/*********************************************************************/
+
+/*****Charges*********************************************************/
+/*********************************************************************/
+Charges:
+NoConcatenate
+Load
+  [Charge Key]
+  ,[Charge Type]
+  ,[Charge]
+  ,[Charge Code]
+  ,[Charge Description]
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Charges.qvd]
+(qvd); 
+/*********************************************************************/
+/*********************************************************************/
+
+/*****Users***********************************************************/
+/*********************************************************************/
+Users:
+NoConcatenate
+Load
+  [User Key]
+  ,[User]
+  ,[User Type]
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Users.qvd]
+(qvd);  
+/*********************************************************************/
+/*********************************************************************/  
+
+/*****Geographical Mix************************************************/
+/*********************************************************************/
+Geographical_Mix:
+NoConcatenate
+Load
+  [Geographical Mix Key]
+  ,[Geographical Mix Source]
+  ,[Geographical City] 
+  ,[Geographical Country]
+  ,[Geographical Continent]
+  ,[Geographical Area]
+  ,[Geographical Territory]
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Geographical_Mix_Merged.qvd]
+(qvd);  
+/*********************************************************************/
+/*********************************************************************/ 
+
+/*****Product Styles Mix**********************************************/
+/*********************************************************************/
+Product_Styles_Mix:
+NoConcatenate
+Load
+   [Product Style Mix Key]
+  ,[Product Style Mix Source]
+  ,[Product Style Mix Code]
+  ,[Product Style Mix Description]
+  ,[Product Style Line] as [Product Style Line - OLD]
+//   ,[Product Business Line]
+  ,[Style Type] as [Style Type - OLD]
+  ,[Style Family] as [Style Family - OLD]
+  ,[Style Category] as [Style Category - OLD]
+//   ,[Style Sub Category]
+  ,[Style] as [Style - OLD]
+  
+  ,[Style Category] As [Product Packed/End Use - OLD]
+  ,[Style] As [Building Block - OLD]
+  ,[Product Style Line] As [Product Line - OLD]
+  ,[Style Family] As [Structure - OLD]
+  ,[Style Type] As [Product Details - OLD]
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Product_Styles_Mix_Merged.qvd]
+(qvd); 
+/*********************************************************************/
+/*********************************************************************/ 
+ 
+/*****Market Sectors Mix**********************************************/
+/*********************************************************************/
+Market_Sectors_Mix:
+NoConcatenate
+Load
+   [Market Sector Mix Key]
+  ,[Market Sector Mix Source]
+  ,[Market Sector] as [Market Sector - OLD]
+  ,[Market Sector Description]
+  ,[Market Group] as [Market Group - OLD]
+  ,[Market Application] as [Market Application - OLD]
+  ,[Market Application] As [Application - OLD]
+  ,[Market Group] As [Sector - OLD]
+  ,[Market Sector] As [Industry - OLD]
+//   ,[Market Group Family]
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Market_Sectors_Mix.qvd]
+(qvd); 
+/*********************************************************************/
+/*********************************************************************/
+
+/*****Items***********************************************************/
+/*********************************************************************/
+Items:
+NoConcatenate
+Load
+   [Item Key] 
+   ,Upper("Item Key") as InventoryItemsKey
+   ,Upper("Item Key") as "Item Origin Key"
+  ,[Item Source]
+  ,[Item Number]
+  ,[Item Code]
+  ,[Item Name]
+  ,[Item Description]
+  ,[Item Inventory Unit]
+//   ,[Product MFG Code]
+//   ,[Product MFG Name]
+//   ,[Product MFG Description]
+//   ,[Product Item Code]
+//   ,[Product Item Name]
+//   ,[Product Item Description]
+//   ,[Product Revision Code]
+//   ,[Product Revision Date]
+//   ,[Product Revision Process]
+//   ,[Product Code]
+//   ,[Product Name]
+//   ,[Product Description]
+  ,[Product Style Mix Key]
+//   ,[Product Marketing Mix Key]
+//   ,[Manufacturing Mix Key]
+  ,[Market Sector Mix Key]
+//   ,[Printing Type Key]
+//   ,[Forming Key]
+//   ,[Board Mix Key]
+//   ,[Material Lot Code]
+//   ,[Material Lot Name]
+//   ,[Material Lot Description]
+//   ,[Material Code]
+//   ,[Material Name]
+//   ,[Material Description]
+//   ,[Material Financial Type Key]
+//   ,[Material RM Category Key]
+//   ,[Material RM Family Key]
+//   ,[Material RM Type Key]
+//   ,[Material Type Key]
+//   ,[Production Item Code]
+//   ,[Production Item Serial NB]
+  ,[Item Type Key]
+  ,[Item Group]
+  ,[Business Type]
+  ,[Item - isNew Year] as [Item IsNew]
+  ,"Item Dimension4"
+  ,[Item Created Year]
+  ,[Item Conversion Carton to KG]
+  ,[Item Conversion Bundle to KG]
+  
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Items_Merged.qvd]
+(qvd); 
+ 
+ Items:
+Concatenate
+LOAD
+   UPPER("Item Key") AS "Item Key"
+   ,left([Item Key],5)  & '|' &[Segment 1] as [Segment 1 For Aggregation Purchases-Inventories]
+
+FROM [lib://Folder_IFP_Admin_Group/QVD\AX2012\PurchasesInventories\Items.qvd]
+(qvd);
+
+/*********************************************************************/
+/*********************************************************************/
+
+
+Items_Original:
+NoConcatenate
+Load
+    Upper("Item Origin Key") As "Item Origin Key",
+    [Item Origin Description],
+    [Item Origing Year Created],
+    [Item Original Code]
+  
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Items_Original.qvd]
+(qvd); 
+
+
+
+
+/*****Product Managers************************************************/
+/*********************************************************************/
+Product_Managers:
+NoConcatenate
+Load 
+   [Product Manager Key]
+  ,[Product Manager Key] as [Product Manager Grading Key]
+  ,[Product Manager]
+  ,[Marketing Manager]
+  ,[General Manager]
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Product_Managers.qvd]
+(qvd); 
+
+
+
+ProductManagersGrading:
+NoConcatenate
+Load
+   Upper(PMKEY) as [Product Manager Grading Key],
+   Capitalize("SLSGREADINGELEVL")  As [Product Manager Team Member],
+   EMPLOYEE_NUMBER AS [PM Employee Key]
+   
+   ;	
+SQL
+SELECT DISTINCT SLSGREADINGELEVL  , PMKEY  , PMP.EMPLOYEE_NUMBER   FROM (
+SELECT  DISTINCT   PM AS SLSGREADINGELEVL , PMKEY , PMKEY AS DESCRIPTION FROM [NAPAX-12-PROD-DEV].dbo.PM_TABLE
+UNION 
+SELECT  DISTINCT   MM AS SLSGREADINGELEVL , PMKEY , PMKEY AS DESCRIPTION  FROM [NAPAX-12-PROD-DEV].dbo.PM_TABLE
+UNION 
+SELECT  DISTINCT   GM AS SLSGREADINGELEVL , PMKEY , PMKEY AS DESCRIPTION  FROM [NAPAX-12-PROD-DEV].dbo.PM_TABLE) AS AA
+LEFT OUTER JOIN PM_PULSE PMP ON PMP.PM = AA.SLSGREADINGELEVL;
+
+
+EmployeesDetailsPM:
+NoConcatenate
+LOAD
+    "Employee Division" 					as "PM Employee Division",
+    "Employee Company" 						as "PM Employee Company",
+    "Employee Businessunit" 				as "PM Employee Businessunit",
+    "Employee Employee_Number" 				as "PM Employee Key",
+    Capitalize("Employee Name") 			as "PM Employee Name",
+    "Employee Employee_Status" 				as "PM Employee Status",
+    Capitalize("Employee Employee_Title") 	as "PM Employee Title",
+     'G' & "Employee Grade" 				as "PM Employee Grade",
+    Capitalize("Employee Citizenship") 		as "PM Employee Citizenship"
+FROM [lib://Folder_IFP_Admin_Group/QVD\AX2012\OracleEmployeesPULSE.qvd]
+(qvd);
+
+
+
+
+/*********************************************************************/
+/*********************************************************************/
+
+/*****Revisions Log***************************************************/
+/*********************************************************************/
+Revisions_Log:
+NoConcatenate
+Load 
+  [Revision Log Key]
+  ,[Revision Log Record Type]
+  ,[Revision Log Action]
+  ,[Revision Log Date]
+  ,[Revision Log Modify User]
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Revisions_Log.qvd]
+(qvd); 
+/*********************************************************************/
+/*********************************************************************/
+
+/*****Service Providers***********************************************/
+/*********************************************************************/
+Service_Providers:
+NoConcatenate
+Load 
+  [Service Provider Key]
+  ,[Service Provider Account Num]
+  ,[Service Provider]
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Service_Providers.qvd]
+(qvd);    
+/*********************************************************************/
+/*********************************************************************/
+
+/*****Business Units**************************************************/
+/*********************************************************************/
+Business_Units:
+NoConcatenate
+Load
+  [Business Unit Key]
+  ,[Branch]
+  ,[Business Unit]
+  ,[Division]
+  ,	if ( [Business Unit Key] ='2.301' , 'NCP',
+  		if([Holding]='NAPCO','NFP',
+  			if([Holding]='INDEVCO USA','IFP USA'
+    		 ,'IFP'))) As [Actual Division]
+            
+  ,if ( [Business Unit Key] ='2.301' , 'NCP' , [Holding]) as [Holding]
+  ,Capitalize([Business Unit Location]) As [Business Unit Location]
+  ,Capitalize([Business Unit Country]) As [Business Unit Country]
+  ,[Business Unit Type]
+  ,[Business Unit Account]
+  ,[Business Unit Currency Code]
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Business_Units_Merged.qvd]
+(qvd) ; 
+/*********************************************************************/
+/*********************************************************************/
+
+/*****Sales shared Charges********************************************/
+/*********************************************************************/
+Sales_Shared_Charges:
+NoConcatenate
+Load 
+	[Sales Shared Key]
+    ,[Charge Key]
+    ,[Service Provider Key]
+    ,[Charge Amount USD]
+    ,[Charge By Weight Amount USD]
+    ,[Charge By Value Amount USD]
+    ,[Charge Provision By Weight Amount USD]
+    ,[Charge Provision By Value Amount USD]
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Sales_Shared_Charges.qvd]
+(qvd);       
+/*********************************************************************/
+/*********************************************************************/
+
+
+
+//Expected Month Closing
+EMC:
+NoConcatenate
+Load 
+	'EMC.' & [Invoice Key] As [EMC Key]
+    ,[Invoice Values Sign] As [EMC Values Sign]
+    ,[Invoice Process] As [EMC Process]
+    ,[Invoice Number] As [EMC Number]
+    ,[Invoice Line Number] As [EMC Line Number]
+    ,[Invoice Issuing Date] As [EMC Issuing Date]
+    ,[Invoice Creation Date] As [EMC Creation Date]
+    ,[Invoice Quantity] As [EMC Quantity]
+    ,[Invoice Quantity Unit] As [EMC Quantity Unit]
+    ,[Invoice Pieces] As [EMC Pieces]
+    ,[Invoice Kg] As [EMC Kg]
+    ,[Invoice MT] As [EMC MT]
+    ,[Invoice US Ton] As [EMC US Ton]
+    ,[Invoice Lbp] As [EMC Lbp]
+    ,[Invoice SQM] As [EMC SQM]
+    ,[Invoice MSF] As [EMC MSF]
+    ,[Invoice Main Amount USD] As [EMC Main Amount USD]
+    ,[Invoice Discount Amount USD] As [EMC Discount Amount USD]
+    ,[Invoice Misc Charges By Weight Amount USD] As [EMC Misc Charges By Weight Amount USD]
+    ,[Invoice Misc Charges By Value Amount USD] As [EMC Misc Charges By Value Amount USD]
+    ,[Invoice Misc Charges Provision By Weight Amount USD] As [EMC Misc Charges Provision By Weight Amount USD]
+    ,[Invoice Misc Charges Provision By Value Amount USD] As [EMC Misc Charges Provision By Value Amount USD]
+    ,[Invoice Amount USD] As [EMC Amount USD]
+    ,[Invoice Cost USD] As [EMC Cost USD]
+//     ,[Invoice RM Cost USD] As [EMC RM Cost USD]
+//     ,[Invoice Conversion Cost USD] As [EMC Conversion Cost USD]
+Resident
+	Invoices;
+    
+EMC:
+Concatenate
+Load 
+	'EMC.' & [Backlog Order Key] As [EMC Key]
+    ,[Backlog Order Sales Type] As [EMC Sales Type]
+    ,[Backlog Order Process] As [EMC Process]
+    ,[Backlog Order Type] As [EMC Type]
+    ,[Backlog Order Number] As [EMC Number]
+    ,[Backlog Order Detail Number] As [EMC Detail Number]
+    ,[Backlog Order Issuing Date] As [EMC Issuing Date]
+    ,[Backlog Order Requested Delivery Date] As [EMC Requested Delivery Date]
+    ,[Backlog Order Delivery Date] As [EMC Delivery Date]
+    ,[Backlog Order Expected Date] As [EMC Expected Date]
+    ,[Backlog Order Confirmation Date] As [EMC Confirmation Date]
+    ,[Backlog Order Status] As [EMC Status]
+    ,[Backlog Order Detail Status] As [EMC Detail Status]
+    ,[Backlog Order Quantity] As [EMC Quantity]
+    ,[Backlog Order Quantity Unit] As [EMC Quantity Unit]
+    ,[Backlog Order Pieces] As [EMC Pieces]
+    ,[Backlog Order Kg] As [EMC Kg]
+    ,[Backlog Order MT] As [EMC MT]
+    ,[Backlog Order US Ton] As [EMC US Ton]
+    ,[Backlog Order Lbp] As [EMC Lbp]
+    ,[Backlog Order SQM] As [EMC SQM]
+    ,[Backlog Order MSF] As [EMC MSF]
+    ,[Backlog Order Amount USD] As [EMC Amount USD]
+    ,[Backlog Order Cost USD] As [EMC Cost USD]
+    ,[Backlog Order Customer PO Number] As [EMC Customer PO Number]
+//     ,[Backlog Order RM Cost USD] As [EMC RM Cost USD]
+//     ,[Backlog Order Conversion Cost USD] As [EMC Conversion Cost USD]
+    ,[Backlog Order Sales Name] As [EMC Sales Name]
+    ,[Backlog Order PT] As [EMC PT]
+    ,[Backlog Order Insurance Coverage] As [EMC Insurance Coverage]
+    ,[Backlog Order Insured] As [EMC Insured]
+Resident
+	Backlog_Orders;
+
+
+ 
+//Expected vs Budget
+EMC_BUD:
+NoConcatenate
+Load 
+	'EMC-BUD.' & [EMC Key] As [EMC-BUD Key]
+    ,[EMC Quantity] As [EMC-BUD Quantity]
+    ,[EMC Quantity Unit] As [EMC-BUD Quantity Unit]
+    ,[EMC Pieces] As [EMC-BUD Pieces]
+    ,[EMC Kg] As [EMC-BUD Kg]
+    ,[EMC MT] As [EMC-BUD MT]
+    ,[EMC US Ton] As [EMC-BUD US Ton]
+    ,[EMC Lbp] As [EMC-BUD Lbp]
+    ,[EMC SQM] As [EMC-BUD SQM]
+    ,[EMC MSF] As [EMC-BUD MSF]
+    ,[EMC Amount USD] As [EMC-BUD Amount USD]
+    ,[EMC Discount Amount USD] As [EMC-BUD Discount Amount USD]
+    ,[EMC Misc Charges By Weight Amount USD] As [EMC-BUD Misc Charges By Weight Amount USD]
+    ,[EMC Misc Charges By Value Amount USD] As [EMC-BUD Misc Charges By Value Amount USD]
+    ,[EMC Misc Charges Provision By Weight Amount USD] As [EMC-BUD Misc Charges Provision By Weight Amount USD]
+    ,[EMC Misc Charges Provision By Value Amount USD] As [EMC-BUD Misc Charges Provision By Value Amount USD]
+    ,[EMC Cost USD] As [EMC-BUD Cost USD]
+//     ,[Invoice RM Cost USD] As [EMC RM Cost USD]
+//     ,[Invoice Conversion Cost USD] As [EMC Conversion Cost USD]
+Resident
+	EMC;
+
+EMC_BUD:
+Concatenate
+Load
+ 'EMC-BUD.' & [Budget Key] As [EMC-BUD Key]
+  ,(-1) * [Budget Quantity] As [EMC-BUD Quantity]
+  ,[Budget Quantity Unit] As [EMC-BUD Quantity Unit]
+  ,(-1) * [Budget MT] As [EMC-BUD MT]
+  ,(-1) * [Budget Kg] As [EMC-BUD Kg]
+  ,(-1) * [Budget Lbp] As [EMC-BUD Lbp]
+  ,(-1) * [Budget US Ton] As [EMC-BUD US Ton]
+  ,(-1) * [Budget Amount USD] As [EMC-BUD Amount USD]
+  ,(-1) * [Budget Cost USD] As [EMC-BUD Cost USD]
+  ,(-1) * [Budget Misc Charges USD] As [EMC-BUD Misc Charges USD]
+Resident
+	Budgets;
+    
+//CAPACITY
+
+Capacity:
+NoConcatenate
+Load 
+	[Capacity Key],
+    [Capacity Trans Date],
+    [Capacity Quantity],
+    [Capacity Quantity Unit],
+    [Capacity Pieces],
+    [Capacity Kg],
+    [Capacity MT],
+    [Capacity US Ton],
+    [Capacity Lbp],
+    [Capacity SQM],
+    [Capacity MSF]
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Capacity.qvd]
+(qvd);
+
+
+//Forecast_Accuracy
+
+Forecast_Accuracy:
+NoConcatenate
+Load 
+Upper([Salesman Key] & '|' & [Order Customer Key] & '|' & num(DayStart(FADATE)) & '|' & [Business Unit Key] & '|' & [Item Key]) as [FAKey],
+[FA Invoiced Qty],
+[FA Forecast Qty],
+[FA Hits],
+[FA Total Count]
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Forecast_Accuracy.qvd]
+(qvd);
+
+
+//Forecast_Accuracy
+
+Revised_Forecast_Accuracy:
+NoConcatenate
+Load 
+Upper([Salesman Key] & '|' & [Order Customer Key] & '|' & num(DayStart([FADATE - Revised])) & '|' & [Business Unit Key] & '|' & [Item Key]) as [FAKey - Revised],
+[FA Invoiced Qty - Revised],
+[FA Forecast Qty - Revised],
+[FA Hits - Revised],
+[FA Total Count - Revised]
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Forecast_Revised_Accuracy.qvd]
+(qvd);
+
+
+OTIF:
+NoConcatenate
+Load 
+     UPPER([OTIF RECID] & '|' & [Business Unit Key]) AS [OTIF Key],
+    [OTIF Invoice Number],
+    [OTIF Total Invoiced Qty],
+    [OTIF Total Ordered Qty],
+    [OTIF Line Number],
+    [OTIF Received In Planning Date],
+    [OTIF Requested Receipt Date],
+    [OTIF Confirmed Receipt Date],
+    [OTIF Confirmed Shipping Date],
+    [OTIF Date] as [OTIF Requested Shippling Date],
+    [OTIF SO Creation date],
+    [OTIF Confirm Date],
+    [OTIF Invoice Date],
+    [OTIF In Full Ratio],
+    [OTIF In Full Count],
+    [OTIF Days RRD],
+    [OTIF On Time Count],
+    [OTIF On Time In full Count],
+    [OTIF Time Status],
+    [OTIF Reason ID] ,
+    [OTIF Delivery Date Change Reason],
+    [OTIF Reason Description],
+    "OTIF Under Delivery P Margin",
+    "OTIF Over Delivery P Margin",
+    1 as [OTIF Count]
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/OTIF.qvd]
+(qvd) where WildMatch(Upper([Item Key]),'*FG*') > 0 ;
+
+
+
+EXTERNAL_ITEMS:
+NoConcatenate
+Load 
+	[External Item Key],
+	[External Item ID],
+	[External Item Description]
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/EXTERNAL_ITEMS.qvd]
+(qvd);
+
+
+RMA:
+NoConcatenate
+Load 
+	UPPER([RMA Key]) as [RMA Key],
+    [RMA Number],
+    [RMA Deadline Date],
+    [RMA Line ETA Date],
+    [RMA Line Actual Arrival Date],
+    [RMA Closed Date],
+    [Return Lot Id],
+    [RMA Header Return Status],
+    [RMA Header Sales Order], 
+    [RMA Line Sales Order],
+    Capitalize([RMA Reason Group]) as [RMA Reason Group],
+    Capitalize([RMA Return Reason Description]) as [RMA Return Reason Description],
+    [RMA Return Reason Code],
+    [RMA Return Disposition Code ID],
+    Capitalize([RMA Return Disposition Code Description]) as [RMA Return Disposition Code Description],
+    Capitalize([RMA Line Return Status]) as [RMA Line Return Status],
+    [RMA Net Weight]*-1 as [RMA Net Weight],
+    [RMA Returned Net Weight]*-1 as [RMA Returned Net Weight],
+    [Sales Line InventDimId],
+    [RMA Original Sales Order],
+    [RMA Line InvoiceNumber],
+    [RMA Returned Sales Amount USD]*-1 as [RMA Returned Sales Amount USD],
+    [RMA Inventory Transaction ID]
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/RMA_Lines.qvd]
+(qvd);
+
+
+CustomerVolume:
+NoConcatenate
+Load 
+    UPPER([Customer Volume Line Key]) as [Customer Volume Line Key],
+    UPPER([Customer Volume Line Key]) as [Customer Volume Competitor Line Key],
+    [Customer Volume],
+    [Customer Share Percentage],
+        ApplyMap('CustomerVolumnesSoldMapping',Upper(Year("Master Calendar Date")) & '|' & Upper("CPB Building Block") & '|' & Upper("CPB Product Line") & '|' & Upper("Customer Key"),0) as "CPB Volume Sold Kg",
+    if([Customer Volume] > ApplyMap('CustomerVolumnesSoldMapping',Upper(Year("Master Calendar Date")) & '|' & Upper("CPB Building Block") & '|' & Upper("CPB Product Line") & '|' & Upper("Customer Key"),0),
+    	[Customer Volume] - ApplyMap('CustomerVolumnesSoldMapping',Upper(Year("Master Calendar Date")) & '|' & Upper("CPB Building Block") & '|' & Upper("CPB Product Line") & '|' & Upper("Customer Key"),0)
+    ,0) as [CPB Volume KG Potential For Growth]
+        
+    
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/CustomerVolumes.qvd]
+(qvd); 
+
+
+
+CustomerVolumeCompetitor:
+NoConcatenate
+Load 
+
+    UPPER([Customer Volume Competitor Line Key]) as [Customer Volume Competitor Line Key],
+    [Competitor Name], 
+    [Competitor Share Volume] , 
+    [Competitor Share Percentage]
+    
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/CustomerVolumesCompetitor.qvd]
+(qvd);
+
+Concatenate(CustomerVolumeCompetitor)
+Load 
+    UPPER([Customer Volume Line Key]) as [Customer Volume Competitor Line Key],
+    [Competitor From BU Name] as [Competitor Name], 
+    [Customer Volume] as [Competitor Share Volume] , 
+    0 as [Competitor Share Percentage]
+    
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/CustomerVolumes.qvd]
+(qvd);
+
+
+
+CustomerProfileBuilding:
+NoConcatenate
+Load 
+	UPPER(CPBLINEKEY) as CPBLINEKEY,
+    [CPB - Customer Section Count],
+	[CPB - Market Sector Section Count],
+	[CPB - Product Section Count],
+    [CPB - Total Filled Slots],
+	[CPB - Total Fields to be Filled],
+    [Full Customers Count],
+	[CPB Customers Count], 
+    [CPB Form - Multinational Value],
+    [CPB Form - Cust Relationship Value],
+    [CPB Form - Year Established],
+    [CPB Form - Annual Sales Revenue],
+    [CPB Form - Business Relation History],
+    [CPB Form - Purchase Behavior],
+    [CPB Form - WinBakc Customer],
+    [CPB Form - Winback Year],
+    [CPB Form - Additional Growth],
+    [CPB Form - Parent Company],
+    [CPB Form - Market Sector],
+    [CPB Form - Market Sub Sector],
+    [CPB Form - Market Dominance],
+    [CPB Form - Product Line],
+    [CPB Form - Customer Volume],
+    [CPB Form - Sales Unit],
+    [CPB Form - Building Block],
+    [CPB Form - Joint Product Dev],
+    [CPB Form - Share Percentage],
+    [CPB Form - Supplier],
+    [CPB Form - Supplier Country],
+    [CPB Form - Supplier Share Volume],
+    [CPB Form - Product Widenning Portfolio]
+    
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/CustomerProfileBuilding.qvd]
+(qvd);
+
+
+Customer_Scoring_table:
+NoConcatenate
+Load
+
+[Business Unit Key] as [Business Unit Key Cons],
+[Order Customer Key] as [Order Customer Key Cons],
+[Master Calendar Date] as  [Master Calendar Date Cons],
+[Business Unit Key] & '|' & [Order Customer Key] & '|' & Year([Master Calendar Date]) as [Scoring Key],
+[Scoring -  Strategic Produts Score],
+[Scoring -  Strategic Produts],
+[Scoring - Additional Growth Score],
+[Scoring - Additional Growth],
+[Scoring - Bulding Block Count],
+[Scoring - Business History (Year)],
+[Scoring - Business History Score],
+[Scoring - COP % (Cust) Score],
+[Scoring - COP % (Cust)],
+[Scoring - Customer Insurance Provider Score],
+[Scoring - Customer Insurance Provider],
+[Scoring - Customer Volume Percentage],
+[Scoring - Customer Volume Score],
+[Scoring - Geog. Proximity Score],
+[Scoring - Geog. Proximity],
+[Scoring - IFP BUs Score],
+[Scoring - IFP BUs],
+[Scoring - Joint Product Score],
+[Scoring - Joint Product],
+[Scoring - Market Dominnace Score],
+[Scoring - Market Dominnace],
+[Scoring - Market Expansion Plan Score],
+[Scoring - Market Expansion Plan],
+[Scoring - Multinational Score],
+[Scoring - Multinational],
+[Scoring - Net Weight % (BU) Score],
+[Scoring - Net Weight % (BU)],
+[Scoring - Net Weight % (Division) Score],
+[Scoring - Net Weight % (Division)],
+[Scoring - Overdue Avg. Score],
+[Scoring - Overdue Avg.],
+[Scoring - Payement Term Score],
+[Scoring - Payement Term],
+[Scoring - Price Quality Ratio Score],
+[Scoring - Price Quality Ratio],
+[Scoring - Product Line Score],
+[Scoring - Product Line],
+[Scoring - Product Widening Score],
+[Scoring - Product Widening],
+[Scoring - Purchase Behavior Score],
+[Scoring - Purchase Behavior],
+[Scoring - Relationship Score],
+[Scoring - Relationship],
+[Scoring - Sectors Score],
+[Scoring - Sectors],
+[Scoring - Yearly Plastic Purch (USD)],
+[Scoring - Yearly Plastic Purch Score],
+[Scoring - Forecast Accuracy Score],
+[Scoring - Forecast Accuracy],
+[Scoring - Profitability Score],
+"Scoring - By Customer Name - Product Lines Count",
+"Scoring - By Customer Name - Product Lines Count Score",
+"Scoring - By Customer Name - Sectors Count",
+"Scoring - By Customer Name - Sectors Count Score",
+"Scoring - By Customer Name - Business Unit Count",
+"Scoring - By Customer Name - Business Unit Count Score",
+"Scoring - By Customer Name - YearlySales_P",
+"Scoring - By Customer Name - YearlySales_P Score",
+"Scoring - By Customer Name - Budget Accuracy P",
+"Scoring - By Customer Name - Budget Accuracy P Score",
+"Scoring - By Customer Name - Strategic Products Count",
+"Scoring - By Customer Name - Strategic Products Count Score",
+"Scoring - By Customer Name - Avg Due Days",
+"Scoring - By Customer Name - Avg Due Days Score",
+"Scoring - By Customer Name - COP_P",
+"Scoring - By Customer Name - COP_P Score",
+"Scoring - By Chain Name - Product Lines Count",
+"Scoring - By Chain Name - Product Lines Count Score",
+"Scoring - By Chain Name - Sectors Count",
+"Scoring - By Chain Name - Sectors Count Score",
+"Scoring - By Chain Name - Business Unit Count",
+"Scoring - By Chain Name - Business Unit Count Score",
+"Scoring - By Chain Name - YearlySales_P",
+"Scoring - By Chain Name - YearlySales_P Score",
+"Scoring - By Chain Name - Budget Accuracy P",
+"Scoring - By Chain Name - Budget Accuracy P Score",
+"Scoring - By Chain Name - Strategic Products Count",
+"Scoring - By Chain Name - Strategic Products Count Score",
+"Scoring - By Chain Name - Avg Due Days",
+"Scoring - By Chain Name - Avg Due Days Score",
+"Scoring - By Chain Name - COP_P",
+"Scoring - By Chain Name - COP_P Score",
+"Scoring - By Customer Name - Profitability Score",
+"Scoring - By Chain Name - Profitability Score",
+"Scoring - By Customer Name - Price_Q",
+"Scoring - By Customer Name - Price_Q Score",
+"Scoring - By Chain Name - Price_Q",
+"Scoring - By Chain Name - Price_Q Score",
+
+    "Scoring - BY NAME - Additional Growth Score",
+    "Scoring - BY NAME - Customer Insurance Provider Score",
+    "Scoring - BY NAME - Customer Volume Score",
+    "Scoring - BY NAME - Geog. Proximity Score",
+    "Scoring - BY NAME - Joint Product Score",
+    "Scoring - BY NAME - Market Dominnace Score",
+    "Scoring - BY NAME - Market Expansion Plan Score",
+    "Scoring - BY NAME - Net Weight % (BU) Score",
+    "Scoring - BY NAME - Net Weight % (Division) Score",
+    "Scoring - BY NAME - Payement Term Score",
+    "Scoring - BY NAME - Product Widening Score",
+    "Scoring - BY NAME - Purchase Behavior Score",
+    "Scoring - BY NAME - Multinational Score",
+    "Scoring - BY NAME - Relationship Score",
+    "Scoring - BY NAME - Business History Score",
+    
+    
+    "Scoring - BY CHAIN - Additional Growth Score",
+    "Scoring - BY CHAIN - Customer Insurance Provider Score",
+    "Scoring - BY CHAIN - Customer Volume Score",
+    "Scoring - BY CHAIN - Geog. Proximity Score",
+    "Scoring - BY CHAIN - Joint Product Score",
+    "Scoring - BY CHAIN - Market Dominnace Score",
+    "Scoring - BY CHAIN - Market Expansion Plan Score",
+    "Scoring - BY CHAIN - Net Weight % (BU) Score",
+    "Scoring - BY CHAIN - Net Weight % (Division) Score",
+    "Scoring - BY CHAIN - Payement Term Score",
+    "Scoring - BY CHAIN - Product Widening Score",
+    "Scoring - BY CHAIN - Purchase Behavior Score",
+    "Scoring - BY CHAIN - Multinational Score",
+    "Scoring - BY CHAIN - Relationship Score",
+    "Scoring - BY CHAIN - Business History Score", 
+ 
+[Scoring - Multinational Score] 
+               + [Scoring - Purchase Behavior Score]
+                              + [Scoring - Relationship Score] 
+                                             + [Scoring - Business History Score] as [Company Profile Score],
+                                             
+                                             
+  
+  
+[Scoring - Sectors Score]
+               +[Scoring - Yearly Plastic Purch Score]
+                              +[Scoring - Product Line Score]
+                                  + [Scoring - IFP BUs Score] 
+                                                              + [Scoring - Price Quality Ratio Score]
+                                                                  + [Scoring - Market Dominnace Score] 
+                                                                         + [Scoring -  Strategic Produts Score]
+                                  as [Company Sectors Score],
+
+[Scoring - Joint Product Score]+
+[Scoring - Product Widening Score]  as [Comapany Product Dev and Innovation Score],
+
+
+[Scoring - Geog. Proximity Score] + 
+[Scoring - Market Expansion Plan Score] as [Company Geographical Scope Score] ,
+
+
+[Scoring - Additional Growth Score]+
+               [Scoring - COP % (Cust) Score]+
+                              [Scoring - Customer Insurance Provider Score]+
+                                             [Scoring - Customer Volume Score]+
+                                                            [Scoring - Net Weight % (BU) Score]+
+                                                                           [Scoring - Net Weight % (Division) Score]+
+                                                                                          [Scoring - Overdue Avg. Score]+
+                                                                                                         [Scoring - Payement Term Score] +
+                              																							[Scoring - Forecast Accuracy Score] + 
+                                                                                                                                       [Scoring - Profitability Score] 
+                                                                                                                                                      as [Company Financial Score],
+                                                                                                                                                      
+
+                                             
+ ////////////////////////////// By Customer Name ////////////////////////////////////                                            
+  
+  if(isnull("Scoring - BY NAME - Multinational Score"),0,"Scoring - BY NAME - Multinational Score") 
+  + if(isnull("Scoring - BY NAME - Purchase Behavior Score"),0,"Scoring - BY NAME - Purchase Behavior Score")
+  + if(isnull("Scoring - BY NAME - Relationship Score"),0,"Scoring - BY NAME - Relationship Score")
+  + if(isnull("Scoring - BY NAME - Business History Score"),0,"Scoring - BY NAME - Business History Score") 
+                                             
+        as [Company Profile Score - BY NAME], 
+  
+if( isnull("Scoring - By Customer Name - Sectors Count Score") , 0 , "Scoring - By Customer Name - Sectors Count Score")
++[Scoring - Yearly Plastic Purch Score]
++ if( isnull("Scoring - By Customer Name - Product Lines Count Score"),0,"Scoring - By Customer Name - Product Lines Count Score")
++ if( isnull("Scoring - By Customer Name - Business Unit Count Score" ),0,"Scoring - By Customer Name - Business Unit Count Score")
++ if( isnull("Scoring - By Customer Name - Price_Q Score" ),0,"Scoring - By Customer Name - Price_Q Score")     
++ if(isnull("Scoring - BY NAME - Market Dominnace Score"),0,"Scoring - BY NAME - Market Dominnace Score")
++ if(isnull("Scoring - By Customer Name - Strategic Products Count Score"),0,"Scoring - By Customer Name - Strategic Products Count Score")
+
+		as [Company Sectors Score - BY NAME],
+
+if(isnull("Scoring - BY NAME - Joint Product Score"),0,"Scoring - BY NAME - Joint Product Score")+
+if(isnull("Scoring - BY NAME - Product Widening Score"),0,"Scoring - BY NAME - Product Widening Score")
+		
+        as [Comapany Product Dev and Innovation Score - BY NAME],
+
+
+if(isnull("Scoring - BY NAME - Geog. Proximity Score"),0,"Scoring - BY NAME - Geog. Proximity Score")+
+if(isnull("Scoring - BY NAME - Market Expansion Plan Score"),0,"Scoring - BY NAME - Market Expansion Plan Score")
+
+		as [Company Geographical Scope Score - BY NAME] ,
+
+
+if(isnull("Scoring - BY NAME - Additional Growth Score"),0,"Scoring - BY NAME - Additional Growth Score")+
+if(isnull("Scoring - By Customer Name - COP_P Score"),0,"Scoring - By Customer Name - COP_P Score")+
+if(isnull("Scoring - BY NAME - Customer Insurance Provider Score"),0,"Scoring - BY NAME - Customer Insurance Provider Score")+
+if(isnull("Scoring - By Customer Name - YearlySales_P Score"),0,"Scoring - By Customer Name - YearlySales_P Score") +
+if(isnull("Scoring - BY NAME - Net Weight % (BU) Score"),0,"Scoring - BY NAME - Net Weight % (BU) Score") +
+if(isnull("Scoring - BY NAME - Net Weight % (Division) Score"),0,"Scoring - BY NAME - Net Weight % (Division) Score")+
+if(isnull("Scoring - By Customer Name - Avg Due Days Score"),0,"Scoring - By Customer Name - Avg Due Days Score")+
+if(isnull("Scoring - BY NAME - Payement Term Score"),0,"Scoring - BY NAME - Payement Term Score") +
+if(isnull("Scoring - By Customer Name - Budget Accuracy P Score"),0,"Scoring - By Customer Name - Budget Accuracy P Score") +   
+if(isnull("Scoring - By Customer Name - Profitability Score"),0,"Scoring - By Customer Name - Profitability Score") 
+                                
+                          as [Company Financial Score - BY NAME] ,                                                                                                                                                    
+                                                                                                                                                      
+ ////////////////////////////// By Chain ////////////////////////////////////                                            
+  
+  if(isnull("Scoring - BY CHAIN - Multinational Score"),0,"Scoring - BY CHAIN - Multinational Score") 
+  + if(isnull("Scoring - BY CHAIN - Purchase Behavior Score"),0,"Scoring - BY CHAIN - Purchase Behavior Score")
+  + if(isnull("Scoring - BY CHAIN - Relationship Score"),0,"Scoring - BY CHAIN - Relationship Score")
+  + if(isnull("Scoring - BY CHAIN - Business History Score"),0,"Scoring - BY CHAIN - Business History Score") 
+                                             
+        as [Company Profile Score - BY CHAIN], 
+  
+if( isnull("Scoring - By Chain Name - Sectors Count Score") , 0 , "Scoring - By Chain Name - Sectors Count Score")
++[Scoring - Yearly Plastic Purch Score]
++ if( isnull("Scoring - By Chain Name - Product Lines Count Score"),0,"Scoring - By Chain Name - Product Lines Count Score")
++ if( isnull("Scoring - By Chain Name - Business Unit Count Score" ),0,"Scoring - By Chain Name - Business Unit Count Score")
++ if( isnull("Scoring - By Chain Name - Price_Q Score" ),0,"Scoring - By Chain Name - Price_Q Score")     
++ if(isnull("Scoring - BY CHAIN - Market Dominnace Score"),0,"Scoring - BY CHAIN - Market Dominnace Score")
++ if(isnull("Scoring - By Chain Name - Strategic Products Count Score"),0,"Scoring - By Chain Name - Strategic Products Count Score")
+
+		as [Company Sectors Score - BY CHAIN],
+
+if(isnull("Scoring - BY CHAIN - Joint Product Score"),0,"Scoring - BY CHAIN - Joint Product Score")+
+if(isnull("Scoring - BY CHAIN - Product Widening Score"),0,"Scoring - BY CHAIN - Product Widening Score")
+		
+        as [Comapany Product Dev and Innovation Score - BY CHAIN],
+
+
+if(isnull("Scoring - BY CHAIN - Geog. Proximity Score"),0,"Scoring - BY CHAIN - Geog. Proximity Score") + 
+if(isnull("Scoring - BY CHAIN - Market Expansion Plan Score"),0,"Scoring - BY CHAIN - Market Expansion Plan Score")
+
+		as [Company Geographical Scope Score - BY CHAIN] ,
+
+
+if(isnull("Scoring - BY CHAIN - Additional Growth Score"),0,"Scoring - BY CHAIN - Additional Growth Score")+
+if(isnull("Scoring - By Chain Name - COP_P Score"),0,"Scoring - By Chain Name - COP_P Score")+
+if(isnull("Scoring - BY CHAIN - Customer Insurance Provider Score"),0,"Scoring - BY CHAIN - Customer Insurance Provider Score")+
+if(isnull("Scoring - By Chain Name - YearlySales_P Score"),0,"Scoring - By Chain Name - YearlySales_P Score") +
+if(isnull("Scoring - BY CHAIN - Net Weight % (BU) Score"),0,"Scoring - BY CHAIN - Net Weight % (BU) Score") +
+if(isnull("Scoring - BY CHAIN - Net Weight % (Division) Score"),0,"Scoring - BY CHAIN - Net Weight % (Division) Score")+
+if(isnull("Scoring - By Chain Name - Avg Due Days Score"),0,"Scoring - By Chain Name - Avg Due Days Score")+
+if(isnull("Scoring - BY CHAIN - Payement Term Score"),0,"Scoring - BY CHAIN - Payement Term Score") +
+if(isnull("Scoring - By Chain Name - Budget Accuracy P Score"),0,"Scoring - By Chain Name - Budget Accuracy P Score") +   
+if(isnull("Scoring - By Chain Name - Profitability Score"),0,"Scoring - By Chain Name - Profitability Score") 
+                                
+                          as [Company Financial Score - BY CHAIN]
+
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Scoring.qvd]
+(qvd);
+
+
+
+Customer_Scoring:
+NoConcatenate
+
+load *,
+	yEAR([Master Calendar Date Cons]) & '-'& "Order Customer Key Cons" as [ScoringTierKey],  
+    [Company Profile Score] + [Company Sectors Score]  + [Comapany Product Dev and Innovation Score]  +  [Company Geographical Scope Score]   + [Company Financial Score]  as [Scoring - Total Customer Score],
+    [Company Profile Score - BY NAME] + [Company Sectors Score - BY NAME]  + [Comapany Product Dev and Innovation Score - BY NAME]  +  [Company Geographical Scope Score - BY NAME]   + [Company Financial Score - BY NAME]  as [Scoring - Total Customer Score - BY NAME],
+   [Company Profile Score - BY CHAIN] + [Company Sectors Score - BY CHAIN]  + [Comapany Product Dev and Innovation Score - BY CHAIN]  +  [Company Geographical Scope Score - BY CHAIN]   + [Company Financial Score - BY CHAIN]  as [Scoring - Total Customer Score - BY CHAIN]
+                      
+Resident Customer_Scoring_table;
+
+
+
+STORE Customer_Scoring INTO [LIB://Folder_IFP_Admin_Group/QVD/AX2012/Customer_Scoring_table_TEST.qvd];
+
+
+
+//////////////////////////////////// SCORING TIERS AGGRATION AND CALCUALTION ////////////////////////////////////////////////
+
+CusttableName:
+Mapping
+LOAD
+    UppeR("Customer Key") as Key, 
+     Capitalize(Customer)  as Customer
+FROM [lib://Folder_IFP_Admin_Group/QVD/AX2012/Customers.qvd]
+(qvd);
+
+
+CusttableChain:
+Mapping
+LOAD
+    UppeR("Customer Key") as Key, 
+    Capitalize("Customer Chain")  as "Customer Chain"
+FROM [lib://Folder_IFP_Admin_Group/QVD/AX2012/Customers.qvd]
+(qvd);
+ 
+ScoringTEMP1:
+NoConcatenate
+LOAD
+
+	ApplyMap('CusttableName',  UppeR("Order Customer Key Cons"),'NoName') as "Customer Name",	
+    ApplyMap('CusttableChain', UppeR("Order Customer Key Cons"),'NoChain') as "Customer Chain",
+    "Business Unit Key Cons",
+    "Order Customer Key Cons",
+    "Master Calendar Date Cons",
+    Year("Master Calendar Date Cons") as [Scoring Year],
+    Year("Master Calendar Date Cons")-1 as [Scoring Year PY],
+    "Scoring - Total Customer Score", 
+    "Scoring - Total Customer Score - BY NAME",  
+    "Scoring - Total Customer Score - BY CHAIN"
+     
+    
+FROM [lib://Folder_IFP_Admin_Group/QVD/AX2012/Customer_Scoring_table_TEST.qvd]
+(qvd);
+
+
+Aggregation:
+Mapping
+LOAD
+
+UppeR([Scoring Year] & '-' & "Customer Name"), 
+    Avg("Scoring - Total Customer Score - BY NAME") as  AvgScoreByName
+ 
+Resident ScoringTEMP1 
+	Group by [Scoring Year] & '-' & "Customer Name";
+    
+    
+Aggregation2:
+Mapping
+LOAD
+
+UppeR([Scoring Year] & '-' & "Customer Chain"),
+    Avg("Scoring - Total Customer Score - BY CHAIN") as  AvgScoreByChain
+ 
+Resident ScoringTEMP1 
+	Group by 	[Scoring Year] & '-' & "Customer Chain";
+    
+    
+ScoringTempToWorkOn:
+NoConcatenate
+
+Load  
+	"Customer Name",
+    "Customer Chain",
+    "Business Unit Key Cons",
+    "Order Customer Key Cons",
+    "Master Calendar Date Cons", 
+    "Scoring - Total Customer Score", 
+    ApplyMap('Aggregation',  UppeR([Scoring Year] & '-' & "Customer Name"),'NoName')   as "Scoring - Total Customer Score - BY NAME",  
+    ApplyMap('Aggregation2',  UppeR([Scoring Year] & '-' & "Customer Chain"),'NoName')   as "Scoring - Total Customer Score - BY CHAIN"
+    
+Resident ScoringTEMP1; 
+DROP Table ScoringTEMP1;
+
+
+ScoringTEMP:
+NoConcatenate
+LOAD
+    "Business Unit Key Cons",
+    "Order Customer Key Cons",
+    "Master Calendar Date Cons",
+    "Customer Name",
+    "Customer Chain",
+    Year("Master Calendar Date Cons") as [Scoring Year],
+    Year("Master Calendar Date Cons")-1 as [Scoring Year PY],
+    "Scoring - Total Customer Score",
+    If("Scoring - Total Customer Score" >= 76 , 'Platinum' ,
+    			if( "Scoring - Total Customer Score" >= 51 , 'Gold' , 
+                	if ("Scoring - Total Customer Score" >= 26 , 'Silver' , 'Bronze'))) as "Scoring - Total Customer Score Tier",
+    
+    "Scoring - Total Customer Score - BY NAME", 
+     If("Scoring - Total Customer Score - BY NAME" >= 76 , 'Platinum' , 
+     	if( "Scoring - Total Customer Score - BY NAME" >= 51 and  "Scoring - Total Customer Score - BY NAME" < 76, 'Gold' , 
+        		if ("Scoring - Total Customer Score - BY NAME" >= 26 , 'Silver' , 'Bronze'))) as "Scoring - Total Customer Score - BY NAME Tier",
+    
+    "Scoring - Total Customer Score - BY CHAIN",
+     If("Scoring - Total Customer Score - BY CHAIN" >= 76 , 'Platinum' , 
+     		if( "Scoring - Total Customer Score - BY CHAIN" >= 51 , 'Gold' , 
+            		if ("Scoring - Total Customer Score - BY CHAIN" >= 26 , 'Silver' , 'Bronze'))) as "Scoring - Total Customer Score - BY CHAIN Tier"
+    
+  Resident ScoringTempToWorkOn;  
+  
+
+ScoringMapping:
+Mapping
+Load 
+	[Scoring Year] & "Order Customer Key Cons" as Key,
+    "Scoring - Total Customer Score Tier"
+  Resident ScoringTEMP;
+   
+  
+ScoringMappingNAME:
+Mapping
+Load 
+	[Scoring Year] & "Customer Name" as Key,
+    "Scoring - Total Customer Score - BY NAME Tier"
+  Resident ScoringTEMP;
+  
+  
+ScoringMappingCHAIN:
+Mapping
+Load 
+	[Scoring Year] & "Customer Chain" as Key,
+    "Scoring - Total Customer Score - BY CHAIN Tier"
+  Resident ScoringTEMP;
+  
+   
+  
+ FinalScoringTiers:
+ NoConcatenate
+ 	Load 
+    	
+        [Scoring Year] & '-'& "Order Customer Key Cons" as [ScoringTierKey],  
+        "Scoring - Total Customer Score Tier" as "Scoring - Total Customer Score Tier CY", 
+        ApplyMap('ScoringMapping',[Scoring Year PY]& "Order Customer Key Cons",'NoTier') as "Scoring - Total Customer Score Tier LY",
+         
+        
+        "Scoring - Total Customer Score - BY NAME Tier" as "Scoring - Total Customer Score - BY NAME Tier CY",
+        ApplyMap('ScoringMappingNAME',[Scoring Year PY]& "Customer Name",'NoTier') as "Scoring - Total Customer Score - BY NAME Tier LY",
+        
+        
+        "Scoring - Total Customer Score - BY CHAIN Tier" as "Scoring - Total Customer Score - BY CHAIN Tier - CY",
+        ApplyMap('ScoringMappingCHAIN',[Scoring Year PY]& "Customer Chain",'NoTier') as "Scoring - Total Customer Score - BY CHAIN Tier LY"
+ 
+ Resident ScoringTEMP;
+ 
+ 
+ 
+ FinalScoringTiersInoivcesLink:
+ NoConcatenate
+ 	Load 
+    	
+        [Scoring Year] & '-'& "Order Customer Key Cons" as [ScoringTierKeyInvoicing],  
+        "Scoring - Total Customer Score Tier" as "Scoring - Total Customer Score Tier CY Invoicing", 
+        ApplyMap('ScoringMapping',[Scoring Year PY]& "Order Customer Key Cons",'NoTier') as "Scoring - Total Customer Score Tier LY Invoicing",
+          
+        
+        "Scoring - Total Customer Score - BY NAME Tier" as "Scoring - Total Customer Score - BY NAME Tier CY Invoicing",
+        ApplyMap('ScoringMappingNAME',[Scoring Year PY]& "Customer Name",'NoTier') as "Scoring - Total Customer Score - BY NAME Tier LY Invoicing",
+        
+        
+        "Scoring - Total Customer Score - BY CHAIN Tier" as "Scoring - Total Customer Score - BY CHAIN Tier - CY Invoicing",
+        ApplyMap('ScoringMappingCHAIN',[Scoring Year PY]& "Customer Chain",'NoTier') as "Scoring - Total Customer Score - BY CHAIN Tier LY Invoicing"
+ 
+ Resident ScoringTEMP;
+    
+    
+ DROP table ScoringTEMP;
+ 
+ Drop table ScoringTempToWorkOn;
+    
+ 
+//////////////////////////////////// END ////////////////////////////////////////////////
+
+ 
+ 
+Customer_Scoring_Consolidated:
+NoConcatenate
+	Load 
+    	[Business Unit Key Cons] ,
+        [Order Customer Key Cons] ,
+        [Master Calendar Date Cons],
+        [Scoring - Total Customer Score]
+      Resident Customer_Scoring;
+      
+STORE Customer_Scoring_Consolidated INTO [LIB://Folder_IFP_Admin_Group/QVD/AX2012/Customer_Scoring_Consolidated.qvd];
+DROP TABLE Customer_Scoring_Consolidated; 
+
+
+
+Drop Table Customer_Scoring_table;
+
+// Ageing ******************************************************************************************************************************************
+
+PTDays:
+Mapping
+LOAD
+    Upper("Customer Key") as Key,
+    "Customer Payment Terms Number Of Days"
+FROM [lib://Folder_IFP_Admin_Group/QVD/AX2012/Customers.qvd]
+(qvd); 
+
+// Ageing ******************************************************************************************************************************************
+
+Aging:
+NoConcatenate
+Load
+Upper("Order Customer Key") as [Customer Key],
+Upper([Sales Shared Key]) as [Aging Line Key],
+[0-30 USD],
+[31-60 USD],
+[61-90 USD],
+[91-120 USD],
+[121-150 USD],
+[151-180 USD],
+[181-210 USD], 
+[211-240 USD], 
+[241-270 USD], 
+[271-300 USD], 
+[301-330 USD], 
+[331-360 USD], 
+[Over 180 Days USD],
+[Over 90 Days USD],
+[Over 120 Days USD],
+[Over 150 Days USD],
+[NET BALANCE USD],
+[NET BALANCE USD] - ([0-30 USD] + [31-60 USD] + [61-90 USD] + [91-120 USD] + [121-150 USD] + [151-180 USD] + [181-210 USD] + [211-240 USD] + [241-270 USD] + [271-300 USD] + [301-330 USD] + [331-360 USD]) as [Over 360 Days USD],
+
+ApplyMap('PTDays',Upper("Order Customer Key"),0)    as [PT Num Of Days]
+
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/CustomerAging.qvd]
+(qvd);
+
+
+AgingFinal:
+NoConcatenate
+Load 
+[Aging Line Key],
+[0-30 USD],
+[31-60 USD],
+[61-90 USD],
+[91-120 USD],
+[121-150 USD],
+[151-180 USD],
+[181-210 USD], 
+[211-240 USD], 
+[241-270 USD], 
+[271-300 USD], 
+[301-330 USD], 
+[331-360 USD], 
+[Over 180 Days USD],
+[Over 90 Days USD],
+[Over 120 Days USD],
+[Over 150 Days USD],
+[Over 360 Days USD],
+[NET BALANCE USD],
+if([PT Num Of Days] = 0 	 , [NET BALANCE USD] , 
+if([PT Num Of Days] <= 30	 , [31-60 USD] + [61-90 USD] + [91-120 USD] + [121-150 USD] + [151-180 USD] + [181-210 USD] + [211-240 USD] + [241-270 USD] + [271-300 USD] + [301-330 USD] + [331-360 USD] + [Over 360 Days USD], 
+if([PT Num Of Days] <= 60 	 , [61-90 USD] + [91-120 USD] + [121-150 USD] + [151-180 USD] + [181-210 USD] + [211-240 USD] + [241-270 USD] + [271-300 USD] + [301-330 USD] + [331-360 USD] + [Over 360 Days USD], 
+if([PT Num Of Days] <= 90 	 , [91-120 USD] + [121-150 USD] + [151-180 USD] + [181-210 USD] + [211-240 USD] + [241-270 USD] + [271-300 USD] + [301-330 USD] + [331-360 USD]  + [Over 360 Days USD], 
+if([PT Num Of Days] <= 120 	 , [121-150 USD] + [151-180 USD] + [181-210 USD] + [211-240 USD] + [241-270 USD] + [271-300 USD] + [301-330 USD] + [331-360 USD]  + [Over 360 Days USD], 
+if([PT Num Of Days] <= 150 	 , [151-180 USD] + [181-210 USD] + [211-240 USD] + [241-270 USD] + [271-300 USD] + [301-330 USD] + [331-360 USD] + [Over 360 Days USD],  
+if([PT Num Of Days] <= 180	 , [181-210 USD] + [211-240 USD] + [241-270 USD] + [271-300 USD] + [301-330 USD] + [331-360 USD]  + [Over 360 Days USD], 
+if([PT Num Of Days] <= 210 	 , [211-240 USD] + [241-270 USD] + [271-300 USD] + [301-330 USD] + [331-360 USD] + [Over 360 Days USD] , 
+if([PT Num Of Days] <= 240 	 , [241-270 USD] + [271-300 USD] + [301-330 USD] + [331-360 USD] + [Over 360 Days USD] , 
+if([PT Num Of Days] <= 270   , [271-300 USD] + [301-330 USD] + [331-360 USD] + [Over 360 Days USD] , 
+if([PT Num Of Days] <= 300 	 , [301-330 USD] + [331-360 USD] + [Over 360 Days USD] , 
+if([PT Num Of Days] <= 330   , [331-360 USD] + [Over 360 Days USD] , 
+if([PT Num Of Days] <= 360   , [Over 360 Days USD], [NET BALANCE USD])))))))))))))  as [Over PT Balance USD]
+Resident Aging;
+
+
+Drop Table Aging;
+
+
+// ***************************************************************************************************************************************************************************************************************
+
+// Collections ***************************************************************************************************************************************************************************************************
+
+Collections:
+NoConcatenate
+Load
+
+Upper([Sales Shared Key]) as [Collections Line Key],
+[Collection Amount USD],
+[Collections Days Interval],
+[Collection Payment Number] 
+
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/CustomerCollections.qvd]
+(qvd);
+
+//***************************************************************************************************************************************************************************************************************
+
+
+
+Doubtfull_Invoices:
+NoConcatenate
+Load
+Upper([Sales Shared Key]) as [Doubtful Invoices Line Key],
+[Doubtful Invoice Number],
+[Doubtful Invoice Approval Status],
+[Doubtful Invoice Legal Action],
+[Doubtful Invoice Receipt Status],
+[Net Doubtful Amount USD],
+[Doubtful Invoice - Legal Amount USD],
+[Doubtful Invoice - Action Plan],
+[Doubtful Invoice - Status],
+[Doubtful Invoice - Accountability] ,
+[Doubtful Invoice - Provision],
+[Doubtful Invoice - Action Deadline] ,
+[Doubtful Invoice - Due Date]
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/CustomerDoutfulInvoices.qvd]
+(qvd);
+
+
+
+CustomersUnmetBudget:
+NoConcatenate
+Load
+
+'Based On Weight' as [Unmet Budget Origin Type],
+UPPER([Business Unit Key]) & '|' & UPPER([Order Customer Key]) & '|' & UPPER([Item Key]) & '|' & UPPER(Num([Master Calendar Date])) & '|MT' as  [Unmet Budget Line Key],
+[Unmet Budget - Invoiced Net Weight],
+[Unmet Budget - Budget Net Weight],
+[Unmet Budget - Missed Net Weight],
+[Unmet Budget - Invoiced Net Sales USD],
+[Unmet Budget - Budget Net Sales USD],
+[Unmet Budget - Missed COP USD],
+[Unmet Budget - Missed Net Sales USD],
+[Unmet Budget - Budget Achieved Percentage],
+Capitalize([Unmet Budget - Lost Reason ID]) as [Unmet Budget - Lost Reason],
+Capitalize([Unmet Budget - Lost Reason Category]) as [Unmet Budget - Lost Reason Category],
+Capitalize("Unmet Budget - Is Reason Approved") as [Unmet Budget - Is Reason Approved]
+
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/CustomersUnmetBudget.qvd]
+(qvd) where Num([Unmet Budget - Budget Achieved Percentage]) < 0.9 ; 
+
+
+Concatenate(CustomersUnmetBudget)
+Load
+'Based On Net Sales' as [Unmet Budget Origin Type],
+UPPER([Business Unit Key]) & '|' & UPPER([Order Customer Key]) & '|' & UPPER([Item Key]) & '|' & UPPER(Num([Master Calendar Date])) & '|NS' as  [Unmet Budget Line Key],
+[Unmet Budget - Invoiced Net Weight],
+[Unmet Budget - Budget Net Weight],
+[Unmet Budget - Missed Net Weight],
+[Unmet Budget - Invoiced Net Sales USD],
+[Unmet Budget - Budget Net Sales USD],
+[Unmet Budget - Missed COP USD] ,
+[Unmet Budget - Missed Net Sales USD] ,
+[Unmet Budget - Budget Achieved Percentage] ,
+Capitalize([Unmet Budget - Lost Reason ID]) as [Unmet Budget - Lost Reason],
+Capitalize([Unmet Budget - Lost Reason Category]) as [Unmet Budget - Lost Reason Category],
+Capitalize("Unmet Budget - Is Reason Approved") as [Unmet Budget - Is Reason Approved]
+
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/CustomersUnmetBudget.qvd]
+(qvd) where Num([Unmet Budget - Budget Achieved Percentage - Net Sales]) < 0.9 ; 
+
+
+CostVariance:
+NoConcatenate
+LOAD
+    "Business Unit Key"  & '|' & "Master Calendar Date" as MonthlyVariancesTableKey,    
+    "Conversion Variance USD",
+    "Material Variance USD",
+    "IR Variance USD",
+    "Other Variance USD",
+    "Quarantine Variance USD"
+FROM [lib://Folder_IFP_Admin_Group/QVD\AX2012\MonthlyVariancesTable.qvd]
+(qvd);
+
+
+AverageSalesAmounts:
+NoConcatenate
+  Load 
+  Upper(LineKey) as [GrossSalesDSOKey], 
+  "Invoice Gross Amount USD 12 Month"
+  
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/FinalCustomersAggregate.qvd]
+(qvd);
+
+ 
+  
+BalanceByInvoiceMonthly:
+ NoConcatenate
+LOAD
+    "Sales Shared Key" as [BalanceByInvoiceMonthlyKey],
+    "Overdue Balance by Invoice Monthly - USD",
+    "Overdue Balance Monthly Invoice",
+    [Balanace By Invoice Monthly Days From Due],
+    "Balance by Invoice Overdue Monthly - Amount USD (0-30)",
+    "Balance by Invoice Overdue Monthly - Amount USD (31-60)",
+    "Balance by Invoice Overdue Monthly - Amount USD (61-90)",
+    "Balance by Invoice Overdue Monthly - Amount USD (91-120)",
+    "Balance by Invoice Overdue Monthly - Amount USD (121-150)",
+    "Balance by Invoice Overdue Monthly - Amount USD (Over 150)",
+    "Balance by Invoice Overdue Monthly - Amount USD (Over 120)",
+    "Balance by Invoice Overdue Monthly - Amount USD (Over 180)",
+    "Balance by Invoice Overdue Monthly - Amount USD (Over 360)"
+FROM [lib://Folder_IFP_Admin_Group/QVD\AX2012\BalanceByInvoiceMonthly.qvd]
+(qvd);
+
+
+
+
+CustomerCreditCeiling:
+NoConcatenate 
+LOAD 
+    Upper("Sales Shared Key") as [Customer Credit Ceiling Key], 
+    "Customer Credit Limit USD" as [Customer Credit Ceiling USD]
+FROM [lib://Folder_IFP_Admin_Group/QVD\AX2012\CustomerCreditCeiling.qvd]
+(qvd);
+
+
+
+
+
+End Sub

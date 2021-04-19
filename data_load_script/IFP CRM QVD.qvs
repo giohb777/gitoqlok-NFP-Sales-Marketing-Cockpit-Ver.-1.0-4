@@ -1,0 +1,261 @@
+///$tab IFP CRM QVD
+Sub IFP_CRM_QVD
+
+Leads_Mapping_SourceDetails:
+Mapping
+
+LOAD
+
+   Upper(Trim( ENTITYID &'|'& DATAAREAID))  as [Lead Key],
+    SOURCETYPEDETAILS
+FROM [lib://Folder_IFP_Admin_Group/QVD/AX2012/LeadPRospectSources.qvd]
+(qvd) where ENTITYTYPE = 'Lead';
+
+
+Leads_Mapping_SourceType:
+Mapping
+
+LOAD
+
+  Upper(Trim( ENTITYID &'|'& DATAAREAID))   as [Lead Key],
+    SOURCETYPEID
+FROM [lib://Folder_IFP_Admin_Group/QVD/AX2012/LeadPRospectSources.qvd]
+(qvd) where ENTITYTYPE = 'Lead';
+
+
+Prospects_Mapping_SourceDetails:
+Mapping
+
+LOAD
+
+   Upper(Trim( ENTITYID &'|'& DATAAREAID))  as [Prospect Key],
+    SOURCETYPEDETAILS
+FROM [lib://Folder_IFP_Admin_Group/QVD/AX2012/LeadPRospectSources.qvd]
+(qvd) where ENTITYTYPE = 'Prospect';
+
+
+Prospects_Mapping_SourceType:
+Mapping
+
+LOAD
+
+  Upper(Trim( ENTITYID &'|'& DATAAREAID))   as [Prospect Key],
+    SOURCETYPEID
+FROM [lib://Folder_IFP_Admin_Group/QVD/AX2012/LeadPRospectSources.qvd]
+(qvd) where ENTITYTYPE = 'Prospect';
+
+Leads:
+NoConcatenate
+Load 
+	   [Lead Key]
+ 	  ,[Lead Number]
+      ,[Lead Name]
+      ,[Lead Status]
+      ,[Lead Subject]
+      ,[Lead Line Of Business]
+      ,[Lead Memo]
+      ,[Lead Comments]
+      ,[Lead Reason]
+      ,[LS Activity Link]
+      ,[Lead Opened By]
+	  ,[Lead Owned By] 
+      ,[Lead Customer Key] 
+      
+//       ,[Lead Source Details Key]
+//       ,[Lead Source Type ID]     
+      
+      ,Capitalize(ApplyMap('Leads_Mapping_SourceDetails',[Lead Key],'No Source Details')) as [Lead Source Details Key]
+      ,Capitalize(ApplyMap('Leads_Mapping_SourceType',[Lead Key],'No Source Type') )as [Lead Source Type ID]
+      
+      ,[Lead Business Uniy Key]
+
+From [LIB://Folder_IFP_Admin_Group/QVD/AX2012/CRMSALES-LeadsDIM.qvd]
+(qvd); 
+
+
+Prospects:
+NoConcatenate
+Load 
+	   [Prospect Key]
+ 	  ,[Prospect Number]
+      ,[Prospect Name]
+      ,[Prospect Status]
+      ,[Prospect Subject]
+      ,[Prospect Line Of Business]
+      ,[Prospect Memo]
+      ,[Prospect Reason]
+      ,[PS Activity Link]
+      ,[Prospect Opened By]
+	  ,[Prospect Owned By]   
+      ,[Prospect Customer Key]
+       ,Capitalize(ApplyMap('Prospects_Mapping_SourceDetails',[Prospect Key],'No Source Details')) as [Prospect Source Details]
+      ,Capitalize(ApplyMap('Prospects_Mapping_SourceType',[Prospect Key],'No Source Type')) as [Prospect Source Type]
+      
+
+From [LIB://Folder_IFP_Admin_Group/QVD/AX2012/CRMSALES-ProspectsDIM.qvd]
+(qvd); 
+
+//Invoicing Related to Prospects
+
+Invoices_Prospects:
+NoConcatenate
+Load 
+            [Order Customer Key] as [Prospect Customer Key] ,
+            Sum([Invoice MT]) as  [Invoice Prospect MT] 
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Invoices_Merged.qvd]
+(qvd) Group by [Order Customer Key];
+
+Invoices_Prospects:
+Concatenate
+Load 
+            [Order Customer Key] as [Prospect Customer Key] ,
+            Sum([Invoice MT]) as  [Invoice Prospect MT] 
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Invoices_Affiliates.qvd]
+(qvd) Group by [Order Customer Key];
+
+////////////////////////////////////////////////////////////////////
+
+
+Addresses:
+NoConcatenate
+Load 
+		[AddressKey] as [CRM Address Key], 
+        [Address Party ID],
+        [Country ID],
+        [Address Country Name],
+        [Address State],
+        [Address County],
+        [Address City]
+        
+From [LIB://Folder_IFP_Admin_Group/QVD/AX2012/CRMSALES-AddressesDIM.qvd]
+(qvd); 
+
+
+
+CRMBusinessSectors:
+NoConcatenate
+Load
+	[BusinessSectoryKey] as [CRM BusinessSectorKey],
+    [Business Sector ID],
+    [Business Sector]
+    
+From [LIB://Folder_IFP_Admin_Group/QVD/AX2012/CRMSALES-BusinessSectorsDIM.qvd]
+(qvd); 
+
+
+CRMBuildingBlocks:
+NoConcatenate
+Load 
+		[BBLineKey] as [CRM BBLineKey],
+        [Building Block] as [CRM Building Block]
+From  [LIB://Folder_IFP_Admin_Group/QVD/AX2012/CRMSALES-BuildingBlocksDIM.qvd]
+(qvd); 
+
+
+CRMSalesUnit:
+NoConcatenate
+Load 
+	 [SalesUnitKey] as [CRM SalesUnitKey],
+	 [Sales Unit]
+From  [LIB://Folder_IFP_Admin_Group/QVD/AX2012/CRMSALES-SalesUnitDIM.qvd]
+(qvd); 
+
+
+SourceDetails:
+NoConcatenate
+Load
+	   [SourceDetailsKey],
+       Capitalize([Source Details]) as [Source Details]
+From  [LIB://Folder_IFP_Admin_Group/QVD/AX2012/CRMSALES-SourceDetailsDIM.qvd]
+(qvd); 
+
+
+SourcesType:
+NoConcatenate
+Load
+	 [SourceTypeKey],
+    Capitalize( [Source Type]) as [Source Type]
+From  [LIB://Folder_IFP_Admin_Group/QVD/AX2012/CRMSALES-SourcesTypeDIM.qvd]
+(qvd); 
+
+
+LeadsFacts:
+NoConcatenate
+Load [Lead Count],
+	 [Lead Line Key]
+From [LIB://Folder_IFP_Admin_Group/QVD/AX2012/CRMSALES-LeadsFacts.qvd]
+(qvd); 
+
+
+ProspectsFacts:
+NoConcatenate
+Load  
+	  [Prospect Count],
+      [Prospect MQP Count],
+	  [Prospect Won Count],
+	  [Prospect Line Key]
+From [LIB://Folder_IFP_Admin_Group/QVD/AX2012/CRMSALES-ProspectsFacts.qvd]
+(qvd); 
+
+
+ActivityFacts:
+NoConcatenate
+Load [Activity Count],
+	 [Activity Line Key]
+From [LIB://Folder_IFP_Admin_Group/QVD/AX2012/CRMSALES-Activities.qvd]
+(qvd); 
+
+Activity:
+NoConcatenate
+Load 
+            
+   [Activity Entity Name],
+   [Activity Number],
+   [Activity Entity],
+   [Activity Entity Type], 
+   [Activity Key] 
+  ,[Activity Details]
+  ,[Activity Category]  
+  ,[Activity Closed]
+  ,[ActivityParentTypeKey]
+  ,[Activity Percentage Completed]
+  ,[Activity Phase]
+  ,[Activity Priority]
+  ,[Activity Purpose]
+  ,[Activity Responsibility]
+  ,[Activity Status]
+  ,[Activity Task Time type]   
+  ,[Activity Type] 
+
+From [LIB://Folder_IFP_Admin_Group/QVD/AX2012/CRMSALES-ActivityDIM.qvd]
+(qvd);  
+
+
+SMMContacts:
+NoConcatenate
+LOAD
+    Upper("SMM Entity Key") as "SMM Entity Key",
+    "SMM Contact Title",
+    "SMM Contact First Name",
+    "SMM Contact Middle Name",
+    "SMM Contact Last Name",
+    "SMM Contact Email"
+FROM [lib://Folder_IFP_Admin_Group/QVD/AX2012/SMMContactDetails.qvd]
+(qvd);
+
+
+SMMCompanySectors:
+NoConcatenate
+LOAD
+    Upper("SMM SEC Entity Key") as "SMM SEC Entity Key",
+    "SMM Company Sector",
+    "SMM Company Industry",
+    "SMM Company Product EndUse",
+    "SMM Company Product EndUse" as "SMM Company Product Packed End / Use",
+    "SMM Company BB",
+    "SMM Company PL"
+FROM [lib://Folder_IFP_Admin_Group/QVD/AX2012/SMMCompanySegments.qvd]
+(qvd); 
+
+
+END Sub

@@ -1,0 +1,57 @@
+///$tab Production
+sub Production
+
+Production_Machines:
+NoConcatenate
+LOAD	
+  UPPER([Machine Key]) as [Machine Key],
+  Machine
+FROM [LIB://Folder_IFP_Admin_Group/QVD/Production/Production_Machines_NEW.qvd]
+(qvd) where Upper([Machine Key]) <> '96K.P03';
+
+
+
+
+Production_Outputs:
+NoConcatenate
+Load
+UPPER([Production Shared Key])&'|'&[Machine Capacity Key] as 	[Production Shared Key],
+ 
+		 [Production Output FG Qty MT]
+		,[Production Output WIP Qty MT]
+		,"HOURS" AS [Production Output Planned Hours]
+        
+From [LIB://Folder_IFP_Admin_Group/QVD/Production/Production_Output_NEW.qvd]
+(qvd) where Upper([Machine Key]) <> '96K.P03';
+
+
+
+Production_Outputs:
+Concatenate
+Load
+UPPER([Production Shared Key])&'|'&[Machine Capacity Key] as 	[Production Shared Key],
+	if([ItemWasteId] = 'WIP',0,[Production Waste Qty MT]*(-1))  as [Production Output FG Qty MT]
+	,if([ItemWasteId] <> 'WIP',0,[Production Waste Qty MT]*(-1))  as [Production Output WIP Qty MT]
+	,[Production Waste Qty MT]
+    
+From [LIB://Folder_IFP_Admin_Group/QVD/Production/Production_Wastes_NEW.qvd]
+(qvd) where Upper([Machine Key]) <> '96K.P03';
+
+ 
+ 
+ 
+Production_Outputs:
+Concatenate
+Load
+	 UPPER(Num(DayStart([Capacity Calendar Date])) & '|' & [Machine Key]) As [Production Shared Key] 
+    ,[Full Day Minutes] / 60 as [Full Day Hours] 
+From [LIB://Folder_IFP_Admin_Group/QVD/Production/Production_Machine_Time_Capacity_NEW.qvd]
+(qvd) where Upper([Machine Key]) <> '96K.P03';
+
+
+
+
+
+
+
+end sub

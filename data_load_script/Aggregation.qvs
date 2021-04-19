@@ -1,0 +1,192 @@
+///$tab Aggregation
+Sub Invoices_Aggregation
+
+ 
+
+InvoiceAggregated:
+LOAD 
+    
+    "Invoice Customer Key" & '|' &  MonthStart("Master Calendar Date") as LineKey,
+    addmonths(MonthStart("Master Calendar Date"), - 1) as LastMonth,
+    "Invoice Customer Key", 
+    "Salesman Key",  
+    MonthStart("Master Calendar Date") as "Master Calendar Date",
+    "Business Unit Key",
+    Sum("Invoice Amount USD") as "Invoice Gross Amount USD"
+FROM [lib://Folder_IFP_Admin_Group/QVD\AX2012\Invoices_Merged.qvd]
+(qvd) 
+GROUP by 
+	"Invoice Customer Key", 
+    "Salesman Key",  
+    MonthStart("Master Calendar Date"),
+    "Business Unit Key";
+    
+    
+    
+    
+InvoicesSummation:
+NoConcatenate
+Load 
+    LineKey, 
+    "Invoice Customer Key", 
+    "Salesman Key",  
+    "Master Calendar Date",
+    "Business Unit Key",
+    "Invoice Gross Amount USD"
+Resident InvoiceAggregated;
+  
+  
+Concatenate(InvoicesSummation)  
+Load 
+    LineKey, 
+    "Invoice Customer Key", 
+    "Salesman Key",  
+    addmonths(MonthStart("Master Calendar Date"),1) as "Master Calendar Date",
+    "Business Unit Key",
+    "Invoice Gross Amount USD"
+Resident InvoiceAggregated;
+
+
+Concatenate(InvoicesSummation)  
+Load 
+    LineKey, 
+    "Invoice Customer Key", 
+    "Salesman Key",  
+    addmonths(MonthStart("Master Calendar Date"),2) as "Master Calendar Date",
+    "Business Unit Key",
+    "Invoice Gross Amount USD"
+Resident InvoiceAggregated;
+  
+  
+  
+  Concatenate(InvoicesSummation)  
+Load 
+    LineKey, 
+    "Invoice Customer Key", 
+    "Salesman Key", 
+    addmonths(MonthStart("Master Calendar Date"),3) as "Master Calendar Date",
+    "Business Unit Key",
+    "Invoice Gross Amount USD"
+Resident InvoiceAggregated;
+  
+  
+  Concatenate(InvoicesSummation)  
+Load 
+    LineKey, 
+    "Invoice Customer Key", 
+    "Salesman Key",  
+    addmonths(MonthStart("Master Calendar Date"),4) as "Master Calendar Date",
+    "Business Unit Key",
+    "Invoice Gross Amount USD"
+Resident InvoiceAggregated;
+  
+  
+  
+  Concatenate(InvoicesSummation)  
+Load 
+    LineKey, 
+    "Invoice Customer Key", 
+    "Salesman Key",  
+    addmonths(MonthStart("Master Calendar Date"),5) as "Master Calendar Date",
+    "Business Unit Key",
+    "Invoice Gross Amount USD"
+Resident InvoiceAggregated;
+  
+  
+  Concatenate(InvoicesSummation)  
+Load 
+    LineKey, 
+    "Invoice Customer Key", 
+    "Salesman Key",  
+    addmonths(MonthStart("Master Calendar Date"),6) as "Master Calendar Date",
+    "Business Unit Key",
+    "Invoice Gross Amount USD"
+Resident InvoiceAggregated;
+  
+  
+  Concatenate(InvoicesSummation)  
+Load 
+    LineKey, 
+    "Invoice Customer Key", 
+    "Salesman Key",  
+    addmonths(MonthStart("Master Calendar Date"),7) as "Master Calendar Date",
+    "Business Unit Key",
+    "Invoice Gross Amount USD"
+Resident InvoiceAggregated;
+  
+  
+  Concatenate(InvoicesSummation)  
+Load 
+    LineKey, 
+    "Invoice Customer Key", 
+    "Salesman Key",  
+    addmonths(MonthStart("Master Calendar Date"),8) as "Master Calendar Date",
+    "Business Unit Key",
+    "Invoice Gross Amount USD"
+Resident InvoiceAggregated;
+  
+  
+  Concatenate(InvoicesSummation)  
+Load 
+    LineKey, 
+    "Invoice Customer Key", 
+    "Salesman Key",  
+    addmonths(MonthStart("Master Calendar Date"),9) as "Master Calendar Date",
+    "Business Unit Key",
+    "Invoice Gross Amount USD"
+Resident InvoiceAggregated;
+  
+  
+  Concatenate(InvoicesSummation)  
+Load 
+    LineKey, 
+    "Invoice Customer Key", 
+    "Salesman Key",  
+    addmonths(MonthStart("Master Calendar Date"),10) as "Master Calendar Date",
+    "Business Unit Key",
+    "Invoice Gross Amount USD"
+Resident InvoiceAggregated;
+
+Concatenate(InvoicesSummation)  
+Load 
+    LineKey, 
+    "Invoice Customer Key", 
+    "Salesman Key",  
+    addmonths(MonthStart("Master Calendar Date"),11) as "Master Calendar Date",
+    "Business Unit Key",
+    "Invoice Gross Amount USD"
+Resident InvoiceAggregated;
+  
+ 
+Drop Table InvoiceAggregated;
+
+
+
+InvoicesSummationFinal:
+NoConcatenate
+Load  
+    
+    "Invoice Customer Key" & '|' & RowNo() as LineKey,
+    "Invoice Customer Key", 
+    "Salesman Key",  
+   	"Master Calendar Date",
+    "Business Unit Key",
+    Sum("Invoice Gross Amount USD") as "Invoice Gross Amount USD 12 Month" 
+Resident InvoicesSummation
+Group by "Invoice Customer Key", 
+    "Salesman Key",  
+   	"Master Calendar Date",
+    "Business Unit Key";
+
+Drop table InvoicesSummation;
+
+
+STORE InvoicesSummationFinal INTO [LIB://Folder_IFP_Admin_Group/QVD/AX2012/FinalCustomersAggregate.qvd];
+DROP TABLE InvoicesSummationFinal; 
+   
+  
+ 
+ 
+ 
+
+END SUB

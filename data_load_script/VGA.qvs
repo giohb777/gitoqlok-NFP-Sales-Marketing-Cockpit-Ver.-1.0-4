@@ -1,0 +1,33 @@
+///$tab VGA
+Sub VGA 
+ 
+ VGA_Fact:
+  NoConcatenate
+  load
+  [Competitor Master ID],
+  country as VGA_country,
+  product_type,
+  quality,
+  VGA_Quality_Score,
+  brand_equity,
+  VGA_BrandEquity_Score,
+  problem_solving_response,
+  VGA_Problem_Solving_Response_Score,
+  timely_delivery,
+  VGA_Timely_Delivery_Score,
+  lead_time,
+  VGA_Lead_Time_Score,
+  customer_relationship,
+  VGA_Customer_Relationship_Score,
+  price,
+  VGA_Price_Score, 
+  market_share_percentage, 
+  payment_facilities,
+  VGA_Payment_Facilities_Score
+    
+  from [lib://Folder_IFP_Admin_Group/QVD\SalePro\mpk_VGA.qvd] (qvd);
+
+
+
+
+end sub

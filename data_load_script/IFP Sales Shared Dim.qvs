@@ -1,0 +1,1045 @@
+///$tab IFP Sales Shared Dim
+Sub IFP_Sales_Shared_Dim_QVD
+
+
+LIB CONNECT TO 'NAPAX-12-PROD-DEV (indevco_georges.raad)';
+
+CusomtersSalesmanMapping:
+Mapping
+LOAD
+    Upper(Trim("Customer Key")) As "Customer Key",
+    UPPER([Alternate Salesman Key]) as [Salesman Key];
+SQL 
+Select
+      Convert(Varchar,'2') + '.' + Convert(Varchar,CUSTTABLE.DATAAREAID) + '.' + Convert(Varchar,CUSTTABLE.ACCOUNTNUM) As [Customer Key],
+      Convert(Varchar,'2') + '.' + '0' + '.' + DIMENSIONS.num + '!' + DIMENSIONS.Description As [Alternate Salesman Key]
+From DBO.CUSTTABLE As CUSTTABLE(nolock)
+	left outer join DBO.DIMENSIONS AS DIMENSIONS(nolock) on dimensions.DATAAREAID = CUSTTABLE.DATAAREAID and custtable.DIMENSION3_ = DIMENSIONS.NUM;
+    
+
+
+Vendors:
+NoConcatenate
+LOAD
+   UPPER( TRIM("Vendor Key")) AS [Vendor Key],
+    "Vendor Account",
+    "Vendor Buyer group",
+    "Vendor Country",
+    left([Vendor Key],5)  & '|' &[Vendor Country] as [Vendor Country For Aggregation],
+    "Vendor Invoice account",
+    "Vendor Main contact",
+    "Vendor Manufacturer Account",
+    "Vendor Manufacturer Name",
+    "Vendor Agent",
+    "Vendor Coordinator",
+    "Vendor Group",
+    "Vendor group Name",
+    "Vendor Invoice Account Name",
+    "Vendor Material Type",
+    "Vendor Name",
+    "Vendor Negotiator",
+    "Vendor purpose",
+    "Vendor RFQ",
+    "Vendor Payment Terms",
+    "Vendor PT Number Of Days",
+    "Vendor PT Description",
+    "Vendor Address",
+    "Vendor Phone",
+    "Vendor Telefax",
+    "Vendor City"
+FROM [lib://Folder_IFP_Admin_Group/QVD\AX2012\PurchasesInventories\Vendors.qvd]
+(qvd);
+
+
+  
+InvoiceStatistics:
+NoConcatenate
+LOAD
+    'Invoice Statistics' as [Invoice Record Type],
+    Upper("Invoice Settlment Key") as [Invoice Settlment Key],
+    [Invoice Settlement Status],   
+    "Invoice Difference Days Document - Last Settlment Date",
+    "Invoice Difference Days Due Date - Last Settlment Date"
+ 
+FROM [lib://Folder_IFP_Admin_Group/QVD\AX2012\InvoiceCollectionStatistics.qvd]
+(qvd);
+  
+  
+InvoiceStatisticsMisc:
+NoConcatenate
+LOAD
+  	
+  	Upper([Invoice Number Misc Key]) as [Invoice Number Misc Key], 
+    [Invoice Settlement Status] as  [Invoice Misc Settlement Status],
+    "Invoice Signed Status" as "Invoice Misc Signed Status",
+    "Invoice Misc Supplier Name",
+    "Invoice Misc Supplier Code",
+    "Invoice Due Status" as "Invoice Misc Due Status"
+ 
+FROM [lib://Folder_IFP_Admin_Group/QVD\AX2012\InvoiceCollectionStatistics.qvd]
+(qvd); 
+
+
+  ItemSegmentMapping:
+Mapping
+LOAD
+    Upper([Item Key]) as [Item Key],
+   [Segment 1 For Aggregation Purchases-Inventories]
+Resident Items;
+
+  
+
+ItemsMapping:
+Mapping
+LOAD
+    "Item Key", 
+    "Item Name" 
+FROM [lib://Folder_IFP_Admin_Group/QVD/AX2012/PurchasesInventories/Items.qvd]
+(qvd);
+
+LIB CONNECT TO 'NAPAX-12-PROD-DEV (indevco_georges.raad)';
+
+  SingleSourceSupplier:
+Mapping
+Load  Upper([Item Key]) as [Item Key] ,  [Single_Source_Item] ;
+SQL 
+SELECT 
+	Convert(Varchar,'2') + '.' + Convert(Varchar,INVENTTABLE.DATAAREAID) + '.' + 'PI' + '.' + Convert(Varchar,INVENTTABLE.ITEMID) As [Item Key],
+	'Single Source Item' AS [Single_Source_Item]
+FROM INVENTTABLE_SINGLESOURCEITEM  INVENTTABLE;
+
+
+BULocalCurrency:
+Mapping
+LOAD
+    "Business Unit Key",
+    "Business Unit Currency"
+FROM [lib://Folder_IFP_Admin_Group/IFP_EXCEL\BU Local Currencies.xlsx]
+(ooxml, embedded labels, table is BUCurrency);
+
+
+
+ 
+ //SalePro Data
+ Sales_Shared_Dimensions:
+  NoConcatenate
+ 
+ load 
+  '2.'  &  [Business Unit Key] as [Business Unit Key],
+[Master Calendar Date Num],
+[Master Calendar Date Num] As [Currency Conversion Rate Date Num],
+[Steep Status],
+[Subsequent Risk],
+Impact,
+[Status],
+[Risk Category],
+[Steep Category],
+[Control Measures],
+[Date Created],
+[Date Updated]
+    
+    from [lib://Folder_IFP_Admin_Group/QVD\SalePro\mpk_Steep.qvd] (qvd);
+ 
+//Production Data
+Sales_Shared_Dimensions:
+Concatenate
+LOAD
+Num(DayStart([Master Calendar Date Key])) As [Master Calendar Date Num],
+Num(DayStart([Master Calendar Date Key])) As "Currency Conversion Rate Date Num",
+UPPER([Production Shared Key])&'|'&[Machine Capacity Key] as 	[Production Shared Key], 
+UPPER([Machine Key]) as [Machine Key],
+ '2.' & UPPER(LEFT( [Machine Capacity Key] , 3 )) AS [Business Unit Key],
+ 'Normal' as [Entity Relationship]
+
+From [LIB://Folder_IFP_Admin_Group/QVD/Production/Production_Output_NEW.qvd]
+(qvd);
+
+
+  
+Sales_Shared_Dimensions:
+Concatenate
+LOAD
+Num(DayStart([Master Calendar Date Key])) As [Master Calendar Date Num],
+Num(DayStart([Master Calendar Date Key])) As "Currency Conversion Rate Date Num",
+UPPER([Production Shared Key])&'|'&[Machine Capacity Key] as 	[Production Shared Key],
+UPPER([Machine Key]) as [Machine Key],
+'2.' & UPPER(LEFT( [Machine Capacity Key] , 3 )) AS [Business Unit Key],
+ 'Normal' as [Entity Relationship]
+
+
+From [LIB://Folder_IFP_Admin_Group/QVD/Production/Production_Wastes_NEW.qvd]
+(qvd);
+
+
+
+Sales_Shared_Dimensions:
+Concatenate
+LOAD
+Num(DayStart([Capacity Calendar Date])) As [Master Calendar Date Num]
+,Num(DayStart([Capacity Calendar Date])) As [Currency Conversion Rate Date Num]
+,UPPER(Num(DayStart([Capacity Calendar Date])) & '|' & [Machine Key]) As [Production Shared Key] 
+,UPPER([Capacity Machine Key])  As [Machine Key]
+,'2.' & UPPER(LEFT( [Capacity Machine Key] , 3 )) AS [Business Unit Key]
+,'Normal' as [Entity Relationship]
+ 
+From [LIB://Folder_IFP_Admin_Group/QVD/Production/Production_Machine_Time_Capacity_NEW.qvd]
+(qvd);
+
+ 
+ 
+//Inventory Data 
+Sales_Shared_Dimensions:
+Concatenate
+LOAD
+'Invoice Lines' as [Measure Group] ,
+upper( [Business Unit Key]) AS  "Business Unit Key",
+UPPER( TRIM("Vendor Key")) AS [Vendor Key],
+upper( [Item Key]) as [Item Key], 
+
+ApplyMap('ItemsMapping',Upper([Item Key]),'') as [Received Item Name],
+ApplyMap('SingleSourceSupplier',upper( [Item Key]),'Not Single Source Item') as [Item Single Source Supplier],
+
+
+left([Vendor Key],5)  & '|' &[Received Currency Code]                 					 as [Received Currency Code For Aggregation],
+ApplyMap('ItemSegmentMapping',Upper(Trim("Item Key")),"Vendor Key")    					 as [Vendor Key Segment For Aggregation],
+ApplyMap('ItemSegmentMapping',Upper(Trim("Item Key")),"Vendor Key") &'.'&  "Vendor Key"  as [Vendor Key Segment For Aggregation 2],
+"Currency Conversion Rate Date Num",
+"Master Calendar Date Num" 
+, if (Upper([Received Currency Code]) =   Upper(ApplyMap('BULocalCurrency',upper([Business Unit Key])))  ,'Local','Foreign') as [Purchases Currency Type],
+[Received Invoice ID],
+[Invent Supplier Grade ID],
+ "Received Amount USD",
+ "Received Amount USD"*3.74795 as [Received Amount SAR]
+
+FROM [lib://Folder_IFP_Admin_Group/QVD\AX2012\PurchasesInventories\Received.qvd]
+(qvd) WHERE  Year("Master Calendar Date Num") > 2017 ;
+  
+ 
+
+ 
+ 
+
+Sales_Shared_Dimensions:
+  Concatenate
+  Load 
+    [Invoice Key],
+    Upper([Invoice Key]) as [Invoice Settlment Key], 
+    Upper( [Business Unit Key] & '|' & [Invoice Number] ) as [Invoice Number Misc Key]
+    
+    ,[Sales Shared Key]
+    ,'Net Sales' As [Sales Type]
+    ,[Sales Source]
+  //   ,[Shipment Key]
+    ,[Order Key]
+    ,UPPER([Invoice Customer Key]) As [Invoice Customer Key]
+    ,UPPER([Order Customer Key]) As [Customer Key]
+    ,UPPER([Order Customer Key]) as "SMM SEC Entity Key"
+    ,[Item Key]
+    ,[Salesman Key]
+    ,[Geographical Mix Key]
+    ,Num(DayStart([Currency Conversion Rate Date])) As [Currency Conversion Rate Date Num]
+    ,Num(DayStart([Master Calendar Date])) As [Master Calendar Date Num]
+    ,[Business Unit Key]
+  //   ,[Purpose Key]
+  //   ,[Payment Term Key]
+    ,[Product Manager Key]
+    ,Upper("Business Unit Key") &'|'& Upper("Order Customer Key") As "Shared Security Key"
+     ,Upper("Business Unit Key") &'|'& Upper("Order Customer Key") & '|' & upper([Item Key]) as [External Item Key]
+  From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Invoices_Merged.qvd]
+  (qvd);
+  /*********************************************************************/
+  /*********************************************************************/
+  
+  /*****Invoices Affiliates*********************************************/
+  /*********************************************************************/
+  Sales_Shared_Dimensions:
+  Concatenate
+  Load 
+    [Invoice Key]
+    ,[Sales Shared Key]
+    ,'Net Sales' As [Sales Type]
+    ,[Sales Source]
+    ,[Order Key]
+    ,UPPER([Order Customer Key]) As [Customer Key]
+    ,UPPER([Invoice Customer Key]) As [Invoice Customer Key]
+    ,UPPER([Order Customer Key]) as "SMM SEC Entity Key"
+    ,[Item Key]
+    ,[Salesman Key]
+    ,[Geographical Mix Key]
+    ,Num(DayStart([Currency Conversion Rate Date])) As [Currency Conversion Rate Date Num]
+    ,Num(DayStart([Master Calendar Date])) As [Master Calendar Date Num]
+    ,[Business Unit Key]
+    ,[Product Manager Key]
+    ,Upper("Business Unit Key") &'|'& Upper("Order Customer Key") As "Shared Security Key"
+     ,Upper("Business Unit Key") &'|'& Upper("Order Customer Key") & '|' & upper([Item Key]) as [External Item Key]
+  From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Invoices_Affiliates.qvd]
+  (qvd);
+  
+  
+  
+  Sales_Shared_Dimensions:
+  Concatenate 
+	LOAD
+   
+   "Invoice Key",
+   'Balance By Invoice' As [Sales Type],
+   "Business Unit Key"
+   ,UPPER([Order Customer Key]) As [Customer Key]
+   ,UPPER([Invoice Customer Key]) As [Invoice Customer Key]
+   ,UPPER([Order Customer Key]) as "SMM SEC Entity Key"
+   ,"Salesman Key",
+   "Sales Shared Key",
+   "Sales Source",
+   Upper("Business Unit Key") &'|'& Upper("Order Customer Key") As "Shared Security Key",
+   Num(DayStart([Currency Conversion Rate Date])) As [Currency Conversion Rate Date Num]
+   ,Num(DayStart([Master Calendar Date])) As [Master Calendar Date Num]
+   ,IF ("Gross Invoice Due Days" > 0 , 'Due' , 'Not Due' ) as [Invoice Due Status]
+    
+	FROM [lib://Folder_IFP_Admin_Group/QVD\AX2012\BalanceByInvoice.qvd]
+	(qvd);
+
+  
+  
+  /*********************************************************************/
+  /*********************************************************************/
+  
+  /*****Shipments*******************************************************/
+  /*********************************************************************/
+  Sales_Shared_Dimensions:
+  Concatenate
+  Load
+    [Shipment Key]
+    ,[Sales Shared Key]
+    ,'Shipment' As [Sales Type]
+    ,[Sales Source]
+    ,[Order Key]
+    ,UPPER([Invoice Customer Key]) As [Invoice Customer Key]
+    ,UPPER([Order Customer Key]) As [Customer Key]
+    ,UPPER([Order Customer Key]) as "SMM SEC Entity Key"
+    ,[Item Key]
+    ,[Salesman Key]
+    ,[Geographical Mix Key]
+    ,Num(DayStart([Currency Conversion Rate Date])) As [Currency Conversion Rate Date Num]
+    ,Num(DayStart([Master Calendar Date])) As [Master Calendar Date Num]
+    ,[Business Unit Key]
+    ,[Product Manager Key]
+    ,Upper("Business Unit Key") &'|'& Upper("Order Customer Key") As "Shared Security Key"
+     ,Upper("Business Unit Key") &'|'& Upper("Order Customer Key") & '|' & upper([Item Key]) as [External Item Key]
+  From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Shipments.qvd]
+  (qvd);
+  /*********************************************************************/
+  /*********************************************************************/
+  
+  /*****Budgets*********************************************************/
+  /*********************************************************************/
+  Sales_Shared_Dimensions:
+  Concatenate
+  Load
+   [Budget Key]
+    ,[Sales Shared Key]
+    ,'Approved by BU' as [Approved by BU]
+    ,'Approved by RU' as [Approved by RU]
+    ,'Budget' As [Sales Type]
+    ,[Sales Source]
+  //   ,[Invoice Customer Key]
+  //   ,[Order Customer Key]
+  	,UPPER([Customer Key]) As [Invoice Customer Key]
+    ,UPPER([Customer Key]) As [Customer Key]
+    ,UPPER([Customer Key]) as "SMM SEC Entity Key"
+    ,[Item Key]
+    ,[Salesman Key]
+    ,[Geographical Mix Key]
+    ,Num(DayStart([Currency Conversion Rate Date])) As [Currency Conversion Rate Date Num]
+    ,Num(DayStart([Master Calendar Date])) As [Master Calendar Date Num]
+    ,[Business Unit Key]
+    ,[Forecast Model Key]
+    ,[Product Manager Key]
+    ,[Modify User Key]
+    ,Upper("Business Unit Key") &'|'& Upper("Customer Key") As "Shared Security Key"
+    ,Upper("Business Unit Key") &'|'& Upper("Customer Key") & '|' & upper([Item Key]) as [External Item Key]
+  From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Budgets.qvd]
+  (qvd);
+  
+  
+  
+  
+   Sales_Shared_Dimensions:
+  Concatenate 
+	LOAD
+    
+    "Sales Shared Key" as [BalanceByInvoiceMonthlyKey],
+   'Balance By Invoice Monthly' As [Sales Type],
+   "Business Unit Key"
+   ,UPPER([Order Customer Key]) As [Customer Key]
+   ,UPPER([Invoice Customer Key]) As [Invoice Customer Key]
+   ,UPPER([Order Customer Key]) as "SMM SEC Entity Key"
+   ,"Salesman Key",
+   "Sales Shared Key",
+    "Sales Source",
+   Upper("Business Unit Key") &'|'& Upper("Order Customer Key") As "Shared Security Key",
+   Num(DayStart([Currency Conversion Rate Date])) As [Currency Conversion Rate Date Num]
+   ,Num(DayStart([Master Calendar Date])) As [Master Calendar Date Num]
+  	
+    FROM [lib://Folder_IFP_Admin_Group/QVD\AX2012\BalanceByInvoiceMonthly.qvd]
+	(qvd);
+  
+
+  
+  
+  /*********************************************************************/
+  /*********************************************************************/
+  
+  /*****Forecasts*******************************************************/
+  /*********************************************************************/
+  Sales_Shared_Dimensions:
+  Concatenate
+  Load
+     [Forecast Key]
+    ,[Sales Shared Key]
+    ,'Approved by BU' as [Approved by BU]
+    ,'Approved by RU' as [Approved by RU]
+    ,'Forecast' As [Sales Type]
+    ,[Sales Source]
+  //   ,[Invoice Customer Key]
+  //   ,[Order Customer Key]
+    ,UPPER([Customer Key]) As [Invoice Customer Key]
+    ,UPPER([Customer Key]) As [Customer Key]
+    ,UPPER([Customer Key]) as "SMM SEC Entity Key"
+    ,[Item Key]
+    ,[Salesman Key]
+    ,[Geographical Mix Key]
+    ,Num(DayStart([Currency Conversion Rate Date])) As [Currency Conversion Rate Date Num]
+    ,Num(DayStart([Master Calendar Date])) As [Master Calendar Date Num]
+    ,[Business Unit Key]
+    ,[Forecast Model Key]
+    ,[Product Manager Key]
+    ,[Modify User Key]
+    ,Upper("Business Unit Key") &'|'& Upper("Customer Key") As "Shared Security Key"
+     ,Upper("Business Unit Key") &'|'& Upper("Customer Key") & '|' & upper([Item Key]) as [External Item Key]
+  From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Forecasts.qvd]
+  (qvd);
+  
+  
+  
+    Sales_Shared_Dimensions:
+  Concatenate
+  Load
+     "Full Revised Forecast Key"
+    ,[Sales Shared Key]
+    ,'Revised Forecast Full' As [Sales Type]
+    ,[Sales Source] 
+    ,UPPER([Customer Key]) As [Invoice Customer Key]
+    ,UPPER([Customer Key]) As [Customer Key]
+    ,UPPER([Customer Key]) as "SMM SEC Entity Key"
+    ,[Item Key]
+    ,[Salesman Key]
+    ,[Geographical Mix Key]
+    ,Num(DayStart([Currency Conversion Rate Date])) As [Currency Conversion Rate Date Num]
+    ,Num(DayStart([Master Calendar Date])) As [Master Calendar Date Num]
+    ,[Business Unit Key]
+    ,[Forecast Model Key]
+    ,[Product Manager Key]
+    ,[Modify User Key]
+    ,Upper("Business Unit Key") &'|'& Upper("Customer Key") As "Shared Security Key"
+     ,Upper("Business Unit Key") &'|'& Upper("Customer Key") & '|' & upper([Item Key]) as [External Item Key]
+  From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Forecasts_Revision_Full.qvd]
+  (qvd);
+  
+   
+  
+  Sales_Shared_Dimensions:
+  Concatenate
+  Load
+    [Revised Forecast Performace  Key]
+    ,[Sales Shared Key]
+    ,[Revised Forecast Performace Approved by RU] as [Approved by RU]
+    ,[Revised Forecast Performace Approved by BU] as [Approved by BU]
+    ,'Revised Forcast Performance' As [Sales Type]
+    ,[Sales Source]
+  	,UPPER([Customer Key]) As [Invoice Customer Key]
+    ,UPPER([Customer Key]) As [Customer Key]
+    ,UPPER([Customer Key]) as "SMM SEC Entity Key"
+    ,[Item Key]
+    ,[Salesman Key]
+    ,[Geographical Mix Key]
+    ,Num(DayStart([Currency Conversion Rate Date])) As [Currency Conversion Rate Date Num]
+    ,Num(DayStart([Master Calendar Date])) As [Master Calendar Date Num]
+    ,[Business Unit Key]
+    ,[Forecast Model Key]
+    ,[Product Manager Key]
+    ,[Modify User Key]
+    ,Upper("Business Unit Key") &'|'& Upper("Customer Key") As "Shared Security Key"
+     ,Upper("Business Unit Key") &'|'& Upper("Customer Key") & '|' & upper([Item Key]) as [External Item Key]
+  From [lib://Folder_IFP_Admin_Group/QVD/AX2012/ForecastRevisionPerformance.qvd]
+  (qvd);
+  
+  
+  /*****Forecast Audit**************************************************/
+  /*********************************************************************/
+  Sales_Shared_Dimensions:
+  Concatenate
+  Load
+    [Forecast Audit Key]
+    ,[Sales Shared Key]
+    ,'Audit Forecast' As [Sales Type]
+    ,[Sales Source]
+    ,UPPER([Customer Key]) As [Invoice Customer Key]
+    ,Upper([Customer Key]) As [Customer Key]
+    ,UPPER([Customer Key]) as "SMM SEC Entity Key"
+    ,[Item Key]
+    ,[Salesman Key]
+    ,[Geographical Mix Key]
+    ,Num(DayStart([Currency Conversion Rate Date])) As [Currency Conversion Rate Date Num]
+    ,Num(DayStart([Master Calendar Date])) As [Master Calendar Date Num]
+    ,[Business Unit Key]
+    ,[Forecast Model Key]
+    ,[Product Manager Key]
+    ,[Modify User Key]
+    ,[Revision Log Key]
+    ,Upper("Business Unit Key") &'|'& Upper("Customer Key") As "Shared Security Key"
+     ,Upper("Business Unit Key") &'|'& Upper("Customer Key") & '|' & upper([Item Key]) as [External Item Key]
+  From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Forecast_Audit.qvd]
+  (qvd);  
+  /*********************************************************************/
+  /*********************************************************************/
+  
+  /*****Orders**********************************************************/
+  /*********************************************************************/
+  Sales_Shared_Dimensions:
+  Concatenate
+  Load
+    [Order Key]
+    ,[Sales Shared Key]
+    ,'Order' As [Sales Type]
+    ,[Sales Source]
+    ,Upper([Invoice Customer Key]) As [Invoice Customer Key]
+    ,Upper([Order Customer Key]) As [Customer Key]
+    ,UPPER([Order Customer Key]) as "SMM SEC Entity Key"
+    ,[Item Key]
+    ,[Salesman Key]  
+    ,[Geographical Mix Key]
+    ,Num(DayStart([Currency Conversion Rate Date])) As [Currency Conversion Rate Date Num]
+    ,Num(DayStart([Master Calendar Date])) As [Master Calendar Date Num]
+    ,[Business Unit Key]
+  //   ,[Payment Term Key]
+    ,[Product Manager Key]
+    ,Upper("Business Unit Key") &'|'& Upper("Order Customer Key") As "Shared Security Key"
+     ,Upper("Business Unit Key") &'|'& Upper("Order Customer Key") & '|' & upper([Item Key]) as [External Item Key]
+  From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Orders_Merged.qvd]
+  (qvd);
+  /*********************************************************************/
+  /*********************************************************************/
+  
+  /*****Quotations******************************************************/
+  /*********************************************************************/
+  Sales_Shared_Dimensions:
+  Concatenate
+  Load
+    [Quotation Key]
+    ,[Sales Shared Key]
+    ,'Quotation' As [Sales Type]
+    ,[Sales Source]
+  //   ,[Invoice Customer Key]
+  //   ,[Order Customer Key]
+  ,UPPER([Customer Key]) As [Invoice Customer Key]
+    ,Upper([Customer Key]) As [Customer Key],
+    UPPER([Customer Key]) as "SMM SEC Entity Key"
+    ,[Item Key]
+    ,[Salesman Key]
+    ,[Geographical Mix Key]
+    ,Num(DayStart([Currency Conversion Rate Date])) As [Currency Conversion Rate Date Num]
+    ,Num(DayStart([Master Calendar Date])) As [Master Calendar Date Num]
+    ,[Business Unit Key]
+  //   ,[Payment Term Key]
+    ,[Product Manager Key]
+    ,[Creator User Key]
+    ,[Modify User Key]
+    ,Upper("Business Unit Key") &'|'& Upper("Customer Key") As "Shared Security Key"
+     ,Upper("Business Unit Key") &'|'& Upper("Customer Key") & '|' & upper([Item Key]) as [External Item Key]
+  From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Quotations_Merged.qvd]
+  (qvd);
+  /*********************************************************************/
+  /*********************************************************************/
+  
+  /*****Backlog Orders**************************************************/
+  /*********************************************************************/
+  Sales_Shared_Dimensions:
+  Concatenate
+  Load
+    [Backlog Order Key]  
+    ,[Sales Shared Key]
+    ,'Backlog' As [Sales Type]
+    ,[Sales Source]
+    ,[Order Key]
+    ,Upper([Invoice Customer Key]) As [Invoice Customer Key]
+    ,Upper([Order Customer Key]) As [Customer Key]
+    ,UPPER([Order Customer Key]) as "SMM SEC Entity Key"
+    ,[Item Key]
+    ,[Salesman Key]
+    ,[Geographical Mix Key]
+    ,Num(DayStart([Currency Conversion Rate Date])) As [Currency Conversion Rate Date Num]
+    ,Num(DayStart([Master Calendar Date])) As [Master Calendar Date Num]
+    ,[Business Unit Key]
+  //   ,[Payment Term Key]
+    ,[Product Manager Key]
+    ,Upper("Business Unit Key") &'|'& Upper("Order Customer Key") As "Shared Security Key"
+     ,Upper("Business Unit Key") &'|'& Upper("Order Customer Key") & '|' & upper([Item Key]) as [External Item Key]
+  From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Backlog_Orders_Merged.qvd]
+  (qvd);
+  
+  
+    
+  Sales_Shared_Dimensions:
+  Concatenate
+  Load 
+	[Capacity Key],
+    [Sales Shared Key],
+    [Sales Source],
+    'Capacity' As [Sales Type],
+    [Item Key],
+    Num(DayStart([Master Calendar Date])) As [Master Calendar Date Num],
+    Num(DayStart([Master Calendar Date])) As [Currency Conversion Rate Date Num],
+    [Business Unit Key]
+    ,Upper("Business Unit Key") As "Shared Security Key"
+  From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Capacity.qvd]
+  (qvd);
+  
+  
+  
+  Sales_Shared_Dimensions:
+  Concatenate
+  Load  
+    'EMV' As [Sales Type],
+    Upper("Item Key") as "Item Key",
+    Num(DayStart([Master Calendar Date])) As [Master Calendar Date Num],
+    Num(DayStart([Master Calendar Date])) As [Currency Conversion Rate Date Num],
+    [Business Unit Key]
+    ,Upper("Business Unit Key") As "Shared Security Key",
+    "EMV Country",
+    "EMV Volume"
+FROM [lib://Folder_IFP_Admin_Group/QVD/AX2012/EstimatedMarketVolumne.qvd]
+(qvd);
+  
+  
+  
+  Sales_Shared_Dimensions:
+  Concatenate
+  Load 
+  
+  Upper([Salesman Key] & '|' & [Order Customer Key] & '|' & num(DayStart(FADATE)) & '|' & [Business Unit Key] & '|' & [Item Key]) as [FAKey],
+    Upper([Salesman Key]) as [Salesman Key],
+	Upper([Item Key]) as [Item Key],
+	Upper([Order Customer Key]) as [Customer Key],
+    UPPER([Order Customer Key]) as "SMM SEC Entity Key",
+	Upper([Invoice Customer Key]) as [Invoice Customer Key],
+	Upper([Business Unit Key]) as [Business Unit Key],
+	Num(DayStart([FADATE])) As [Master Calendar Date Num],
+    Num(DayStart([FADATE])) As [Currency Conversion Rate Date Num],
+    Upper([Business Unit Key]) &'|'& Upper("Order Customer Key") As "Shared Security Key"
+     ,Upper("Business Unit Key") &'|'& Upper("Order Customer Key") & '|' & upper([Item Key]) as [External Item Key]
+  From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Forecast_Accuracy.qvd]
+  (qvd); 
+  
+  
+  
+  Sales_Shared_Dimensions:
+  Concatenate
+  Load 
+    Upper([Salesman Key] & '|' & [Order Customer Key] & '|' & num(DayStart([FADATE - Revised])) & '|' & [Business Unit Key] & '|' & [Item Key]) as [FAKey - Revised],
+    Upper([Salesman Key]) as [Salesman Key],
+	Upper([Item Key]) as [Item Key],
+	Upper([Order Customer Key]) as [Customer Key],
+    UPPER([Order Customer Key]) as "SMM SEC Entity Key",
+	Upper([Invoice Customer Key]) as [Invoice Customer Key],
+	Upper([Business Unit Key]) as [Business Unit Key],
+	Num(DayStart([FADATE - Revised])) As [Master Calendar Date Num],
+    Num(DayStart([FADATE - Revised])) As [Currency Conversion Rate Date Num],
+    Upper([Business Unit Key]) &'|'& Upper("Order Customer Key") As "Shared Security Key"
+    ,Upper("Business Unit Key") &'|'& Upper("Order Customer Key") & '|' & upper([Item Key]) as [External Item Key]
+  From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Forecast_Revised_Accuracy.qvd]
+  (qvd); 
+  
+  
+  
+  
+  Sales_Shared_Dimensions:
+  Concatenate
+  Load 
+  	UPPER([OTIF RECID] & '|' & [Business Unit Key]) AS [OTIF Key],
+    Num(DayStart([OTIF Date])) as [Master Calendar Date Num],
+    Num(DayStart([OTIF Date])) as [Currency Conversion Rate Date Num],
+    Upper([Business Unit Key]) as [Business Unit Key],
+    Upper([Salesman Key]) as [Salesman Key],
+    UPPER([Item Key]) AS [Item Key],
+    Upper([Order Key]) as [Order Key],
+    Upper([Order Customer Key]) as [Customer Key],
+    UPPER([Order Customer Key]) as "SMM SEC Entity Key",
+    Upper([Invoice Customer Key]) as [Invoice Customer Key],
+    'OTIF' As [Sales Type],
+     Upper("Business Unit Key")  &'|'& Upper("Order Customer Key") As "Shared Security Key"
+     ,Upper("Business Unit Key")  &'|'& Upper("Order Customer Key") & '|' & upper([Item Key]) as [External Item Key]
+  From [lib://Folder_IFP_Admin_Group/QVD/AX2012/OTIF.qvd]
+  (qvd) where WildMatch(Upper([Item Key]),'*FG*') > 0;
+  
+  
+  
+  Sales_Shared_Dimensions:
+  Concatenate
+  Load 
+  	UPPER([RMA Key]) AS [RMA Key],
+    Num(DayStart([RMA Date])) as [Master Calendar Date Num],
+    Num(DayStart([RMA Date])) as [Currency Conversion Rate Date Num],
+    Upper([Business Unit Key]) as [Business Unit Key],
+    Upper([Salesman Key]) as [Salesman Key],
+    UPPER([Item Key]) AS [Item Key],
+    Upper([Order Key]) as [Order Key],
+    Upper([Order Customer Key]) as [Customer Key],
+    UPPER([Order Customer Key]) as "SMM SEC Entity Key",
+    Upper([Invoice Customer Key]) as [Invoice Customer Key],
+    'RMA' As [Sales Type],
+    Upper("Business Unit Key") &'|'& Upper("Order Customer Key") As "Shared Security Key"
+  From [lib://Folder_IFP_Admin_Group/QVD/AX2012/RMA_Lines.qvd]
+  (qvd);
+  
+  
+Sales_Shared_Dimensions:
+ Concatenate
+	Load 
+      Upper([Customer Volume Line Key]) as [Customer Volume Line Key],
+      Upper([Item Key]) as [Item Key],
+      UPPER([Customer Key]) As [Invoice Customer Key],
+      UPPER([Customer Key]) as "SMM SEC Entity Key",
+      Upper([Customer Key]) as [Customer Key],
+      Upper([Salesman Key]) as [Salesman Key],
+      Upper([Business Unit Key]) as [Business Unit Key],
+      Upper("Business Unit Key") &'|'& Upper("Customer Key") As "Shared Security Key",
+      Num(DayStart([Master Calendar Date])) as [Master Calendar Date Num],
+      Num(DayStart([Master Calendar Date])) as [Currency Conversion Rate Date Num]
+	From [lib://Folder_IFP_Admin_Group/QVD/AX2012/CustomerVolumes.qvd]
+(qvd);
+    
+    
+Sales_Shared_Dimensions:
+Concatenate
+Load 
+	UPPER(CPBLINEKEY) as CPBLINEKEY,
+    UPPER([Customer Key]) As [Invoice Customer Key],
+  	Upper([Customer Key]) as [Customer Key],
+    UPPER([Customer Key]) as "SMM SEC Entity Key",
+    Upper([Salesman Key]) as [Salesman Key],
+    Upper("Business Unit Key") &'|'& Upper("Customer Key") As "Shared Security Key",
+    Upper([Business Unit Key]) as [Business Unit Key],
+     Num(MakeDate(2018,1,1)) as [Master Calendar Date Num],
+     Num(MakeDate(2018,1,1)) as [Currency Conversion Rate Date Num]
+    
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/CustomerProfileBuilding.qvd]
+(qvd);
+
+
+Sales_Shared_Dimensions:
+  Concatenate
+  Load
+    UPPER([Business Unit Key]) & '|' & UPPER([Order Customer Key]) & '|' & UPPER([Item Key]) & '|' & UPPER(Num([Master Calendar Date])) & '|MT' as  [Unmet Budget Line Key],
+    'UnmetBudget' As [Sales Type],
+    Num(DayStart([Master Calendar Date])) As [Currency Conversion Rate Date Num],
+    Num(DayStart([Master Calendar Date])) As [Master Calendar Date Num],
+    Upper("Business Unit Key") &'|'& Upper("Order Customer Key") As "Shared Security Key",
+    Upper([Business Unit Key]) as [Business Unit Key],
+    UPPER([Order Customer Key]) As [Customer Key],
+    UPPER([Order Customer Key]) as "SMM SEC Entity Key",
+    UPPER([Invoice Customer Key]) As [Invoice Customer Key],
+    UPPER([Salesman Key]) as [Salesman Key],
+    UPPER([Item Key]) AS [Item Key]
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/CustomersUnmetBudget.qvd]
+(qvd) where Num([Unmet Budget - Budget Achieved Percentage]) < 0.9 ;
+
+
+
+Sales_Shared_Dimensions:
+  Concatenate
+  Load
+    UPPER([Business Unit Key]) & '|' & UPPER([Order Customer Key]) & '|' & UPPER([Item Key]) & '|' & UPPER(Num([Master Calendar Date])) & '|NS' as [Unmet Budget Line Key],
+    'UnmetBudget' As [Sales Type],
+    Num(DayStart([Master Calendar Date])) As [Currency Conversion Rate Date Num],
+    Num(DayStart([Master Calendar Date])) As [Master Calendar Date Num],
+    Upper("Business Unit Key") &'|'& Upper("Order Customer Key") As "Shared Security Key",
+    Upper([Business Unit Key]) as [Business Unit Key],
+    UPPER([Order Customer Key]) As [Customer Key],
+    UPPER([Order Customer Key]) as "SMM SEC Entity Key",
+    UPPER([Invoice Customer Key]) As [Invoice Customer Key],
+    UPPER([Salesman Key]) as [Salesman Key],
+    UPPER([Item Key]) AS [Item Key]
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/CustomersUnmetBudget.qvd]
+(qvd) where Num([Unmet Budget - Budget Achieved Percentage - Net Sales]) < 0.9 ;
+
+
+
+// Outer Join in Order to Create a Shared Key for the Unit & Area, to be used Along with Customes // Prospects // Leads
+
+Outer Join(Sales_Shared_Dimensions)
+Load  distinct [Customer Key], [Customer Unit] as [Shared Unit Key],[Customer Area]  as [Shared Area Key], left([Customer Key],5) & '|' &  "Customer Sector - Profile" as "Shared Cutomer Sector"  Resident Customers;
+
+
+
+Outer Join(Sales_Shared_Dimensions)
+Load
+   [Item Key],[Segment1Key],[Segment2Key],[Segment3Key],[Segment4Key],[Segment5Key],[Segment6Key],[Segment7Key],[Segment8Key] ,
+   left([Item Key],5)  & '|' &Segment5Key as [Building Block For Aggregation],
+   left([Item Key],5)  & '|' &Segment2Key as [Market Sector For Aggregation]
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Items_Merged.qvd]
+(qvd); 
+
+
+
+Sales_Shared_Dimensions:
+Concatenate
+Load 
+	 
+      
+      
+      if( Upper(Left([Lead Key],1)) = 'L'  , Upper([Lead Key]) ,upper([Prospect Key]) ) as "SMM Entity Key",
+      if( Upper(Left([Lead Key],1)) = 'L'  , Upper([Lead Key]) ,upper([Prospect Key]) ) as "SMM SEC Entity Key",
+      [Sales Type],
+      [BusinessSectoryKey] as [CRM BusinessSectorKey],
+      [Customer Key],
+      [Master Calendar Date Num],
+      [Activity Business Relation Key],
+      [Activity Key],
+      [Activity Line Key],
+      [AddressKey] as [CRM Address Key],
+      [BBLineKey] as [CRM BBLineKey],
+      [Business Unit Key],
+      [Lead Key],
+      [Lead Line Key],
+      [Lead Qualified Line Key],
+      [Opened By],
+      [Owned By],
+      [Party Type],
+      [Prospect Key],
+      [Prospect Line Key],
+      [Prospect MQP Line Key],
+      [Prospect Won Line Key],
+      [SalesUnitKey] as [CRM SalesUnitKey],
+      [Shared Entity Key],
+      [SourceDetailsKey],
+      [SourceTypeKey],
+      [UserCreatedByKey],
+       Num(MakeDate(2018,1,1)) as [Currency Conversion Rate Date Num]
+      ,Upper("Business Unit Key") As "Shared Security Key",
+      [Shared Unit Key],
+      [Shared Area Key], 
+      // ApplyMap('CusomtersSalesmanMapping',Upper(Trim("Customer Key")),[Salesman Key]) as [Salesman Key]
+      Upper([Salesman Key]) as [Salesman Key]
+     ,[Segment1Key]
+	 ,[Segment2Key]
+	 ,[Segment3Key]
+	 ,[Segment4Key]
+	 ,[Segment5Key]
+	 ,[Segment6Key]
+	 ,[Segment7Key]
+	 ,[Segment8Key]
+     ,[Opportunity Year Created]
+
+       
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/CRMSALES-SharedDimensionsDIM.qvd]
+(qvd); 
+
+
+
+Sales_Shared_Dimensions:
+  Concatenate
+  Load
+ [Business Unit Key] & '|' & [Order Customer Key] & '|' & Year([Master Calendar Date]) as [Scoring Key],
+ Upper([Business Unit Key]) as [Business Unit Key],
+ Upper([Order Customer Key]) as [Customer Key], 
+    UPPER([Order Customer Key]) as "SMM SEC Entity Key",
+ Upper([Order Customer Key]) as [Invoice Customer Key],
+ Upper([Business Unit Key])  &'|'& Upper([Order Customer Key]) As "Shared Security Key",
+ 'Scoring' As [Sales Type],
+ UPPER([Salesman Key]) as [Salesman Key],
+ Num(DayStart([Master Calendar Date])) as [Master Calendar Date Num],
+ Num(DayStart([Master Calendar Date]))  as [Currency Conversion Rate Date Num]
+    
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/Scoring.qvd]
+(qvd);
+
+
+// Ageing Shared Dimensions  ******************************************
+
+ Sales_Shared_Dimensions:
+  Concatenate
+  Load
+  
+  Upper([Sales Shared Key]) as [Aging Line Key],
+  Num(DayStart([Currency Conversion Rate Date])) As [Currency Conversion Rate Date Num],
+  Num(DayStart([Master Calendar Date])) As [Master Calendar Date Num],
+  Upper("Business Unit Key") &'|'& Upper("Order Customer Key") As "Shared Security Key",
+  Upper([Business Unit Key]) as [Business Unit Key],
+  UPPER([Order Customer Key]) As [Customer Key],
+    UPPER([Order Customer Key]) as "SMM SEC Entity Key",
+  UPPER([Invoice Customer Key]) As [Invoice Customer Key],
+  UPPER([Salesman Key]) as [Salesman Key]
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/CustomerAging.qvd]
+(qvd);
+
+
+
+Sales_Shared_Dimensions:
+  Concatenate
+  Load
+   'AvgGrossSales' As [Sales Type],
+  Upper(LineKey) as [GrossSalesDSOKey],
+  Num(DayStart([Master Calendar Date])) As [Currency Conversion Rate Date Num],
+  Num(DayStart([Master Calendar Date])) As [Master Calendar Date Num],
+  Upper("Business Unit Key") &'|'& Upper("Invoice Customer Key") As "Shared Security Key",
+  Upper([Business Unit Key]) as [Business Unit Key],
+  UPPER([Invoice Customer Key]) As [Customer Key],
+    UPPER([Invoice Customer Key]) as "SMM SEC Entity Key",
+  UPPER([Invoice Customer Key]) As [Invoice Customer Key],
+  UPPER([Salesman Key]) as [Salesman Key]
+  
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/FinalCustomersAggregate.qvd]
+(qvd);
+ 
+// Collections Shared Dimensions   ******************************************
+
+Sales_Shared_Dimensions:
+  Concatenate
+  Load
+  
+  Upper([Sales Shared Key]) as [Collections Line Key],
+  'Collections' As [Sales Type],
+  Num(DayStart([Currency Conversion Rate Date])) As [Currency Conversion Rate Date Num],
+  Num(DayStart([Master Calendar Date])) As [Master Calendar Date Num],
+  Upper("Business Unit Key") &'|'& Upper("Order Customer Key") As "Shared Security Key",
+  Upper([Business Unit Key]) as [Business Unit Key],
+  UPPER([Order Customer Key]) As [Customer Key],
+    UPPER([Order Customer Key]) as "SMM SEC Entity Key",
+  UPPER([Invoice Customer Key]) As [Invoice Customer Key],
+  UPPER([Salesman Key]) as [Salesman Key]
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/CustomerCollections.qvd]
+(qvd);
+
+
+Sales_Shared_Dimensions:
+  Concatenate
+LOAD
+	 Upper("Sales Shared Key") as [Customer Credit Ceiling Key], 
+    'Customer Credit Ceiling' As [Sales Type],
+    Upper([Business Unit Key]) as [Business Unit Key],
+    Upper("Order Customer Key") as [Customer Key],
+    UPPER([Order Customer Key]) as "SMM SEC Entity Key",
+    Upper("Invoice Customer Key") as [Invoice Customer Key],
+    Upper("Salesman Key") as [Salesman Key],
+      Upper("Business Unit Key") &'|'& Upper("Order Customer Key") As "Shared Security Key",
+     Num(DayStart("Currency Conversion Rate Date")) as "Currency Conversion Rate Date Num",
+     Num(DayStart("Master Calendar Date")) as "Master Calendar Date Num"
+FROM [lib://Folder_IFP_Admin_Group/QVD\AX2012\CustomerCreditCeiling.qvd]
+(qvd);
+
+ 
+Sales_Shared_Dimensions:
+  Concatenate
+  Load
+    Upper([Sales Shared Key]) as [Doubtful Invoices Line Key],
+    'DoubtfulInvoices' As [Sales Type],
+    Num(DayStart([Currency Conversion Rate Date])) As [Currency Conversion Rate Date Num],
+    Num(DayStart([Master Calendar Date])) As [Master Calendar Date Num],
+    Upper("Business Unit Key") &'|'& Upper("Order Customer Key") As "Shared Security Key",
+    Upper([Business Unit Key]) as [Business Unit Key],
+    UPPER([Order Customer Key]) As [Customer Key],
+    UPPER([Order Customer Key]) as "SMM SEC Entity Key",
+    UPPER([Invoice Customer Key]) As [Invoice Customer Key],
+    UPPER([Salesman Key]) as [Salesman Key]
+From [lib://Folder_IFP_Admin_Group/QVD/AX2012/CustomerDoutfulInvoices.qvd]
+(qvd);
+
+
+Sales_Shared_Dimensions:
+  Concatenate
+LOAD
+   
+    'Monthly Variances' As [Sales Type],
+    "Business Unit Key"  & '|' & "Master Calendar Date" as MonthlyVariancesTableKey,  
+    Upper([Business Unit Key]) as [Business Unit Key],
+	Num(DayStart([Master Calendar Date])) As [Master Calendar Date Num],
+    Upper("Business Unit Key") As "Shared Security Key",
+	Num(DayStart([Master Calendar Date])) As [Currency Conversion Rate Date Num]
+    
+FROM [lib://Folder_IFP_Admin_Group/QVD\AX2012\MonthlyVariancesTable.qvd]
+(qvd);
+
+
+
+Shared_DIM_Unit:
+NoConcatenate
+Load Distinct [Shared Unit Key], [Shared Unit Key] as [Shared Sales Unit] Resident Sales_Shared_Dimensions;
+
+
+Shared_DIM_Area:
+NoConcatenate
+Load Distinct [Shared Area Key], [Shared Area Key] as [Shared Sales Area] Resident Sales_Shared_Dimensions;
+
+
+
+Shared_Items_Classification:
+NoConcatenate
+Load Distinct [Segment1Key]  ,[Segment2Key] ,[Segment3Key] ,[Segment4Key]  ,[Segment5Key] ,[Segment6Key]  ,[Segment7Key] ,[Segment8Key]
+Resident Sales_Shared_Dimensions;
+
+
+Shared_Items_Class1:
+Load Distinct [Segment1Key] , Capitalize([Segment1Key]) as [Market Application] , Capitalize([Segment1Key]) as [Application] , Capitalize([Segment1Key]) as [Product Application] 
+Resident Shared_Items_Classification;
+
+
+Shared_Items_Class2:
+Load Distinct [Segment2Key] , Capitalize([Segment2Key]) as [Market Group] , Capitalize([Segment2Key]) as [Sector] ,  Capitalize([Segment2Key]) as [Product Sector]
+Resident Shared_Items_Classification;
+
+
+
+Shared_Items_Class3:
+Load Distinct [Segment3Key] , Capitalize([Segment3Key]) as [Market Sector], Capitalize([Segment3Key]) as [Industry] ,  Capitalize([Segment3Key]) as [Product Industry]
+Resident Shared_Items_Classification;
+
+
+Shared_Items_Class4:
+Load Distinct [Segment4Key] , Capitalize([Segment4Key]) as [Product Packed/End Use] , Capitalize([Segment4Key]) as [Style Category]
+Resident Shared_Items_Classification;
+
+
+Shared_Items_Class5:
+Load Distinct [Segment5Key] , Capitalize([Segment5Key]) as [Building Block] , Capitalize([Segment5Key]) as [Style] , if(Capitalize([Segment5Key]) = 'Ramapet' , 'Purch' , 'Sales') as [SUK Split]
+Resident Shared_Items_Classification;
+
+
+Shared_Items_Class6:
+Load Distinct [Segment6Key] , Capitalize([Segment6Key]) as [Product Line] , Capitalize([Segment6Key]) as [Product Style Line]
+Resident Shared_Items_Classification;
+
+
+Shared_Items_Class7:
+Load Distinct [Segment7Key] , Capitalize([Segment7Key]) as [Structure] ,Capitalize([Segment7Key]) as  [Style Family] ,Capitalize([Segment7Key]) as  [Product Structure]
+Resident Shared_Items_Classification;
+
+
+Shared_Items_Class8:
+Load Distinct [Segment8Key] , Capitalize([Segment8Key]) as [Product Details] , Capitalize([Segment8Key]) as [Style Type] 
+Resident Shared_Items_Classification;
+
+
+
+Drop Table Shared_Items_Classification;
+
+
+
+Sales_Shared_Dimensions_Final:
+NoConcatenate
+Load * 
+Resident Sales_Shared_Dimensions;
+//where upper([Business Unit Key]) <> '2.301';
+
+
+DROP Table Sales_Shared_Dimensions; 
+End Sub

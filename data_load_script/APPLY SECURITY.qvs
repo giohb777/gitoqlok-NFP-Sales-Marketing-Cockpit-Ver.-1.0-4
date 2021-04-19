@@ -1,0 +1,354 @@
+///$tab APPLY SECURITY
+Sub Apply_Security
+
+CustomerSalesman:
+Mapping
+LOAD
+    "Customer Key",
+    "Salesman Key"
+FROM [lib://Folder_IFP_Admin_Group/QVD/AX2012/CustomerSalesman.qvd]
+(qvd);
+
+ 
+
+Tmp_Shared_Security:
+NoConcatenate
+Load Distinct	
+	Upper("Business Unit Key") & if(isnull("Customer Key"),'','|'& Upper("Customer Key")) As "Shared Security Key",
+	Upper("Business Unit Key") As "Security Business Unit Key",
+    Upper("Customer Key") As "Security Customer Key",
+	Upper(ApplyMap('CustomerSalesman',Upper("Customer Key"),Upper("Salesman Key")))   AS "Security Salesman Key"
+Resident	
+	Sales_Shared_Dimensions_Final
+	Where [Business Unit Key] <> '2.96C' AND Len([Sales Type]) >= 1 and [Sales Type] <> 'CRM Activities' and [Sales Type] <> 'AvgGrossSales' and  [Sales Type] <> Null();
+    
+
+Left Join
+Load	
+   
+   If(Upper([Business Unit Key] = '2.SC&L') , 4,  if( Upper([Business Unit Key]) = '1.6.1' OR Upper([Business Unit Key]) = '1.6.2' , 5 ,
+   if( [Business Unit Key] <> '2.440' AND [Business Unit Key] <> '2.96P' AND [Business Unit Key] <> '2.IPI' AND [Business Unit Key] <> '2.INDP', 2,
+        if(  [Business Unit Key] = '2.96P' OR [Business Unit Key] = '2.IPI' OR [Business Unit Key] = '2.INDP',  3,1)))) as "Security SUK Key",
+        
+        
+	Upper("Business Unit Key") As "Security Business Unit Key",
+	Upper("Actual Division") As "Security Division",
+    Upper("Business Unit Type") As "Security Business Unit Type"
+Resident	
+	Business_Units
+	Where [Business Unit Key] <> '2.96C';
+    
+Left Join
+Load	
+	Upper("Customer Key") As "Security Customer Key",
+    Upper("Customer Statistics Group") As "Security Customer Statistics Group",
+    Upper("Customer Unit") As "Security Customer Unit",
+    Upper("Customer Area") As "Security Customer Area",
+    Upper("Customer Key Account LV2") As "Security Customer Key Account LV2 Key",
+    Upper("Customer Key Account") As "Security Customer Key Account Key",
+    Upper("Customer Sector - Profile") as "Security Customer Sector Key",
+    Upper("Customer Sub Sector - Profile") as "Security Customer Indusrtry Key",
+    Upper("Customer Export Support Function") as "Security Customer Export Support Function Key"
+Resident
+	Customers;
+	
+Left Join
+Load	
+	Upper("Salesman Key") As "Security Salesman Key",
+    Upper("Salesman OLD") 		 As "Security Salesman Name Key",
+    Upper("Salesman Level1 OLD") As "Security Salesman Level1 Key",
+    Upper("Salesman Level2 OLD") As "Security Salesman Level2 Key",
+	Upper("Salesman Level3 OLD") As "Security Salesman Level3 Key"
+Resident
+	Salesmen;
+    
+    
+    STORE Tmp_Shared_Security INTO [LIB://Folder_IFP_Admin_Group/QVD/AX2012/Tmp_Shared_Security.qvd];
+
+
+Shared_Security_Dimensions:
+NoConcatenate
+Load	
+	"Shared Security Key",
+    "Security SUK Key"
+    &'|'& "Security Division" 
+    &'|'& "Security Business Unit Key"
+    &'|'& "Security Customer Statistics Group" 
+    &'|'& "Security Business Unit Type" 
+    &'|'& "Security Customer Unit" 
+    &'|'& "Security Customer Area" 
+	&'|'& "Security Salesman Name Key" 
+	&'|'& "Security Salesman Level1 Key"
+	&'|'& "Security Salesman Level2 Key" 
+	&'|'& "Security Salesman Level3 Key" 
+    &'|'& "Security Customer Key Account LV2 Key" 
+    &'|'& "Security Customer Key Account Key" 
+    &'|'& "Security Customer Sector Key" 
+    &'|'& "Security Customer Indusrtry Key" 
+    &'|'& "Security Customer Export Support Function Key" 
+    
+    As "Local Mixed Security Key"
+	
+Resident	
+	Tmp_Shared_Security;
+
+
+
+Shared_Security:
+NoConcatenate
+Load Distinct	
+	"Security SUK Key" & '|' & "Security Division" &'|'& "Security Business Unit Key" &'|'& "Security Customer Statistics Group" &'|'& "Security Business Unit Type" &'|'& "Security Customer Unit" &'|'& "Security Customer Area" 
+	 &'|'& "Security Salesman Name Key" &'|'& "Security Salesman Level1 Key" &'|'& "Security Salesman Level2 Key" &'|'& "Security Salesman Level3 Key"  &'|'& "Security Customer Sector Key"  &'|'& "Security Customer Indusrtry Key"  
+     &'|'& "Security Customer Export Support Function Key"
+     As "Local Mixed Security Key",
+	
+    "Security SUK Key" & '|' & "Security Division" &'|'& "Security Business Unit Key" &'|'& "Security Customer Statistics Group" &'|'& "Security Business Unit Type" &'|'& "Security Customer Unit" &'|'& "Security Customer Area"   &'|'& "Security Customer Indusrtry Key"  As "Mixed Security Key"
+Resident
+	Tmp_Shared_Security;
+
+Shared_Security:
+Concatenate
+Load Distinct	
+	"Security SUK Key" & '|' & "Security Division" &'|'& "Security Business Unit Key" &'|'& "Security Customer Statistics Group" &'|'& "Security Business Unit Type" &'|'& "Security Customer Unit" &'|'& "Security Customer Area"
+	 &'|'& "Security Salesman Name Key" &'|'& "Security Salesman Level1 Key" &'|'& "Security Salesman Level2 Key" &'|'& "Security Salesman Level3 Key" &'|'& "Security Customer Key Account LV2 Key"  &'|'& "Security Customer Key Account Key"   
+       &'|'& "Security Customer Sector Key"  &'|'& "Security Customer Indusrtry Key"   &'|'& "Security Customer Export Support Function Key"
+     As "Local Mixed Security Key",
+    "Security SUK Key" & '|' & 'ALL' & '|' & [Security Business Unit Key] & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' &  'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL'  As "Mixed Security Key"
+Resident
+	Tmp_Shared_Security;   
+
+Shared_Security:
+Concatenate
+Load Distinct	
+	"Security SUK Key" & '|' & "Security Division" &'|'& "Security Business Unit Key" &'|'& "Security Customer Statistics Group" &'|'& "Security Business Unit Type" &'|'& "Security Customer Unit" &'|'& "Security Customer Area"
+	&'|'& "Security Salesman Name Key" &'|'& "Security Salesman Level1 Key" &'|'& "Security Salesman Level2 Key" &'|'& "Security Salesman Level3 Key" &'|'& "Security Customer Key Account LV2 Key"  &'|'& "Security Customer Key Account Key"
+      &'|'& "Security Customer Sector Key"  &'|'& "Security Customer Indusrtry Key"  &'|'& "Security Customer Export Support Function Key" As "Local Mixed Security Key",
+    "Security SUK Key" & '|' & [Security Division] & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' &  'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' As "Mixed Security Key"
+Resident
+	Tmp_Shared_Security;
+
+Shared_Security:
+Concatenate
+Load Distinct	
+	"Security SUK Key" & '|' & "Security Division" &'|'& "Security Business Unit Key" &'|'& "Security Customer Statistics Group" &'|'& "Security Business Unit Type" &'|'& "Security Customer Unit" &'|'& "Security Customer Area"
+	&'|'& "Security Salesman Name Key" &'|'& "Security Salesman Level1 Key" &'|'& "Security Salesman Level2 Key" &'|'& "Security Salesman Level3 Key" &'|'& "Security Customer Key Account LV2 Key"  &'|'& "Security Customer Key Account Key"
+      &'|'& "Security Customer Sector Key"  &'|'& "Security Customer Indusrtry Key"  &'|'& "Security Customer Export Support Function Key"  As "Local Mixed Security Key",
+    "Security SUK Key" & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & [Security Business Unit Type] & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' &  'ALL' & '|' & 'ALL' & '|' &  'ALL' & '|' & 'ALL'  & '|' & 'ALL' As "Mixed Security Key"
+Resident
+	Tmp_Shared_Security;   
+
+Shared_Security:
+Concatenate
+Load Distinct	
+	"Security SUK Key" & '|' & "Security Division" &'|'& "Security Business Unit Key" &'|'& "Security Customer Statistics Group" &'|'& "Security Business Unit Type" &'|'& "Security Customer Unit" &'|'& "Security Customer Area"
+	&'|'& "Security Salesman Name Key" &'|'& "Security Salesman Level1 Key" &'|'& "Security Salesman Level2 Key" &'|'& "Security Salesman Level3 Key"  &'|'& "Security Customer Key Account LV2 Key"  &'|'& "Security Customer Key Account Key" 
+      &'|'& "Security Customer Sector Key"  &'|'& "Security Customer Indusrtry Key"  &'|'& "Security Customer Export Support Function Key"  As "Local Mixed Security Key",
+    "Security SUK Key" & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & [Security Customer Area] & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' &  'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL'  & '|' & 'ALL' As "Mixed Security Key"
+Resident
+	Tmp_Shared_Security;
+
+Shared_Security:
+Concatenate
+Load Distinct	
+	"Security SUK Key" & '|' & "Security Division" &'|'& "Security Business Unit Key" &'|'& "Security Customer Statistics Group" &'|'& "Security Business Unit Type" &'|'& "Security Customer Unit" &'|'& "Security Customer Area"
+	&'|'& "Security Salesman Name Key" &'|'& "Security Salesman Level1 Key" &'|'& "Security Salesman Level2 Key" &'|'& "Security Salesman Level3 Key"  &'|'& "Security Customer Key Account LV2 Key"  &'|'& "Security Customer Key Account Key"
+      &'|'& "Security Customer Sector Key"  &'|'& "Security Customer Indusrtry Key"  &'|'& "Security Customer Export Support Function Key"  As "Local Mixed Security Key",
+    "Security SUK Key" & '|' & 'ALL' & '|' & 'ALL' & '|' & [Security Customer Statistics Group] & '|' & [Security Business Unit Type] & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' &  'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' As "Mixed Security Key"
+Resident
+	Tmp_Shared_Security;   
+
+
+Shared_Security:
+Concatenate
+Load Distinct	
+	"Security SUK Key" & '|' & "Security Division" &'|'& "Security Business Unit Key" &'|'& "Security Customer Statistics Group" &'|'& "Security Business Unit Type" &'|'& "Security Customer Unit" &'|'& "Security Customer Area"
+	&'|'& "Security Salesman Name Key" &'|'& "Security Salesman Level1 Key" &'|'& "Security Salesman Level2 Key" &'|'& "Security Salesman Level3 Key"  &'|'& "Security Customer Key Account LV2 Key"  &'|'& "Security Customer Key Account Key" 
+      &'|'& "Security Customer Sector Key"  &'|'& "Security Customer Indusrtry Key"  &'|'& "Security Customer Export Support Function Key" As "Local Mixed Security Key",
+    "Security SUK Key" & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & [Security Customer Unit] & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' &  'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL'  As "Mixed Security Key"
+Resident
+	Tmp_Shared_Security;   
+
+
+
+Shared_Security:
+Concatenate
+Load Distinct	
+	"Security SUK Key" & '|' & "Security Division" &'|'& "Security Business Unit Key" &'|'& "Security Customer Statistics Group" &'|'& "Security Business Unit Type" &'|'& "Security Customer Unit" &'|'& "Security Customer Area"
+	&'|'& "Security Salesman Name Key" &'|'& "Security Salesman Level1 Key" &'|'& "Security Salesman Level2 Key" &'|'& "Security Salesman Level3 Key" &'|'& "Security Customer Key Account LV2 Key"  &'|'& "Security Customer Key Account Key" 
+      &'|'& "Security Customer Sector Key"  &'|'& "Security Customer Indusrtry Key"  &'|'& "Security Customer Export Support Function Key" As "Local Mixed Security Key",
+    "Security SUK Key" & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' &  'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL'  As "Mixed Security Key"
+Resident
+	Tmp_Shared_Security;
+	
+
+
+Shared_Security:
+Concatenate
+Load Distinct	
+	"Security SUK Key" & '|' & "Security Division" &'|'& "Security Business Unit Key" &'|'& "Security Customer Statistics Group" &'|'& "Security Business Unit Type" &'|'& "Security Customer Unit" &'|'& "Security Customer Area"
+	&'|'& "Security Salesman Name Key" &'|'& "Security Salesman Level1 Key" &'|'& "Security Salesman Level2 Key" &'|'& "Security Salesman Level3 Key" &'|'& "Security Customer Key Account LV2 Key"  &'|'& "Security Customer Key Account Key"
+      &'|'& "Security Customer Sector Key"  &'|'& "Security Customer Indusrtry Key"  &'|'& "Security Customer Export Support Function Key" As "Local Mixed Security Key",
+    "Security SUK Key" & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & [Security Salesman Level3 Key] & '|' &  'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' As "Mixed Security Key"
+Resident
+	Tmp_Shared_Security;
+    
+Shared_Security:
+Concatenate
+Load Distinct	
+	"Security SUK Key" & '|' & "Security Division" &'|'& "Security Business Unit Key" &'|'& "Security Customer Statistics Group" &'|'& "Security Business Unit Type" &'|'& "Security Customer Unit" &'|'& "Security Customer Area"
+	&'|'& "Security Salesman Name Key" &'|'& "Security Salesman Level1 Key" &'|'& "Security Salesman Level2 Key" &'|'& "Security Salesman Level3 Key" &'|'& "Security Customer Key Account LV2 Key"  &'|'& "Security Customer Key Account Key" 
+      &'|'& "Security Customer Sector Key"  &'|'& "Security Customer Indusrtry Key"  &'|'& "Security Customer Export Support Function Key" As "Local Mixed Security Key",
+    "Security SUK Key" & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & [Security Salesman Level2 Key] & '|' & 'ALL' & '|' &  'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' As "Mixed Security Key"
+Resident
+	Tmp_Shared_Security;
+	
+	
+Shared_Security:
+Concatenate
+Load Distinct	
+	"Security SUK Key" & '|' & "Security Division" &'|'& "Security Business Unit Key" &'|'& "Security Customer Statistics Group" &'|'& "Security Business Unit Type" &'|'& "Security Customer Unit" &'|'& "Security Customer Area"
+	&'|'& "Security Salesman Name Key" &'|'& "Security Salesman Level1 Key" &'|'& "Security Salesman Level2 Key" &'|'& "Security Salesman Level3 Key" &'|'& "Security Customer Key Account LV2 Key"  &'|'& "Security Customer Key Account Key" 
+      &'|'& "Security Customer Sector Key"  &'|'& "Security Customer Indusrtry Key"   &'|'& "Security Customer Export Support Function Key" As "Local Mixed Security Key",
+    "Security SUK Key" & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & [Security Salesman Level1 Key] & '|' & 'ALL' & '|' & 'ALL' & '|' &  'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' As "Mixed Security Key"
+Resident
+	Tmp_Shared_Security;
+	
+	
+Shared_Security:
+Concatenate
+Load Distinct	
+	"Security SUK Key" & '|' & "Security Division" &'|'& "Security Business Unit Key" &'|'& "Security Customer Statistics Group" &'|'& "Security Business Unit Type" &'|'& "Security Customer Unit" &'|'& "Security Customer Area"
+	&'|'& "Security Salesman Name Key" &'|'& "Security Salesman Level1 Key" &'|'& "Security Salesman Level2 Key" &'|'& "Security Salesman Level3 Key" &'|'& "Security Customer Key Account LV2 Key"  &'|'& "Security Customer Key Account Key" 
+      &'|'& "Security Customer Sector Key"  &'|'& "Security Customer Indusrtry Key"   &'|'& "Security Customer Export Support Function Key"  As "Local Mixed Security Key",
+    "Security SUK Key" & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & [Security Salesman Name Key] & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' &  'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' As "Mixed Security Key"
+Resident
+	Tmp_Shared_Security;
+	
+	
+
+Shared_Security:
+Concatenate
+Load Distinct	
+	"Security SUK Key" & '|' & "Security Division" &'|'& "Security Business Unit Key" &'|'& "Security Customer Statistics Group" &'|'& "Security Business Unit Type" &'|'& "Security Customer Unit" &'|'& "Security Customer Area"
+	&'|'& "Security Salesman Name Key" &'|'& "Security Salesman Level1 Key" &'|'& "Security Salesman Level2 Key" &'|'& "Security Salesman Level3 Key" &'|'& "Security Customer Key Account LV2 Key"  &'|'& "Security Customer Key Account Key"
+      &'|'& "Security Customer Sector Key"  &'|'& "Security Customer Indusrtry Key"  &'|'& "Security Customer Export Support Function Key"  As "Local Mixed Security Key",
+    "Security SUK Key" & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' &  [Security Customer Key Account LV2 Key] & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' As "Mixed Security Key"
+Resident
+	Tmp_Shared_Security;
+
+Shared_Security:
+Concatenate
+Load Distinct	
+	"Security SUK Key" & '|' & "Security Division" &'|'& "Security Business Unit Key" &'|'& "Security Customer Statistics Group" &'|'& "Security Business Unit Type" &'|'& "Security Customer Unit" &'|'& "Security Customer Area"
+	&'|'& "Security Salesman Name Key" &'|'& "Security Salesman Level1 Key" &'|'& "Security Salesman Level2 Key" &'|'& "Security Salesman Level3 Key" &'|'& "Security Customer Key Account LV2 Key"  &'|'& "Security Customer Key Account Key" 
+      &'|'& "Security Customer Sector Key"  &'|'& "Security Customer Indusrtry Key"   &'|'& "Security Customer Export Support Function Key" As "Local Mixed Security Key",
+    "Security SUK Key" & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' &  'ALL' & '|' & [Security Customer Key Account Key] & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL'  As "Mixed Security Key"
+Resident
+	Tmp_Shared_Security;	
+    
+Shared_Security:
+Concatenate
+Load Distinct	
+	"Security SUK Key" & '|' & "Security Division" &'|'& "Security Business Unit Key" &'|'& "Security Customer Statistics Group" &'|'& "Security Business Unit Type" &'|'& "Security Customer Unit" &'|'& "Security Customer Area"
+	&'|'& "Security Salesman Name Key" &'|'& "Security Salesman Level1 Key" &'|'& "Security Salesman Level2 Key" &'|'& "Security Salesman Level3 Key" &'|'& "Security Customer Key Account LV2 Key"  &'|'& "Security Customer Key Account Key"
+      &'|'& "Security Customer Sector Key"  &'|'& "Security Customer Indusrtry Key"  &'|'& "Security Customer Export Support Function Key"  As "Local Mixed Security Key",
+    "Security SUK Key" & '|' & 'ALL' & '|' & "Security Business Unit Key" & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' &  'ALL' & '|' & [Security Customer Key Account Key] &  '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' 
+    	As "Mixed Security Key"
+Resident
+	Tmp_Shared_Security;	
+    
+    
+Shared_Security:
+Concatenate
+Load Distinct	
+	"Security SUK Key" & '|' & "Security Division" &'|'& "Security Business Unit Key" &'|'& "Security Customer Statistics Group" &'|'& "Security Business Unit Type" &'|'& "Security Customer Unit" &'|'& "Security Customer Area"
+	&'|'& "Security Salesman Name Key" &'|'& "Security Salesman Level1 Key" &'|'& "Security Salesman Level2 Key" &'|'& "Security Salesman Level3 Key" &'|'& "Security Customer Key Account LV2 Key"  &'|'& "Security Customer Key Account Key" 
+      &'|'& "Security Customer Sector Key"  &'|'& "Security Customer Indusrtry Key"   &'|'& "Security Customer Export Support Function Key" As "Local Mixed Security Key",
+      
+    "Security SUK Key" & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' &  'ALL' & '|' & 'ALL' & '|' & "Security Customer Sector Key"  & '|' & 'ALL' & '|' & 'ALL' As "Mixed Security Key"
+Resident
+	Tmp_Shared_Security;
+    
+    
+    
+Shared_Security:
+Concatenate
+Load Distinct	
+	"Security SUK Key" & '|' & "Security Division" &'|'& "Security Business Unit Key" &'|'& "Security Customer Statistics Group" &'|'& "Security Business Unit Type" &'|'& "Security Customer Unit" &'|'& "Security Customer Area"
+	&'|'& "Security Salesman Name Key" &'|'& "Security Salesman Level1 Key" &'|'& "Security Salesman Level2 Key" &'|'& "Security Salesman Level3 Key" &'|'& "Security Customer Key Account LV2 Key"  &'|'& "Security Customer Key Account Key" 
+      &'|'& "Security Customer Sector Key"  &'|'& "Security Customer Indusrtry Key"  &'|'& "Security Customer Export Support Function Key"  As "Local Mixed Security Key",
+      
+    "Security SUK Key" & '|' & "Security Division" & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & "Security Customer Unit" & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' &  'ALL' & '|' & 'ALL' & '|' & "Security Customer Sector Key"  & '|' & 'ALL' & '|' & 'ALL' As "Mixed Security Key"
+Resident
+	Tmp_Shared_Security;
+    
+
+
+Shared_Security:
+Concatenate
+Load Distinct	
+	"Security SUK Key" & '|' & "Security Division" &'|'& "Security Business Unit Key" &'|'& "Security Customer Statistics Group" &'|'& "Security Business Unit Type" &'|'& "Security Customer Unit" &'|'& "Security Customer Area"
+	&'|'& "Security Salesman Name Key" &'|'& "Security Salesman Level1 Key" &'|'& "Security Salesman Level2 Key" &'|'& "Security Salesman Level3 Key" &'|'& "Security Customer Key Account LV2 Key"  &'|'& "Security Customer Key Account Key" 
+      &'|'& "Security Customer Sector Key"  &'|'& "Security Customer Indusrtry Key"   &'|'& "Security Customer Export Support Function Key" As "Local Mixed Security Key",
+      
+    "Security SUK Key" & '|' & 'ALL' & '|' & "Security Business Unit Key" & '|' & 'ALL' & '|' & 'ALL' & '|' & "Security Customer Unit" & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' &  'ALL' & '|' & 'ALL' & '|' & 'ALL'  & '|' & 'ALL' & '|' & 'ALL' As "Mixed Security Key"
+Resident
+	Tmp_Shared_Security;
+    
+    
+    
+
+Shared_Security:
+Concatenate
+Load Distinct	
+	"Security SUK Key" & '|' & "Security Division" &'|'& "Security Business Unit Key" &'|'& "Security Customer Statistics Group" &'|'& "Security Business Unit Type" &'|'& "Security Customer Unit" &'|'& "Security Customer Area"
+	&'|'& "Security Salesman Name Key" &'|'& "Security Salesman Level1 Key" &'|'& "Security Salesman Level2 Key" &'|'& "Security Salesman Level3 Key" &'|'& "Security Customer Key Account LV2 Key"  &'|'& "Security Customer Key Account Key" 
+      &'|'& "Security Customer Sector Key"  &'|'& "Security Customer Indusrtry Key"  &'|'& "Security Customer Export Support Function Key"  As "Local Mixed Security Key",
+      
+    "Security SUK Key" & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' &  'ALL' & '|' & 'ALL' & '|' & "Security Customer Sector Key"  & '|' & "Security Customer Indusrtry Key" & '|' & 'ALL'  As "Mixed Security Key"
+Resident
+	Tmp_Shared_Security;
+    
+    
+ Shared_Security:
+Concatenate
+Load Distinct	
+	"Security SUK Key" & '|' & "Security Division" &'|'& "Security Business Unit Key" &'|'& "Security Customer Statistics Group" &'|'& "Security Business Unit Type" &'|'& "Security Customer Unit" &'|'& "Security Customer Area"
+	&'|'& "Security Salesman Name Key" &'|'& "Security Salesman Level1 Key" &'|'& "Security Salesman Level2 Key" &'|'& "Security Salesman Level3 Key" &'|'& "Security Customer Key Account LV2 Key"  &'|'& "Security Customer Key Account Key" 
+      &'|'& "Security Customer Sector Key"  &'|'& "Security Customer Indusrtry Key"  &'|'& "Security Customer Export Support Function Key"  As "Local Mixed Security Key",
+      
+    "Security SUK Key" & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' &  'ALL' & '|' & 'ALL' &  '|' &  'ALL'  & '|' & "Security Customer Indusrtry Key" & '|' & 'ALL' As "Mixed Security Key"
+Resident
+	Tmp_Shared_Security;
+    
+ 
+Shared_Security:
+Concatenate
+Load Distinct	
+	"Security SUK Key" & '|' & "Security Division" &'|'& "Security Business Unit Key" &'|'& "Security Customer Statistics Group" &'|'& "Security Business Unit Type" &'|'& "Security Customer Unit" &'|'& "Security Customer Area"
+	&'|'& "Security Salesman Name Key" &'|'& "Security Salesman Level1 Key" &'|'& "Security Salesman Level2 Key" &'|'& "Security Salesman Level3 Key" &'|'& "Security Customer Key Account LV2 Key"  &'|'& "Security Customer Key Account Key" 
+      &'|'& "Security Customer Sector Key"  &'|'& "Security Customer Indusrtry Key"   &'|'& "Security Customer Export Support Function Key" As "Local Mixed Security Key",
+      
+    "Security SUK Key" & '|' & "Security Division" & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' &  'ALL' & '|' & 'ALL' &  '|' & "Security Customer Sector Key"  & '|' & 'ALL' & '|' & 'ALL'  As "Mixed Security Key"
+Resident
+	Tmp_Shared_Security;
+    
+    
+    
+     Shared_Security:
+Concatenate
+Load Distinct	
+	"Security SUK Key" & '|' & "Security Division" &'|'& "Security Business Unit Key" &'|'& "Security Customer Statistics Group" &'|'& "Security Business Unit Type" &'|'& "Security Customer Unit" &'|'& "Security Customer Area"
+	&'|'& "Security Salesman Name Key" &'|'& "Security Salesman Level1 Key" &'|'& "Security Salesman Level2 Key" &'|'& "Security Salesman Level3 Key" &'|'& "Security Customer Key Account LV2 Key"  &'|'& "Security Customer Key Account Key" 
+      &'|'& "Security Customer Sector Key"  &'|'& "Security Customer Indusrtry Key"  &'|'& "Security Customer Export Support Function Key"  As "Local Mixed Security Key",
+      
+    "Security SUK Key" & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' & 'ALL' & '|' &  'ALL' & '|' & 'ALL' &  '|' &  'ALL'  & '|' & 'ALL' & '|' & "Security Customer Export Support Function Key"  As "Mixed Security Key"
+Resident
+	Tmp_Shared_Security;
+     
+
+Drop Table Tmp_Shared_Security;
+
+
+
+End Sub

@@ -1,0 +1,157 @@
+///$tab Qwik Table  - CXM
+[Dimensions_L]:
+LOAD * INLINE [
+Dimensions_L, DimensionsID_L
+Business Unit, 4rpadbu4uivvkiqbu7nnp
+Sector, 3j9tlvhzdplt003w46h3z
+Application, iw76qavwu2ddt1qze37ntg
+Lead Number, 2x69x9yelg3jh5wa7ec42a
+Lead Name, 1vjmt6wrk7h3ufb9g951y7
+Lead Memo,asdkuokldjsdklf216ad
+Lead Comments,klsopflsdfkljs365asd
+Salesman, 6anp5psl92tistq7copg
+Country, 0wnn6mwy8fbebtew3e63p2w
+Lead Opened By, 5f80ur07szil59pb339h
+Product Manager, 83hulx7y39t2utd0rkcjlr
+Month Year, gq28x88n3hi655wc6qy3fw
+Source Details, 9ry7u7vqwepafg0nskbx
+Source Type, ele8hyylteupottus1are
+Sales Unit, kxvdl5r5m4ooprfpxcnab
+Area, 0exnh4cvic3b56j0ym79s08
+Contact First Name, asdasdasdqweqweqwe
+Contact Last Name, akjsdakldaskldj1123klj123
+Contact Middle Name, askljaiokewrlmjksdfkm2234,
+Contact Email, aslkjadoijladskjoiuad,
+Contact Title, askloplkjsdfiuuwer2343
+Company Sector, adsiaosda;pqpweokkasd
+Company Industry,askpelkfpaoikads12321
+Company Product Packed / End Use, akiooijadoo23eop123
+Company Building Block,oikljqeiuqweij12312
+Company Product Line,aiosdkjsdif3e234joasd
+Lead State,lkaslkdlkasdklqwepo
+Lead City,kjaiodlkjasdiokljadjiqwe
+
+]
+;
+[Measures_L]:
+LOAD * INLINE [
+Measures_L, MeasuresID_L
+Total Leads, 1wbyp60k9sgmri1qi4rq8l
+Disqualified OY, 0yuloa629m6plhw7h1w7bf
+Inactive, irjgvmj8h18mtfk16v0uk
+Open OY, zd76q38su34shmwtcnwpw
+Qualified, dlq7sm42iz239s341sgqf
+Lead to Prospect Ratio, jqv79qs40xblewyw271sy
+Disqualified, rmlhzrxb5ys82wu439xbk9
+Active, h4fj3g4c6jlv00naqu336a
+Converted, gxrd9z53h0mbyzlz6uo2b4
+Lead to Prospect Ratio - CY, 1tpco1remmksqf4cvx8pn
+Acquired, l9b5ccuww1cmx46agbh8kg
+]
+;
+
+
+
+[Dimensions_P]:
+LOAD * INLINE [
+Dimensions_P, DimensionsID_P
+Business Unit, pgtf8eud9gcl2vy111w49
+Prospect Number, 1a3vdjack5tt9eywozkgnc
+Prospect Name, a53ddpwlhabzwb3on85vir
+Country, nvmdr9kfwdl8g1lwwigoj
+Sales Unit, n5fda5yc5a6uq6za5j75
+Business Unit Location, 39b0rstvzikw3jc8fzpoc
+Source Details, q6fp94irv6jy1v312tsy
+Source Type, 9jtno1dgtatavq5p7ww9aj
+Product Manager, asf80qhf0fmjsv5raq4qq
+Opened By, 7gsooezyr08xgfg1iyfw1c
+Application, o4447tltmkv655dm18oab
+Salesman, gg1zfbctz76v2h7lpo8fhe
+Area, oq3d2ww96ppn6r0qwgkai8
+Contact First Name, asdasdaserwerwreqwe
+Contact Last Name, akjsdaklhdfgghfghj1123klj123
+Contact Middle Name, askljsdfsdfmjksdfkm2234,
+Contact Email, aslkjadoihffghfghiuad,
+Contact Title, asklsdfsdfsdfiuuwer2343
+Company Sector, adsiaos12313qpweokkasd
+Company Industry,askp235254345paoikads12321
+Company Product Packed / End Use, a234535doo23eop123
+Company Building Block,oikljqew4rf3iuqweij12312
+Company Product Line,aiosdaqwe25133e234joasd
+Prospect State,asdaedfslkdlkasdklqwepo
+Prospect City,wwdeodlkjasdiokljadjiqwe
+
+
+]
+;
+[Measures_P]:
+LOAD * INLINE [
+Measures_P, MeasuresID_P
+Active, g2g1tpzr7dc0zx0zna5hm
+Lost, 53kzcmvxxt6iln74jqbou
+Cancelled, vltrrzm8i8q8tig3rgztck
+Acquired Prospects, 9e9iru1wv0djwbbug9mkdk
+Converted, a9m0krp03d5w5gt4lt7pf
+Postponed,a9m0krp03d5w5gt4lt7ps
+]
+;
+
+
+
+[Dimensions_A]:
+LOAD * INLINE [
+Dimensions_A, DimensionsID_A
+Activity Details, 5jq2ki33x2ntxt8ds
+Activity Entity Name, 2madd6lbj468
+Activity Entity Type, odssbxqipl39w
+Activity Entity, 8t0pc25w4yx9n
+Activity Number, b4orxebfmvjoya6qbl
+Application, iw76qavwu2ddt1qze37ntg
+Area, 0exnh4cvic3b56j0ym79s08
+Business Unit Location, 39b0rstvzikw3jc8fzpoc
+Business Unit, 4rpadbu4uivvkiqbu7nnp
+Company Building Block,oikljqeiuqweij12312
+Company Industry,askpelkfpaoikads12321
+Company Product Line,aiosdkjsdif3e234joasd
+Company Product Packed / End Use, akiooijadoo23eop123
+Company Sector, adsiaosda;pqpweokkasd
+Contact Email, aslkjadoijladskjoiuad,
+Contact First Name, asdasdasdqweqweqwe
+Contact Last Name, akjsdakldaskldj1123klj123
+Contact Middle Name, askljaiokewrlmjksdfkm2234,
+Contact Title, askloplkjsdfiuuwer2343
+Country, 0wnn6mwy8fbebtew3e63p2w
+Lead Comments,klsopflsdfkljs365asd
+Lead Memo,asdkuokldjsdklf216ad
+Lead Name, 1vjmt6wrk7h3ufb9g951y7
+Lead Number, 2x69x9yelg3jh5wa7ec42a
+Lead Opened By, 5f80ur07szil59pb339h
+Lead Reason, akaoaoahbusgu78
+Lead Source Details, fygfwu273rgyh
+Lead Source Type, dgfhstjsshhw
+Lead Status, lsidhgpisvbosdg
+Month Year, gq28x88n3hi655wc6qy3fw
+Opened By, 7gsooezyr08xgfg1iyfw1c
+Owned By, wb3ocr303szn19h6
+Product Manager, 83hulx7y39t2utd0rkcjlr
+Prospect Name, a53ddpwlhabzwb3on85vir
+Prospect Number, 1a3vdjack5tt9eywozkgnc
+Prospect Reason, jkfkjghkftkdukq3d
+Prospect Source Details, ertguinfue5
+Prospect Source Type, nhjdthdjgjd
+Prospect Status, fhhkdukfgkfwe5
+Sales Unit, kxvdl5r5m4ooprfpxcnab
+Salesman, 6anp5psl92tistq7copg
+Sector, 3j9tlvhzdplt003w46h3z
+]
+;
+[Measures_A]:
+LOAD * INLINE [
+Measures_A, MeasuresID_A
+Activity Count, doafmvs32ah2npc6lg0jxb,
+Lead_Active, klaslkdjasdkljadkljassd
+Lead_Qisqualified, iuwkljsdfihsdfkljsdf
+Lead_Inactive, juygsdfkjhsdfihsdfjkh
+Lead_Qualified, iowermjsdoifsdmhsoi
+]
+;

@@ -1,0 +1,52 @@
+///$tab Five Forces
+Sub Five_Forces
+
+Five_Forces:
+NoConcatenate
+LOAD
+    "Five Forces ID",
+    salesman_id,
+    business_unit_id,
+    "Five Forces Product Name",
+    FF_number_of_suppliers,
+    FF_suppliers_location,
+    FF_avg_size_supplier,
+    FF_uniqueness_of_service,
+    FF_your_ability_to_Subsitute,
+    FF_switching_costs,
+    FF_number_of_buyers,
+    FF_concentration_of_buyers,
+    FF_buyers_size_of_orders,
+    FF_buyers_switching_costs,
+    FF_buyers_ability_to_integrate,
+    FF_buyers_price_sensitivity,
+    FF_buyers_cost_structure,
+    FF_number_of_competitors,
+    FF_diversity_of__competitors,
+    FF_product_differenciation_substitutes,
+    FF_economics_of_scale,
+    FF_customer_loyality,
+    FF_customer_switching_cost,
+    FF_industry_sector_growth,
+    FF_availability_of_subsitutes,
+    FF_subsitute_price_vs_industry_product,
+    FF_subsitute_product_quality_vs_indistry_product,
+    FF_threat_switching_costs,
+    FF_specialist_knowledge,
+    FF_product_differenciation,
+    FF_brand_name,
+    FF_initial_capital_investment,
+    FF_consumer_switching_costs,
+    FF_access_to_distribution_channels,
+    FF_technology_protections,
+    FF_governmental_and_legal_barries,
+    FF_retaliation
+   
+FROM [lib://Folder_IFP_Admin_Group_INDEVCO/QVD/SalePro/mpk_five_forces.qvd]
+(qvd);
+
+
+
+
+
+End Sub

@@ -1,0 +1,66 @@
+///$tab SECURITY
+// Section access;
+
+
+// // OMIT users from accessing COP Related Measures
+// LOAD   USERID AS USERID,
+//        OMIT
+// FROM  [lib://Folder_IFP_Admin_Group/IFP_EXCEL/SECURITY/Fields-Access.xlsx]
+// (ooxml, embedded labels, table is [Fields Access]);
+// //**************************************************************************
+
+// tmp_Security_Roles:
+// NoConcatenate
+// LOAD
+//     'USER' as ACCESS, 
+//     Upper(User) as USERID,
+//     Role
+// FROM [lib://Folder_IFP_Admin_Group/IFP_EXCEL/SECURITY/IFP_SALES_Security.xlsx]
+// (ooxml, embedded labels, table is [Security Users]);
+
+
+// tmp_Security_Users:
+// NoConcatenate
+// LOAD
+//     Role,
+//     UPPER("Security SUK Key")
+//     &'|'& Upper("Division Security Key") 
+//     &'|'& Upper("Business Unit Security Key")  
+//     &'|'& Upper("Customer Statistics Group Security Key")
+//     &'|'& Upper("Business Unit Type Security Key")
+//     &'|'& Upper("Customer Unit Security Key") 
+//     &'|'& Upper("Customer Area Security Key") 
+//     &'|'& Upper("Security Salesman Name Key") 
+// 	&'|'& Upper("Security Salesman Level1 Key")
+// 	&'|'& Upper("Security Salesman Level2 Key")
+// 	&'|'& Upper("Security Salesman Level3 Key")
+//     &'|'& Upper("Security Customer Key Account LV2 Key")
+// 	&'|'& Upper("Security Customer Key Account Key")
+//     &'|'& Upper("Security Customer Sector Key")
+// 	&'|'& Upper("Security Customer Indusrtry Key")
+//     &'|'& Upper("Security Export Support Function Key")   
+    
+//     As "Mixed Security Key"
+// FROM [lib://Folder_IFP_Admin_Group/IFP_EXCEL/SECURITY/IFP_SALES_Security.xlsx]
+// (ooxml, embedded labels, table is [Security Roles]);
+ 
+
+// Inner Join(tmp_Security_Users)
+// Load * Resident tmp_Security_Roles;
+
+
+// Security:
+// NoConcatenate
+// LOAD
+// 	ACCESS, 
+//     USERID,
+//     "Mixed Security Key"
+// Resident tmp_Security_Users;
+
+
+// Drop Table tmp_Security_Roles;
+// Drop Table tmp_Security_Users;
+
+
+
+// Section Application;

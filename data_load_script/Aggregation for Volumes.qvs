@@ -1,0 +1,52 @@
+///$tab Aggregation for Volumes
+Sub Volumes_Aggregations
+
+ItemsSegment5:
+Mapping
+LOAD
+    Upper("Item Key") as "Item Key", 
+    Segment5Key
+FROM [lib://Folder_IFP_Admin_Group/QVD/AX2012/Items.qvd]
+(qvd);
+
+
+ItemsSegment6:
+Mapping
+LOAD
+	Upper("Item Key") as "Item Key", 
+    Segment6Key
+FROM [lib://Folder_IFP_Admin_Group/QVD/AX2012/Items.qvd]
+(qvd);
+
+
+InvoicesGrouped:
+NoConcatenate
+LOAD
+	"Order Customer Key",
+    ApplyMap('ItemsSegment5',Upper("Item Key"),'') as Segment5Key, 
+    ApplyMap('ItemsSegment6',Upper("Item Key"),'') as Segment6Key, 
+    Year("Master Calendar Date") as Year,
+    Sum("Invoice Kg") as "Invoice Kg"
+FROM [lib://Folder_IFP_Admin_Group/QVD/AX2012/Invoices_Merged.qvd]
+(qvd) group by 
+	"Order Customer Key",
+    ApplyMap('ItemsSegment5',Upper("Item Key"),'')  , 
+    ApplyMap('ItemsSegment6',Upper("Item Key"),'') , 
+    Year("Master Calendar Date") ;
+
+
+
+
+CustomerVolumnesSoldMapping:
+Mapping
+Load 
+    Upper("Year") & '|' & Upper("Segment5Key") & '|' & Upper("Segment6Key") & '|' & Upper("Order Customer Key") as MappingKey,
+    "Invoice Kg"
+Resident InvoicesGrouped;
+
+
+Drop table InvoicesGrouped;
+
+ 
+
+END Sub

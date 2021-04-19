@@ -1,0 +1,18 @@
+///$tab Call
+Call Invoices_Aggregation
+Call Volumes_Aggregations
+Call IFP_QVD
+Call IFP_CRM_QVD
+Call VGA 
+Call Five_Forces
+
+Call IFP_Sales_Shared_Dim_QVD
+Call VOC
+Call Competitors_SalePro
+Call Production
+
+
+Call Master_Calendar
+Call Synthetic_Dimensions
+Call Apply_Security
+Call Currency_Rates

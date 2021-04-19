@@ -1,0 +1,716 @@
+///$tab Synthetic Dimensions
+Sub Synthetic_Dimensions
+  
+  
+  [%SynHeadersA]:
+  Load dual('Invoiced',1) As %SynHeadersA
+  AutoGenerate(1);
+  Load dual('Under Execution',2) As %SynHeadersA
+  AutoGenerate(1);
+  Load dual('Expected Month Closing',3) As %SynHeadersA
+  AutoGenerate(1);
+  Load dual('Budget',4) As %SynHeadersA
+  AutoGenerate(1);
+  Load dual('Same Year Last Month',5) As %SynHeadersA
+  AutoGenerate(1);
+  Load dual('Expected vs Budget',6) As %SynHeadersA
+  AutoGenerate(1);
+  Load dual('Forecast',7) As %SynHeadersA
+  AutoGenerate(1);
+  
+  [%SynHeadersB]:
+  Load dual('YTD',1) As %SynHeadersB
+  AutoGenerate(1);
+  Load dual('Month 1',2) As %SynHeadersB
+  AutoGenerate(1);
+  Load dual('Month 2',3) As %SynHeadersB
+  AutoGenerate(1);
+  Load dual('2 Months Onward',4) As %SynHeadersB
+  AutoGenerate(1);
+  Load dual('Total',5) As %SynHeadersB
+  AutoGenerate(1);
+
+  [%SynHeadersC]:
+  Load dual('Expected Month Closing',1) As %SynHeadersC
+  AutoGenerate(1);
+  Load dual('Month 1',2) As %SynHeadersC
+  AutoGenerate(1);
+  Load dual('Month 2',3) As %SynHeadersC
+  AutoGenerate(1);
+  Load dual('2 Months Onward',4) As %SynHeadersC
+  AutoGenerate(1);
+  Load dual('Total Load',5) As %SynHeadersC
+  AutoGenerate(1);
+  
+  
+  
+  [%SynHeadersOne]:
+  Load dual('Invoiced',1) As %SynHeadersOne
+  AutoGenerate(1);
+  Load dual('Under Execution',2) As %SynHeadersOne
+  AutoGenerate(1);
+  Load dual('Expected Month Closing',3) As %SynHeadersOne
+  AutoGenerate(1);
+  Load dual('Budget',4) As %SynHeadersOne
+  AutoGenerate(1);
+  Load dual('Forecast',5) As %SynHeadersOne
+  AutoGenerate(1);
+  Load dual('Previous Month',6) As %SynHeadersOne
+  AutoGenerate(1);
+  Load dual('Expected vs Budget',7) As %SynHeadersOne
+  AutoGenerate(1);
+  Load dual('Expected vs Forecast',8) As %SynHeadersOne
+  AutoGenerate(1);
+  Load dual('Forecast vs Budget',9) As %SynHeadersOne
+  AutoGenerate(1);
+
+
+
+  [%SynHeadersTwo]:
+  Load dual('EMC',1) As %SynHeadersTwo
+  AutoGenerate(1);
+  Load dual('M1(Vs. Forecast)',2) As %SynHeadersTwo
+  AutoGenerate(1);
+  Load dual('M2(Vs. Forecast)',3) As %SynHeadersTwo
+  AutoGenerate(1);
+
+
+  [%SynHeadersThree]:
+  Load dual('Expected Month Closing',1) As %SynHeadersThree
+  AutoGenerate(1);
+  Load dual('Month +1',2) As %SynHeadersThree
+  AutoGenerate(1);
+  Load dual('Month +2',3) As %SynHeadersThree
+  AutoGenerate(1);
+  Load dual('2 Months Onward',4) As %SynHeadersThree
+  AutoGenerate(1);
+  Load dual('Total Load',5) As %SynHeadersThree
+  AutoGenerate(1);
+
+
+  [%SynHeadersFour]:
+  Load dual('EMC Month +1',1) As %SynHeadersFour
+  AutoGenerate(1);
+  Load dual('Forecast',2) As %SynHeadersFour
+  AutoGenerate(1);
+  Load dual('Budget',3) As %SynHeadersFour
+  AutoGenerate(1);
+  Load dual('Forecast vs. Budget',4) As %SynHeadersFour
+  AutoGenerate(1);
+  Load dual('EMC M1 vs. Budget',5) As %SynHeadersFour
+  AutoGenerate(1);
+  Load dual('EMC M1 vs. Forecast',6) As %SynHeadersFour
+  AutoGenerate(1);
+  
+
+  [%SynHeadersFive]:
+  Load dual('EMC Month +2',1) As %SynHeadersFive
+  AutoGenerate(1);
+  Load dual('Forecast',2) As %SynHeadersFive
+  AutoGenerate(1);
+  Load dual('Budget',3) As %SynHeadersFive
+  AutoGenerate(1);
+  Load dual('Forecast vs. Budget',4) As %SynHeadersFive
+  AutoGenerate(1);
+  Load dual('EMC M2 vs. Budget',5) As %SynHeadersFive
+  AutoGenerate(1);
+  Load dual('EMC M2 vs. Forecast',6) As %SynHeadersFive
+  AutoGenerate(1);
+  
+  
+  [%SynHeadersSalesOne]:
+  Load dual('This Period',1) As %SynHeadersSalesOne
+  AutoGenerate(1);
+  Load dual('Budget',2) As %SynHeadersSalesOne
+  AutoGenerate(1);
+  Load dual('Sales vs. Budget',3) As %SynHeadersSalesOne
+  AutoGenerate(1);
+  Load dual('Previous Year',4) As %SynHeadersSalesOne
+  AutoGenerate(1);
+  Load dual('Sales vs. Previous Year',5) As %SynHeadersSalesOne
+  AutoGenerate(1);
+  Load dual('Forecast',6) As %SynHeadersSalesOne
+  AutoGenerate(1);
+  Load dual('Sales vs. Forecast',7) As %SynHeadersSalesOne
+  AutoGenerate(1);
+  Load dual('Budget Full Year',8) As %SynHeadersSalesOne
+  AutoGenerate(1);
+  
+  
+    [%SynHeadersSalesCustomerSource]:
+  Load dual('This Period',1) As %SynHeadersSalesCustomerSource
+  AutoGenerate(1);
+  Load dual('Budget',2) As %SynHeadersSalesCustomerSource
+  AutoGenerate(1); 
+  
+  
+  
+  
+  [%SynHeadersSalesOneYTD]:
+  Load dual('This Period YTD',1) As %SynHeadersSalesOneYTD
+  AutoGenerate(1);
+  Load dual('Budget YTD',2) As %SynHeadersSalesOneYTD
+  AutoGenerate(1);
+  Load dual('Sales vs. Budget YTD',3) As %SynHeadersSalesOneYTD
+  AutoGenerate(1);
+  Load dual('Previous Year YTD',4) As %SynHeadersSalesOneYTD
+  AutoGenerate(1);
+  Load dual('Sales vs. Previous Year YTD',5) As %SynHeadersSalesOneYTD
+  AutoGenerate(1);
+  Load dual('Forecast YTD',6) As %SynHeadersSalesOneYTD
+  AutoGenerate(1);
+  Load dual('Sales vs. Forecast YTD',7) As %SynHeadersSalesOneYTD
+  AutoGenerate(1);
+  
+  
+  
+  [%SynHeadersDeatiledPivot]:
+  Load dual('Invoiced',1) As %SynHeadersDeatiledPivot
+  AutoGenerate(1);
+  Load dual('Under Execution',2) As %SynHeadersDeatiledPivot
+  AutoGenerate(1);
+  Load dual('Expected Month Closing',3) As %SynHeadersDeatiledPivot
+  AutoGenerate(1);
+  Load dual('Budget',4) As %SynHeadersDeatiledPivot
+  AutoGenerate(1);
+  Load dual('Forecast',5) As %SynHeadersDeatiledPivot
+  AutoGenerate(1);
+  Load dual('Previous Month',6) As %SynHeadersDeatiledPivot
+  AutoGenerate(1);
+  Load dual('Expected vs Budget',7) As %SynHeadersDeatiledPivot
+  AutoGenerate(1);
+  Load dual('Expected vs Forecast',8) As %SynHeadersDeatiledPivot
+  AutoGenerate(1);
+  Load dual('Forecast vs Budget',9) As %SynHeadersDeatiledPivot
+  AutoGenerate(1);
+  
+  
+  
+  [%SynHeadersSix]:
+  Load dual('EMC',1) As %SynHeadersSix
+  AutoGenerate(1);
+  Load dual('Month +1',2) As %SynHeadersSix
+  AutoGenerate(1);
+  Load dual('Month +2',3) As %SynHeadersSix
+  AutoGenerate(1);
+  Load dual('Month +3',4) As %SynHeadersSix
+  AutoGenerate(1);
+  Load dual('Month +4',5) As %SynHeadersSix
+  AutoGenerate(1);
+  Load dual('Month +5',6) As %SynHeadersSix
+  AutoGenerate(1);
+  Load dual('Month +6',7) As %SynHeadersSix
+  AutoGenerate(1);
+  
+  
+  
+  
+  [%SynHeadersFullRevised]:
+  Load dual('Full Budget',1) As %SynHeadersFullRevised
+  AutoGenerate(1);  
+  Load dual('Full Forecast',2) As %SynHeadersFullRevised
+  AutoGenerate(2);
+  Load dual('Forecast Approved from Sales',3) As %SynHeadersFullRevised
+  AutoGenerate(3);
+  Load dual('Forecast Approved from BU',4) As %SynHeadersFullRevised 
+  AutoGenerate(4);
+  Load dual('Final Forecast',5) As %SynHeadersFullRevised
+  AutoGenerate(5); 
+  Load dual('Last Year Sales',6) As %SynHeadersFullRevised
+  AutoGenerate(6); 
+  Load dual('Budget H1',7) As %SynHeadersFullRevised
+  AutoGenerate(7);
+  Load dual('Budget H2',8) As %SynHeadersFullRevised
+  AutoGenerate(8);
+  Load dual('Forecast H1 Full',9) As %SynHeadersFullRevised
+  AutoGenerate(9);
+  Load dual('Forecast H2 Full',10) As %SynHeadersFullRevised
+  AutoGenerate(10);
+  Load dual('Actual Sales',11) As %SynHeadersFullRevised
+  AutoGenerate(11);
+
+
+  
+  
+  
+  [%SynHeadersExpansion]:
+  Load dual('New customers',1) As %SynHeadersExpansion
+  AutoGenerate(1);
+  Load dual('Forecasted Prospect',2) As %SynHeadersExpansion
+  AutoGenerate(1);
+  Load dual('Won back',3) As %SynHeadersExpansion 
+  AutoGenerate(1);
+  Load dual('Forecasted Win back',4) As %SynHeadersExpansion
+  AutoGenerate(1);
+  Load dual('Expansion',5) As %SynHeadersExpansion
+  AutoGenerate(1);
+  Load dual('Total Sales',6) As %SynHeadersExpansion
+  AutoGenerate(1);
+
+
+	
+  [%SynHeadersExpansion1]:
+  Load dual('Non-Forecasted New Customers',1) As %SynHeadersExpansion1
+  AutoGenerate(1);
+  Load dual('Forecasted New Customers',2) As %SynHeadersExpansion1
+  AutoGenerate(1);
+  Load dual('Non-Forecasted Won back Customers',3) As %SynHeadersExpansion1
+  AutoGenerate(1);
+  Load dual('Forecasted Won back customers',4) As %SynHeadersExpansion1
+  AutoGenerate(1);
+  Load dual('Recurrent Customers',5) As %SynHeadersExpansion1
+  AutoGenerate(1);
+  Load dual('Inactive',6) As %SynHeadersExpansion1
+  AutoGenerate(1);
+
+
+
+CustomerScoringFunnel:
+NoConcatenate
+load * inline 
+[
+Scoring,ScoringOrder,
+Platinum,1,
+Gold,2,
+Silver,3,
+Bronze,4,
+Inactive,5,
+WonBack,6,
+New Customers,7,
+Prospects,8,
+Leads,9
+]
+
+;
+
+  
+  
+CustomerScoringFunnelTiers:
+NoConcatenate
+load * inline 
+[
+ScoringTiers,ScoringOrderTiers,
+Platinum,1,
+Gold,2,
+Silver,3,
+Bronze,4
+]
+
+;
+
+  
+CustomerScoringTiers:
+NoConcatenate
+load * inline 
+[
+CustomerScoringTiers,CustomerScoringTiersOrder,
+A - PLATINUM,1,
+B - GOLD,2,
+C - SILVER,3,
+D - BRONZE,4,
+E - New or Re-Activated Customers,5
+]
+
+;
+ 
+[CustomerPyramidTiers]:
+  Load dual('A - Platinum',1) As CustomerPyramidTiers
+  AutoGenerate(1);
+  Load dual('B - Gold',2) As CustomerPyramidTiers
+  AutoGenerate(1);
+  Load dual('C - Silver',3) As CustomerPyramidTiers
+  AutoGenerate(1);
+  Load dual('D - Bronze',4) As CustomerPyramidTiers
+  AutoGenerate(1);
+  Load dual('E - New or Re-Activated Customers',5) As CustomerPyramidTiers
+  AutoGenerate(1); 
+ 
+ 
+[CustomerPyramidTiersRevenue]:
+  Load dual('A - Platinum',1) As CustomerPyramidTiersRevenue
+  AutoGenerate(1);
+  Load dual('B - Gold',2) As CustomerPyramidTiersRevenue
+  AutoGenerate(1);
+  Load dual('C - Silver',3) As CustomerPyramidTiersRevenue
+  AutoGenerate(1);
+  Load dual('D - Bronze',4) As CustomerPyramidTiersRevenue
+  AutoGenerate(1);
+  Load dual('E - New or Re-Activated Customers',5) As CustomerPyramidTiersRevenue
+  AutoGenerate(1);
+  Load dual('Total',6) As CustomerPyramidTiersRevenue
+  AutoGenerate(1);
+  Load dual('Variance',7) As CustomerPyramidTiersRevenue
+  AutoGenerate(1);
+  Load dual('Var %',8) As CustomerPyramidTiersRevenue
+  AutoGenerate(1);
+  
+  
+
+
+//****************************************EMC Synthetic Headers *********************************??
+
+  
+  [%SynHeadersA_EMC]:
+  Load dual('Invoiced',1) As %SynHeadersA_EMC
+  AutoGenerate(1);
+  Load dual('Under Execution',2) As %SynHeadersA_EMC
+  AutoGenerate(1);
+  Load dual('Expected Month Closing',3) As %SynHeadersA_EMC
+  AutoGenerate(1);
+  Load dual('Budget',4) As %SynHeadersA_EMC
+  AutoGenerate(1);
+  Load dual('Same Year Last Month',5) As %SynHeadersA_EMC
+  AutoGenerate(1);
+  Load dual('Expected vs Budget',6) As %SynHeadersA_EMC
+  AutoGenerate(1);
+  Load dual('Forecast',7) As %SynHeadersA_EMC
+  AutoGenerate(1);
+  
+  [%SynHeadersB_EMC]:
+  Load dual('YTD',1) As %SynHeadersB_EMC
+  AutoGenerate(1);
+  Load dual('Month 1',2) As %SynHeadersB_EMC
+  AutoGenerate(1);
+  Load dual('Month 2',3) As %SynHeadersB_EMC
+  AutoGenerate(1);
+  Load dual('2 Months Onward',4) As %SynHeadersB_EMC
+  AutoGenerate(1);
+  Load dual('Total',5) As %SynHeadersB_EMC
+  AutoGenerate(1);
+
+  [%SynHeadersC_EMC]:
+  Load dual('Expected Month Closing',1) As %SynHeadersC_EMC
+  AutoGenerate(1);
+  Load dual('Month 1',2) As %SynHeadersC_EMC
+  AutoGenerate(1);
+  Load dual('Month 2',3) As %SynHeadersC_EMC
+  AutoGenerate(1);
+  Load dual('2 Months Onward',4) As %SynHeadersC_EMC
+  AutoGenerate(1);
+  Load dual('Total Load',5) As %SynHeadersC_EMC
+  AutoGenerate(1);
+  
+  
+  
+  [%SynHeadersOne_EMC]:
+  Load dual('Invoiced',1) As %SynHeadersOne_EMC
+  AutoGenerate(1);
+  Load dual('Under Execution',2) As %SynHeadersOne_EMC
+  AutoGenerate(1);
+  Load dual('Expected Month Closing',3) As %SynHeadersOne_EMC
+  AutoGenerate(1);
+  Load dual('Budget',4) As %SynHeadersOne_EMC
+  AutoGenerate(1);
+  Load dual('Forecast',5) As %SynHeadersOne_EMC
+  AutoGenerate(1);
+  Load dual('Previous Month',6) As %SynHeadersOne_EMC
+  AutoGenerate(1);
+  Load dual('Expected vs Budget',7) As %SynHeadersOne_EMC
+  AutoGenerate(1);
+  Load dual('Expected vs Forecast',8) As %SynHeadersOne_EMC
+  AutoGenerate(1);
+  Load dual('Forecast vs Budget',9) As %SynHeadersOne_EMC
+  AutoGenerate(1);
+  Load dual('Budget Full Year',10) As %SynHeadersOne_EMC
+  AutoGenerate(1);
+  Load dual('Quot. Created',11) As %SynHeadersOne_EMC
+  AutoGenerate(1);
+  Load dual('Quot. Sent',12) As %SynHeadersOne_EMC
+  AutoGenerate(1);
+  Load dual('Pending Order',13) As %SynHeadersOne_EMC
+  AutoGenerate(1);
+
+
+
+  [%SynHeadersTwo_EMC]:
+  Load dual('EMC',1) As %SynHeadersTwo_EMC
+  AutoGenerate(1);
+  Load dual('M1(Vs. Forecast)',2) As %SynHeadersTwo_EMC
+  AutoGenerate(1);
+  Load dual('M2(Vs. Forecast)',3) As %SynHeadersTwo_EMC
+  AutoGenerate(1);
+
+
+
+ [%SynHeadersThree_EMC]:
+  Load dual('Expected Month Closing',1) As %SynHeadersThree_EMC
+  AutoGenerate(1);
+  Load dual('Month +1',2) As %SynHeadersThree_EMC
+  AutoGenerate(1);
+  Load dual('Budget (Month +1)',3) As %SynHeadersThree_EMC
+  AutoGenerate(1);
+  Load dual('Expected vs Budget (Month +1)',4) As %SynHeadersThree_EMC
+  AutoGenerate(1);
+  Load dual('Forecast (Month +1)',5) As %SynHeadersThree_EMC
+  AutoGenerate(1);  
+  Load dual('Expected vs Fcst. (Month +1)',6) As %SynHeadersThree_EMC
+  AutoGenerate(1);
+  Load dual('Month +2',7) As %SynHeadersThree_EMC
+  AutoGenerate(1);
+  Load dual('2 Months Onward',8) As %SynHeadersThree_EMC
+  AutoGenerate(1);
+  Load dual('Total Load',9) As %SynHeadersThree_EMC
+  AutoGenerate(1);
+  
+
+
+  [%SynHeadersFour_EMC]:
+  Load dual('EMC Month +1',1) As %SynHeadersFour_EMC
+  AutoGenerate(1);
+  Load dual('Forecast',2) As %SynHeadersFour_EMC
+  AutoGenerate(1);
+  Load dual('Budget',3) As %SynHeadersFour_EMC
+  AutoGenerate(1);
+  Load dual('Forecast vs. Budget',4) As %SynHeadersFour_EMC
+  AutoGenerate(1);
+  Load dual('EMC M1 vs. Budget',5) As %SynHeadersFour_EMC
+  AutoGenerate(1);
+  Load dual('EMC M1 vs. Forecast',6) As %SynHeadersFour_EMC
+  AutoGenerate(1);
+  
+
+  [%SynHeadersFive_EMC]:
+  Load dual('EMC Month +2',1) As %SynHeadersFive_EMC
+  AutoGenerate(1);
+  Load dual('Forecast',2) As %SynHeadersFive_EMC
+  AutoGenerate(1);
+  Load dual('Budget',3) As %SynHeadersFive_EMC
+  AutoGenerate(1);
+  Load dual('Forecast vs. Budget',4) As %SynHeadersFive_EMC
+  AutoGenerate(1);
+  Load dual('EMC M2 vs. Budget',5) As %SynHeadersFive_EMC
+  AutoGenerate(1);
+  Load dual('EMC M2 vs. Forecast',6) As %SynHeadersFive_EMC
+  AutoGenerate(1);
+  
+  
+  
+  [%SynHeadersSix_EMC]:
+  Load dual('EMC',1) As %SynHeadersSix_EMC
+  AutoGenerate(1);
+  Load dual('Month +1',2) As %SynHeadersSix_EMC
+  AutoGenerate(1);
+  Load dual('Month +2',3) As %SynHeadersSix_EMC
+  AutoGenerate(1);
+  Load dual('Month +3',4) As %SynHeadersSix_EMC
+  AutoGenerate(1);
+  Load dual('Month +4',5) As %SynHeadersSix_EMC
+  AutoGenerate(1);
+  Load dual('Month +5',6) As %SynHeadersSix_EMC
+  AutoGenerate(1);
+  Load dual('Month +6',7) As %SynHeadersSix_EMC
+  AutoGenerate(1);
+  
+  
+  
+  [%SynHeadersDeatiledPivot_EMC]:
+  Load dual('Invoiced',1) As %SynHeadersDeatiledPivot_EMC
+  AutoGenerate(1);
+  Load dual('Under Execution',2) As %SynHeadersDeatiledPivot_EMC
+  AutoGenerate(1);
+  Load dual('Expected Month Closing',3) As %SynHeadersDeatiledPivot_EMC
+  AutoGenerate(1);
+  Load dual('Budget',4) As %SynHeadersDeatiledPivot_EMC
+  AutoGenerate(1);
+  Load dual('Forecast',5) As %SynHeadersDeatiledPivot_EMC
+  AutoGenerate(1);
+  Load dual('Previous Month',6) As %SynHeadersDeatiledPivot_EMC
+  AutoGenerate(1);
+  Load dual('Expected vs Budget',7) As %SynHeadersDeatiledPivot_EMC
+  AutoGenerate(1);
+  Load dual('Expected vs Forecast',8) As %SynHeadersDeatiledPivot_EMC
+  AutoGenerate(1);
+  Load dual('Forecast vs Budget',9) As %SynHeadersDeatiledPivot_EMC
+  AutoGenerate(1);
+  Load dual('EMC +1',10) As %SynHeadersDeatiledPivot_EMC
+  AutoGenerate(1);
+  Load dual('Quot. Created',11) As %SynHeadersDeatiledPivot_EMC
+  AutoGenerate(1);
+  Load dual('Quot. Sent',12) As %SynHeadersDeatiledPivot_EMC
+  AutoGenerate(1);
+  Load dual('Pending Order',13) As %SynHeadersDeatiledPivot_EMC
+  AutoGenerate(1);
+
+
+
+
+  [%SynHeadersDeatiledUnitOfMeasures]:
+  Load dual('Quantity',1) As %SynHeadersDeatiledUnitOfMeasures
+  AutoGenerate(1);
+  Load dual('Gross Sales',2) As %SynHeadersDeatiledUnitOfMeasures
+  AutoGenerate(1);
+  Load dual('Misc. Charges',3) As %SynHeadersDeatiledUnitOfMeasures
+  AutoGenerate(1);
+  Load dual('Net Sales',4) As %SynHeadersDeatiledUnitOfMeasures
+  AutoGenerate(1);
+  Load dual('COP',5) As %SynHeadersDeatiledUnitOfMeasures
+  AutoGenerate(1);
+  Load dual('G. ASP',6) As %SynHeadersDeatiledUnitOfMeasures
+  AutoGenerate(1);
+  Load dual('Unit Misc. Charges',7) As %SynHeadersDeatiledUnitOfMeasures
+  AutoGenerate(1);
+  Load dual('N. ASP',8) As %SynHeadersDeatiledUnitOfMeasures
+  AutoGenerate(1);
+  Load dual('Unit COGS',9) As %SynHeadersDeatiledUnitOfMeasures
+  AutoGenerate(1);
+   Load dual('Unit COP',10) As %SynHeadersDeatiledUnitOfMeasures
+  AutoGenerate(1);
+  Load dual('COP %',11) As %SynHeadersDeatiledUnitOfMeasures
+  AutoGenerate(1);
+
+[v_Selected_Dimension_MT_AMT]:
+  Load dual('MT',1) As v_Selected_Dimension_MT_AMT
+  AutoGenerate(1);
+  Load dual('AMT',2) As v_Selected_Dimension_MT_AMT
+  AutoGenerate(1);
+  
+  
+  [%SynHeadersPricingGrouping]:
+  Load dual('Actual',1) As %SynHeadersPricingGrouping
+  AutoGenerate(1);
+  Load dual('Replacement Cost',2) As %SynHeadersPricingGrouping
+  AutoGenerate(1);
+  Load dual('Weighted Average Cost',3) As %SynHeadersPricingGrouping
+  AutoGenerate(1);
+  
+  
+  [%SynHeadersPricingActual]:
+  Load dual('Quantity Sold Kg',1) As %SynHeadersPricingActual
+  AutoGenerate(1);
+  Load dual('ASP/Kg (Gross)',2) As %SynHeadersPricingActual
+  AutoGenerate(1);
+  Load dual('ASP/Kg',3) As %SynHeadersPricingActual
+  AutoGenerate(1);
+  Load dual('COS/Kg (Before Var.)',4) As %SynHeadersPricingActual
+  AutoGenerate(1);
+  Load dual('COS/Kg (After Var.)',5) As %SynHeadersPricingActual
+  AutoGenerate(1);
+  Load dual('COP/Kg (Gross Before Var.)',6) As %SynHeadersPricingActual
+  AutoGenerate(1);
+  Load dual('COP/Kg (Gross After Var.)',7) As %SynHeadersPricingActual
+  AutoGenerate(1);
+  Load dual('COP/Kg (Before Var.)',8) As %SynHeadersPricingActual
+  AutoGenerate(1);
+  Load dual('COP/Kg (After Var.)',9) As %SynHeadersPricingActual
+  AutoGenerate(1);
+  
+  
+  [%SynHeadersPricingRepCost]:
+  Load dual('Rep. COS/Kg without Freight/Cliche/Cylinder',1) As %SynHeadersPricingRepCost
+  AutoGenerate(1);
+  Load dual('Var COS/Kg vs Actual before variance',2) As %SynHeadersPricingRepCost
+  AutoGenerate(1);
+  Load dual('Rep. COP/Kg',3) As %SynHeadersPricingRepCost
+  AutoGenerate(1);
+  Load dual('Var COP/Kg vs Actual',4) As %SynHeadersPricingRepCost
+  AutoGenerate(1);
+  Load dual('Impact Net COP Var SR',5) As %SynHeadersPricingRepCost
+  AutoGenerate(1);
+  
+  
+  [%SynHeadersPricingWeightedAvgCost]:
+  Load dual('WA. COS/Kg without Freight/Cliche/Cylinder',1) As %SynHeadersPricingWeightedAvgCost
+  AutoGenerate(1);
+  Load dual('Var COS/Kg vs Actual before variance',2) As %SynHeadersPricingWeightedAvgCost
+  AutoGenerate(1);
+  Load dual('WA COP/Kg',3) As %SynHeadersPricingWeightedAvgCost
+  AutoGenerate(1);
+  Load dual('Var COP/Kg vs Actual',4) As %SynHeadersPricingWeightedAvgCost
+  AutoGenerate(1);
+  Load dual('Impact Net COP Var SR',5) As %SynHeadersPricingWeightedAvgCost
+  AutoGenerate(1);
+  
+  
+  [%SynHeadersUnmetBudgetMeasures]:
+  Load dual('Unmet Budget Weight',1) As %SynHeadersUnmetBudgetMeasures
+  AutoGenerate(1);
+  Load dual('Unmet Budget Net Sales',2) As %SynHeadersUnmetBudgetMeasures
+  AutoGenerate(1);
+  Load dual('Missed Net Weight',3) As %SynHeadersUnmetBudgetMeasures
+  AutoGenerate(1);
+  Load dual('Missed Net Sales',4) As %SynHeadersUnmetBudgetMeasures
+  AutoGenerate(1);
+  Load dual('Invoiced Net Weight',5) As %SynHeadersUnmetBudgetMeasures
+  AutoGenerate(1);
+  Load dual('Invoiced Net Sales',6) As %SynHeadersUnmetBudgetMeasures
+  AutoGenerate(1);
+  Load dual('% of Unmet Budget',7) As %SynHeadersUnmetBudgetMeasures
+  AutoGenerate(1);
+  Load dual('% of Unmet Budget Sales',8) As %SynHeadersUnmetBudgetMeasures
+  AutoGenerate(1);
+  Load dual('Filled %',9) As %SynHeadersUnmetBudgetMeasures
+  AutoGenerate(1);
+
+
+[v_Selected_Product_Development]:
+  
+  Load dual('Last Year Sales',1) As v_Selected_Product_Development
+  AutoGenerate(1);
+  
+  Load dual('Curreny Year Sales',2) As v_Selected_Product_Development
+  AutoGenerate(1);
+  
+  Load dual('Years To Date Sales',3) As v_Selected_Product_Development
+  AutoGenerate(1);
+
+
+
+ [v_Selected_Dimension_Quotation]:
+  Load dual('Quotation Process',1) As v_Selected_Dimension_Quotation
+  AutoGenerate(1);
+  Load dual('Sales Order to Invoice Process',2) As v_Selected_Dimension_Quotation
+  AutoGenerate(1);
+  
+  
+   [v_Selected_Dimension_Quotation_To_Invoice]:
+  Load dual('Quotation - Created',1) As v_Selected_Dimension_Quotation_To_Invoice
+  AutoGenerate(1);
+  Load dual('Quotation - Sent To Customer',2) As v_Selected_Dimension_Quotation_To_Invoice
+  AutoGenerate(1);
+  Load dual('Journal Orders - Waiting BU Approval',3) As v_Selected_Dimension_Quotation_To_Invoice
+  AutoGenerate(1);
+  Load dual('Orders In Production',4) As v_Selected_Dimension_Quotation_To_Invoice
+  AutoGenerate(1);
+  Load dual('Invoiced to Customer',5) As v_Selected_Dimension_Quotation_To_Invoice
+  AutoGenerate(1);
+  
+  
+  
+   [v_APO_Headers]:
+  Load dual('Contribution Over Production',1) As v_APO_Headers
+  AutoGenerate(1);
+ Load dual('New Customers Conversion',2) As v_APO_Headers
+  AutoGenerate(1);
+  Load dual('New products sales',3) As v_APO_Headers
+  AutoGenerate(1);
+  Load dual('Quality Complaints Ratio',4) As v_APO_Headers
+  AutoGenerate(1);
+  Load dual('OTIF',5) As v_APO_Headers
+  AutoGenerate(1);
+  Load dual('New Business Generation',6) As v_APO_Headers
+  AutoGenerate(1);
+  Load dual('Inventory Record Accuracy %',7) As v_APO_Headers
+  AutoGenerate(1); 
+   
+   
+   
+     
+   [%SynHeadersExpectedYearClosingAnalysis]:
+  Load dual('Actual Last Year',1) As %SynHeadersExpectedYearClosingAnalysis
+  AutoGenerate(1);
+ Load dual('Expected Year Closing',2) As %SynHeadersExpectedYearClosingAnalysis
+  AutoGenerate(1);
+  Load dual('Current Year Budget',3) As %SynHeadersExpectedYearClosingAnalysis
+  AutoGenerate(1);
+  Load dual('Next Year Budget',4) As %SynHeadersExpectedYearClosingAnalysis
+  AutoGenerate(1);
+  Load dual('Expected Vs Budget',5) As %SynHeadersExpectedYearClosingAnalysis
+  AutoGenerate(1);
+  Load dual('Expected Vs Last Year',6) As %SynHeadersExpectedYearClosingAnalysis
+  AutoGenerate(1); 
+   
+   
+   
+
+  
+End sub
