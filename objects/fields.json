@@ -3,7 +3,7 @@
     "qIsHidden": true,
     "qIsSystem": true,
     "qName": "$Field",
-    "qCardinal": 1366,
+    "qCardinal": 1444,
     "qTags": [
       "$ascii",
       "$text",
@@ -17,7 +17,7 @@
     "qIsHidden": true,
     "qIsSystem": true,
     "qName": "$FieldNo",
-    "qCardinal": 141,
+    "qCardinal": 156,
     "qTags": [
       "$hidden",
       "$system",
@@ -30,7 +30,7 @@
     "qIsHidden": true,
     "qIsSystem": true,
     "qName": "$Fields",
-    "qCardinal": 33,
+    "qCardinal": 32,
     "qTags": [
       "$hidden",
       "$system",
@@ -56,7 +56,7 @@
     "qIsHidden": true,
     "qIsSystem": true,
     "qName": "$Rows",
-    "qCardinal": 105,
+    "qCardinal": 108,
     "qTags": [
       "$hidden",
       "$system",
@@ -69,7 +69,7 @@
     "qIsHidden": true,
     "qIsSystem": true,
     "qName": "$Table",
-    "qCardinal": 149,
+    "qCardinal": 155,
     "qTags": [
       "$ascii",
       "$text",
@@ -444,7 +444,7 @@
   },
   {
     "qName": "0-30 USD",
-    "qCardinal": 51708,
+    "qCardinal": 52356,
     "qTags": [
       "$numeric"
     ],
@@ -454,7 +454,7 @@
   },
   {
     "qName": "121-150 USD",
-    "qCardinal": 14208,
+    "qCardinal": 14490,
     "qTags": [
       "$numeric"
     ],
@@ -464,7 +464,7 @@
   },
   {
     "qName": "151-180 USD",
-    "qCardinal": 9782,
+    "qCardinal": 9969,
     "qTags": [
       "$numeric"
     ],
@@ -474,7 +474,7 @@
   },
   {
     "qName": "181-210 USD",
-    "qCardinal": 7343,
+    "qCardinal": 7510,
     "qTags": [
       "$numeric"
     ],
@@ -484,7 +484,7 @@
   },
   {
     "qName": "211-240 USD",
-    "qCardinal": 5827,
+    "qCardinal": 5965,
     "qTags": [
       "$numeric"
     ],
@@ -494,7 +494,7 @@
   },
   {
     "qName": "241-270 USD",
-    "qCardinal": 4813,
+    "qCardinal": 4912,
     "qTags": [
       "$numeric"
     ],
@@ -504,7 +504,7 @@
   },
   {
     "qName": "271-300 USD",
-    "qCardinal": 4100,
+    "qCardinal": 4200,
     "qTags": [
       "$numeric"
     ],
@@ -514,7 +514,7 @@
   },
   {
     "qName": "301-330 USD",
-    "qCardinal": 3528,
+    "qCardinal": 3621,
     "qTags": [
       "$numeric"
     ],
@@ -524,7 +524,7 @@
   },
   {
     "qName": "31-60 USD",
-    "qCardinal": 45532,
+    "qCardinal": 46510,
     "qTags": [
       "$numeric"
     ],
@@ -534,7 +534,7 @@
   },
   {
     "qName": "331-360 USD",
-    "qCardinal": 3110,
+    "qCardinal": 3173,
     "qTags": [
       "$numeric"
     ],
@@ -544,7 +544,7 @@
   },
   {
     "qName": "61-90 USD",
-    "qCardinal": 35212,
+    "qCardinal": 35899,
     "qTags": [
       "$numeric"
     ],
@@ -554,7 +554,7 @@
   },
   {
     "qName": "91-120 USD",
-    "qCardinal": 23115,
+    "qCardinal": 23571,
     "qTags": [
       "$numeric"
     ],
@@ -619,7 +619,7 @@
   },
   {
     "qName": "Activity Details",
-    "qCardinal": 14565,
+    "qCardinal": 14594,
     "qTags": [
       "$ascii",
       "$text"
@@ -630,7 +630,7 @@
   },
   {
     "qName": "Activity Entity",
-    "qCardinal": 8188,
+    "qCardinal": 8200,
     "qTags": [
       "$ascii",
       "$text"
@@ -641,7 +641,7 @@
   },
   {
     "qName": "Activity Entity Name",
-    "qCardinal": 8478,
+    "qCardinal": 8507,
     "qTags": [
       "$ascii",
       "$text"
@@ -663,7 +663,7 @@
   },
   {
     "qName": "Activity Key",
-    "qCardinal": 25104,
+    "qCardinal": 25175,
     "qTags": [
       "$ascii",
       "$text",
@@ -676,7 +676,7 @@
   },
   {
     "qName": "Activity Line Key",
-    "qCardinal": 25104,
+    "qCardinal": 25175,
     "qTags": [
       "$ascii",
       "$text",
@@ -689,7 +689,7 @@
   },
   {
     "qName": "Activity Number",
-    "qCardinal": 18905,
+    "qCardinal": 18976,
     "qTags": [
       "$ascii",
       "$text"
@@ -733,7 +733,7 @@
   },
   {
     "qName": "Activity Purpose",
-    "qCardinal": 12631,
+    "qCardinal": 12646,
     "qTags": [
       "$ascii",
       "$text"
@@ -810,7 +810,7 @@
   },
   {
     "qName": "Address City",
-    "qCardinal": 4082,
+    "qCardinal": 4106,
     "qTags": [
       "$ascii",
       "$text"
@@ -832,7 +832,7 @@
   },
   {
     "qName": "Address County",
-    "qCardinal": 692,
+    "qCardinal": 693,
     "qTags": [
       "$ascii",
       "$text"
@@ -843,7 +843,7 @@
   },
   {
     "qName": "Address Party ID",
-    "qCardinal": 48520,
+    "qCardinal": 48634,
     "qTags": [
       "$numeric",
       "$integer"
@@ -854,7 +854,7 @@
   },
   {
     "qName": "Address State",
-    "qCardinal": 177,
+    "qCardinal": 178,
     "qTags": [
       "$ascii",
       "$text"
@@ -865,7 +865,7 @@
   },
   {
     "qName": "Aging Line Key",
-    "qCardinal": 138542,
+    "qCardinal": 141209,
     "qTags": [
       "$ascii",
       "$text",
@@ -922,7 +922,7 @@
   },
   {
     "qName": "Backlog Order Amount USD",
-    "qCardinal": 5489,
+    "qCardinal": 5458,
     "qTags": [
       "$numeric"
     ],
@@ -932,7 +932,7 @@
   },
   {
     "qName": "Backlog Order Confirmation Date",
-    "qCardinal": 449,
+    "qCardinal": 454,
     "qTags": [
       "$numeric",
       "$timestamp"
@@ -965,7 +965,7 @@
   },
   {
     "qName": "Backlog Order Cost USD",
-    "qCardinal": 5702,
+    "qCardinal": 5613,
     "qTags": [
       "$numeric"
     ],
@@ -975,7 +975,7 @@
   },
   {
     "qName": "Backlog Order Customer PO Number",
-    "qCardinal": 3363,
+    "qCardinal": 3633,
     "qTags": [],
     "qSrcTables": [
       "Backlog_Orders"
@@ -983,7 +983,7 @@
   },
   {
     "qName": "Backlog Order Delivery Date",
-    "qCardinal": 678,
+    "qCardinal": 676,
     "qTags": [
       "$numeric",
       "$timestamp"
@@ -994,7 +994,7 @@
   },
   {
     "qName": "Backlog Order Detail Number",
-    "qCardinal": 6518,
+    "qCardinal": 7063,
     "qTags": [
       "$ascii",
       "$text"
@@ -1005,7 +1005,7 @@
   },
   {
     "qName": "Backlog Order Detail Status",
-    "qCardinal": 8,
+    "qCardinal": 9,
     "qTags": [
       "$ascii",
       "$text"
@@ -1016,7 +1016,7 @@
   },
   {
     "qName": "Backlog Order Estimated Charges USD",
-    "qCardinal": 1870,
+    "qCardinal": 1859,
     "qTags": [
       "$numeric"
     ],
@@ -1026,7 +1026,7 @@
   },
   {
     "qName": "Backlog Order Expected Date",
-    "qCardinal": 620,
+    "qCardinal": 624,
     "qTags": [
       "$numeric",
       "$timestamp"
@@ -1037,7 +1037,7 @@
   },
   {
     "qName": "Backlog Order Insurance Coverage",
-    "qCardinal": 99,
+    "qCardinal": 105,
     "qTags": [
       "$numeric",
       "$integer"
@@ -1059,7 +1059,7 @@
   },
   {
     "qName": "Backlog Order Issuing Date",
-    "qCardinal": 3414,
+    "qCardinal": 3709,
     "qTags": [
       "$numeric",
       "$timestamp"
@@ -1070,7 +1070,7 @@
   },
   {
     "qName": "Backlog Order Key",
-    "qCardinal": 9303,
+    "qCardinal": 9111,
     "qTags": [
       "$ascii",
       "$text",
@@ -1083,7 +1083,7 @@
   },
   {
     "qName": "Backlog Order Kg",
-    "qCardinal": 3300,
+    "qCardinal": 3293,
     "qTags": [
       "$numeric"
     ],
@@ -1093,7 +1093,7 @@
   },
   {
     "qName": "Backlog Order Kg Bundles",
-    "qCardinal": 64,
+    "qCardinal": 46,
     "qTags": [
       "$numeric"
     ],
@@ -1103,7 +1103,7 @@
   },
   {
     "qName": "Backlog Order Kg Cartons",
-    "qCardinal": 249,
+    "qCardinal": 410,
     "qTags": [
       "$numeric"
     ],
@@ -1113,7 +1113,7 @@
   },
   {
     "qName": "Backlog Order Lbp",
-    "qCardinal": 3327,
+    "qCardinal": 3317,
     "qTags": [
       "$numeric"
     ],
@@ -1123,7 +1123,7 @@
   },
   {
     "qName": "Backlog Order MSF",
-    "qCardinal": 358,
+    "qCardinal": 467,
     "qTags": [
       "$numeric"
     ],
@@ -1133,7 +1133,7 @@
   },
   {
     "qName": "Backlog Order MT",
-    "qCardinal": 3244,
+    "qCardinal": 3229,
     "qTags": [
       "$numeric"
     ],
@@ -1143,7 +1143,7 @@
   },
   {
     "qName": "Backlog Order Main Amount USD",
-    "qCardinal": 5092,
+    "qCardinal": 5065,
     "qTags": [
       "$numeric"
     ],
@@ -1153,7 +1153,7 @@
   },
   {
     "qName": "Backlog Order Number",
-    "qCardinal": 3372,
+    "qCardinal": 3640,
     "qTags": [
       "$numeric",
       "$integer"
@@ -1164,7 +1164,7 @@
   },
   {
     "qName": "Backlog Order PT",
-    "qCardinal": 57,
+    "qCardinal": 58,
     "qTags": [
       "$ascii",
       "$text"
@@ -1175,7 +1175,7 @@
   },
   {
     "qName": "Backlog Order Pieces",
-    "qCardinal": 171,
+    "qCardinal": 176,
     "qTags": [
       "$numeric"
     ],
@@ -1196,7 +1196,7 @@
   },
   {
     "qName": "Backlog Order Quantity",
-    "qCardinal": 3375,
+    "qCardinal": 3177,
     "qTags": [
       "$numeric"
     ],
@@ -1206,7 +1206,7 @@
   },
   {
     "qName": "Backlog Order Quantity Selling",
-    "qCardinal": 2672,
+    "qCardinal": 2471,
     "qTags": [
       "$numeric"
     ],
@@ -1216,7 +1216,7 @@
   },
   {
     "qName": "Backlog Order Quantity Unit",
-    "qCardinal": 26,
+    "qCardinal": 25,
     "qTags": [
       "$ascii",
       "$text"
@@ -1227,7 +1227,7 @@
   },
   {
     "qName": "Backlog Order Requested Delivery Date",
-    "qCardinal": 676,
+    "qCardinal": 687,
     "qTags": [
       "$numeric",
       "$timestamp"
@@ -1238,7 +1238,7 @@
   },
   {
     "qName": "Backlog Order Requested Receipt Date",
-    "qCardinal": 393,
+    "qCardinal": 411,
     "qTags": [
       "$numeric",
       "$integer",
@@ -1251,7 +1251,7 @@
   },
   {
     "qName": "Backlog Order SQM",
-    "qCardinal": 358,
+    "qCardinal": 466,
     "qTags": [
       "$numeric"
     ],
@@ -1261,7 +1261,7 @@
   },
   {
     "qName": "Backlog Order Sales Name",
-    "qCardinal": 1369,
+    "qCardinal": 1418,
     "qTags": [
       "$ascii",
       "$text"
@@ -1283,7 +1283,7 @@
   },
   {
     "qName": "Backlog Order Status",
-    "qCardinal": 4,
+    "qCardinal": 5,
     "qTags": [
       "$ascii",
       "$text"
@@ -1305,7 +1305,7 @@
   },
   {
     "qName": "Backlog Order US Ton",
-    "qCardinal": 3272,
+    "qCardinal": 3254,
     "qTags": [
       "$numeric"
     ],
@@ -1315,7 +1315,7 @@
   },
   {
     "qName": "Balanace By Invoice Monthly Days From Due",
-    "qCardinal": 2924,
+    "qCardinal": 2925,
     "qTags": [
       "$numeric",
       "$integer"
@@ -1326,7 +1326,7 @@
   },
   {
     "qName": "Balance by Invoice Overdue Monthly - Amount USD (0-30)",
-    "qCardinal": 49793,
+    "qCardinal": 50526,
     "qTags": [
       "$numeric"
     ],
@@ -1336,7 +1336,7 @@
   },
   {
     "qName": "Balance by Invoice Overdue Monthly - Amount USD (121-150)",
-    "qCardinal": 8930,
+    "qCardinal": 8946,
     "qTags": [
       "$numeric"
     ],
@@ -1346,7 +1346,7 @@
   },
   {
     "qName": "Balance by Invoice Overdue Monthly - Amount USD (31-60)",
-    "qCardinal": 22655,
+    "qCardinal": 22835,
     "qTags": [
       "$numeric"
     ],
@@ -1356,7 +1356,7 @@
   },
   {
     "qName": "Balance by Invoice Overdue Monthly - Amount USD (61-90)",
-    "qCardinal": 14807,
+    "qCardinal": 14949,
     "qTags": [
       "$numeric"
     ],
@@ -1366,7 +1366,7 @@
   },
   {
     "qName": "Balance by Invoice Overdue Monthly - Amount USD (91-120)",
-    "qCardinal": 11093,
+    "qCardinal": 11110,
     "qTags": [
       "$numeric"
     ],
@@ -1376,7 +1376,7 @@
   },
   {
     "qName": "Balance by Invoice Overdue Monthly - Amount USD (Over 120)",
-    "qCardinal": 13239,
+    "qCardinal": 13285,
     "qTags": [
       "$numeric"
     ],
@@ -1386,7 +1386,7 @@
   },
   {
     "qName": "Balance by Invoice Overdue Monthly - Amount USD (Over 150)",
-    "qCardinal": 11419,
+    "qCardinal": 11448,
     "qTags": [
       "$numeric"
     ],
@@ -1396,7 +1396,7 @@
   },
   {
     "qName": "Balance by Invoice Overdue Monthly - Amount USD (Over 180)",
-    "qCardinal": 10213,
+    "qCardinal": 10241,
     "qTags": [
       "$numeric"
     ],
@@ -1406,7 +1406,7 @@
   },
   {
     "qName": "Balance by Invoice Overdue Monthly - Amount USD (Over 360)",
-    "qCardinal": 4917,
+    "qCardinal": 4754,
     "qTags": [
       "$numeric"
     ],
@@ -1416,7 +1416,7 @@
   },
   {
     "qName": "BalanceByInvoiceMonthlyKey",
-    "qCardinal": 272172,
+    "qCardinal": 271577,
     "qTags": [
       "$ascii",
       "$text",
@@ -1429,7 +1429,7 @@
   },
   {
     "qName": "Branch",
-    "qCardinal": 36,
+    "qCardinal": 37,
     "qTags": [
       "$ascii",
       "$text"
@@ -1598,7 +1598,7 @@
   },
   {
     "qName": "Building Block - OLD",
-    "qCardinal": 292,
+    "qCardinal": 293,
     "qTags": [
       "$ascii",
       "$text"
@@ -1609,7 +1609,7 @@
   },
   {
     "qName": "Building Block For Aggregation",
-    "qCardinal": 708,
+    "qCardinal": 707,
     "qTags": [
       "$text"
     ],
@@ -1652,7 +1652,7 @@
   },
   {
     "qName": "Business Unit",
-    "qCardinal": 34,
+    "qCardinal": 35,
     "qTags": [
       "$ascii",
       "$text"
@@ -1663,7 +1663,7 @@
   },
   {
     "qName": "Business Unit Account",
-    "qCardinal": 34,
+    "qCardinal": 35,
     "qTags": [
       "$ascii",
       "$text"
@@ -1695,19 +1695,8 @@
     ]
   },
   {
-    "qName": "Business Unit ID",
-    "qCardinal": 14,
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "mpk_competitor"
-    ]
-  },
-  {
     "qName": "Business Unit Key",
-    "qCardinal": 44,
+    "qCardinal": 48,
     "qTags": [
       "$ascii",
       "$text",
@@ -1875,7 +1864,7 @@
   },
   {
     "qName": "CPB Form - Customer Volume",
-    "qCardinal": 268,
+    "qCardinal": 263,
     "qTags": [
       "$numeric",
       "$integer"
@@ -1937,7 +1926,7 @@
   },
   {
     "qName": "CPB Form - Parent Company",
-    "qCardinal": 2213,
+    "qCardinal": 2216,
     "qTags": [
       "$text"
     ],
@@ -1947,7 +1936,7 @@
   },
   {
     "qName": "CPB Form - Product Line",
-    "qCardinal": 292,
+    "qCardinal": 289,
     "qTags": [],
     "qSrcTables": [
       "CustomerProfileBuilding"
@@ -1988,7 +1977,7 @@
   },
   {
     "qName": "CPB Form - Share Percentage",
-    "qCardinal": 34,
+    "qCardinal": 33,
     "qTags": [
       "$numeric"
     ],
@@ -2019,7 +2008,7 @@
   },
   {
     "qName": "CPB Form - Supplier Share Volume",
-    "qCardinal": 174,
+    "qCardinal": 178,
     "qTags": [
       "$numeric"
     ],
@@ -2062,7 +2051,7 @@
   },
   {
     "qName": "CPB Volume KG Potential For Growth",
-    "qCardinal": 3912,
+    "qCardinal": 3930,
     "qTags": [
       "$numeric"
     ],
@@ -2072,7 +2061,7 @@
   },
   {
     "qName": "CPB Volume Sold Kg",
-    "qCardinal": 11044,
+    "qCardinal": 11150,
     "qTags": [
       "$numeric"
     ],
@@ -2082,7 +2071,7 @@
   },
   {
     "qName": "CPBLINEKEY",
-    "qCardinal": 20317,
+    "qCardinal": 20448,
     "qTags": [
       "$ascii",
       "$text",
@@ -2095,7 +2084,7 @@
   },
   {
     "qName": "CRM Address Key",
-    "qCardinal": 49878,
+    "qCardinal": 49997,
     "qTags": [
       "$ascii",
       "$text",
@@ -2108,7 +2097,7 @@
   },
   {
     "qName": "CRM BBLineKey",
-    "qCardinal": 44567,
+    "qCardinal": 44686,
     "qTags": [
       "$ascii",
       "$text",
@@ -2132,7 +2121,7 @@
   },
   {
     "qName": "CRM BusinessSectorKey",
-    "qCardinal": 37426,
+    "qCardinal": 37571,
     "qTags": [
       "$ascii",
       "$text",
@@ -2145,7 +2134,7 @@
   },
   {
     "qName": "CRM SalesUnitKey",
-    "qCardinal": 569,
+    "qCardinal": 571,
     "qTags": [
       "$ascii",
       "$text",
@@ -2289,7 +2278,7 @@
   },
   {
     "qName": "Charge Amount USD",
-    "qCardinal": 387433,
+    "qCardinal": 389460,
     "qTags": [
       "$numeric"
     ],
@@ -2299,7 +2288,7 @@
   },
   {
     "qName": "Charge By Value Amount USD",
-    "qCardinal": 295150,
+    "qCardinal": 297502,
     "qTags": [
       "$numeric"
     ],
@@ -2309,7 +2298,7 @@
   },
   {
     "qName": "Charge By Weight Amount USD",
-    "qCardinal": 318174,
+    "qCardinal": 320589,
     "qTags": [
       "$numeric"
     ],
@@ -2354,7 +2343,7 @@
   },
   {
     "qName": "Charge Provision By Value Amount USD",
-    "qCardinal": 369566,
+    "qCardinal": 371533,
     "qTags": [
       "$numeric"
     ],
@@ -2364,7 +2353,7 @@
   },
   {
     "qName": "Charge Provision By Weight Amount USD",
-    "qCardinal": 387433,
+    "qCardinal": 389460,
     "qTags": [
       "$numeric"
     ],
@@ -2385,7 +2374,7 @@
   },
   {
     "qName": "Collection Amount USD",
-    "qCardinal": 137315,
+    "qCardinal": 138443,
     "qTags": [
       "$numeric"
     ],
@@ -2395,7 +2384,7 @@
   },
   {
     "qName": "Collection Payment Number",
-    "qCardinal": 997,
+    "qCardinal": 999,
     "qTags": [
       "$ascii",
       "$text"
@@ -2406,7 +2395,7 @@
   },
   {
     "qName": "Collections Days Interval",
-    "qCardinal": 1531,
+    "qCardinal": 1537,
     "qTags": [
       "$numeric",
       "$integer"
@@ -2417,7 +2406,7 @@
   },
   {
     "qName": "Collections Line Key",
-    "qCardinal": 189046,
+    "qCardinal": 190521,
     "qTags": [
       "$ascii",
       "$text",
@@ -2565,7 +2554,7 @@
   },
   {
     "qName": "Company Sectors Score - BY CHAIN",
-    "qCardinal": 20194,
+    "qCardinal": 20376,
     "qTags": [
       "$numeric"
     ],
@@ -2575,7 +2564,7 @@
   },
   {
     "qName": "Company Sectors Score - BY NAME",
-    "qCardinal": 32235,
+    "qCardinal": 32490,
     "qTags": [
       "$numeric"
     ],
@@ -2590,7 +2579,7 @@
       "$text"
     ],
     "qSrcTables": [
-      "mpk_competitor"
+      "Sales_Shared_Dimensions_Final"
     ]
   },
   {
@@ -2601,12 +2590,12 @@
       "$text"
     ],
     "qSrcTables": [
-      "mpk_competitor"
+      "Sales_Shared_Dimensions_Final"
     ]
   },
   {
     "qName": "Competitor Certification",
-    "qCardinal": 43,
+    "qCardinal": 44,
     "qTags": [
       "$ascii",
       "$text"
@@ -2617,7 +2606,7 @@
   },
   {
     "qName": "Competitor Certification Table Line ID",
-    "qCardinal": 260,
+    "qCardinal": 274,
     "qTags": [
       "$numeric",
       "$integer"
@@ -2631,7 +2620,7 @@
     "qCardinal": 0,
     "qTags": [],
     "qSrcTables": [
-      "mpk_competitor"
+      "Sales_Shared_Dimensions_Final"
     ]
   },
   {
@@ -2642,18 +2631,44 @@
       "$text"
     ],
     "qSrcTables": [
-      "mpk_competitor"
+      "Sales_Shared_Dimensions_Final"
+    ]
+  },
+  {
+    "qName": "Competitor Customer Country",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "mpk_competitor_Products_Customers"
+    ]
+  },
+  {
+    "qName": "Competitor Customer Name",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "mpk_competitor_Products_Customers"
     ]
   },
   {
     "qName": "Competitor Customer Product Link Key",
-    "qCardinal": 394,
+    "qCardinal": 406,
     "qTags": [
       "$ascii",
-      "$text"
+      "$text",
+      "$key"
     ],
     "qSrcTables": [
-      "mpk_competitor_Products"
+      "mpk_competitor_Products",
+      "mpk_competitor_Products_Customers"
+    ]
+  },
+  {
+    "qName": "Competitor Customer Share Percentage",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "mpk_competitor_Products_Customers"
     ]
   },
   {
@@ -2663,7 +2678,7 @@
       "$text"
     ],
     "qSrcTables": [
-      "mpk_competitor"
+      "Sales_Shared_Dimensions_Final"
     ]
   },
   {
@@ -2674,7 +2689,7 @@
       "$text"
     ],
     "qSrcTables": [
-      "mpk_competitor"
+      "Sales_Shared_Dimensions_Final"
     ]
   },
   {
@@ -2682,7 +2697,7 @@
     "qCardinal": 0,
     "qTags": [],
     "qSrcTables": [
-      "mpk_competitor"
+      "Sales_Shared_Dimensions_Final"
     ]
   },
   {
@@ -2694,18 +2709,18 @@
       "$geopoint"
     ],
     "qSrcTables": [
-      "mpk_competitor"
+      "Sales_Shared_Dimensions_Final"
     ]
   },
   {
     "qName": "Competitor Headquarter Location",
-    "qCardinal": 47,
+    "qCardinal": 49,
     "qTags": [
       "$ascii",
       "$text"
     ],
     "qSrcTables": [
-      "mpk_competitor"
+      "Sales_Shared_Dimensions_Final"
     ]
   },
   {
@@ -2716,7 +2731,18 @@
       "$text"
     ],
     "qSrcTables": [
-      "mpk_competitor"
+      "Sales_Shared_Dimensions_Final"
+    ]
+  },
+  {
+    "qName": "Competitor Manager Table Line Key",
+    "qCardinal": 240,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "mpk_competitor_manager"
     ]
   },
   {
@@ -2726,12 +2752,12 @@
       "$text"
     ],
     "qSrcTables": [
-      "mpk_competitor"
+      "Sales_Shared_Dimensions_Final"
     ]
   },
   {
     "qName": "Competitor Market Presence",
-    "qCardinal": 336,
+    "qCardinal": 338,
     "qTags": [
       "$ascii",
       "$text"
@@ -2753,7 +2779,7 @@
   },
   {
     "qName": "Competitor Market Presence Table Line Key",
-    "qCardinal": 2123,
+    "qCardinal": 2150,
     "qTags": [
       "$numeric",
       "$integer"
@@ -2774,8 +2800,44 @@
     ]
   },
   {
+    "qName": "Competitor Marketing Srategy",
+    "qCardinal": 4,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "mpk_competitor_marketing_strategy"
+    ]
+  },
+  {
+    "qName": "Competitor Marketing Strategy Table Line ID",
+    "qCardinal": 253,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "mpk_competitor_marketing_strategy"
+    ]
+  },
+  {
     "qName": "Competitor Master ID",
-    "qCardinal": 240,
+    "qCardinal": 269,
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$key"
+    ],
+    "qSrcTables": [
+      "VGA_Fact",
+      "Sales_Shared_Dimensions_Final",
+      "mpk_competitor_Products"
+    ]
+  },
+  {
+    "qName": "Competitor Master ID - Certifications",
+    "qCardinal": 269,
     "qTags": [
       "$numeric",
       "$integer",
@@ -2783,205 +2845,195 @@
     ],
     "qSrcTables": [
       "Sales_Shared_Dimensions_Final",
-      "mpk_competitor",
-      "mpk_competitor_Products"
-    ]
-  },
-  {
-    "qName": "Competitor Master ID - Certifications",
-    "qCardinal": 240,
-    "qTags": [
-      "$numeric",
-      "$integer",
-      "$key"
-    ],
-    "qSrcTables": [
-      "mpk_competitor",
       "mpk_competitor_certification"
     ]
   },
   {
     "qName": "Competitor Master ID - Company Communication",
-    "qCardinal": 240,
+    "qCardinal": 269,
     "qTags": [
       "$numeric",
       "$integer"
     ],
     "qSrcTables": [
-      "mpk_competitor"
+      "Sales_Shared_Dimensions_Final"
     ]
   },
   {
     "qName": "Competitor Master ID - Contact Manager",
-    "qCardinal": 240,
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "mpk_competitor"
-    ]
-  },
-  {
-    "qName": "Competitor Master ID - Market Presence",
-    "qCardinal": 240,
+    "qCardinal": 269,
     "qTags": [
       "$numeric",
       "$integer",
       "$key"
     ],
     "qSrcTables": [
-      "mpk_competitor",
+      "Sales_Shared_Dimensions_Final",
+      "mpk_competitor_manager"
+    ]
+  },
+  {
+    "qName": "Competitor Master ID - Market Presence",
+    "qCardinal": 269,
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$key"
+    ],
+    "qSrcTables": [
+      "Sales_Shared_Dimensions_Final",
       "mpk_competitor_market_presence"
     ]
   },
   {
     "qName": "Competitor Master ID - Marketing Strategy",
-    "qCardinal": 240,
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "mpk_competitor"
-    ]
-  },
-  {
-    "qName": "Competitor Master ID - Mother Other Locations",
-    "qCardinal": 240,
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "mpk_competitor"
-    ]
-  },
-  {
-    "qName": "Competitor Master ID - News",
-    "qCardinal": 240,
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "mpk_competitor"
-    ]
-  },
-  {
-    "qName": "Competitor Master ID - Other Certifications",
-    "qCardinal": 240,
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "mpk_competitor"
-    ]
-  },
-  {
-    "qName": "Competitor Master ID - Other Locations",
-    "qCardinal": 240,
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "mpk_competitor"
-    ]
-  },
-  {
-    "qName": "Competitor Master ID - Production Lines",
-    "qCardinal": 240,
+    "qCardinal": 269,
     "qTags": [
       "$numeric",
       "$integer",
       "$key"
     ],
     "qSrcTables": [
-      "mpk_competitor",
+      "Sales_Shared_Dimensions_Final",
+      "mpk_competitor_marketing_strategy"
+    ]
+  },
+  {
+    "qName": "Competitor Master ID - Mother Other Locations",
+    "qCardinal": 269,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Sales_Shared_Dimensions_Final"
+    ]
+  },
+  {
+    "qName": "Competitor Master ID - News",
+    "qCardinal": 269,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Sales_Shared_Dimensions_Final"
+    ]
+  },
+  {
+    "qName": "Competitor Master ID - Other Certifications",
+    "qCardinal": 269,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Sales_Shared_Dimensions_Final"
+    ]
+  },
+  {
+    "qName": "Competitor Master ID - Other Locations",
+    "qCardinal": 269,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Sales_Shared_Dimensions_Final"
+    ]
+  },
+  {
+    "qName": "Competitor Master ID - Production Lines",
+    "qCardinal": 269,
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$key"
+    ],
+    "qSrcTables": [
+      "Sales_Shared_Dimensions_Final",
       "mpk_competitor_production_line"
     ]
   },
   {
     "qName": "Competitor Master ID - Social Media",
-    "qCardinal": 240,
+    "qCardinal": 269,
     "qTags": [
       "$numeric",
       "$integer"
     ],
     "qSrcTables": [
-      "mpk_competitor"
+      "Sales_Shared_Dimensions_Final"
     ]
   },
   {
     "qName": "Competitor Master ID - Supplier",
-    "qCardinal": 240,
+    "qCardinal": 269,
     "qTags": [
       "$numeric",
       "$integer"
     ],
     "qSrcTables": [
-      "mpk_competitor"
+      "Sales_Shared_Dimensions_Final"
     ]
   },
   {
     "qName": "Competitor Master UID",
-    "qCardinal": 240,
+    "qCardinal": 269,
     "qTags": [
       "$ascii",
       "$text"
     ],
     "qSrcTables": [
-      "mpk_competitor"
+      "Sales_Shared_Dimensions_Final"
     ]
   },
   {
     "qName": "Competitor Mother Company Headquarter Location",
-    "qCardinal": 36,
+    "qCardinal": 37,
     "qTags": [
       "$ascii",
       "$text"
     ],
     "qSrcTables": [
-      "mpk_competitor"
+      "Sales_Shared_Dimensions_Final"
     ]
   },
   {
     "qName": "Competitor Mother Company Name",
-    "qCardinal": 123,
+    "qCardinal": 130,
     "qTags": [
       "$text"
     ],
     "qSrcTables": [
-      "mpk_competitor"
+      "Sales_Shared_Dimensions_Final"
     ]
   },
   {
     "qName": "Competitor Mother Company Profile",
-    "qCardinal": 3,
+    "qCardinal": 5,
     "qTags": [
       "$ascii",
       "$text"
     ],
     "qSrcTables": [
-      "mpk_competitor"
+      "Sales_Shared_Dimensions_Final"
     ]
   },
   {
     "qName": "Competitor Mother Company Website",
-    "qCardinal": 111,
+    "qCardinal": 118,
     "qTags": [
       "$ascii",
       "$text"
     ],
     "qSrcTables": [
-      "mpk_competitor"
+      "Sales_Shared_Dimensions_Final"
     ]
   },
   {
     "qName": "Competitor Name",
-    "qCardinal": 191,
+    "qCardinal": 192,
     "qTags": [
       "$text"
     ],
@@ -2997,12 +3049,12 @@
       "$text"
     ],
     "qSrcTables": [
-      "mpk_competitor"
+      "Sales_Shared_Dimensions_Final"
     ]
   },
   {
     "qName": "Competitor Products Line Key",
-    "qCardinal": 394,
+    "qCardinal": 406,
     "qTags": [
       "$ascii",
       "$text"
@@ -3019,7 +3071,7 @@
       "$text"
     ],
     "qSrcTables": [
-      "mpk_competitor"
+      "Sales_Shared_Dimensions_Final"
     ]
   },
   {
@@ -3030,7 +3082,7 @@
       "$integer"
     ],
     "qSrcTables": [
-      "mpk_competitor"
+      "Sales_Shared_Dimensions_Final"
     ]
   },
   {
@@ -3045,7 +3097,7 @@
   },
   {
     "qName": "Competitor Share Volume",
-    "qCardinal": 495,
+    "qCardinal": 494,
     "qTags": [
       "$numeric"
     ],
@@ -3061,23 +3113,23 @@
       "$text"
     ],
     "qSrcTables": [
-      "mpk_competitor"
+      "Sales_Shared_Dimensions_Final"
     ]
   },
   {
     "qName": "Competitor Website",
-    "qCardinal": 205,
+    "qCardinal": 210,
     "qTags": [
       "$ascii",
       "$text"
     ],
     "qSrcTables": [
-      "mpk_competitor"
+      "Sales_Shared_Dimensions_Final"
     ]
   },
   {
     "qName": "Contact Customer Key",
-    "qCardinal": 21651,
+    "qCardinal": 21791,
     "qTags": [
       "$ascii",
       "$text",
@@ -3117,6 +3169,57 @@
     ]
   },
   {
+    "qName": "Contact Manager First Name",
+    "qCardinal": 136,
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "mpk_competitor_manager"
+    ]
+  },
+  {
+    "qName": "Contact Manager Full Name",
+    "qCardinal": 144,
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "mpk_competitor_manager"
+    ]
+  },
+  {
+    "qName": "Contact Manager Last Name",
+    "qCardinal": 130,
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "mpk_competitor_manager"
+    ]
+  },
+  {
+    "qName": "Contact Manager LinkedIn",
+    "qCardinal": 30,
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "mpk_competitor_manager"
+    ]
+  },
+  {
+    "qName": "Contact Manager Position",
+    "qCardinal": 35,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "mpk_competitor_manager"
+    ]
+  },
+  {
     "qName": "Contact Middle Name",
     "qCardinal": 298,
     "qTags": [
@@ -3128,7 +3231,7 @@
   },
   {
     "qName": "Contact Person - Desicion",
-    "qCardinal": 9,
+    "qCardinal": 10,
     "qTags": [
       "$ascii",
       "$text"
@@ -3139,7 +3242,7 @@
   },
   {
     "qName": "Contact Person - Person Email",
-    "qCardinal": 1642,
+    "qCardinal": 1664,
     "qTags": [],
     "qSrcTables": [
       "ContactDetailsByCustomer"
@@ -3147,7 +3250,7 @@
   },
   {
     "qName": "Contact Person - Person Fax",
-    "qCardinal": 223,
+    "qCardinal": 224,
     "qTags": [],
     "qSrcTables": [
       "ContactDetailsByCustomer"
@@ -3155,17 +3258,15 @@
   },
   {
     "qName": "Contact Person - Person First Name",
-    "qCardinal": 1691,
-    "qTags": [
-      "$text"
-    ],
+    "qCardinal": 2189,
+    "qTags": [],
     "qSrcTables": [
       "ContactDetailsByCustomer"
     ]
   },
   {
     "qName": "Contact Person - Person ID",
-    "qCardinal": 3452,
+    "qCardinal": 4307,
     "qTags": [
       "$ascii",
       "$text"
@@ -3176,17 +3277,15 @@
   },
   {
     "qName": "Contact Person - Person Last Name",
-    "qCardinal": 2540,
-    "qTags": [
-      "$text"
-    ],
+    "qCardinal": 3459,
+    "qTags": [],
     "qSrcTables": [
       "ContactDetailsByCustomer"
     ]
   },
   {
     "qName": "Contact Person - Person Middle Name",
-    "qCardinal": 317,
+    "qCardinal": 457,
     "qTags": [
       "$text"
     ],
@@ -3196,17 +3295,15 @@
   },
   {
     "qName": "Contact Person - Person Name",
-    "qCardinal": 3563,
-    "qTags": [
-      "$text"
-    ],
+    "qCardinal": 5024,
+    "qTags": [],
     "qSrcTables": [
       "ContactDetailsByCustomer"
     ]
   },
   {
     "qName": "Contact Person - Person Phone Number",
-    "qCardinal": 1973,
+    "qCardinal": 2012,
     "qTags": [],
     "qSrcTables": [
       "ContactDetailsByCustomer"
@@ -3230,7 +3327,7 @@
   },
   {
     "qName": "Contact Person - Profession",
-    "qCardinal": 174,
+    "qCardinal": 298,
     "qTags": [
       "$text"
     ],
@@ -3240,7 +3337,7 @@
   },
   {
     "qName": "Contact Person - Title",
-    "qCardinal": 145,
+    "qCardinal": 191,
     "qTags": [
       "$text"
     ],
@@ -3291,7 +3388,7 @@
   },
   {
     "qName": "Conversion Variance USD",
-    "qCardinal": 1033,
+    "qCardinal": 1046,
     "qTags": [
       "$numeric"
     ],
@@ -3341,7 +3438,7 @@
   },
   {
     "qName": "Currency Conversion Rate Date Num",
-    "qCardinal": 8784,
+    "qCardinal": 8783,
     "qTags": [
       "$numeric",
       "$integer",
@@ -3399,7 +3496,7 @@
   },
   {
     "qName": "Customer",
-    "qCardinal": 18206,
+    "qCardinal": 18337,
     "qTags": [
       "$text"
     ],
@@ -3409,7 +3506,7 @@
   },
   {
     "qName": "Customer Account",
-    "qCardinal": 11855,
+    "qCardinal": 11949,
     "qTags": [
       "$ascii",
       "$text"
@@ -3540,7 +3637,7 @@
   },
   {
     "qName": "Customer CR Number",
-    "qCardinal": 4451,
+    "qCardinal": 4462,
     "qTags": [],
     "qSrcTables": [
       "Customers"
@@ -3581,7 +3678,17 @@
   },
   {
     "qName": "Customer Chain",
-    "qCardinal": 12323,
+    "qCardinal": 12454,
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "Customers"
+    ]
+  },
+  {
+    "qName": "Customer Chain for Aggregation",
+    "qCardinal": 14526,
     "qTags": [
       "$text"
     ],
@@ -3613,7 +3720,7 @@
   },
   {
     "qName": "Customer Contact Key",
-    "qCardinal": 21580,
+    "qCardinal": 21719,
     "qTags": [
       "$ascii",
       "$text",
@@ -3658,7 +3765,7 @@
   },
   {
     "qName": "Customer Country For Aggregation",
-    "qCardinal": 914,
+    "qCardinal": 916,
     "qTags": [
       "$text"
     ],
@@ -3679,7 +3786,7 @@
   },
   {
     "qName": "Customer Credit Ceiling Key",
-    "qCardinal": 150111,
+    "qCardinal": 154600,
     "qTags": [
       "$ascii",
       "$text",
@@ -3703,7 +3810,7 @@
   },
   {
     "qName": "Customer Credit Limit",
-    "qCardinal": 489,
+    "qCardinal": 486,
     "qTags": [
       "$numeric"
     ],
@@ -3735,7 +3842,7 @@
   },
   {
     "qName": "Customer First Invoicing Date",
-    "qCardinal": 99,
+    "qCardinal": 100,
     "qTags": [
       "$numeric",
       "$integer",
@@ -3748,7 +3855,7 @@
   },
   {
     "qName": "Customer First Invoicing Full Date",
-    "qCardinal": 2551,
+    "qCardinal": 2565,
     "qTags": [],
     "qSrcTables": [
       "Customers"
@@ -3789,7 +3896,7 @@
   },
   {
     "qName": "Customer Insurance Account Number",
-    "qCardinal": 3136,
+    "qCardinal": 3145,
     "qTags": [],
     "qSrcTables": [
       "Customers"
@@ -3797,7 +3904,7 @@
   },
   {
     "qName": "Customer Insurance Coverage",
-    "qCardinal": 203,
+    "qCardinal": 199,
     "qTags": [
       "$ascii",
       "$text"
@@ -3841,7 +3948,7 @@
   },
   {
     "qName": "Customer Invoice Account",
-    "qCardinal": 2264,
+    "qCardinal": 2268,
     "qTags": [
       "$ascii",
       "$text"
@@ -3852,7 +3959,7 @@
   },
   {
     "qName": "Customer Invoicing Last Transaction Date",
-    "qCardinal": 99,
+    "qCardinal": 100,
     "qTags": [
       "$numeric",
       "$integer",
@@ -3865,7 +3972,7 @@
   },
   {
     "qName": "Customer Invoicing Last Transaction Full Date",
-    "qCardinal": 2397,
+    "qCardinal": 2410,
     "qTags": [],
     "qSrcTables": [
       "Customers"
@@ -3884,7 +3991,7 @@
   },
   {
     "qName": "Customer Key",
-    "qCardinal": 21623,
+    "qCardinal": 21795,
     "qTags": [
       "$ascii",
       "$text",
@@ -3919,7 +4026,7 @@
   },
   {
     "qName": "Customer Last Payment Date",
-    "qCardinal": 151,
+    "qCardinal": 152,
     "qTags": [
       "$numeric",
       "$integer",
@@ -3932,7 +4039,7 @@
   },
   {
     "qName": "Customer Last Payment Full Date",
-    "qCardinal": 2493,
+    "qCardinal": 2498,
     "qTags": [],
     "qSrcTables": [
       "Customers"
@@ -3951,7 +4058,7 @@
   },
   {
     "qName": "Customer Main Contact",
-    "qCardinal": 579,
+    "qCardinal": 580,
     "qTags": [
       "$ascii",
       "$text"
@@ -4003,7 +4110,7 @@
   },
   {
     "qName": "Customer Parent Company",
-    "qCardinal": 2197,
+    "qCardinal": 2200,
     "qTags": [
       "$text"
     ],
@@ -4035,7 +4142,7 @@
   },
   {
     "qName": "Customer Primary Email",
-    "qCardinal": 5296,
+    "qCardinal": 5346,
     "qTags": [],
     "qSrcTables": [
       "Customers"
@@ -4043,7 +4150,7 @@
   },
   {
     "qName": "Customer Primary Phone",
-    "qCardinal": 8746,
+    "qCardinal": 8789,
     "qTags": [],
     "qSrcTables": [
       "Customers"
@@ -4051,7 +4158,7 @@
   },
   {
     "qName": "Customer Primary Telefax",
-    "qCardinal": 4368,
+    "qCardinal": 4369,
     "qTags": [],
     "qSrcTables": [
       "Customers"
@@ -4059,7 +4166,7 @@
   },
   {
     "qName": "Customer Primary URL",
-    "qCardinal": 649,
+    "qCardinal": 650,
     "qTags": [
       "$ascii",
       "$text"
@@ -4103,7 +4210,7 @@
   },
   {
     "qName": "Customer Salesman",
-    "qCardinal": 274,
+    "qCardinal": 276,
     "qTags": [
       "$ascii",
       "$text"
@@ -4178,7 +4285,7 @@
   },
   {
     "qName": "Customer Source Link Key",
-    "qCardinal": 21590,
+    "qCardinal": 21729,
     "qTags": [
       "$ascii",
       "$text",
@@ -4244,7 +4351,7 @@
   },
   {
     "qName": "Customer Statistics Group for Aggregation",
-    "qCardinal": 21580,
+    "qCardinal": 21719,
     "qTags": [
       "$ascii",
       "$text"
@@ -4287,7 +4394,7 @@
   },
   {
     "qName": "Customer VAT Number",
-    "qCardinal": 3341,
+    "qCardinal": 3358,
     "qTags": [],
     "qSrcTables": [
       "Customers"
@@ -4295,7 +4402,7 @@
   },
   {
     "qName": "Customer Volume",
-    "qCardinal": 413,
+    "qCardinal": 410,
     "qTags": [
       "$numeric",
       "$integer"
@@ -4306,7 +4413,7 @@
   },
   {
     "qName": "Customer Volume Competitor Line Key",
-    "qCardinal": 607306,
+    "qCardinal": 627025,
     "qTags": [
       "$ascii",
       "$text",
@@ -4319,7 +4426,7 @@
   },
   {
     "qName": "Customer Volume Line Key",
-    "qCardinal": 347032,
+    "qCardinal": 358300,
     "qTags": [
       "$ascii",
       "$text",
@@ -4335,6 +4442,16 @@
     "qCardinal": 6,
     "qTags": [
       "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Customers"
+    ]
+  },
+  {
+    "qName": "Customer for Aggregation",
+    "qCardinal": 21708,
+    "qTags": [
       "$text"
     ],
     "qSrcTables": [
@@ -4398,7 +4515,7 @@
   },
   {
     "qName": "Date Created",
-    "qCardinal": 4,
+    "qCardinal": 5,
     "qTags": [
       "$numeric",
       "$integer"
@@ -4409,7 +4526,7 @@
   },
   {
     "qName": "Date Updated",
-    "qCardinal": 4,
+    "qCardinal": 5,
     "qTags": [
       "$numeric",
       "$integer"
@@ -4541,7 +4658,7 @@
   },
   {
     "qName": "Doubtful Invoice - Action Deadline",
-    "qCardinal": 4,
+    "qCardinal": 5,
     "qTags": [
       "$numeric",
       "$integer"
@@ -4552,7 +4669,7 @@
   },
   {
     "qName": "Doubtful Invoice - Action Plan",
-    "qCardinal": 92,
+    "qCardinal": 94,
     "qTags": [
       "$ascii",
       "$text"
@@ -4563,7 +4680,7 @@
   },
   {
     "qName": "Doubtful Invoice - Due Date",
-    "qCardinal": 309,
+    "qCardinal": 308,
     "qTags": [
       "$numeric",
       "$integer",
@@ -4576,7 +4693,7 @@
   },
   {
     "qName": "Doubtful Invoice - Legal Amount USD",
-    "qCardinal": 513,
+    "qCardinal": 511,
     "qTags": [
       "$numeric"
     ],
@@ -4586,7 +4703,7 @@
   },
   {
     "qName": "Doubtful Invoice - Provision",
-    "qCardinal": 473,
+    "qCardinal": 471,
     "qTags": [
       "$numeric"
     ],
@@ -4596,7 +4713,7 @@
   },
   {
     "qName": "Doubtful Invoice - Status",
-    "qCardinal": 10,
+    "qCardinal": 11,
     "qTags": [
       "$ascii",
       "$text"
@@ -4618,7 +4735,7 @@
   },
   {
     "qName": "Doubtful Invoice Legal Action",
-    "qCardinal": 10,
+    "qCardinal": 11,
     "qTags": [
       "$ascii",
       "$text"
@@ -4629,7 +4746,7 @@
   },
   {
     "qName": "Doubtful Invoice Number",
-    "qCardinal": 370,
+    "qCardinal": 369,
     "qTags": [],
     "qSrcTables": [
       "Doubtfull_Invoices"
@@ -4648,7 +4765,7 @@
   },
   {
     "qName": "Doubtful Invoices Line Key",
-    "qCardinal": 4756,
+    "qCardinal": 4901,
     "qTags": [
       "$ascii",
       "$text",
@@ -4661,7 +4778,7 @@
   },
   {
     "qName": "EMC Amount USD",
-    "qCardinal": 636970,
+    "qCardinal": 640947,
     "qTags": [
       "$numeric"
     ],
@@ -4671,7 +4788,7 @@
   },
   {
     "qName": "EMC Confirmation Date",
-    "qCardinal": 449,
+    "qCardinal": 454,
     "qTags": [
       "$numeric",
       "$timestamp"
@@ -4682,7 +4799,7 @@
   },
   {
     "qName": "EMC Cost USD",
-    "qCardinal": 755784,
+    "qCardinal": 760272,
     "qTags": [
       "$numeric"
     ],
@@ -4692,7 +4809,7 @@
   },
   {
     "qName": "EMC Creation Date",
-    "qCardinal": 7431,
+    "qCardinal": 7644,
     "qTags": [
       "$numeric",
       "$timestamp"
@@ -4703,7 +4820,7 @@
   },
   {
     "qName": "EMC Customer PO Number",
-    "qCardinal": 3363,
+    "qCardinal": 3633,
     "qTags": [],
     "qSrcTables": [
       "EMC"
@@ -4711,7 +4828,7 @@
   },
   {
     "qName": "EMC Delivery Date",
-    "qCardinal": 678,
+    "qCardinal": 676,
     "qTags": [
       "$numeric",
       "$timestamp"
@@ -4722,18 +4839,15 @@
   },
   {
     "qName": "EMC Detail Number",
-    "qCardinal": 6518,
-    "qTags": [
-      "$ascii",
-      "$text"
-    ],
+    "qCardinal": 7063,
+    "qTags": [],
     "qSrcTables": [
       "EMC"
     ]
   },
   {
     "qName": "EMC Detail Status",
-    "qCardinal": 8,
+    "qCardinal": 9,
     "qTags": [
       "$ascii",
       "$text"
@@ -4754,7 +4868,7 @@
   },
   {
     "qName": "EMC Expected Date",
-    "qCardinal": 620,
+    "qCardinal": 624,
     "qTags": [
       "$numeric",
       "$timestamp"
@@ -4765,7 +4879,7 @@
   },
   {
     "qName": "EMC Insurance Coverage",
-    "qCardinal": 99,
+    "qCardinal": 105,
     "qTags": [
       "$numeric",
       "$integer"
@@ -4787,7 +4901,7 @@
   },
   {
     "qName": "EMC Issuing Date",
-    "qCardinal": 10849,
+    "qCardinal": 11354,
     "qTags": [
       "$numeric",
       "$timestamp"
@@ -4798,7 +4912,7 @@
   },
   {
     "qName": "EMC Key",
-    "qCardinal": 953905,
+    "qCardinal": 962385,
     "qTags": [
       "$ascii",
       "$text"
@@ -4809,7 +4923,7 @@
   },
   {
     "qName": "EMC Kg",
-    "qCardinal": 249392,
+    "qCardinal": 250598,
     "qTags": [
       "$numeric"
     ],
@@ -4819,7 +4933,7 @@
   },
   {
     "qName": "EMC Lbp",
-    "qCardinal": 233005,
+    "qCardinal": 234316,
     "qTags": [
       "$numeric"
     ],
@@ -4829,7 +4943,7 @@
   },
   {
     "qName": "EMC Line Number",
-    "qCardinal": 5331,
+    "qCardinal": 5341,
     "qTags": [],
     "qSrcTables": [
       "EMC"
@@ -4837,7 +4951,7 @@
   },
   {
     "qName": "EMC MSF",
-    "qCardinal": 26991,
+    "qCardinal": 27598,
     "qTags": [
       "$numeric"
     ],
@@ -4847,7 +4961,7 @@
   },
   {
     "qName": "EMC MT",
-    "qCardinal": 233691,
+    "qCardinal": 234799,
     "qTags": [
       "$numeric"
     ],
@@ -4857,7 +4971,7 @@
   },
   {
     "qName": "EMC Main Amount USD",
-    "qCardinal": 442676,
+    "qCardinal": 446008,
     "qTags": [
       "$numeric"
     ],
@@ -4867,7 +4981,7 @@
   },
   {
     "qName": "EMC Misc Charges By Value Amount USD",
-    "qCardinal": 190659,
+    "qCardinal": 192330,
     "qTags": [
       "$numeric"
     ],
@@ -4877,7 +4991,7 @@
   },
   {
     "qName": "EMC Misc Charges By Weight Amount USD",
-    "qCardinal": 210616,
+    "qCardinal": 212377,
     "qTags": [
       "$numeric"
     ],
@@ -4887,7 +5001,7 @@
   },
   {
     "qName": "EMC Misc Charges Provision By Value Amount USD",
-    "qCardinal": 234732,
+    "qCardinal": 235993,
     "qTags": [
       "$numeric"
     ],
@@ -4897,7 +5011,7 @@
   },
   {
     "qName": "EMC Misc Charges Provision By Weight Amount USD",
-    "qCardinal": 254069,
+    "qCardinal": 255435,
     "qTags": [
       "$numeric"
     ],
@@ -4907,7 +5021,7 @@
   },
   {
     "qName": "EMC Number",
-    "qCardinal": 443962,
+    "qCardinal": 446550,
     "qTags": [],
     "qSrcTables": [
       "EMC"
@@ -4915,7 +5029,7 @@
   },
   {
     "qName": "EMC PT",
-    "qCardinal": 57,
+    "qCardinal": 58,
     "qTags": [
       "$ascii",
       "$text"
@@ -4926,7 +5040,7 @@
   },
   {
     "qName": "EMC Pieces",
-    "qCardinal": 16176,
+    "qCardinal": 16311,
     "qTags": [
       "$numeric"
     ],
@@ -4947,7 +5061,7 @@
   },
   {
     "qName": "EMC Quantity",
-    "qCardinal": 92275,
+    "qCardinal": 92740,
     "qTags": [
       "$numeric"
     ],
@@ -4957,7 +5071,7 @@
   },
   {
     "qName": "EMC Quantity Unit",
-    "qCardinal": 77,
+    "qCardinal": 78,
     "qTags": [
       "$ascii",
       "$text"
@@ -4968,7 +5082,7 @@
   },
   {
     "qName": "EMC Requested Delivery Date",
-    "qCardinal": 676,
+    "qCardinal": 687,
     "qTags": [
       "$numeric",
       "$timestamp"
@@ -4979,7 +5093,7 @@
   },
   {
     "qName": "EMC SQM",
-    "qCardinal": 26827,
+    "qCardinal": 27420,
     "qTags": [
       "$numeric"
     ],
@@ -4989,7 +5103,7 @@
   },
   {
     "qName": "EMC Sales Name",
-    "qCardinal": 1369,
+    "qCardinal": 1418,
     "qTags": [
       "$text"
     ],
@@ -5010,7 +5124,7 @@
   },
   {
     "qName": "EMC Status",
-    "qCardinal": 4,
+    "qCardinal": 5,
     "qTags": [
       "$ascii",
       "$text"
@@ -5032,7 +5146,7 @@
   },
   {
     "qName": "EMC US Ton",
-    "qCardinal": 216979,
+    "qCardinal": 218206,
     "qTags": [
       "$numeric"
     ],
@@ -5053,7 +5167,7 @@
   },
   {
     "qName": "EMC-BUD Amount USD",
-    "qCardinal": 871749,
+    "qCardinal": 875725,
     "qTags": [
       "$numeric"
     ],
@@ -5063,7 +5177,7 @@
   },
   {
     "qName": "EMC-BUD Cost USD",
-    "qCardinal": 999346,
+    "qCardinal": 1003835,
     "qTags": [
       "$numeric"
     ],
@@ -5083,7 +5197,7 @@
   },
   {
     "qName": "EMC-BUD Key",
-    "qCardinal": 1461342,
+    "qCardinal": 1469822,
     "qTags": [
       "$ascii",
       "$text"
@@ -5094,7 +5208,7 @@
   },
   {
     "qName": "EMC-BUD Kg",
-    "qCardinal": 365129,
+    "qCardinal": 366318,
     "qTags": [
       "$numeric"
     ],
@@ -5104,7 +5218,7 @@
   },
   {
     "qName": "EMC-BUD Lbp",
-    "qCardinal": 348777,
+    "qCardinal": 350072,
     "qTags": [
       "$numeric"
     ],
@@ -5114,7 +5228,7 @@
   },
   {
     "qName": "EMC-BUD MSF",
-    "qCardinal": 26991,
+    "qCardinal": 27598,
     "qTags": [
       "$numeric"
     ],
@@ -5124,7 +5238,7 @@
   },
   {
     "qName": "EMC-BUD MT",
-    "qCardinal": 347640,
+    "qCardinal": 348727,
     "qTags": [
       "$numeric"
     ],
@@ -5134,7 +5248,7 @@
   },
   {
     "qName": "EMC-BUD Misc Charges By Value Amount USD",
-    "qCardinal": 190659,
+    "qCardinal": 192330,
     "qTags": [
       "$numeric"
     ],
@@ -5144,7 +5258,7 @@
   },
   {
     "qName": "EMC-BUD Misc Charges By Weight Amount USD",
-    "qCardinal": 210616,
+    "qCardinal": 212377,
     "qTags": [
       "$numeric"
     ],
@@ -5154,7 +5268,7 @@
   },
   {
     "qName": "EMC-BUD Misc Charges Provision By Value Amount USD",
-    "qCardinal": 234732,
+    "qCardinal": 235993,
     "qTags": [
       "$numeric"
     ],
@@ -5164,7 +5278,7 @@
   },
   {
     "qName": "EMC-BUD Misc Charges Provision By Weight Amount USD",
-    "qCardinal": 254069,
+    "qCardinal": 255435,
     "qTags": [
       "$numeric"
     ],
@@ -5184,7 +5298,7 @@
   },
   {
     "qName": "EMC-BUD Pieces",
-    "qCardinal": 16176,
+    "qCardinal": 16311,
     "qTags": [
       "$numeric"
     ],
@@ -5194,7 +5308,7 @@
   },
   {
     "qName": "EMC-BUD Quantity",
-    "qCardinal": 207430,
+    "qCardinal": 207883,
     "qTags": [
       "$numeric"
     ],
@@ -5204,7 +5318,7 @@
   },
   {
     "qName": "EMC-BUD Quantity Unit",
-    "qCardinal": 78,
+    "qCardinal": 79,
     "qTags": [
       "$ascii",
       "$text"
@@ -5215,7 +5329,7 @@
   },
   {
     "qName": "EMC-BUD SQM",
-    "qCardinal": 26827,
+    "qCardinal": 27420,
     "qTags": [
       "$numeric"
     ],
@@ -5225,7 +5339,7 @@
   },
   {
     "qName": "EMC-BUD US Ton",
-    "qCardinal": 331006,
+    "qCardinal": 332213,
     "qTags": [
       "$numeric"
     ],
@@ -5235,7 +5349,7 @@
   },
   {
     "qName": "EMV Country",
-    "qCardinal": 7,
+    "qCardinal": 19,
     "qTags": [
       "$ascii",
       "$text"
@@ -5246,7 +5360,7 @@
   },
   {
     "qName": "EMV Volume",
-    "qCardinal": 16,
+    "qCardinal": 40,
     "qTags": [
       "$numeric",
       "$integer"
@@ -5257,7 +5371,7 @@
   },
   {
     "qName": "EYC Amount USD - Forecast",
-    "qCardinal": 14792,
+    "qCardinal": 19752,
     "qTags": [
       "$numeric"
     ],
@@ -5267,7 +5381,7 @@
   },
   {
     "qName": "EYC Amount USD - Invoiced",
-    "qCardinal": 624798,
+    "qCardinal": 633366,
     "qTags": [
       "$numeric"
     ],
@@ -5277,7 +5391,7 @@
   },
   {
     "qName": "EYC Cost USD - Forecast",
-    "qCardinal": 15185,
+    "qCardinal": 19799,
     "qTags": [
       "$numeric"
     ],
@@ -5287,7 +5401,7 @@
   },
   {
     "qName": "EYC Cost USD - Invoiced",
-    "qCardinal": 741050,
+    "qCardinal": 751348,
     "qTags": [
       "$numeric"
     ],
@@ -5297,7 +5411,7 @@
   },
   {
     "qName": "EYC Kg - Forecast",
-    "qCardinal": 11000,
+    "qCardinal": 13169,
     "qTags": [
       "$numeric"
     ],
@@ -5307,7 +5421,7 @@
   },
   {
     "qName": "EYC Kg - Invoiced",
-    "qCardinal": 245864,
+    "qCardinal": 248381,
     "qTags": [
       "$numeric"
     ],
@@ -5317,7 +5431,7 @@
   },
   {
     "qName": "EYC MT - Forecast",
-    "qCardinal": 10957,
+    "qCardinal": 13109,
     "qTags": [
       "$numeric"
     ],
@@ -5327,7 +5441,7 @@
   },
   {
     "qName": "EYC MT - Invoiced",
-    "qCardinal": 230452,
+    "qCardinal": 232814,
     "qTags": [
       "$numeric"
     ],
@@ -5422,6 +5536,17 @@
     ]
   },
   {
+    "qName": "Entity Relationship",
+    "qCardinal": 1,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Sales_Shared_Dimensions_Final"
+    ]
+  },
+  {
     "qName": "External Item Description",
     "qCardinal": 3515,
     "qTags": [
@@ -5433,7 +5558,7 @@
   },
   {
     "qName": "External Item ID",
-    "qCardinal": 8498,
+    "qCardinal": 8513,
     "qTags": [],
     "qSrcTables": [
       "EXTERNAL_ITEMS"
@@ -5441,7 +5566,7 @@
   },
   {
     "qName": "External Item Key",
-    "qCardinal": 245535,
+    "qCardinal": 248687,
     "qTags": [
       "$text",
       "$key"
@@ -5453,7 +5578,7 @@
   },
   {
     "qName": "FA Forecast Qty",
-    "qCardinal": 37113,
+    "qCardinal": 37115,
     "qTags": [
       "$numeric"
     ],
@@ -5463,7 +5588,7 @@
   },
   {
     "qName": "FA Forecast Qty - Revised",
-    "qCardinal": 29781,
+    "qCardinal": 29785,
     "qTags": [
       "$numeric"
     ],
@@ -5495,7 +5620,7 @@
   },
   {
     "qName": "FA Invoiced Qty",
-    "qCardinal": 33182,
+    "qCardinal": 33184,
     "qTags": [
       "$numeric"
     ],
@@ -5505,7 +5630,7 @@
   },
   {
     "qName": "FA Invoiced Qty - Revised",
-    "qCardinal": 26876,
+    "qCardinal": 26882,
     "qTags": [
       "$numeric"
     ],
@@ -5537,7 +5662,7 @@
   },
   {
     "qName": "FAKey",
-    "qCardinal": 87661,
+    "qCardinal": 87660,
     "qTags": [
       "$text",
       "$key"
@@ -5549,7 +5674,7 @@
   },
   {
     "qName": "FAKey - Revised",
-    "qCardinal": 63059,
+    "qCardinal": 63076,
     "qTags": [
       "$ascii",
       "$text",
@@ -5561,8 +5686,294 @@
     ]
   },
   {
+    "qName": "FF_access_to_distribution_channels",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Five_Forces"
+    ]
+  },
+  {
+    "qName": "FF_availability_of_subsitutes",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Five_Forces"
+    ]
+  },
+  {
+    "qName": "FF_avg_size_supplier",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Five_Forces"
+    ]
+  },
+  {
+    "qName": "FF_brand_name",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Five_Forces"
+    ]
+  },
+  {
+    "qName": "FF_buyers_ability_to_integrate",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Five_Forces"
+    ]
+  },
+  {
+    "qName": "FF_buyers_cost_structure",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Five_Forces"
+    ]
+  },
+  {
+    "qName": "FF_buyers_price_sensitivity",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Five_Forces"
+    ]
+  },
+  {
+    "qName": "FF_buyers_size_of_orders",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Five_Forces"
+    ]
+  },
+  {
+    "qName": "FF_buyers_switching_costs",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Five_Forces"
+    ]
+  },
+  {
+    "qName": "FF_concentration_of_buyers",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Five_Forces"
+    ]
+  },
+  {
+    "qName": "FF_consumer_switching_costs",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Five_Forces"
+    ]
+  },
+  {
+    "qName": "FF_customer_loyality",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Five_Forces"
+    ]
+  },
+  {
+    "qName": "FF_customer_switching_cost",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Five_Forces"
+    ]
+  },
+  {
+    "qName": "FF_diversity_of__competitors",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Five_Forces"
+    ]
+  },
+  {
+    "qName": "FF_economics_of_scale",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Five_Forces"
+    ]
+  },
+  {
+    "qName": "FF_governmental_and_legal_barries",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Five_Forces"
+    ]
+  },
+  {
+    "qName": "FF_industry_sector_growth",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Five_Forces"
+    ]
+  },
+  {
+    "qName": "FF_initial_capital_investment",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Five_Forces"
+    ]
+  },
+  {
+    "qName": "FF_number_of_buyers",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Five_Forces"
+    ]
+  },
+  {
+    "qName": "FF_number_of_competitors",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Five_Forces"
+    ]
+  },
+  {
+    "qName": "FF_number_of_suppliers",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Five_Forces"
+    ]
+  },
+  {
+    "qName": "FF_product_differenciation",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Five_Forces"
+    ]
+  },
+  {
+    "qName": "FF_product_differenciation_substitutes",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Five_Forces"
+    ]
+  },
+  {
+    "qName": "FF_retaliation",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Five_Forces"
+    ]
+  },
+  {
+    "qName": "FF_specialist_knowledge",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Five_Forces"
+    ]
+  },
+  {
+    "qName": "FF_subsitute_price_vs_industry_product",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Five_Forces"
+    ]
+  },
+  {
+    "qName": "FF_subsitute_product_quality_vs_indistry_product",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Five_Forces"
+    ]
+  },
+  {
+    "qName": "FF_suppliers_location",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Five_Forces"
+    ]
+  },
+  {
+    "qName": "FF_switching_costs",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Five_Forces"
+    ]
+  },
+  {
+    "qName": "FF_technology_protections",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Five_Forces"
+    ]
+  },
+  {
+    "qName": "FF_threat_switching_costs",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Five_Forces"
+    ]
+  },
+  {
+    "qName": "FF_uniqueness_of_service",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Five_Forces"
+    ]
+  },
+  {
+    "qName": "FF_your_ability_to_Subsitute",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Five_Forces"
+    ]
+  },
+  {
+    "qName": "Five Forces ID",
+    "qCardinal": 3,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Five_Forces"
+    ]
+  },
+  {
+    "qName": "Five Forces Product Name",
+    "qCardinal": 2,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Five_Forces"
+    ]
+  },
+  {
     "qName": "Forecast Amount USD",
-    "qCardinal": 59589,
+    "qCardinal": 155110,
     "qTags": [
       "$numeric"
     ],
@@ -5732,7 +6143,7 @@
   },
   {
     "qName": "Forecast Cost USD",
-    "qCardinal": 60985,
+    "qCardinal": 167931,
     "qTags": [
       "$numeric"
     ],
@@ -5750,7 +6161,7 @@
   },
   {
     "qName": "Forecast Creation Date",
-    "qCardinal": 100,
+    "qCardinal": 434,
     "qTags": [
       "$numeric",
       "$integer",
@@ -5763,7 +6174,7 @@
   },
   {
     "qName": "Forecast Date",
-    "qCardinal": 128,
+    "qCardinal": 645,
     "qTags": [
       "$numeric",
       "$integer",
@@ -5776,7 +6187,7 @@
   },
   {
     "qName": "Forecast Key",
-    "qCardinal": 143071,
+    "qCardinal": 359494,
     "qTags": [
       "$ascii",
       "$text",
@@ -5789,7 +6200,7 @@
   },
   {
     "qName": "Forecast Kg",
-    "qCardinal": 34338,
+    "qCardinal": 75533,
     "qTags": [
       "$numeric"
     ],
@@ -5799,7 +6210,7 @@
   },
   {
     "qName": "Forecast Lbp",
-    "qCardinal": 34338,
+    "qCardinal": 75533,
     "qTags": [
       "$numeric"
     ],
@@ -5809,7 +6220,7 @@
   },
   {
     "qName": "Forecast MT",
-    "qCardinal": 34089,
+    "qCardinal": 74513,
     "qTags": [
       "$numeric"
     ],
@@ -5819,7 +6230,7 @@
   },
   {
     "qName": "Forecast Misc Charges USD",
-    "qCardinal": 40083,
+    "qCardinal": 89183,
     "qTags": [
       "$numeric"
     ],
@@ -5859,7 +6270,7 @@
   },
   {
     "qName": "Forecast Model Key",
-    "qCardinal": 804,
+    "qCardinal": 808,
     "qTags": [
       "$ascii",
       "$text",
@@ -5883,7 +6294,7 @@
   },
   {
     "qName": "Forecast Quantity",
-    "qCardinal": 33977,
+    "qCardinal": 74825,
     "qTags": [
       "$numeric"
     ],
@@ -5893,7 +6304,7 @@
   },
   {
     "qName": "Forecast Quantity Unit",
-    "qCardinal": 17,
+    "qCardinal": 21,
     "qTags": [
       "$ascii",
       "$text"
@@ -5904,7 +6315,7 @@
   },
   {
     "qName": "Forecast US Ton",
-    "qCardinal": 34085,
+    "qCardinal": 74537,
     "qTags": [
       "$numeric"
     ],
@@ -5914,7 +6325,7 @@
   },
   {
     "qName": "Forecast Year",
-    "qCardinal": 3,
+    "qCardinal": 10,
     "qTags": [
       "$numeric",
       "$integer"
@@ -5935,8 +6346,19 @@
     ]
   },
   {
+    "qName": "Full Day Hours",
+    "qCardinal": 1,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Production_Outputs"
+    ]
+  },
+  {
     "qName": "Full Revised Forecast Amount USD",
-    "qCardinal": 46516,
+    "qCardinal": 54177,
     "qTags": [
       "$numeric"
     ],
@@ -5946,7 +6368,7 @@
   },
   {
     "qName": "Full Revised Forecast Cost USD",
-    "qCardinal": 47325,
+    "qCardinal": 54438,
     "qTags": [
       "$numeric"
     ],
@@ -5956,7 +6378,7 @@
   },
   {
     "qName": "Full Revised Forecast Key",
-    "qCardinal": 114639,
+    "qCardinal": 115838,
     "qTags": [
       "$ascii",
       "$text",
@@ -5969,7 +6391,7 @@
   },
   {
     "qName": "Full Revised Forecast Kg",
-    "qCardinal": 27675,
+    "qCardinal": 30876,
     "qTags": [
       "$numeric"
     ],
@@ -5979,7 +6401,7 @@
   },
   {
     "qName": "Full Revised Forecast Lbp",
-    "qCardinal": 27675,
+    "qCardinal": 30876,
     "qTags": [
       "$numeric"
     ],
@@ -5989,7 +6411,7 @@
   },
   {
     "qName": "Full Revised Forecast MT",
-    "qCardinal": 27503,
+    "qCardinal": 30652,
     "qTags": [
       "$numeric"
     ],
@@ -6021,7 +6443,7 @@
   },
   {
     "qName": "Full Revised Forecast Misc Charges USD",
-    "qCardinal": 32246,
+    "qCardinal": 37431,
     "qTags": [
       "$numeric"
     ],
@@ -6031,7 +6453,7 @@
   },
   {
     "qName": "Full Revised Forecast Quantity",
-    "qCardinal": 27323,
+    "qCardinal": 30456,
     "qTags": [
       "$numeric"
     ],
@@ -6063,7 +6485,7 @@
   },
   {
     "qName": "Full Revised Forecast US Ton",
-    "qCardinal": 27509,
+    "qCardinal": 30664,
     "qTags": [
       "$numeric"
     ],
@@ -6117,7 +6539,7 @@
   },
   {
     "qName": "Geographical Country",
-    "qCardinal": 231,
+    "qCardinal": 230,
     "qTags": [
       "$ascii",
       "$text"
@@ -6128,7 +6550,7 @@
   },
   {
     "qName": "Geographical Mix Key",
-    "qCardinal": 3107,
+    "qCardinal": 3105,
     "qTags": [
       "$ascii",
       "$text",
@@ -6173,7 +6595,7 @@
   },
   {
     "qName": "Gross Backlog Order Amount USD",
-    "qCardinal": 5092,
+    "qCardinal": 5065,
     "qTags": [
       "$numeric"
     ],
@@ -6183,7 +6605,7 @@
   },
   {
     "qName": "Gross Invoice Amount BL USD",
-    "qCardinal": 12827,
+    "qCardinal": 12760,
     "qTags": [
       "$numeric"
     ],
@@ -6193,7 +6615,7 @@
   },
   {
     "qName": "Gross Invoice Amount Balance BL USD",
-    "qCardinal": 12901,
+    "qCardinal": 12830,
     "qTags": [
       "$numeric"
     ],
@@ -6203,7 +6625,7 @@
   },
   {
     "qName": "Gross Invoice Amount Setteled BL USD",
-    "qCardinal": 956,
+    "qCardinal": 935,
     "qTags": [
       "$numeric"
     ],
@@ -6213,7 +6635,7 @@
   },
   {
     "qName": "Gross Invoice Due Days",
-    "qCardinal": 1077,
+    "qCardinal": 1074,
     "qTags": [
       "$numeric",
       "$integer"
@@ -6235,7 +6657,7 @@
   },
   {
     "qName": "Gross Invoice Due Weeks",
-    "qCardinal": 317,
+    "qCardinal": 320,
     "qTags": [
       "$ascii",
       "$text"
@@ -6246,7 +6668,7 @@
   },
   {
     "qName": "Gross Invoice Overdue Amout BL USD",
-    "qCardinal": 4019,
+    "qCardinal": 4046,
     "qTags": [
       "$numeric"
     ],
@@ -6256,7 +6678,7 @@
   },
   {
     "qName": "Gross Invoice Overdue Amout BL USD - Grace Days",
-    "qCardinal": 8776,
+    "qCardinal": 8979,
     "qTags": [
       "$numeric"
     ],
@@ -6266,7 +6688,7 @@
   },
   {
     "qName": "GrossSalesDSOKey",
-    "qCardinal": 334555,
+    "qCardinal": 337019,
     "qTags": [
       "$ascii",
       "$text",
@@ -6290,7 +6712,7 @@
   },
   {
     "qName": "IR Variance USD",
-    "qCardinal": 87,
+    "qCardinal": 88,
     "qTags": [
       "$numeric"
     ],
@@ -6330,8 +6752,16 @@
     ]
   },
   {
+    "qName": "Invent Supplier Grade ID",
+    "qCardinal": 3685,
+    "qTags": [],
+    "qSrcTables": [
+      "Sales_Shared_Dimensions_Final"
+    ]
+  },
+  {
     "qName": "InventoryItemsKey",
-    "qCardinal": 1039118,
+    "qCardinal": 1062430,
     "qTags": [
       "$text",
       "$key"
@@ -6343,7 +6773,7 @@
   },
   {
     "qName": "Invoice Amount USD",
-    "qCardinal": 631936,
+    "qCardinal": 635972,
     "qTags": [
       "$numeric"
     ],
@@ -6353,7 +6783,7 @@
   },
   {
     "qName": "Invoice Bundles",
-    "qCardinal": 16953,
+    "qCardinal": 16984,
     "qTags": [
       "$numeric"
     ],
@@ -6363,7 +6793,7 @@
   },
   {
     "qName": "Invoice Cartons",
-    "qCardinal": 86849,
+    "qCardinal": 86937,
     "qTags": [
       "$numeric"
     ],
@@ -6373,7 +6803,7 @@
   },
   {
     "qName": "Invoice Cost USD",
-    "qCardinal": 750127,
+    "qCardinal": 754719,
     "qTags": [
       "$numeric"
     ],
@@ -6383,7 +6813,7 @@
   },
   {
     "qName": "Invoice Creation Date",
-    "qCardinal": 7431,
+    "qCardinal": 7644,
     "qTags": [
       "$numeric",
       "$integer",
@@ -6396,7 +6826,7 @@
   },
   {
     "qName": "Invoice Customer",
-    "qCardinal": 18206,
+    "qCardinal": 18337,
     "qTags": [
       "$text"
     ],
@@ -6406,7 +6836,7 @@
   },
   {
     "qName": "Invoice Customer Account",
-    "qCardinal": 11855,
+    "qCardinal": 11949,
     "qTags": [
       "$ascii",
       "$text"
@@ -6505,7 +6935,7 @@
   },
   {
     "qName": "Invoice Customer CR Number",
-    "qCardinal": 4451,
+    "qCardinal": 4462,
     "qTags": [],
     "qSrcTables": [
       "Invoice_Customers"
@@ -6546,7 +6976,7 @@
   },
   {
     "qName": "Invoice Customer Chain",
-    "qCardinal": 12323,
+    "qCardinal": 12454,
     "qTags": [
       "$ascii",
       "$text"
@@ -6597,7 +7027,7 @@
   },
   {
     "qName": "Invoice Customer Contact Key",
-    "qCardinal": 21580,
+    "qCardinal": 21719,
     "qTags": [
       "$ascii",
       "$text",
@@ -6693,7 +7123,7 @@
   },
   {
     "qName": "Invoice Customer Credit Limit",
-    "qCardinal": 489,
+    "qCardinal": 486,
     "qTags": [
       "$numeric"
     ],
@@ -6758,7 +7188,7 @@
   },
   {
     "qName": "Invoice Customer Insurance Account Number",
-    "qCardinal": 3136,
+    "qCardinal": 3145,
     "qTags": [],
     "qSrcTables": [
       "Invoice_Customers"
@@ -6766,7 +7196,7 @@
   },
   {
     "qName": "Invoice Customer Insurance Coverage",
-    "qCardinal": 203,
+    "qCardinal": 199,
     "qTags": [
       "$ascii",
       "$text"
@@ -6810,7 +7240,7 @@
   },
   {
     "qName": "Invoice Customer Invoice Account",
-    "qCardinal": 2264,
+    "qCardinal": 2268,
     "qTags": [
       "$ascii",
       "$text"
@@ -6832,7 +7262,7 @@
   },
   {
     "qName": "Invoice Customer Key",
-    "qCardinal": 21613,
+    "qCardinal": 21755,
     "qTags": [
       "$ascii",
       "$text",
@@ -6878,7 +7308,7 @@
   },
   {
     "qName": "Invoice Customer Main Contact",
-    "qCardinal": 579,
+    "qCardinal": 580,
     "qTags": [
       "$ascii",
       "$text"
@@ -6930,7 +7360,7 @@
   },
   {
     "qName": "Invoice Customer Parent Company",
-    "qCardinal": 2197,
+    "qCardinal": 2200,
     "qTags": [
       "$text"
     ],
@@ -6962,7 +7392,7 @@
   },
   {
     "qName": "Invoice Customer Primary Email",
-    "qCardinal": 5296,
+    "qCardinal": 5346,
     "qTags": [],
     "qSrcTables": [
       "Invoice_Customers"
@@ -6970,7 +7400,7 @@
   },
   {
     "qName": "Invoice Customer Primary Phone",
-    "qCardinal": 8746,
+    "qCardinal": 8789,
     "qTags": [],
     "qSrcTables": [
       "Invoice_Customers"
@@ -6978,7 +7408,7 @@
   },
   {
     "qName": "Invoice Customer Primary Telefax",
-    "qCardinal": 4368,
+    "qCardinal": 4369,
     "qTags": [],
     "qSrcTables": [
       "Invoice_Customers"
@@ -6986,7 +7416,7 @@
   },
   {
     "qName": "Invoice Customer Primary URL",
-    "qCardinal": 649,
+    "qCardinal": 650,
     "qTags": [
       "$ascii",
       "$text"
@@ -7030,7 +7460,7 @@
   },
   {
     "qName": "Invoice Customer Salesman",
-    "qCardinal": 274,
+    "qCardinal": 276,
     "qTags": [
       "$ascii",
       "$text"
@@ -7127,7 +7557,7 @@
   },
   {
     "qName": "Invoice Customer VAT Number",
-    "qCardinal": 3341,
+    "qCardinal": 3358,
     "qTags": [],
     "qSrcTables": [
       "Invoice_Customers"
@@ -7146,7 +7576,7 @@
   },
   {
     "qName": "Invoice Difference Days Document - Last Settlment Date",
-    "qCardinal": 2416,
+    "qCardinal": 2415,
     "qTags": [
       "$numeric",
       "$integer"
@@ -7157,7 +7587,7 @@
   },
   {
     "qName": "Invoice Difference Days Due Date - Last Settlment Date",
-    "qCardinal": 1843,
+    "qCardinal": 1859,
     "qTags": [
       "$numeric",
       "$integer"
@@ -7189,7 +7619,7 @@
   },
   {
     "qName": "Invoice Gross Amount USD 12 Month",
-    "qCardinal": 147328,
+    "qCardinal": 148749,
     "qTags": [
       "$numeric"
     ],
@@ -7199,7 +7629,7 @@
   },
   {
     "qName": "Invoice Initial Cost USD",
-    "qCardinal": 713610,
+    "qCardinal": 717441,
     "qTags": [
       "$numeric"
     ],
@@ -7209,7 +7639,7 @@
   },
   {
     "qName": "Invoice Issuing Date",
-    "qCardinal": 7441,
+    "qCardinal": 7657,
     "qTags": [
       "$numeric",
       "$integer",
@@ -7222,7 +7652,7 @@
   },
   {
     "qName": "Invoice Key",
-    "qCardinal": 944606,
+    "qCardinal": 953283,
     "qTags": [
       "$ascii",
       "$text",
@@ -7236,7 +7666,7 @@
   },
   {
     "qName": "Invoice Kg",
-    "qCardinal": 247925,
+    "qCardinal": 249140,
     "qTags": [
       "$numeric"
     ],
@@ -7246,7 +7676,7 @@
   },
   {
     "qName": "Invoice Lbp",
-    "qCardinal": 231492,
+    "qCardinal": 232816,
     "qTags": [
       "$numeric"
     ],
@@ -7256,7 +7686,7 @@
   },
   {
     "qName": "Invoice Line Number",
-    "qCardinal": 5331,
+    "qCardinal": 5341,
     "qTags": [
       "$ascii",
       "$text",
@@ -7269,7 +7699,7 @@
   },
   {
     "qName": "Invoice MSF",
-    "qCardinal": 26687,
+    "qCardinal": 27268,
     "qTags": [
       "$numeric"
     ],
@@ -7279,7 +7709,7 @@
   },
   {
     "qName": "Invoice MT",
-    "qCardinal": 232369,
+    "qCardinal": 233512,
     "qTags": [
       "$numeric"
     ],
@@ -7289,7 +7719,7 @@
   },
   {
     "qName": "Invoice Main Amount USD",
-    "qCardinal": 442676,
+    "qCardinal": 446008,
     "qTags": [
       "$numeric"
     ],
@@ -7299,7 +7729,7 @@
   },
   {
     "qName": "Invoice Misc Charges By Value Amount USD",
-    "qCardinal": 190659,
+    "qCardinal": 192330,
     "qTags": [
       "$numeric"
     ],
@@ -7309,7 +7739,7 @@
   },
   {
     "qName": "Invoice Misc Charges By Weight Amount USD",
-    "qCardinal": 210616,
+    "qCardinal": 212377,
     "qTags": [
       "$numeric",
       "$integer"
@@ -7320,7 +7750,7 @@
   },
   {
     "qName": "Invoice Misc Charges Provision By Value Amount USD",
-    "qCardinal": 234732,
+    "qCardinal": 235993,
     "qTags": [
       "$numeric",
       "$integer"
@@ -7331,7 +7761,7 @@
   },
   {
     "qName": "Invoice Misc Charges Provision By Weight Amount USD",
-    "qCardinal": 254069,
+    "qCardinal": 255435,
     "qTags": [
       "$numeric",
       "$integer"
@@ -7375,7 +7805,7 @@
   },
   {
     "qName": "Invoice Misc Supplier Code",
-    "qCardinal": 456,
+    "qCardinal": 461,
     "qTags": [
       "$ascii",
       "$text"
@@ -7386,7 +7816,7 @@
   },
   {
     "qName": "Invoice Misc Supplier Name",
-    "qCardinal": 388,
+    "qCardinal": 389,
     "qTags": [
       "$text"
     ],
@@ -7396,7 +7826,7 @@
   },
   {
     "qName": "Invoice Number",
-    "qCardinal": 440590,
+    "qCardinal": 442911,
     "qTags": [
       "$numeric",
       "$integer"
@@ -7407,7 +7837,7 @@
   },
   {
     "qName": "Invoice Number Misc Key",
-    "qCardinal": 653331,
+    "qCardinal": 657545,
     "qTags": [
       "$ascii",
       "$text",
@@ -7431,7 +7861,7 @@
   },
   {
     "qName": "Invoice Pieces",
-    "qCardinal": 16139,
+    "qCardinal": 16267,
     "qTags": [
       "$numeric"
     ],
@@ -7452,7 +7882,7 @@
   },
   {
     "qName": "Invoice Prospect MT",
-    "qCardinal": 11843,
+    "qCardinal": 11915,
     "qTags": [
       "$numeric"
     ],
@@ -7462,7 +7892,7 @@
   },
   {
     "qName": "Invoice Quantity",
-    "qCardinal": 90458,
+    "qCardinal": 90935,
     "qTags": [
       "$numeric"
     ],
@@ -7472,7 +7902,7 @@
   },
   {
     "qName": "Invoice Quantity Unit",
-    "qCardinal": 76,
+    "qCardinal": 77,
     "qTags": [
       "$ascii",
       "$text"
@@ -7494,7 +7924,7 @@
   },
   {
     "qName": "Invoice SQM",
-    "qCardinal": 26545,
+    "qCardinal": 27118,
     "qTags": [
       "$numeric"
     ],
@@ -7504,7 +7934,7 @@
   },
   {
     "qName": "Invoice Sales Filtering",
-    "qCardinal": 811683,
+    "qCardinal": 817319,
     "qTags": [
       "$numeric"
     ],
@@ -7525,7 +7955,7 @@
   },
   {
     "qName": "Invoice Settlment Key",
-    "qCardinal": 1048744,
+    "qCardinal": 1057935,
     "qTags": [
       "$ascii",
       "$text",
@@ -7548,7 +7978,7 @@
   },
   {
     "qName": "Invoice US Ton",
-    "qCardinal": 215618,
+    "qCardinal": 216870,
     "qTags": [
       "$numeric"
     ],
@@ -7569,7 +7999,7 @@
   },
   {
     "qName": "Item Code",
-    "qCardinal": 949356,
+    "qCardinal": 971795,
     "qTags": [
       "$ascii",
       "$text"
@@ -7580,7 +8010,7 @@
   },
   {
     "qName": "Item Conversion Bundle to KG",
-    "qCardinal": 673,
+    "qCardinal": 674,
     "qTags": [],
     "qSrcTables": [
       "Items"
@@ -7588,7 +8018,7 @@
   },
   {
     "qName": "Item Conversion Carton to KG",
-    "qCardinal": 3173,
+    "qCardinal": 3177,
     "qTags": [],
     "qSrcTables": [
       "Items"
@@ -7607,7 +8037,7 @@
   },
   {
     "qName": "Item Description",
-    "qCardinal": 127661,
+    "qCardinal": 129040,
     "qTags": [
       "$ascii",
       "$text"
@@ -7629,7 +8059,7 @@
   },
   {
     "qName": "Item Group",
-    "qCardinal": 26,
+    "qCardinal": 27,
     "qTags": [
       "$ascii",
       "$text"
@@ -7640,7 +8070,7 @@
   },
   {
     "qName": "Item Inventory Unit",
-    "qCardinal": 93,
+    "qCardinal": 94,
     "qTags": [
       "$ascii",
       "$text"
@@ -7659,7 +8089,7 @@
   },
   {
     "qName": "Item Key",
-    "qCardinal": 1039297,
+    "qCardinal": 1633695,
     "qTags": [
       "$ascii",
       "$text",
@@ -7672,7 +8102,7 @@
   },
   {
     "qName": "Item Name",
-    "qCardinal": 199505,
+    "qCardinal": 201185,
     "qTags": [
       "$ascii",
       "$text"
@@ -7683,7 +8113,7 @@
   },
   {
     "qName": "Item Number",
-    "qCardinal": 95525,
+    "qCardinal": 96206,
     "qTags": [
       "$ascii",
       "$text"
@@ -7705,7 +8135,7 @@
   },
   {
     "qName": "Item Origin Key",
-    "qCardinal": 1039110,
+    "qCardinal": 1062421,
     "qTags": [
       "$text",
       "$key"
@@ -7717,7 +8147,7 @@
   },
   {
     "qName": "Item Original Code",
-    "qCardinal": 86,
+    "qCardinal": 353,
     "qTags": [
       "$ascii",
       "$text"
@@ -7738,6 +8168,17 @@
     ]
   },
   {
+    "qName": "Item Single Source Supplier",
+    "qCardinal": 2,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Sales_Shared_Dimensions_Final"
+    ]
+  },
+  {
     "qName": "Item Source",
     "qCardinal": 8,
     "qTags": [
@@ -7750,7 +8191,7 @@
   },
   {
     "qName": "Item Type Key",
-    "qCardinal": 202,
+    "qCardinal": 203,
     "qTags": [
       "$ascii",
       "$text"
@@ -7801,7 +8242,7 @@
   },
   {
     "qName": "Lead Customer Key",
-    "qCardinal": 9262,
+    "qCardinal": 9355,
     "qTags": [
       "$ascii",
       "$text"
@@ -7812,7 +8253,7 @@
   },
   {
     "qName": "Lead Key",
-    "qCardinal": 27077,
+    "qCardinal": 27197,
     "qTags": [
       "$ascii",
       "$text",
@@ -7825,7 +8266,7 @@
   },
   {
     "qName": "Lead Line Key",
-    "qCardinal": 27058,
+    "qCardinal": 27178,
     "qTags": [
       "$ascii",
       "$text",
@@ -7849,7 +8290,7 @@
   },
   {
     "qName": "Lead Memo",
-    "qCardinal": 6835,
+    "qCardinal": 6845,
     "qTags": [
       "$ascii",
       "$text"
@@ -7860,7 +8301,7 @@
   },
   {
     "qName": "Lead Name",
-    "qCardinal": 23440,
+    "qCardinal": 23558,
     "qTags": [
       "$text"
     ],
@@ -7870,7 +8311,7 @@
   },
   {
     "qName": "Lead Number",
-    "qCardinal": 5071,
+    "qCardinal": 5097,
     "qTags": [
       "$ascii",
       "$text"
@@ -7892,7 +8333,7 @@
   },
   {
     "qName": "Lead Owned By",
-    "qCardinal": 371,
+    "qCardinal": 376,
     "qTags": [
       "$ascii",
       "$text"
@@ -7903,7 +8344,7 @@
   },
   {
     "qName": "Lead Qualified Line Key",
-    "qCardinal": 13709,
+    "qCardinal": 13766,
     "qTags": [
       "$ascii",
       "$text"
@@ -7914,7 +8355,7 @@
   },
   {
     "qName": "Lead Reason",
-    "qCardinal": 44,
+    "qCardinal": 43,
     "qTags": [
       "$ascii",
       "$text"
@@ -7956,7 +8397,7 @@
   },
   {
     "qName": "Lead Subject",
-    "qCardinal": 25936,
+    "qCardinal": 26051,
     "qTags": [
       "$text"
     ],
@@ -7966,7 +8407,7 @@
   },
   {
     "qName": "Local Mixed Security Key",
-    "qCardinal": 7754,
+    "qCardinal": 7906,
     "qTags": [
       "$text",
       "$key"
@@ -7978,7 +8419,7 @@
   },
   {
     "qName": "MSDate",
-    "qCardinal": 7429,
+    "qCardinal": 7642,
     "qTags": [
       "$numeric",
       "$integer",
@@ -8000,6 +8441,28 @@
     ],
     "qSrcTables": [
       "Budgets"
+    ]
+  },
+  {
+    "qName": "Machine",
+    "qCardinal": 863,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Production_Machines"
+    ]
+  },
+  {
+    "qName": "Machine Key",
+    "qCardinal": 960,
+    "qTags": [
+      "$key"
+    ],
+    "qSrcTables": [
+      "Sales_Shared_Dimensions_Final",
+      "Production_Machines"
     ]
   },
   {
@@ -8078,7 +8541,7 @@
   },
   {
     "qName": "Market Sector For Aggregation",
-    "qCardinal": 251,
+    "qCardinal": 256,
     "qTags": [
       "$ascii",
       "$text"
@@ -8089,7 +8552,7 @@
   },
   {
     "qName": "Market Sector Mix Key",
-    "qCardinal": 671,
+    "qCardinal": 674,
     "qTags": [
       "$text",
       "$key"
@@ -8149,7 +8612,7 @@
   },
   {
     "qName": "Master Calendar Date Num",
-    "qCardinal": 6108,
+    "qCardinal": 6143,
     "qTags": [
       "$numeric",
       "$integer",
@@ -8164,12 +8627,23 @@
   },
   {
     "qName": "Material Variance USD",
-    "qCardinal": 1043,
+    "qCardinal": 1056,
     "qTags": [
       "$numeric"
     ],
     "qSrcTables": [
       "CostVariance"
+    ]
+  },
+  {
+    "qName": "Measure Group",
+    "qCardinal": 1,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Sales_Shared_Dimensions_Final"
     ]
   },
   {
@@ -8262,7 +8736,7 @@
   },
   {
     "qName": "Mixed Security Key",
-    "qCardinal": 3300,
+    "qCardinal": 3578,
     "qTags": [
       "$text"
     ],
@@ -8272,7 +8746,7 @@
   },
   {
     "qName": "Modify User Key",
-    "qCardinal": 216,
+    "qCardinal": 241,
     "qTags": [
       "$ascii",
       "$text"
@@ -8340,7 +8814,7 @@
   },
   {
     "qName": "MonthlyVariancesTableKey",
-    "qCardinal": 1129,
+    "qCardinal": 1141,
     "qTags": [
       "$ascii",
       "$text",
@@ -8364,7 +8838,7 @@
   },
   {
     "qName": "NET BALANCE USD",
-    "qCardinal": 70042,
+    "qCardinal": 70885,
     "qTags": [
       "$numeric"
     ],
@@ -8418,7 +8892,7 @@
   },
   {
     "qName": "Net Doubtful Amount USD",
-    "qCardinal": 897,
+    "qCardinal": 899,
     "qTags": [
       "$numeric"
     ],
@@ -8428,7 +8902,7 @@
   },
   {
     "qName": "OCKey",
-    "qCardinal": 13804,
+    "qCardinal": 13874,
     "qTags": [
       "$ascii",
       "$text"
@@ -8450,7 +8924,7 @@
   },
   {
     "qName": "OTIF Confirm Date",
-    "qCardinal": 2927,
+    "qCardinal": 2944,
     "qTags": [
       "$numeric",
       "$integer",
@@ -8463,7 +8937,7 @@
   },
   {
     "qName": "OTIF Confirmed Receipt Date",
-    "qCardinal": 3132,
+    "qCardinal": 3162,
     "qTags": [
       "$numeric",
       "$integer"
@@ -8474,7 +8948,7 @@
   },
   {
     "qName": "OTIF Confirmed Shipping Date",
-    "qCardinal": 3127,
+    "qCardinal": 3153,
     "qTags": [
       "$numeric",
       "$integer"
@@ -8496,7 +8970,7 @@
   },
   {
     "qName": "OTIF Days RRD",
-    "qCardinal": 771,
+    "qCardinal": 772,
     "qTags": [
       "$numeric",
       "$integer"
@@ -8528,7 +9002,7 @@
   },
   {
     "qName": "OTIF In Full Ratio",
-    "qCardinal": 62965,
+    "qCardinal": 63336,
     "qTags": [
       "$numeric"
     ],
@@ -8538,7 +9012,7 @@
   },
   {
     "qName": "OTIF Invoice Date",
-    "qCardinal": 3096,
+    "qCardinal": 3108,
     "qTags": [
       "$numeric",
       "$integer",
@@ -8551,7 +9025,7 @@
   },
   {
     "qName": "OTIF Invoice Number",
-    "qCardinal": 330338,
+    "qCardinal": 332568,
     "qTags": [
       "$ascii",
       "$text"
@@ -8562,7 +9036,7 @@
   },
   {
     "qName": "OTIF Key",
-    "qCardinal": 563658,
+    "qCardinal": 569031,
     "qTags": [
       "$ascii",
       "$text",
@@ -8638,7 +9112,7 @@
   },
   {
     "qName": "OTIF Received In Planning Date",
-    "qCardinal": 921,
+    "qCardinal": 929,
     "qTags": [
       "$numeric",
       "$integer"
@@ -8649,7 +9123,7 @@
   },
   {
     "qName": "OTIF Requested Receipt Date",
-    "qCardinal": 3083,
+    "qCardinal": 3100,
     "qTags": [
       "$numeric",
       "$integer"
@@ -8660,7 +9134,7 @@
   },
   {
     "qName": "OTIF Requested Shippling Date",
-    "qCardinal": 3079,
+    "qCardinal": 3094,
     "qTags": [
       "$numeric",
       "$integer"
@@ -8671,7 +9145,7 @@
   },
   {
     "qName": "OTIF SO Creation date",
-    "qCardinal": 238959,
+    "qCardinal": 243382,
     "qTags": [
       "$numeric",
       "$timestamp"
@@ -8693,7 +9167,7 @@
   },
   {
     "qName": "OTIF Total Invoiced Qty",
-    "qCardinal": 166901,
+    "qCardinal": 167598,
     "qTags": [
       "$numeric"
     ],
@@ -8703,7 +9177,7 @@
   },
   {
     "qName": "OTIF Total Ordered Qty",
-    "qCardinal": 104262,
+    "qCardinal": 104611,
     "qTags": [
       "$numeric"
     ],
@@ -8713,7 +9187,7 @@
   },
   {
     "qName": "OTIF Under Delivery P Margin",
-    "qCardinal": 201,
+    "qCardinal": 203,
     "qTags": [
       "$numeric"
     ],
@@ -8723,7 +9197,7 @@
   },
   {
     "qName": "On Hand - Physical Net Weight",
-    "qCardinal": 4236,
+    "qCardinal": 4131,
     "qTags": [
       "$numeric"
     ],
@@ -8733,7 +9207,7 @@
   },
   {
     "qName": "On Hand - Physical Qty",
-    "qCardinal": 4686,
+    "qCardinal": 4549,
     "qTags": [
       "$numeric"
     ],
@@ -8764,7 +9238,7 @@
   },
   {
     "qName": "Order Amount USD",
-    "qCardinal": 217601,
+    "qCardinal": 218979,
     "qTags": [
       "$numeric"
     ],
@@ -8774,7 +9248,7 @@
   },
   {
     "qName": "Order Confirmation Date",
-    "qCardinal": 9390,
+    "qCardinal": 9502,
     "qTags": [
       "$numeric"
     ],
@@ -8784,7 +9258,7 @@
   },
   {
     "qName": "Order Confirmed Delivery Date",
-    "qCardinal": 8537,
+    "qCardinal": 8678,
     "qTags": [
       "$numeric"
     ],
@@ -8794,7 +9268,7 @@
   },
   {
     "qName": "Order Confirmed Receipt Date",
-    "qCardinal": 11802,
+    "qCardinal": 11944,
     "qTags": [
       "$numeric",
       "$timestamp"
@@ -8805,7 +9279,7 @@
   },
   {
     "qName": "Order Cost USD",
-    "qCardinal": 471162,
+    "qCardinal": 474149,
     "qTags": [
       "$numeric"
     ],
@@ -8815,7 +9289,7 @@
   },
   {
     "qName": "Order Customer Key Cons",
-    "qCardinal": 12796,
+    "qCardinal": 12861,
     "qTags": [
       "$ascii",
       "$text"
@@ -8826,7 +9300,7 @@
   },
   {
     "qName": "Order Customer PO Number",
-    "qCardinal": 77700,
+    "qCardinal": 78182,
     "qTags": [],
     "qSrcTables": [
       "Orders"
@@ -8834,7 +9308,7 @@
   },
   {
     "qName": "Order Customer Reference",
-    "qCardinal": 150721,
+    "qCardinal": 152185,
     "qTags": [],
     "qSrcTables": [
       "Orders"
@@ -8842,7 +9316,7 @@
   },
   {
     "qName": "Order Customer Requisition",
-    "qCardinal": 148888,
+    "qCardinal": 149709,
     "qTags": [],
     "qSrcTables": [
       "Orders"
@@ -8850,7 +9324,7 @@
   },
   {
     "qName": "Order Delivery Date",
-    "qCardinal": 8663,
+    "qCardinal": 8810,
     "qTags": [
       "$numeric"
     ],
@@ -8860,7 +9334,7 @@
   },
   {
     "qName": "Order Detail Number",
-    "qCardinal": 86452,
+    "qCardinal": 87050,
     "qTags": [
       "$ascii",
       "$text"
@@ -8882,7 +9356,7 @@
   },
   {
     "qName": "Order External Item Number",
-    "qCardinal": 18179,
+    "qCardinal": 18253,
     "qTags": [],
     "qSrcTables": [
       "Orders"
@@ -8920,7 +9394,7 @@
   },
   {
     "qName": "Order Issuing Date",
-    "qCardinal": 367933,
+    "qCardinal": 370871,
     "qTags": [
       "$numeric",
       "$timestamp"
@@ -8931,7 +9405,7 @@
   },
   {
     "qName": "Order Key",
-    "qCardinal": 736711,
+    "qCardinal": 743670,
     "qTags": [
       "$ascii",
       "$text",
@@ -8944,7 +9418,7 @@
   },
   {
     "qName": "Order Kg",
-    "qCardinal": 139114,
+    "qCardinal": 139685,
     "qTags": [
       "$numeric"
     ],
@@ -8954,7 +9428,7 @@
   },
   {
     "qName": "Order Lbp",
-    "qCardinal": 139435,
+    "qCardinal": 140009,
     "qTags": [
       "$numeric"
     ],
@@ -8964,7 +9438,7 @@
   },
   {
     "qName": "Order MSF",
-    "qCardinal": 18959,
+    "qCardinal": 19103,
     "qTags": [
       "$numeric"
     ],
@@ -8974,7 +9448,7 @@
   },
   {
     "qName": "Order MT",
-    "qCardinal": 125479,
+    "qCardinal": 125987,
     "qTags": [
       "$numeric"
     ],
@@ -8984,7 +9458,7 @@
   },
   {
     "qName": "Order Number",
-    "qCardinal": 78784,
+    "qCardinal": 79283,
     "qTags": [
       "$numeric",
       "$integer"
@@ -9006,7 +9480,7 @@
   },
   {
     "qName": "Order Pieces",
-    "qCardinal": 1302,
+    "qCardinal": 1310,
     "qTags": [
       "$numeric"
     ],
@@ -9027,7 +9501,7 @@
   },
   {
     "qName": "Order Quantity",
-    "qCardinal": 126944,
+    "qCardinal": 127425,
     "qTags": [
       "$numeric"
     ],
@@ -9037,7 +9511,7 @@
   },
   {
     "qName": "Order Quantity Unit",
-    "qCardinal": 57,
+    "qCardinal": 58,
     "qTags": [
       "$ascii",
       "$text"
@@ -9048,7 +9522,7 @@
   },
   {
     "qName": "Order Requested Delivery Date",
-    "qCardinal": 11808,
+    "qCardinal": 11966,
     "qTags": [
       "$numeric",
       "$timestamp"
@@ -9059,7 +9533,7 @@
   },
   {
     "qName": "Order Requested Receipt Date",
-    "qCardinal": 11764,
+    "qCardinal": 11924,
     "qTags": [
       "$numeric",
       "$timestamp"
@@ -9070,7 +9544,7 @@
   },
   {
     "qName": "Order SQM",
-    "qCardinal": 18387,
+    "qCardinal": 18512,
     "qTags": [
       "$numeric"
     ],
@@ -9080,7 +9554,7 @@
   },
   {
     "qName": "Order Sales Name",
-    "qCardinal": 18568,
+    "qCardinal": 18735,
     "qTags": [
       "$ascii",
       "$text"
@@ -9146,7 +9620,7 @@
   },
   {
     "qName": "Order US Ton",
-    "qCardinal": 126121,
+    "qCardinal": 126633,
     "qTags": [
       "$numeric"
     ],
@@ -9156,7 +9630,7 @@
   },
   {
     "qName": "Other Variance USD",
-    "qCardinal": 315,
+    "qCardinal": 318,
     "qTags": [
       "$numeric"
     ],
@@ -9166,7 +9640,7 @@
   },
   {
     "qName": "Over 120 Days USD",
-    "qCardinal": 20871,
+    "qCardinal": 21175,
     "qTags": [
       "$numeric"
     ],
@@ -9176,7 +9650,7 @@
   },
   {
     "qName": "Over 150 Days USD",
-    "qCardinal": 15343,
+    "qCardinal": 15556,
     "qTags": [
       "$numeric"
     ],
@@ -9186,7 +9660,7 @@
   },
   {
     "qName": "Over 180 Days USD",
-    "qCardinal": 18046,
+    "qCardinal": 18332,
     "qTags": [
       "$numeric"
     ],
@@ -9196,7 +9670,7 @@
   },
   {
     "qName": "Over 360 Days USD",
-    "qCardinal": 7708,
+    "qCardinal": 7812,
     "qTags": [
       "$numeric"
     ],
@@ -9206,7 +9680,7 @@
   },
   {
     "qName": "Over 90 Days USD",
-    "qCardinal": 31242,
+    "qCardinal": 31742,
     "qTags": [
       "$numeric"
     ],
@@ -9216,7 +9690,7 @@
   },
   {
     "qName": "Over PT Balance USD",
-    "qCardinal": 53087,
+    "qCardinal": 54055,
     "qTags": [
       "$numeric"
     ],
@@ -9226,7 +9700,7 @@
   },
   {
     "qName": "Overdue Balance Monthly Invoice",
-    "qCardinal": 67496,
+    "qCardinal": 68601,
     "qTags": [
       "$ascii",
       "$text"
@@ -9237,7 +9711,7 @@
   },
   {
     "qName": "Overdue Balance by Invoice Monthly - USD",
-    "qCardinal": 59137,
+    "qCardinal": 59901,
     "qTags": [
       "$numeric"
     ],
@@ -9247,7 +9721,7 @@
   },
   {
     "qName": "Overdue Invoice Age Days",
-    "qCardinal": 950,
+    "qCardinal": 946,
     "qTags": [
       "$numeric",
       "$integer"
@@ -9301,7 +9775,7 @@
   },
   {
     "qName": "Overdue Invoice Number",
-    "qCardinal": 16432,
+    "qCardinal": 16190,
     "qTags": [
       "$ascii",
       "$text"
@@ -9323,7 +9797,7 @@
   },
   {
     "qName": "Overdue Invoice Payment Terms",
-    "qCardinal": 73,
+    "qCardinal": 76,
     "qTags": [
       "$ascii",
       "$text"
@@ -9356,7 +9830,7 @@
   },
   {
     "qName": "Overdue Invoice Sales Order Number",
-    "qCardinal": 10856,
+    "qCardinal": 10732,
     "qTags": [
       "$ascii",
       "$text"
@@ -9367,7 +9841,7 @@
   },
   {
     "qName": "Owned By",
-    "qCardinal": 408,
+    "qCardinal": 411,
     "qTags": [
       "$text"
     ],
@@ -9486,7 +9960,7 @@
   },
   {
     "qName": "Parent Company",
-    "qCardinal": 12323,
+    "qCardinal": 12454,
     "qTags": [
       "$text"
     ],
@@ -9507,7 +9981,7 @@
   },
   {
     "qName": "Prodcut Type",
-    "qCardinal": 57,
+    "qCardinal": 60,
     "qTags": [
       "$ascii",
       "$text"
@@ -9562,7 +10036,7 @@
   },
   {
     "qName": "Product Core ID",
-    "qCardinal": 13,
+    "qCardinal": 10,
     "qTags": [
       "$ascii",
       "$text"
@@ -9635,7 +10109,7 @@
   },
   {
     "qName": "Product Line",
-    "qCardinal": 591,
+    "qCardinal": 593,
     "qTags": [],
     "qSrcTables": [
       "Shared_Items_Class6"
@@ -9702,7 +10176,7 @@
   },
   {
     "qName": "Product Packed/End Use",
-    "qCardinal": 398,
+    "qCardinal": 399,
     "qTags": [
       "$text"
     ],
@@ -9712,7 +10186,7 @@
   },
   {
     "qName": "Product Packed/End Use - OLD",
-    "qCardinal": 375,
+    "qCardinal": 376,
     "qTags": [
       "$ascii",
       "$text"
@@ -9778,7 +10252,7 @@
   },
   {
     "qName": "Product Qty Sold",
-    "qCardinal": 74,
+    "qCardinal": 75,
     "qTags": [
       "$ascii",
       "$text"
@@ -9819,7 +10293,7 @@
   },
   {
     "qName": "Product Style Line",
-    "qCardinal": 591,
+    "qCardinal": 593,
     "qTags": [],
     "qSrcTables": [
       "Shared_Items_Class6"
@@ -9846,7 +10320,7 @@
   },
   {
     "qName": "Product Style Mix Description",
-    "qCardinal": 5738,
+    "qCardinal": 5786,
     "qTags": [],
     "qSrcTables": [
       "Product_Styles_Mix"
@@ -9854,7 +10328,7 @@
   },
   {
     "qName": "Product Style Mix Key",
-    "qCardinal": 7545,
+    "qCardinal": 7594,
     "qTags": [
       "$ascii",
       "$text",
@@ -9889,7 +10363,7 @@
   },
   {
     "qName": "Product Width",
-    "qCardinal": 29,
+    "qCardinal": 28,
     "qTags": [
       "$ascii",
       "$text"
@@ -9900,7 +10374,7 @@
   },
   {
     "qName": "Production Line Brandline Name",
-    "qCardinal": 9,
+    "qCardinal": 10,
     "qTags": [
       "$text"
     ],
@@ -9910,7 +10384,7 @@
   },
   {
     "qName": "Production Line Colors NB",
-    "qCardinal": 7,
+    "qCardinal": 8,
     "qTags": [
       "$ascii",
       "$text"
@@ -9954,7 +10428,7 @@
   },
   {
     "qName": "Production Line Ouput Unit",
-    "qCardinal": 4,
+    "qCardinal": 5,
     "qTags": [
       "$ascii",
       "$text"
@@ -9965,7 +10439,7 @@
   },
   {
     "qName": "Production Line Table Line ID",
-    "qCardinal": 262,
+    "qCardinal": 276,
     "qTags": [
       "$numeric",
       "$integer"
@@ -9976,13 +10450,66 @@
   },
   {
     "qName": "Production Line Width",
-    "qCardinal": 26,
+    "qCardinal": 27,
     "qTags": [
       "$ascii",
       "$text"
     ],
     "qSrcTables": [
       "mpk_competitor_production_line"
+    ]
+  },
+  {
+    "qName": "Production Output FG Qty MT",
+    "qCardinal": 633266,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Production_Outputs"
+    ]
+  },
+  {
+    "qName": "Production Output Planned Hours",
+    "qCardinal": 54478,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Production_Outputs"
+    ]
+  },
+  {
+    "qName": "Production Output WIP Qty MT",
+    "qCardinal": 283538,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Production_Outputs"
+    ]
+  },
+  {
+    "qName": "Production Shared Key",
+    "qCardinal": 3366694,
+    "qTags": [
+      "$ascii",
+      "$text",
+      "$key"
+    ],
+    "qSrcTables": [
+      "Sales_Shared_Dimensions_Final",
+      "Production_Outputs"
+    ]
+  },
+  {
+    "qName": "Production Waste Qty MT",
+    "qCardinal": 16144,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Production_Outputs"
     ]
   },
   {
@@ -9998,7 +10525,7 @@
   },
   {
     "qName": "Prospect Customer Key",
-    "qCardinal": 15822,
+    "qCardinal": 15937,
     "qTags": [
       "$ascii",
       "$text",
@@ -10011,7 +10538,7 @@
   },
   {
     "qName": "Prospect Key",
-    "qCardinal": 24858,
+    "qCardinal": 24967,
     "qTags": [
       "$ascii",
       "$text",
@@ -10024,7 +10551,7 @@
   },
   {
     "qName": "Prospect Line Key",
-    "qCardinal": 43435,
+    "qCardinal": 43650,
     "qTags": [
       "$ascii",
       "$text",
@@ -10059,7 +10586,7 @@
   },
   {
     "qName": "Prospect MQP Line Key",
-    "qCardinal": 8469,
+    "qCardinal": 8561,
     "qTags": [
       "$ascii",
       "$text"
@@ -10070,7 +10597,7 @@
   },
   {
     "qName": "Prospect Memo",
-    "qCardinal": 3083,
+    "qCardinal": 3091,
     "qTags": [
       "$ascii",
       "$text"
@@ -10081,7 +10608,7 @@
   },
   {
     "qName": "Prospect Name",
-    "qCardinal": 16081,
+    "qCardinal": 16191,
     "qTags": [
       "$text"
     ],
@@ -10091,7 +10618,7 @@
   },
   {
     "qName": "Prospect Number",
-    "qCardinal": 14936,
+    "qCardinal": 14972,
     "qTags": [
       "$ascii",
       "$text"
@@ -10113,7 +10640,7 @@
   },
   {
     "qName": "Prospect Owned By",
-    "qCardinal": 388,
+    "qCardinal": 389,
     "qTags": [
       "$ascii",
       "$text"
@@ -10166,7 +10693,7 @@
   },
   {
     "qName": "Prospect Subject",
-    "qCardinal": 23477,
+    "qCardinal": 23579,
     "qTags": [
       "$text"
     ],
@@ -10187,7 +10714,18 @@
   },
   {
     "qName": "Prospect Won Line Key",
-    "qCardinal": 10125,
+    "qCardinal": 10139,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Sales_Shared_Dimensions_Final"
+    ]
+  },
+  {
+    "qName": "Purchases Currency Type",
+    "qCardinal": 2,
     "qTags": [
       "$ascii",
       "$text"
@@ -10198,7 +10736,7 @@
   },
   {
     "qName": "Quarantine Variance USD",
-    "qCardinal": 73,
+    "qCardinal": 74,
     "qTags": [
       "$numeric"
     ],
@@ -10241,7 +10779,7 @@
   },
   {
     "qName": "Quotation Amount USD",
-    "qCardinal": 106873,
+    "qCardinal": 107717,
     "qTags": [
       "$numeric"
     ],
@@ -10251,7 +10789,7 @@
   },
   {
     "qName": "Quotation Confirmation Date",
-    "qCardinal": 2447,
+    "qCardinal": 2463,
     "qTags": [
       "$numeric"
     ],
@@ -10261,7 +10799,7 @@
   },
   {
     "qName": "Quotation Cost USD",
-    "qCardinal": 289685,
+    "qCardinal": 291902,
     "qTags": [
       "$numeric"
     ],
@@ -10271,7 +10809,7 @@
   },
   {
     "qName": "Quotation Customer PO Number",
-    "qCardinal": 86975,
+    "qCardinal": 87433,
     "qTags": [],
     "qSrcTables": [
       "Quotations"
@@ -10279,7 +10817,7 @@
   },
   {
     "qName": "Quotation Delivery Date",
-    "qCardinal": 3579,
+    "qCardinal": 3652,
     "qTags": [
       "$numeric",
       "$timestamp"
@@ -10290,7 +10828,7 @@
   },
   {
     "qName": "Quotation Detail Number",
-    "qCardinal": 91523,
+    "qCardinal": 92163,
     "qTags": [
       "$ascii",
       "$text"
@@ -10312,7 +10850,7 @@
   },
   {
     "qName": "Quotation Issuing Date",
-    "qCardinal": 388021,
+    "qCardinal": 390661,
     "qTags": [
       "$numeric",
       "$timestamp"
@@ -10323,7 +10861,7 @@
   },
   {
     "qName": "Quotation Key",
-    "qCardinal": 397773,
+    "qCardinal": 400755,
     "qTags": [
       "$ascii",
       "$text",
@@ -10336,7 +10874,7 @@
   },
   {
     "qName": "Quotation Kg",
-    "qCardinal": 79687,
+    "qCardinal": 80177,
     "qTags": [
       "$numeric"
     ],
@@ -10346,7 +10884,7 @@
   },
   {
     "qName": "Quotation Lbp",
-    "qCardinal": 79774,
+    "qCardinal": 80265,
     "qTags": [
       "$numeric"
     ],
@@ -10356,7 +10894,7 @@
   },
   {
     "qName": "Quotation Lead Time",
-    "qCardinal": 147730,
+    "qCardinal": 148853,
     "qTags": [
       "$numeric"
     ],
@@ -10366,7 +10904,7 @@
   },
   {
     "qName": "Quotation Lead Time - BU Approval",
-    "qCardinal": 142046,
+    "qCardinal": 143036,
     "qTags": [
       "$numeric"
     ],
@@ -10376,7 +10914,7 @@
   },
   {
     "qName": "Quotation Lead Time - BU Approval to Journal SO",
-    "qCardinal": 48469,
+    "qCardinal": 48608,
     "qTags": [
       "$numeric"
     ],
@@ -10386,7 +10924,7 @@
   },
   {
     "qName": "Quotation Lead Time - Quotation To Open Order",
-    "qCardinal": 141189,
+    "qCardinal": 142069,
     "qTags": [
       "$numeric"
     ],
@@ -10396,7 +10934,7 @@
   },
   {
     "qName": "Quotation Lead Time - SO Journal To Open Order",
-    "qCardinal": 70330,
+    "qCardinal": 70716,
     "qTags": [
       "$numeric"
     ],
@@ -10406,7 +10944,7 @@
   },
   {
     "qName": "Quotation MSF",
-    "qCardinal": 2785,
+    "qCardinal": 2878,
     "qTags": [
       "$numeric"
     ],
@@ -10416,7 +10954,7 @@
   },
   {
     "qName": "Quotation MT",
-    "qCardinal": 78372,
+    "qCardinal": 78831,
     "qTags": [
       "$numeric"
     ],
@@ -10426,7 +10964,7 @@
   },
   {
     "qName": "Quotation Number",
-    "qCardinal": 88639,
+    "qCardinal": 89156,
     "qTags": [
       "$ascii",
       "$text"
@@ -10448,7 +10986,7 @@
   },
   {
     "qName": "Quotation Pieces",
-    "qCardinal": 573,
+    "qCardinal": 577,
     "qTags": [
       "$numeric"
     ],
@@ -10469,7 +11007,7 @@
   },
   {
     "qName": "Quotation Quantity",
-    "qCardinal": 75170,
+    "qCardinal": 75574,
     "qTags": [
       "$numeric",
       "$integer"
@@ -10491,7 +11029,7 @@
   },
   {
     "qName": "Quotation Requested Delivery Date",
-    "qCardinal": 4139,
+    "qCardinal": 4223,
     "qTags": [
       "$numeric",
       "$timestamp"
@@ -10502,7 +11040,7 @@
   },
   {
     "qName": "Quotation Requested Receipt Date",
-    "qCardinal": 4128,
+    "qCardinal": 4211,
     "qTags": [
       "$numeric",
       "$timestamp"
@@ -10513,7 +11051,7 @@
   },
   {
     "qName": "Quotation SQM",
-    "qCardinal": 2766,
+    "qCardinal": 2858,
     "qTags": [
       "$numeric"
     ],
@@ -10545,7 +11083,7 @@
   },
   {
     "qName": "Quotation US Ton",
-    "qCardinal": 78520,
+    "qCardinal": 78981,
     "qTags": [
       "$numeric"
     ],
@@ -10555,7 +11093,7 @@
   },
   {
     "qName": "RMA Closed Date",
-    "qCardinal": 1996,
+    "qCardinal": 2008,
     "qTags": [
       "$numeric",
       "$integer"
@@ -10566,7 +11104,7 @@
   },
   {
     "qName": "RMA Deadline Date",
-    "qCardinal": 680,
+    "qCardinal": 681,
     "qTags": [
       "$numeric",
       "$integer"
@@ -10588,7 +11126,7 @@
   },
   {
     "qName": "RMA Header Sales Order",
-    "qCardinal": 9952,
+    "qCardinal": 10025,
     "qTags": [
       "$ascii",
       "$text"
@@ -10599,7 +11137,7 @@
   },
   {
     "qName": "RMA Inventory Transaction ID",
-    "qCardinal": 17392,
+    "qCardinal": 17664,
     "qTags": [],
     "qSrcTables": [
       "RMA"
@@ -10607,7 +11145,7 @@
   },
   {
     "qName": "RMA Key",
-    "qCardinal": 17401,
+    "qCardinal": 17673,
     "qTags": [
       "$ascii",
       "$text",
@@ -10620,7 +11158,7 @@
   },
   {
     "qName": "RMA Line Actual Arrival Date",
-    "qCardinal": 2127,
+    "qCardinal": 2139,
     "qTags": [
       "$numeric",
       "$integer"
@@ -10631,7 +11169,7 @@
   },
   {
     "qName": "RMA Line ETA Date",
-    "qCardinal": 2191,
+    "qCardinal": 2203,
     "qTags": [
       "$numeric",
       "$integer"
@@ -10642,7 +11180,7 @@
   },
   {
     "qName": "RMA Line InvoiceNumber",
-    "qCardinal": 8036,
+    "qCardinal": 8064,
     "qTags": [
       "$ascii",
       "$text"
@@ -10664,7 +11202,7 @@
   },
   {
     "qName": "RMA Line Sales Order",
-    "qCardinal": 9777,
+    "qCardinal": 9847,
     "qTags": [
       "$ascii",
       "$text"
@@ -10675,7 +11213,7 @@
   },
   {
     "qName": "RMA Net Weight",
-    "qCardinal": 8905,
+    "qCardinal": 8948,
     "qTags": [
       "$numeric"
     ],
@@ -10685,7 +11223,7 @@
   },
   {
     "qName": "RMA Number",
-    "qCardinal": 3255,
+    "qCardinal": 3270,
     "qTags": [
       "$ascii",
       "$text"
@@ -10696,7 +11234,7 @@
   },
   {
     "qName": "RMA Original Sales Order",
-    "qCardinal": 3235,
+    "qCardinal": 3289,
     "qTags": [
       "$ascii",
       "$text"
@@ -10762,7 +11300,7 @@
   },
   {
     "qName": "RMA Returned Net Weight",
-    "qCardinal": 9220,
+    "qCardinal": 9263,
     "qTags": [
       "$numeric"
     ],
@@ -10772,7 +11310,7 @@
   },
   {
     "qName": "RMA Returned Sales Amount USD",
-    "qCardinal": 12084,
+    "qCardinal": 12195,
     "qTags": [
       "$numeric"
     ],
@@ -10781,8 +11319,55 @@
     ]
   },
   {
+    "qName": "Received Amount SAR",
+    "qCardinal": 129358,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Sales_Shared_Dimensions_Final"
+    ]
+  },
+  {
+    "qName": "Received Amount USD",
+    "qCardinal": 129358,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Sales_Shared_Dimensions_Final"
+    ]
+  },
+  {
+    "qName": "Received Currency Code For Aggregation",
+    "qCardinal": 100,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Sales_Shared_Dimensions_Final"
+    ]
+  },
+  {
+    "qName": "Received Invoice ID",
+    "qCardinal": 132827,
+    "qTags": [],
+    "qSrcTables": [
+      "Sales_Shared_Dimensions_Final"
+    ]
+  },
+  {
+    "qName": "Received Item Name",
+    "qCardinal": 45289,
+    "qTags": [],
+    "qSrcTables": [
+      "Sales_Shared_Dimensions_Final"
+    ]
+  },
+  {
     "qName": "Rep Clichee Cost USD",
-    "qCardinal": 7242,
+    "qCardinal": 7677,
     "qTags": [
       "$numeric"
     ],
@@ -10792,7 +11377,7 @@
   },
   {
     "qName": "Rep Clichee Cost USD KG",
-    "qCardinal": 630,
+    "qCardinal": 647,
     "qTags": [
       "$numeric"
     ],
@@ -10802,7 +11387,7 @@
   },
   {
     "qName": "Rep Cost USD",
-    "qCardinal": 38865,
+    "qCardinal": 39980,
     "qTags": [
       "$numeric"
     ],
@@ -10812,7 +11397,7 @@
   },
   {
     "qName": "Rep Cost USD KG",
-    "qCardinal": 10867,
+    "qCardinal": 11215,
     "qTags": [
       "$numeric"
     ],
@@ -10822,7 +11407,7 @@
   },
   {
     "qName": "Rep Cylinder Cost USD",
-    "qCardinal": 1583,
+    "qCardinal": 1618,
     "qTags": [
       "$numeric"
     ],
@@ -10832,7 +11417,7 @@
   },
   {
     "qName": "Rep Cylinder Cost USD KG",
-    "qCardinal": 66,
+    "qCardinal": 71,
     "qTags": [
       "$numeric"
     ],
@@ -10842,7 +11427,7 @@
   },
   {
     "qName": "Rep Freight Cost USD",
-    "qCardinal": 49354,
+    "qCardinal": 50723,
     "qTags": [
       "$numeric"
     ],
@@ -10852,7 +11437,7 @@
   },
   {
     "qName": "Rep Freight Cost USD KG",
-    "qCardinal": 3584,
+    "qCardinal": 3734,
     "qTags": [
       "$numeric"
     ],
@@ -10862,7 +11447,7 @@
   },
   {
     "qName": "Return Lot Id",
-    "qCardinal": 13388,
+    "qCardinal": 13641,
     "qTags": [],
     "qSrcTables": [
       "RMA"
@@ -11100,7 +11685,7 @@
   },
   {
     "qName": "Revision Log Modify User",
-    "qCardinal": 144,
+    "qCardinal": 146,
     "qTags": [
       "$ascii",
       "$text"
@@ -11133,7 +11718,7 @@
   },
   {
     "qName": "SMM Company BB",
-    "qCardinal": 143,
+    "qCardinal": 145,
     "qTags": [
       "$ascii",
       "$text"
@@ -11154,7 +11739,7 @@
   },
   {
     "qName": "SMM Company PL",
-    "qCardinal": 124,
+    "qCardinal": 127,
     "qTags": [
       "$ascii",
       "$text"
@@ -11165,7 +11750,7 @@
   },
   {
     "qName": "SMM Company Product EndUse",
-    "qCardinal": 167,
+    "qCardinal": 168,
     "qTags": [
       "$ascii",
       "$text"
@@ -11176,7 +11761,7 @@
   },
   {
     "qName": "SMM Company Product Packed End / Use",
-    "qCardinal": 167,
+    "qCardinal": 168,
     "qTags": [
       "$ascii",
       "$text"
@@ -11187,7 +11772,7 @@
   },
   {
     "qName": "SMM Company Sector",
-    "qCardinal": 21,
+    "qCardinal": 22,
     "qTags": [
       "$ascii",
       "$text"
@@ -11198,7 +11783,7 @@
   },
   {
     "qName": "SMM Contact Email",
-    "qCardinal": 6114,
+    "qCardinal": 6138,
     "qTags": [],
     "qSrcTables": [
       "SMMContacts"
@@ -11206,7 +11791,7 @@
   },
   {
     "qName": "SMM Contact First Name",
-    "qCardinal": 6059,
+    "qCardinal": 6067,
     "qTags": [],
     "qSrcTables": [
       "SMMContacts"
@@ -11214,7 +11799,7 @@
   },
   {
     "qName": "SMM Contact Last Name",
-    "qCardinal": 10181,
+    "qCardinal": 10198,
     "qTags": [],
     "qSrcTables": [
       "SMMContacts"
@@ -11222,7 +11807,7 @@
   },
   {
     "qName": "SMM Contact Middle Name",
-    "qCardinal": 1209,
+    "qCardinal": 1216,
     "qTags": [
       "$text"
     ],
@@ -11242,7 +11827,7 @@
   },
   {
     "qName": "SMM Entity Key",
-    "qCardinal": 56788,
+    "qCardinal": 57023,
     "qTags": [
       "$ascii",
       "$text",
@@ -11255,7 +11840,7 @@
   },
   {
     "qName": "SMM SEC Entity Key",
-    "qCardinal": 76004,
+    "qCardinal": 76381,
     "qTags": [
       "$ascii",
       "$text",
@@ -11278,8 +11863,18 @@
     ]
   },
   {
+    "qName": "SalePro Competitor Name",
+    "qCardinal": 225,
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "Sales_Shared_Dimensions_Final"
+    ]
+  },
+  {
     "qName": "Sales Line InventDimId",
-    "qCardinal": 5413,
+    "qCardinal": 5479,
     "qTags": [],
     "qSrcTables": [
       "RMA"
@@ -11287,7 +11882,7 @@
   },
   {
     "qName": "Sales Shared Key",
-    "qCardinal": 3402640,
+    "qCardinal": 3637897,
     "qTags": [
       "$ascii",
       "$text",
@@ -11322,7 +11917,7 @@
   },
   {
     "qName": "Sales Type",
-    "qCardinal": 23,
+    "qCardinal": 25,
     "qTags": [
       "$ascii",
       "$text"
@@ -11333,7 +11928,7 @@
   },
   {
     "qName": "Sales Unit",
-    "qCardinal": 55,
+    "qCardinal": 57,
     "qTags": [
       "$ascii",
       "$text"
@@ -11343,18 +11938,8 @@
     ]
   },
   {
-    "qName": "SalesPro Competitor Name",
-    "qCardinal": 209,
-    "qTags": [
-      "$text"
-    ],
-    "qSrcTables": [
-      "mpk_competitor"
-    ]
-  },
-  {
     "qName": "Salesman",
-    "qCardinal": 283,
+    "qCardinal": 284,
     "qTags": [
       "$text"
     ],
@@ -11364,7 +11949,7 @@
   },
   {
     "qName": "Salesman Grading Key",
-    "qCardinal": 305,
+    "qCardinal": 306,
     "qTags": [
       "$ascii",
       "$text",
@@ -11377,20 +11962,20 @@
   },
   {
     "qName": "Salesman ID",
-    "qCardinal": 202,
+    "qCardinal": 205,
     "qTags": [
       "$numeric",
       "$integer",
       "$key"
     ],
     "qSrcTables": [
-      "mpk_competitor",
+      "Sales_Shared_Dimensions_Final",
       "mpk_salesman"
     ]
   },
   {
     "qName": "Salesman Key",
-    "qCardinal": 397,
+    "qCardinal": 400,
     "qTags": [
       "$ascii",
       "$text",
@@ -11489,7 +12074,7 @@
   },
   {
     "qName": "Salesman Name",
-    "qCardinal": 200,
+    "qCardinal": 203,
     "qTags": [
       "$ascii",
       "$text"
@@ -11500,7 +12085,7 @@
   },
   {
     "qName": "Salesman OLD",
-    "qCardinal": 302,
+    "qCardinal": 303,
     "qTags": [
       "$ascii",
       "$text"
@@ -11924,7 +12509,7 @@
   },
   {
     "qName": "Scoring - By Chain Name - Avg Due Days",
-    "qCardinal": 3764,
+    "qCardinal": 3789,
     "qTags": [
       "$numeric"
     ],
@@ -11944,7 +12529,7 @@
   },
   {
     "qName": "Scoring - By Chain Name - Budget Accuracy P",
-    "qCardinal": 121,
+    "qCardinal": 123,
     "qTags": [
       "$numeric"
     ],
@@ -11986,7 +12571,7 @@
   },
   {
     "qName": "Scoring - By Chain Name - COP_P",
-    "qCardinal": 19276,
+    "qCardinal": 19442,
     "qTags": [
       "$numeric"
     ],
@@ -12007,7 +12592,7 @@
   },
   {
     "qName": "Scoring - By Chain Name - Price_Q",
-    "qCardinal": 19266,
+    "qCardinal": 19432,
     "qTags": [
       "$numeric"
     ],
@@ -12017,7 +12602,7 @@
   },
   {
     "qName": "Scoring - By Chain Name - Price_Q Score",
-    "qCardinal": 18936,
+    "qCardinal": 19107,
     "qTags": [
       "$numeric"
     ],
@@ -12027,7 +12612,7 @@
   },
   {
     "qName": "Scoring - By Chain Name - Product Lines Count",
-    "qCardinal": 52,
+    "qCardinal": 51,
     "qTags": [
       "$numeric",
       "$integer"
@@ -12100,7 +12685,7 @@
   },
   {
     "qName": "Scoring - By Chain Name - YearlySales_P",
-    "qCardinal": 19228,
+    "qCardinal": 19408,
     "qTags": [
       "$numeric"
     ],
@@ -12121,7 +12706,7 @@
   },
   {
     "qName": "Scoring - By Customer Name - Avg Due Days",
-    "qCardinal": 4460,
+    "qCardinal": 4501,
     "qTags": [
       "$numeric"
     ],
@@ -12141,7 +12726,7 @@
   },
   {
     "qName": "Scoring - By Customer Name - Budget Accuracy P",
-    "qCardinal": 135,
+    "qCardinal": 136,
     "qTags": [
       "$numeric"
     ],
@@ -12183,7 +12768,7 @@
   },
   {
     "qName": "Scoring - By Customer Name - COP_P",
-    "qCardinal": 31622,
+    "qCardinal": 31934,
     "qTags": [
       "$numeric"
     ],
@@ -12204,7 +12789,7 @@
   },
   {
     "qName": "Scoring - By Customer Name - Price_Q",
-    "qCardinal": 31609,
+    "qCardinal": 31920,
     "qTags": [
       "$numeric"
     ],
@@ -12214,7 +12799,7 @@
   },
   {
     "qName": "Scoring - By Customer Name - Price_Q Score",
-    "qCardinal": 31140,
+    "qCardinal": 31464,
     "qTags": [
       "$numeric"
     ],
@@ -12297,7 +12882,7 @@
   },
   {
     "qName": "Scoring - By Customer Name - YearlySales_P",
-    "qCardinal": 31522,
+    "qCardinal": 31844,
     "qTags": [
       "$numeric"
     ],
@@ -12318,7 +12903,7 @@
   },
   {
     "qName": "Scoring - COP % (Cust)",
-    "qCardinal": 32303,
+    "qCardinal": 32528,
     "qTags": [
       "$numeric"
     ],
@@ -12358,7 +12943,7 @@
   },
   {
     "qName": "Scoring - Customer Volume Percentage",
-    "qCardinal": 17031,
+    "qCardinal": 17140,
     "qTags": [
       "$numeric"
     ],
@@ -12478,7 +13063,7 @@
   },
   {
     "qName": "Scoring - Market Expansion Plan",
-    "qCardinal": 1978,
+    "qCardinal": 1999,
     "qTags": [
       "$numeric"
     ],
@@ -12517,7 +13102,7 @@
   },
   {
     "qName": "Scoring - Net Weight % (BU)",
-    "qCardinal": 7469,
+    "qCardinal": 7496,
     "qTags": [
       "$numeric"
     ],
@@ -12538,7 +13123,7 @@
   },
   {
     "qName": "Scoring - Net Weight % (Division)",
-    "qCardinal": 2089,
+    "qCardinal": 2074,
     "qTags": [
       "$numeric"
     ],
@@ -12559,7 +13144,7 @@
   },
   {
     "qName": "Scoring - Overdue Avg.",
-    "qCardinal": 543,
+    "qCardinal": 542,
     "qTags": [
       "$numeric",
       "$integer"
@@ -12600,7 +13185,7 @@
   },
   {
     "qName": "Scoring - Price Quality Ratio",
-    "qCardinal": 32105,
+    "qCardinal": 32330,
     "qTags": [
       "$numeric"
     ],
@@ -12730,7 +13315,7 @@
   },
   {
     "qName": "Scoring - Total Customer Score",
-    "qCardinal": 150,
+    "qCardinal": 151,
     "qTags": [
       "$numeric"
     ],
@@ -12740,7 +13325,7 @@
   },
   {
     "qName": "Scoring - Total Customer Score - BY CHAIN",
-    "qCardinal": 20434,
+    "qCardinal": 20617,
     "qTags": [
       "$numeric"
     ],
@@ -12794,7 +13379,7 @@
   },
   {
     "qName": "Scoring - Total Customer Score - BY NAME",
-    "qCardinal": 32639,
+    "qCardinal": 32883,
     "qTags": [
       "$numeric"
     ],
@@ -12892,7 +13477,7 @@
   },
   {
     "qName": "Scoring - Yearly Plastic Purch (USD)",
-    "qCardinal": 1161,
+    "qCardinal": 1168,
     "qTags": [],
     "qSrcTables": [
       "Customer_Scoring"
@@ -12911,7 +13496,7 @@
   },
   {
     "qName": "Scoring Key",
-    "qCardinal": 34286,
+    "qCardinal": 34534,
     "qTags": [
       "$ascii",
       "$text",
@@ -12946,7 +13531,7 @@
   },
   {
     "qName": "ScoringTierKey",
-    "qCardinal": 34286,
+    "qCardinal": 34534,
     "qTags": [
       "$ascii",
       "$text",
@@ -12959,7 +13544,7 @@
   },
   {
     "qName": "ScoringTierKeyInvoicing",
-    "qCardinal": 38681,
+    "qCardinal": 38940,
     "qTags": [
       "$ascii",
       "$text",
@@ -13005,7 +13590,7 @@
   },
   {
     "qName": "Sector ID",
-    "qCardinal": 32,
+    "qCardinal": 33,
     "qTags": [
       "$ascii",
       "$text",
@@ -13030,6 +13615,17 @@
     ]
   },
   {
+    "qName": "Segment 1 For Aggregation Purchases-Inventories",
+    "qCardinal": 1488,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Items"
+    ]
+  },
+  {
     "qName": "Segment1Key",
     "qCardinal": 75,
     "qTags": [
@@ -13044,7 +13640,7 @@
   },
   {
     "qName": "Segment2Key",
-    "qCardinal": 107,
+    "qCardinal": 109,
     "qTags": [
       "$ascii",
       "$text",
@@ -13057,7 +13653,7 @@
   },
   {
     "qName": "Segment3Key",
-    "qCardinal": 224,
+    "qCardinal": 229,
     "qTags": [
       "$text",
       "$key"
@@ -13069,7 +13665,7 @@
   },
   {
     "qName": "Segment4Key",
-    "qCardinal": 403,
+    "qCardinal": 408,
     "qTags": [
       "$text",
       "$key"
@@ -13081,7 +13677,7 @@
   },
   {
     "qName": "Segment5Key",
-    "qCardinal": 325,
+    "qCardinal": 323,
     "qTags": [
       "$key"
     ],
@@ -13092,7 +13688,7 @@
   },
   {
     "qName": "Segment6Key",
-    "qCardinal": 680,
+    "qCardinal": 687,
     "qTags": [
       "$key"
     ],
@@ -13147,7 +13743,7 @@
   },
   {
     "qName": "Service Provider",
-    "qCardinal": 16210,
+    "qCardinal": 16247,
     "qTags": [],
     "qSrcTables": [
       "Service_Providers"
@@ -13155,7 +13751,7 @@
   },
   {
     "qName": "Service Provider Account Num",
-    "qCardinal": 7309,
+    "qCardinal": 7341,
     "qTags": [],
     "qSrcTables": [
       "Service_Providers"
@@ -13163,7 +13759,7 @@
   },
   {
     "qName": "Service Provider Key",
-    "qCardinal": 22000,
+    "qCardinal": 22079,
     "qTags": [
       "$ascii",
       "$text",
@@ -13186,8 +13782,19 @@
     ]
   },
   {
+    "qName": "Shared Cutomer Sector",
+    "qCardinal": 279,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Sales_Shared_Dimensions_Final"
+    ]
+  },
+  {
     "qName": "Shared Entity Key",
-    "qCardinal": 28125,
+    "qCardinal": 28244,
     "qTags": [
       "$ascii",
       "$text"
@@ -13214,7 +13821,7 @@
   },
   {
     "qName": "Shared Security Key",
-    "qCardinal": 20950,
+    "qCardinal": 21209,
     "qTags": [
       "$key"
     ],
@@ -13493,7 +14100,7 @@
   },
   {
     "qName": "Steep Status",
-    "qCardinal": 1,
+    "qCardinal": 2,
     "qTags": [
       "$ascii",
       "$text"
@@ -13512,7 +14119,7 @@
   },
   {
     "qName": "Structure - OLD",
-    "qCardinal": 609,
+    "qCardinal": 610,
     "qTags": [
       "$ascii",
       "$text"
@@ -13531,7 +14138,7 @@
   },
   {
     "qName": "Style - OLD",
-    "qCardinal": 292,
+    "qCardinal": 293,
     "qTags": [
       "$ascii",
       "$text"
@@ -13542,7 +14149,7 @@
   },
   {
     "qName": "Style Category",
-    "qCardinal": 398,
+    "qCardinal": 399,
     "qTags": [
       "$text"
     ],
@@ -13552,7 +14159,7 @@
   },
   {
     "qName": "Style Category - OLD",
-    "qCardinal": 375,
+    "qCardinal": 376,
     "qTags": [
       "$ascii",
       "$text"
@@ -13571,7 +14178,7 @@
   },
   {
     "qName": "Style Family - OLD",
-    "qCardinal": 609,
+    "qCardinal": 610,
     "qTags": [
       "$ascii",
       "$text"
@@ -13612,7 +14219,7 @@
   },
   {
     "qName": "Total Price Qty",
-    "qCardinal": 2339,
+    "qCardinal": 2383,
     "qTags": [
       "$numeric"
     ],
@@ -13622,7 +14229,7 @@
   },
   {
     "qName": "Total Rep Cost USD",
-    "qCardinal": 54037,
+    "qCardinal": 55617,
     "qTags": [
       "$numeric"
     ],
@@ -13632,7 +14239,7 @@
   },
   {
     "qName": "Total Rep Cost USD KG",
-    "qCardinal": 15258,
+    "qCardinal": 15781,
     "qTags": [
       "$numeric"
     ],
@@ -13642,7 +14249,7 @@
   },
   {
     "qName": "Total Rep Selling Price USD",
-    "qCardinal": 98789,
+    "qCardinal": 100623,
     "qTags": [
       "$numeric"
     ],
@@ -13652,7 +14259,7 @@
   },
   {
     "qName": "Total Rep Selling Price USD KG",
-    "qCardinal": 33175,
+    "qCardinal": 33880,
     "qTags": [
       "$numeric"
     ],
@@ -13662,7 +14269,7 @@
   },
   {
     "qName": "Total WA COP Value USD",
-    "qCardinal": 96754,
+    "qCardinal": 98638,
     "qTags": [
       "$numeric"
     ],
@@ -13672,7 +14279,7 @@
   },
   {
     "qName": "Total WA COP Value USD KG",
-    "qCardinal": 35190,
+    "qCardinal": 35976,
     "qTags": [
       "$numeric"
     ],
@@ -13682,7 +14289,7 @@
   },
   {
     "qName": "Total WA Cost USD",
-    "qCardinal": 63841,
+    "qCardinal": 65625,
     "qTags": [
       "$numeric"
     ],
@@ -13692,7 +14299,7 @@
   },
   {
     "qName": "Total WA Cost USD KG",
-    "qCardinal": 24366,
+    "qCardinal": 25109,
     "qTags": [
       "$numeric"
     ],
@@ -13702,7 +14309,7 @@
   },
   {
     "qName": "Total WA Selling Price USD",
-    "qCardinal": 103512,
+    "qCardinal": 105314,
     "qTags": [
       "$numeric"
     ],
@@ -13712,7 +14319,7 @@
   },
   {
     "qName": "Total WA Selling Price USD KG",
-    "qCardinal": 29341,
+    "qCardinal": 29986,
     "qTags": [
       "$numeric"
     ],
@@ -13722,7 +14329,7 @@
   },
   {
     "qName": "USERID",
-    "qCardinal": 759,
+    "qCardinal": 765,
     "qTags": [
       "$ascii",
       "$text"
@@ -13733,7 +14340,7 @@
   },
   {
     "qName": "Unmet Budget - Budget Achieved Percentage",
-    "qCardinal": 6742,
+    "qCardinal": 6967,
     "qTags": [
       "$numeric"
     ],
@@ -13743,7 +14350,7 @@
   },
   {
     "qName": "Unmet Budget - Budget Net Sales USD",
-    "qCardinal": 20940,
+    "qCardinal": 21008,
     "qTags": [
       "$numeric"
     ],
@@ -13753,7 +14360,7 @@
   },
   {
     "qName": "Unmet Budget - Budget Net Weight",
-    "qCardinal": 12930,
+    "qCardinal": 12956,
     "qTags": [
       "$numeric"
     ],
@@ -13763,7 +14370,7 @@
   },
   {
     "qName": "Unmet Budget - Invoiced Net Sales USD",
-    "qCardinal": 7073,
+    "qCardinal": 7291,
     "qTags": [
       "$numeric"
     ],
@@ -13773,7 +14380,7 @@
   },
   {
     "qName": "Unmet Budget - Invoiced Net Weight",
-    "qCardinal": 5588,
+    "qCardinal": 5755,
     "qTags": [
       "$numeric"
     ],
@@ -13814,7 +14421,7 @@
   },
   {
     "qName": "Unmet Budget - Missed COP USD",
-    "qCardinal": 15058,
+    "qCardinal": 14994,
     "qTags": [
       "$numeric"
     ],
@@ -13824,7 +14431,7 @@
   },
   {
     "qName": "Unmet Budget - Missed Net Sales USD",
-    "qCardinal": 22657,
+    "qCardinal": 22779,
     "qTags": [
       "$numeric"
     ],
@@ -13834,7 +14441,7 @@
   },
   {
     "qName": "Unmet Budget - Missed Net Weight",
-    "qCardinal": 15069,
+    "qCardinal": 15189,
     "qTags": [
       "$numeric"
     ],
@@ -13844,7 +14451,7 @@
   },
   {
     "qName": "Unmet Budget Line Key",
-    "qCardinal": 54424,
+    "qCardinal": 54524,
     "qTags": [
       "$ascii",
       "$text",
@@ -13868,7 +14475,7 @@
   },
   {
     "qName": "User",
-    "qCardinal": 2701,
+    "qCardinal": 2711,
     "qTags": [
       "$text"
     ],
@@ -13878,7 +14485,7 @@
   },
   {
     "qName": "User Key",
-    "qCardinal": 2748,
+    "qCardinal": 2760,
     "qTags": [
       "$ascii",
       "$text"
@@ -13900,7 +14507,7 @@
   },
   {
     "qName": "UserCreatedByKey",
-    "qCardinal": 362,
+    "qCardinal": 364,
     "qTags": [
       "$ascii",
       "$text"
@@ -13911,52 +14518,52 @@
   },
   {
     "qName": "VGA_BrandEquity_Score",
-    "qCardinal": 3,
+    "qCardinal": 4,
     "qTags": [
       "$numeric"
     ],
     "qSrcTables": [
-      "Sales_Shared_Dimensions_Final"
+      "VGA_Fact"
     ]
   },
   {
     "qName": "VGA_Customer_Relationship_Score",
+    "qCardinal": 4,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "VGA_Fact"
+    ]
+  },
+  {
+    "qName": "VGA_Lead_Time_Score",
     "qCardinal": 3,
     "qTags": [
       "$numeric"
     ],
     "qSrcTables": [
-      "Sales_Shared_Dimensions_Final"
-    ]
-  },
-  {
-    "qName": "VGA_Lead_Time_Score",
-    "qCardinal": 1,
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Sales_Shared_Dimensions_Final"
+      "VGA_Fact"
     ]
   },
   {
     "qName": "VGA_Payment_Facilities_Score",
-    "qCardinal": 4,
+    "qCardinal": 5,
     "qTags": [
       "$numeric"
     ],
     "qSrcTables": [
-      "Sales_Shared_Dimensions_Final"
+      "VGA_Fact"
     ]
   },
   {
     "qName": "VGA_Price_Score",
-    "qCardinal": 4,
+    "qCardinal": 5,
     "qTags": [
       "$numeric"
     ],
     "qSrcTables": [
-      "Sales_Shared_Dimensions_Final"
+      "VGA_Fact"
     ]
   },
   {
@@ -13966,7 +14573,7 @@
       "$numeric"
     ],
     "qSrcTables": [
-      "Sales_Shared_Dimensions_Final"
+      "VGA_Fact"
     ]
   },
   {
@@ -13976,22 +14583,33 @@
       "$numeric"
     ],
     "qSrcTables": [
-      "Sales_Shared_Dimensions_Final"
+      "VGA_Fact"
     ]
   },
   {
     "qName": "VGA_Timely_Delivery_Score",
-    "qCardinal": 3,
+    "qCardinal": 4,
     "qTags": [
       "$numeric"
     ],
     "qSrcTables": [
-      "Sales_Shared_Dimensions_Final"
+      "VGA_Fact"
     ]
   },
   {
     "qName": "VGA_country",
-    "qCardinal": 5,
+    "qCardinal": 9,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "VGA_Fact"
+    ]
+  },
+  {
+    "qName": "VOC Answer Options",
+    "qCardinal": 33,
     "qTags": [
       "$ascii",
       "$text"
@@ -14001,8 +14619,88 @@
     ]
   },
   {
+    "qName": "VOC Email",
+    "qCardinal": 1674,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Sales_Shared_Dimensions_Final"
+    ]
+  },
+  {
+    "qName": "VOC Question Type",
+    "qCardinal": 6,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Sales_Shared_Dimensions_Final"
+    ]
+  },
+  {
+    "qName": "VOC Reach Answered",
+    "qCardinal": 2,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Sales_Shared_Dimensions_Final"
+    ]
+  },
+  {
+    "qName": "VOC Score",
+    "qCardinal": 60,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Sales_Shared_Dimensions_Final"
+    ]
+  },
+  {
+    "qName": "VOC Survey Title",
+    "qCardinal": 18,
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "Sales_Shared_Dimensions_Final"
+    ]
+  },
+  {
+    "qName": "VOC __KEY_contact",
+    "qCardinal": 822,
+    "qTags": [
+      "$ascii",
+      "$text",
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Sales_Shared_Dimensions_Final"
+    ]
+  },
+  {
+    "qName": "VOC __KEY_metadata",
+    "qCardinal": 822,
+    "qTags": [
+      "$ascii",
+      "$text",
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Sales_Shared_Dimensions_Final"
+    ]
+  },
+  {
     "qName": "Vendor Account",
-    "qCardinal": 7309,
+    "qCardinal": 7341,
     "qTags": [],
     "qSrcTables": [
       "Vendors"
@@ -14010,7 +14708,7 @@
   },
   {
     "qName": "Vendor Address",
-    "qCardinal": 7013,
+    "qCardinal": 7055,
     "qTags": [],
     "qSrcTables": [
       "Vendors"
@@ -14018,7 +14716,7 @@
   },
   {
     "qName": "Vendor Agent",
-    "qCardinal": 16,
+    "qCardinal": 713,
     "qTags": [
       "$text"
     ],
@@ -14039,7 +14737,7 @@
   },
   {
     "qName": "Vendor City",
-    "qCardinal": 1106,
+    "qCardinal": 1112,
     "qTags": [],
     "qSrcTables": [
       "Vendors"
@@ -14091,7 +14789,7 @@
   },
   {
     "qName": "Vendor Invoice Account Name",
-    "qCardinal": 844,
+    "qCardinal": 842,
     "qTags": [
       "$text"
     ],
@@ -14112,13 +14810,37 @@
   },
   {
     "qName": "Vendor Key",
-    "qCardinal": 21985,
+    "qCardinal": 22063,
+    "qTags": [
+      "$ascii",
+      "$text",
+      "$key"
+    ],
+    "qSrcTables": [
+      "Vendors",
+      "Sales_Shared_Dimensions_Final"
+    ]
+  },
+  {
+    "qName": "Vendor Key Segment For Aggregation",
+    "qCardinal": 904,
     "qTags": [
       "$ascii",
       "$text"
     ],
     "qSrcTables": [
-      "Vendors"
+      "Sales_Shared_Dimensions_Final"
+    ]
+  },
+  {
+    "qName": "Vendor Key Segment For Aggregation 2",
+    "qCardinal": 10730,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Sales_Shared_Dimensions_Final"
     ]
   },
   {
@@ -14166,7 +14888,7 @@
   },
   {
     "qName": "Vendor Name",
-    "qCardinal": 15894,
+    "qCardinal": 15934,
     "qTags": [],
     "qSrcTables": [
       "Vendors"
@@ -14218,7 +14940,7 @@
   },
   {
     "qName": "Vendor Phone",
-    "qCardinal": 5057,
+    "qCardinal": 5062,
     "qTags": [],
     "qSrcTables": [
       "Vendors"
@@ -14256,7 +14978,7 @@
   },
   {
     "qName": "Vendor purpose",
-    "qCardinal": 439,
+    "qCardinal": 443,
     "qTags": [
       "$text"
     ],
@@ -14266,7 +14988,7 @@
   },
   {
     "qName": "WA Clichee Cost USD",
-    "qCardinal": 7242,
+    "qCardinal": 7677,
     "qTags": [
       "$numeric"
     ],
@@ -14276,7 +14998,7 @@
   },
   {
     "qName": "WA Clichee Cost USD KG",
-    "qCardinal": 630,
+    "qCardinal": 647,
     "qTags": [
       "$numeric"
     ],
@@ -14286,7 +15008,7 @@
   },
   {
     "qName": "WA Cost USD",
-    "qCardinal": 62062,
+    "qCardinal": 63769,
     "qTags": [
       "$numeric"
     ],
@@ -14296,7 +15018,7 @@
   },
   {
     "qName": "WA Cost USD KG",
-    "qCardinal": 22233,
+    "qCardinal": 22908,
     "qTags": [
       "$numeric"
     ],
@@ -14306,7 +15028,7 @@
   },
   {
     "qName": "WA Cylinder Cost USD",
-    "qCardinal": 1583,
+    "qCardinal": 1618,
     "qTags": [
       "$numeric"
     ],
@@ -14316,7 +15038,7 @@
   },
   {
     "qName": "WA Cylinder Cost USD KG",
-    "qCardinal": 66,
+    "qCardinal": 71,
     "qTags": [
       "$numeric"
     ],
@@ -14326,7 +15048,7 @@
   },
   {
     "qName": "WA Freight Cost USD",
-    "qCardinal": 49354,
+    "qCardinal": 50723,
     "qTags": [
       "$numeric"
     ],
@@ -14336,7 +15058,7 @@
   },
   {
     "qName": "WA Freight Cost USD KG",
-    "qCardinal": 3584,
+    "qCardinal": 3734,
     "qTags": [
       "$numeric"
     ],
@@ -14390,78 +15112,78 @@
   },
   {
     "qName": "brand_equity",
-    "qCardinal": 3,
+    "qCardinal": 4,
     "qTags": [
       "$ascii",
       "$text"
     ],
     "qSrcTables": [
-      "Sales_Shared_Dimensions_Final"
+      "VGA_Fact"
+    ]
+  },
+  {
+    "qName": "business_unit_id",
+    "qCardinal": 1,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Five_Forces"
     ]
   },
   {
     "qName": "customer_relationship",
+    "qCardinal": 4,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "VGA_Fact"
+    ]
+  },
+  {
+    "qName": "lead_time",
     "qCardinal": 3,
     "qTags": [
       "$ascii",
       "$text"
     ],
     "qSrcTables": [
-      "Sales_Shared_Dimensions_Final"
-    ]
-  },
-  {
-    "qName": "id",
-    "qCardinal": 5,
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Sales_Shared_Dimensions_Final"
-    ]
-  },
-  {
-    "qName": "lead_time",
-    "qCardinal": 1,
-    "qTags": [
-      "$ascii",
-      "$text"
-    ],
-    "qSrcTables": [
-      "Sales_Shared_Dimensions_Final"
+      "VGA_Fact"
     ]
   },
   {
     "qName": "market_share_percentage",
-    "qCardinal": 4,
+    "qCardinal": 6,
     "qTags": [
       "$numeric",
       "$integer"
     ],
     "qSrcTables": [
-      "Sales_Shared_Dimensions_Final"
+      "VGA_Fact"
     ]
   },
   {
     "qName": "payment_facilities",
-    "qCardinal": 4,
+    "qCardinal": 5,
     "qTags": [
       "$ascii",
       "$text"
     ],
     "qSrcTables": [
-      "Sales_Shared_Dimensions_Final"
+      "VGA_Fact"
     ]
   },
   {
     "qName": "price",
-    "qCardinal": 4,
+    "qCardinal": 5,
     "qTags": [
       "$numeric"
     ],
     "qSrcTables": [
-      "Sales_Shared_Dimensions_Final"
+      "VGA_Fact"
     ]
   },
   {
@@ -14472,18 +15194,18 @@
       "$text"
     ],
     "qSrcTables": [
-      "Sales_Shared_Dimensions_Final"
+      "VGA_Fact"
     ]
   },
   {
     "qName": "product_type",
-    "qCardinal": 2,
+    "qCardinal": 5,
     "qTags": [
       "$ascii",
       "$text"
     ],
     "qSrcTables": [
-      "Sales_Shared_Dimensions_Final"
+      "VGA_Fact"
     ]
   },
   {
@@ -14494,18 +15216,29 @@
       "$text"
     ],
     "qSrcTables": [
-      "Sales_Shared_Dimensions_Final"
+      "VGA_Fact"
+    ]
+  },
+  {
+    "qName": "salesman_id",
+    "qCardinal": 2,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Five_Forces"
     ]
   },
   {
     "qName": "timely_delivery",
-    "qCardinal": 3,
+    "qCardinal": 4,
     "qTags": [
       "$ascii",
       "$text"
     ],
     "qSrcTables": [
-      "Sales_Shared_Dimensions_Final"
+      "VGA_Fact"
     ]
   },
   {

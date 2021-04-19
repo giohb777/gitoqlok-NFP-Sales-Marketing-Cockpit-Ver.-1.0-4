@@ -10843,6 +10843,30 @@
   },
   {
     "qInfo": {
+      "qId": "SJQrfUQ",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "% Passives",
+      "qDef": "dual( 'Passives    ' &Num\r\n \n(COUNT( distinct  {$<   [VOC Question Type] = {'NPS'}, [VOC Score] ={\">6<9\"} ,Year ={$(v_Max_Year_VOC)}   >}    [VOC __KEY_metadata] )   \n/\nCOUNT( distinct {$<  [VOC Question Type] = {'NPS'}, Year ={$(v_Max_Year_VOC)}  >}     [VOC __KEY_metadata]   )*100,'##.0')  , \n\n\nCOUNT(  distinct  {$<  [VOC Question Type] = {'NPS'},[VOC Score] ={\">6<9\"} , Year ={$(v_Max_Year_VOC)} >}      [VOC __KEY_metadata]  ) \n/\nCOUNT( distinct {$<   [VOC Question Type] = {'NPS'},Year ={$(v_Max_Year_VOC)}   >}    [VOC __KEY_metadata]   )*100\n)\n",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "coloring": {
+        "baseColor": {
+          "color": "#FFFF66",
+          "index": -1
+        }
+      }
+    },
+    "qMetaDef": {
+      "title": "% Passives",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
       "qId": "SJdvnQj",
       "qType": "measure"
     },
@@ -16375,6 +16399,54 @@
   },
   {
     "qInfo": {
+      "qId": "b85d326d-1370-43e0-9e49-67c5107f0451",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "% Detractors LY",
+      "qDef": " dual( 'Detractors    ' &Num\r\n \n(COUNT( distinct {$<   [VOC Question Type] = {'NPS'},  [VOC Score] ={\"<=6\"} ,Year ={$(v_Max_Year_LY_VOC)}   >}     [VOC __KEY_metadata] )   \n/\nCOUNT( distinct {$<  [VOC Question Type] = {'NPS'}, Year ={$(v_Max_Year_LY_VOC)}  >}      [VOC __KEY_metadata]   )*100,'##.0')  , \n\n\nCOUNT( distinct  {$<  [VOC Question Type] = {'NPS'}, [VOC Score] ={\"<=6\"}, Year ={$(v_Max_Year_LY_VOC)}   >}       [VOC __KEY_metadata]  ) \n/\nCOUNT( distinct {$<   [VOC Question Type] = {'NPS'},Year ={$(v_Max_Year_LY_VOC)}   >}     [VOC __KEY_metadata]   )*100\n)\n\n\n\n\n\n\n",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "coloring": {
+        "baseColor": {
+          "color": "#FF0000",
+          "index": -1
+        }
+      }
+    },
+    "qMetaDef": {
+      "title": "% Detractors LY",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "b9a8350b-2929-4efc-98e1-b16f5d271b4a",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "% Promoters LY",
+      "qDef": " dual( 'Promoters    ' &Num\r\n \n(COUNT(  distinct {$<   [VOC Question Type] = {'NPS'}, [VOC Score] ={\">8\"} ,Year ={$(v_Max_Year_LY_VOC)}   >}    [VOC __KEY_metadata] )   \n/\nCOUNT( distinct{$<  [VOC Question Type] = {'NPS'}, Year ={$(v_Max_Year_LY_VOC)}  >}     [VOC __KEY_metadata]   )*100,'##.0')  , \n\n\nCOUNT(  distinct {$<  [VOC Question Type] = {'NPS'},[VOC Score] ={\">8\"}, Year ={$(v_Max_Year_LY_VOC)}   >}      [VOC __KEY_metadata]  ) \n/\nCOUNT( distinct{$<   [VOC Question Type] = {'NPS'},Year ={$(v_Max_Year_LY_VOC)}   >}    [VOC __KEY_metadata]   )*100\n)",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "coloring": {
+        "baseColor": {
+          "color": "#228B22",
+          "index": -1
+        }
+      }
+    },
+    "qMetaDef": {
+      "title": "% Promoters LY",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
       "qId": "bBsPcX",
       "qType": "measure"
     },
@@ -19033,6 +19105,30 @@
     },
     "qMetaDef": {
       "title": "Order Cost Amount Per US Ton Ratio YTD vs LY YTD",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "f62e54be-3793-46c6-9a75-3dc9e67ecd3b",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "% Passives LY",
+      "qDef": "dual( 'Passives    ' &Num\r\n \n(COUNT( distinct  {$<   [VOC Question Type] = {'NPS'}, [VOC Score] ={\">6<9\"} ,Year ={$(v_Max_Year_LY_VOC)}   >}    [VOC __KEY_metadata] )   \n/\nCOUNT( distinct {$<  [VOC Question Type] = {'NPS'}, Year ={$(v_Max_Year_LY_VOC)}  >}     [VOC __KEY_metadata]   )*100,'##.0')  , \n\n\nCOUNT(  distinct  {$<  [VOC Question Type] = {'NPS'},[VOC Score] ={\">6<9\"} , Year ={$(v_Max_Year_LY_VOC)} >}      [VOC __KEY_metadata]  ) \n/\nCOUNT( distinct {$<   [VOC Question Type] = {'NPS'},Year ={$(v_Max_Year_LY_VOC)}   >}    [VOC __KEY_metadata]   )*100\n)\n",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "coloring": {
+        "baseColor": {
+          "color": "#FFFF66",
+          "index": -1
+        }
+      }
+    },
+    "qMetaDef": {
+      "title": "% Passives LY",
       "description": "",
       "tags": []
     }
@@ -22753,6 +22849,30 @@
   },
   {
     "qInfo": {
+      "qId": "mENBW",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "% Promoters",
+      "qDef": " dual( 'Promoters    ' &Num\r\n \n(COUNT(  distinct {$<   [VOC Question Type] = {'NPS'}, [VOC Score] ={\">8\"} ,Year ={$(v_Max_Year_VOC)}   >}    [VOC __KEY_metadata] )   \n/\nCOUNT( distinct{$<  [VOC Question Type] = {'NPS'}, Year ={$(v_Max_Year_VOC)}  >}     [VOC __KEY_metadata]   )*100,'##.0')  , \n\n\nCOUNT(  distinct {$<  [VOC Question Type] = {'NPS'},[VOC Score] ={\">8\"}, Year ={$(v_Max_Year_VOC)}   >}      [VOC __KEY_metadata]  ) \n/\nCOUNT( distinct{$<   [VOC Question Type] = {'NPS'},Year ={$(v_Max_Year_VOC)}   >}    [VOC __KEY_metadata]   )*100\n)",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "coloring": {
+        "baseColor": {
+          "color": "#228B22",
+          "index": -1
+        }
+      }
+    },
+    "qMetaDef": {
+      "title": "% Promoters",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
       "qId": "mEjGFQq",
       "qType": "measure"
     },
@@ -26317,6 +26437,30 @@
     },
     "qMetaDef": {
       "title": "Budget Contribution Amount LY YTD",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "sPQGu",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "% Detractors",
+      "qDef": " dual( 'Detractors    ' &Num\r\n \n(COUNT( distinct {$<   [VOC Question Type] = {'NPS'},  [VOC Score] ={\"<=6\"} ,Year ={$(v_Max_Year_VOC)}   >}     [VOC __KEY_metadata] )   \n/\nCOUNT( distinct {$<  [VOC Question Type] = {'NPS'}, Year ={$(v_Max_Year_VOC)}  >}      [VOC __KEY_metadata]   )*100,'##.0')  , \n\n\nCOUNT( distinct  {$<  [VOC Question Type] = {'NPS'}, [VOC Score] ={\"<=6\"}, Year ={$(v_Max_Year_VOC)}   >}       [VOC __KEY_metadata]  ) \n/\nCOUNT( distinct {$<   [VOC Question Type] = {'NPS'},Year ={$(v_Max_Year_VOC)}   >}     [VOC __KEY_metadata]   )*100\n)\n\n\n\n\n\n\n",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "coloring": {
+        "baseColor": {
+          "color": "#FF0000",
+          "index": -1
+        }
+      }
+    },
+    "qMetaDef": {
+      "title": "% Detractors",
       "description": "",
       "tags": []
     }

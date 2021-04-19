@@ -1,16 +1,10 @@
 {
   "qTitle": "NFP Sales & Marketing Cockpit Ver. 1.0(4)",
-  "qLastReloadTime": "2021-03-30T08:36:19.191Z",
   "qMigrationHash": "504d4e39a7133ee172fbe29aa58348b1e4054149",
-  "qSavedInProductVersion": "12.674.6",
   "qThumbnail": {
     "qUrl": "/appcontent/b2efed29-9d63-459b-ad4f-19fd09702031/Sales.jpg"
   },
-  "hassectionaccess": false,
-  "createdDate": "2021-03-29T10:33:57.670Z",
-  "modifiedDate": "2021-03-29T14:57:21.983Z",
   "published": false,
-  "publishTime": "1753-01-01T00:00:00.000Z",
   "description": "",
   "dynamicColor": "",
   "stream": null

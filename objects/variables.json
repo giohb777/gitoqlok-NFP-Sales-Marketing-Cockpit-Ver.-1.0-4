@@ -1011,6 +1011,21 @@
   },
   {
     "qInfo": {
+      "qId": "06c7b116-a879-48f3-9735-521e46fdd623",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "v_Max_Year_LY_VOC",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "= if(IsNull(GetFieldSelections([Year])),\r\n\nMax({1<[Sales Type] = {'VOC'},Year=P(Year),Quarter=P(Quarter),[Month Year]=P([Month Year]),[Month Num]=P([Month Num]),Month=P(Month)>}Year)\n,\nMax({1<Year=P(Year),Quarter=P(Quarter),[Month Year]=P([Month Year]),[Month Num]=P([Month Num]),Month=P(Month)>}Year)\n\n)-1",
+    "tags": []
+  },
+  {
+    "qInfo": {
       "qId": "07018846-f7e4-4883-92d7-f457429c5e53",
       "qType": "variable"
     },
@@ -3223,6 +3238,21 @@
   },
   {
     "qInfo": {
+      "qId": "16e6f6ce-8d17-4aa8-a978-bc4418514cae",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "v_Max_Year_VOC",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "= if(IsNull(GetFieldSelections([Year])),\r\n\nMax({1<[Sales Type] = {'VOC'},Year=P(Year),Quarter=P(Quarter),[Month Year]=P([Month Year]),[Month Num]=P([Month Num]),Month=P(Month)>}Year)\n,\nMax({1<Year=P(Year),Quarter=P(Quarter),[Month Year]=P([Month Year]),[Month Num]=P([Month Num]),Month=P(Month)>}Year)\n\n)",
+    "tags": []
+  },
+  {
+    "qInfo": {
       "qId": "16fa2122-a9ac-4dc6-addc-39e4f0838818",
       "qType": "variable"
     },
@@ -4306,6 +4336,21 @@
       "qUseThou": 0
     },
     "qDefinition": "(Sum({$<[Sales Type] = {'Net Sales'},[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, [Month ID] = {\"<=$(v_Max_Month_ID_Minus1)\"}, Year = {$(v_Max_Year_LY)}, Quarter=, Month=, [Month Year]=>} [Invoice Amount USD]*[Currency Average Rate])\r\n\t\t-Sum({$<[Sales Type] = {'Net Sales'},[Currency Sorting Key]={$(=MaxString([Currency Sorting Key]))}, [Month ID] = {\"<=$(v_Max_Month_ID_Minus1)\"}, Year = {$(v_Max_Year_LY)}, Quarter=, Month=, [Month Year]=>} [Invoice Cost USD]*[Currency Average Rate]))\n       ",
+    "tags": []
+  },
+  {
+    "qInfo": {
+      "qId": "1cb37803-82de-48f4-9cf1-daf4692e6122",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "v_Selected_Dimension",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "9",
     "tags": []
   },
   {
@@ -8575,6 +8620,21 @@
       "qUseThou": 0
     },
     "qDefinition": "If($(v_Order_Pieces_LY_YTD)=0, 0, $(v_Order_Conversion_Cost_Amount_LY_YTD)/$(v_Order_Pieces_LY_YTD))"
+  },
+  {
+    "qInfo": {
+      "qId": "3fa1ed45-3d52-4b19-b421-036f3543b5fb",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "v_Currency_Selection",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "1",
+    "tags": []
   },
   {
     "qInfo": {
@@ -13794,6 +13854,21 @@
   },
   {
     "qInfo": {
+      "qId": "66af64b0-0d06-4cc4-ace5-64d92c52a07b",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "v_Selected_Dimension_Competitors",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "15",
+    "tags": []
+  },
+  {
+    "qInfo": {
       "qId": "66b1d88d-ed8f-4134-a253-b7e753dbd122",
       "qType": "variable"
     },
@@ -15016,7 +15091,7 @@
       "qnDec": 10,
       "qUseThou": 0
     },
-    "qDefinition": "Count(\n{<\nYear= {$(v_Max_Year)} ,\n[Month ID] = {\"<=$(v_Max_Month_ID)\"},\n[Sales Type] = {'Net Sales'}, \n[Month] = ,\nQuarter=,\n[Customer Key]={'=( sum({$< [Month ID]={\"<=$(v_Max_Month_ID)\"}, Year={$(v_Max_Year)} , [Sales Type] = {\"Net Sales\"} >} ([Invoice Amount USD] - [Invoice Cost USD]) ) / Sum(Aggr(Sum({1<  [Month ID]={\"<=$(v_Max_Month_ID)\"}, Year={$(v_Max_Year)}   >} TOTAL <[Business Unit Key]> ([Invoice Amount USD] - [Invoice Cost USD])), [Customer Key], [Business Unit Key])))  >= 0.2 '}\n\n>} Distinct [Customer Key])",
+    "qDefinition": "Count(\r\n{<\nYear= {$(v_Max_Year)} ,\n[Month ID] = {\"<=$(v_Max_Month_ID)\"},\n[Sales Type] = {'Net Sales'}, \n[Month] = ,\nQuarter=,\n[Customer Key]={'=(  sum({$< [Month ID]={\"<=$(v_Max_Month_ID)\"}, Year={$(v_Max_Year)} , [Sales Type] = {\"Net Sales\"} , Month =  >} ([Invoice Amount USD] - [Invoice Cost USD]) ) / Sum(Aggr(Sum({1<  [Month ID]={\"<=$(v_Max_Month_ID)\"}, Year={$(v_Max_Year)}  , Month =   >} TOTAL <[Business Unit Key]> ([Invoice Amount USD] - [Invoice Cost USD])), [Customer Key], [Business Unit Key])))  >= 0.2 '}\n\n>} Distinct [Customer Key])",
     "tags": []
   },
   {
@@ -17162,7 +17237,7 @@
       "qnDec": 10,
       "qUseThou": 0
     },
-    "qDefinition": "Count(\n{<\nYear= {$(v_Max_Year)} ,\n[Month ID] = {\"<=$(v_Max_Month_ID)\"},\n[Sales Type] = {'Net Sales'}, \n[Month] = ,\nQuarter=,\n[Market Sector For Aggregation]={'=( sum({$< [Month ID]={\"<=$(v_Max_Month_ID)\"}, Year={$(v_Max_Year)} , [Sales Type] = {\"Net Sales\"}  >} ([Invoice Amount USD] - [Invoice Cost USD]) ) / Sum(Aggr(Sum({1<  [Month ID]={\"<=$(v_Max_Month_ID)\"}, Year={$(v_Max_Year)} >} TOTAL <[Business Unit Key]> ([Invoice Amount USD] - [Invoice Cost USD])), [Market Sector For Aggregation], [Business Unit Key])))  >= 0.2 '}\n\n>} Distinct [Market Sector For Aggregation])",
+    "qDefinition": "Count(\r\n{<\nYear= {$(v_Max_Year)} ,\n[Month ID] = {\"<=$(v_Max_Month_ID)\"},\n[Sales Type] = {'Net Sales'}, \n[Month] = ,\nQuarter=,\n[Market Sector For Aggregation]={'=( sum({$< [Month ID]={\"<=$(v_Max_Month_ID)\"}, Year={$(v_Max_Year)} , [Sales Type] = {\"Net Sales\"} , Month =  >} ([Invoice Amount USD] - [Invoice Cost USD]) ) / Sum(Aggr(Sum({1<  [Month ID]={\"<=$(v_Max_Month_ID)\"}, Year={$(v_Max_Year)} >} TOTAL <[Business Unit Key]> ([Invoice Amount USD] - [Invoice Cost USD])), [Market Sector For Aggregation], [Business Unit Key])))  >= 0.2 '}\n\n>} Distinct [Market Sector For Aggregation])",
     "tags": []
   },
   {
@@ -23236,7 +23311,7 @@
       "qnDec": 10,
       "qUseThou": 0
     },
-    "qDefinition": "Count(\r\n{<\nYear= {$(v_Max_Year)} ,\n[Month ID] = {\"<=$(v_Max_Month_ID)\"},\n[Sales Type] = {'Net Sales'}, \n[Customer Group] = {'Export'},\n[Month] = ,\nQuarter=,\n[Customer Country For Aggregation]={'=( sum({$< [Month ID]={\"<=$(v_Max_Month_ID)\"}, Year={$(v_Max_Year)} , [Sales Type] = {\"Net Sales\"} , [Customer Group] = {\"Export\"} >} ([Invoice Amount USD] - [Invoice Cost USD]) ) / Sum(Aggr(Sum({1<  [Month ID]={\"<=$(v_Max_Month_ID)\"}, Year={$(v_Max_Year)} , [Customer Group] = {\"Export\"} , [Sales Type] = {\"Net Sales\"}    >} TOTAL <[Business Unit Key]> ([Invoice Amount USD] - [Invoice Cost USD])), [Customer Country For Aggregation], [Business Unit Key])))  >= 0.2 '}\n\n>} Distinct [Customer Country For Aggregation])",
+    "qDefinition": "Count(\r\n{<\nYear= {$(v_Max_Year)} ,\n[Month ID] = {\"<=$(v_Max_Month_ID)\"},\n[Sales Type] = {'Net Sales'}, \n[Customer Group] = {'Export'},\n[Month] = ,\nQuarter=,\n[Customer Country For Aggregation]={'=( sum({$< [Month ID]={\"<=$(v_Max_Month_ID)\"}, Year={$(v_Max_Year)} , [Sales Type] = {\"Net Sales\"} , [Customer Group] = {\"Export\"} , Month =  >} ([Invoice Amount USD] - [Invoice Cost USD]) ) / Sum(Aggr(Sum({1<  [Month ID]={\"<=$(v_Max_Month_ID)\"}, Year={$(v_Max_Year)} , [Customer Group] = {\"Export\"} , [Sales Type] = {\"Net Sales\"}    >} TOTAL <[Business Unit Key]> ([Invoice Amount USD] - [Invoice Cost USD])), [Customer Country For Aggregation], [Business Unit Key])))  >= 0.2 '}\n\n>} Distinct [Customer Country For Aggregation])",
     "tags": []
   },
   {
@@ -24104,7 +24179,7 @@
       "qnDec": 10,
       "qUseThou": 0
     },
-    "qDefinition": "Count(\r\n{<\nYear= {$(v_Max_Year)} ,\n[Month ID] = {\"<=$(v_Max_Month_ID)\"},\n[Sales Type] = {'Net Sales'}, \n[Month] = ,\nQuarter=,\n[Invoice Original Currency Code For Aggregation]={'=( sum({$< [Month ID]={\"<=$(v_Max_Month_ID)\"}, Year={$(v_Max_Year)} , [Sales Type] = {\"Net Sales\"}  >} ([Invoice Amount USD] - [Invoice Cost USD]) ) / Sum(Aggr(Sum({1<  [Month ID]={\"<=$(v_Max_Month_ID)\"}, Year={$(v_Max_Year)} >} TOTAL <[Business Unit Key]> ([Invoice Amount USD] - [Invoice Cost USD])), [Invoice Original Currency Code For Aggregation], [Business Unit Key])))  >= 0.2 '}\n\n>} Distinct [Invoice Original Currency Code For Aggregation])",
+    "qDefinition": "Count(\r\n{<\nYear= {$(v_Max_Year)} ,\n[Month ID] = {\"<=$(v_Max_Month_ID)\"},\n[Sales Type] = {'Net Sales'}, \n[Invoice Currency Type] = {'Foreign'},\n[Month] = ,\nQuarter=,\n[Invoice Original Currency Code For Aggregation]={'=( sum({$< [Month ID]={\"<=$(v_Max_Month_ID)\"}, Year={$(v_Max_Year)} , [Sales Type] = {\"Net Sales\"} , Month =  >} ([Invoice Amount USD]) ) / Sum(Aggr(Sum({1<  [Month ID]={\"<=$(v_Max_Month_ID)\"}, Year={$(v_Max_Year)} >} TOTAL <[Business Unit Key]> ([Invoice Amount USD] )), [Invoice Original Currency Code For Aggregation], [Business Unit Key])))  >= 0.2 '}\n\n>} Distinct [Invoice Original Currency Code For Aggregation])",
     "tags": []
   },
   {
@@ -25319,6 +25394,21 @@
   },
   {
     "qInfo": {
+      "qId": "b8ec33c0-19a8-4728-bf5e-276a3cf9b365",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "v_COP_Over_20_Chain_YTD",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Count(\r\n{<\nYear= {$(v_Max_Year)} ,\n[Month ID] = {\"<=$(v_Max_Month_ID)\"},\n[Sales Type] = {'Net Sales'}, \n[Month] = ,\nQuarter=,\n[Customer Chain for Aggregation]={'=( sum({$< [Month ID]={\"<=$(v_Max_Month_ID)\"}, Year={$(v_Max_Year)} , [Sales Type] = {\"Net Sales\"} , Month =  >} ([Invoice Amount USD] - [Invoice Cost USD]) ) / Sum(Aggr(Sum({1<  [Month ID]={\"<=$(v_Max_Month_ID)\"}, Year={$(v_Max_Year)}  , Month =   >} TOTAL <[Business Unit Key]> ([Invoice Amount USD] - [Invoice Cost USD])), [Customer Chain for Aggregation], [Business Unit Key])))  >= 0.2 '}\n\n>} Distinct [Customer Chain for Aggregation])",
+    "tags": []
+  },
+  {
+    "qInfo": {
       "qId": "b8ecd7d8-385c-4168-9594-f61d9573ed6f",
       "qType": "variable"
     },
@@ -25863,6 +25953,21 @@
       "qUseThou": 0
     },
     "qDefinition": "($(v_Sales_Conversion_Cost_Amount_Per_US_Ton_Variation_YTD_vs_LY_YTD) / $(v_Sales_Conversion_Cost_Amount_Per_US_Ton_LY_YTD))"
+  },
+  {
+    "qInfo": {
+      "qId": "bd83879c-ea85-466a-b473-2f118aa324aa",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "v_Export_Country_COP20_YTD_TotalBU",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Count(\r\n{<\nYear= {$(v_Max_Year)} ,\n[Month ID] = {\"<=$(v_Max_Month_ID)\"},\n[Sales Type] = {'Net Sales'}, \n//[Customer Group] = {'Export'},\n[Month] = ,\nQuarter=,\n[Customer Country For Aggregation]={'=( sum({$< [Month ID]={\"<=$(v_Max_Month_ID)\"}, Year={$(v_Max_Year)} , [Sales Type] = {\"Net Sales\"} , [Customer Group] = {\"Export\"} , Month =  >} ([Invoice Amount USD] - [Invoice Cost USD]) ) / Sum(Aggr(Sum({1<  [Month ID]={\"<=$(v_Max_Month_ID)\"}, Year={$(v_Max_Year)} ,  [Sales Type] = {\"Net Sales\"}  , Month =    >} TOTAL <[Business Unit Key]> ([Invoice Amount USD] - [Invoice Cost USD])), [Customer Country For Aggregation], [Business Unit Key])))  >= 0.2 '}\n\n>} Distinct [Customer Country For Aggregation])",
+    "tags": []
   },
   {
     "qInfo": {
@@ -26751,7 +26856,7 @@
       "qnDec": 10,
       "qUseThou": 0
     },
-    "qDefinition": "Count(\n{<\nYear= {$(v_Max_Year)} ,\n[Month ID] = {\"<=$(v_Max_Month_ID)\"},\n[Sales Type] = {'Net Sales'}, \n[Month] = ,\nQuarter=,\n[Building Block For Aggregation]={'=( sum({$< [Month ID]={\"<=$(v_Max_Month_ID)\"}, Year={$(v_Max_Year)} , [Sales Type] = {\"Net Sales\"}  >} ([Invoice Amount USD] - [Invoice Cost USD]) ) / Sum(Aggr(Sum({1<  [Month ID]={\"<=$(v_Max_Month_ID)\"}, Year={$(v_Max_Year)} >} TOTAL <[Business Unit Key]> ([Invoice Amount USD] - [Invoice Cost USD])), [Building Block For Aggregation], [Business Unit Key])))  >= 0.2 '}\n\n>} Distinct [Building Block For Aggregation])",
+    "qDefinition": "Count(\r\n{<\nYear= {$(v_Max_Year)} ,\n[Month ID] = {\"<=$(v_Max_Month_ID)\"},\n[Sales Type] = {'Net Sales'}, \n[Month] = ,\nQuarter=,\n[Building Block For Aggregation]={'=( sum({$< [Month ID]={\"<=$(v_Max_Month_ID)\"}, Year={$(v_Max_Year)} , [Sales Type] = {\"Net Sales\"} , Month =  >} ([Invoice Amount USD] - [Invoice Cost USD]) ) / Sum(Aggr(Sum({1<  [Month ID]={\"<=$(v_Max_Month_ID)\"}, Year={$(v_Max_Year)} , Month = >} TOTAL <[Business Unit Key]> ([Invoice Amount USD] - [Invoice Cost USD])), [Building Block For Aggregation], [Business Unit Key])))  >= 0.2 '}\n\n>} Distinct [Building Block For Aggregation])",
     "tags": []
   },
   {
@@ -27793,7 +27898,7 @@
       "qnDec": 10,
       "qUseThou": 0
     },
-    "qDefinition": "= if\r\n(IsNull(GetFieldSelections([Year])),\nif\n(IsNull(GetFieldSelections([Month])),\nMax({1<[Sales Type] = {'Net Sales'},Year=$::Year,Quarter=$::Quarter,[Month Year]=$::[Month Year],[Month Num]=$::[Month Num],Month=$::Month>}[Month ID]),\nMax({1<[Sales Type] = {'Net Sales'},Year=$::Year,Quarter=$::Quarter,[Month Year]=$::[Month Year],[Month Num]=$::[Month Num],Month=$::Month>}[Month ID])\n)\n,\nMax({1<Year=$::Year,Quarter=$::Quarter,[Month Year]=$::[Month Year],[Month Num]=$::[Month Num],Month=$::Month>}[Month ID])\n\n)",
+    "qDefinition": "= if\r\n(IsNull(GetFieldSelections([Year])),\nif\n(IsNull(GetFieldSelections([Month])),\nMax({1<[Sales Type] = {'Net Sales'},Year=P(Year),Quarter=P(Quarter),[Month Year]=P([Month Year]),[Month Num]=P([Month Num]),Month=P(Month)>}[Month ID]),\nMax({1<[Sales Type] = {'Net Sales'},Year=P(Year),Quarter=P(Quarter),[Month Year]=P([Month Year]),[Month Num]=P([Month Num]),Month=P(Month)>}[Month ID])\n)\n,\nMax({1<Year=P(Year),Quarter=P(Quarter),[Month Year]=P([Month Year]),[Month Num]=P([Month Num]),Month=P(Month)>}[Month ID])\n\n)",
     "tags": []
   },
   {
@@ -30736,6 +30841,21 @@
       "qUseThou": 0
     },
     "qDefinition": "($(v_Shipment_Conversion_Cost_Amount_Per_US_Ton_YTD) - $(v_Shipment_Conversion_Cost_Amount_Per_US_Ton_LY_YTD))"
+  },
+  {
+    "qInfo": {
+      "qId": "e4e3dc3f-11f6-448f-a49a-9d5709fd4de5",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "v_CustomerSector_COP20_YTD",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Count(\r\n{<\nYear= {$(v_Max_Year)} ,\n[Month ID] = {\"<=$(v_Max_Month_ID)\"},\n[Sales Type] = {'Net Sales'}, \n[Month] = ,\nQuarter=,\n[Shared Cutomer Sector]={'=( sum({$< [Month ID]={\"<=$(v_Max_Month_ID)\"}, Year={$(v_Max_Year)} , [Sales Type] = {\"Net Sales\"} , Month = >} ([Invoice Amount USD] - [Invoice Cost USD]) ) / Sum(Aggr(Sum({1<  [Month ID]={\"<=$(v_Max_Month_ID)\"}, Year={$(v_Max_Year)}  >} TOTAL <[Business Unit Key]> ([Invoice Amount USD] - [Invoice Cost USD])), [Shared Cutomer Sector], [Business Unit Key])))  >= 0.2 '}\n\n>} Distinct [Shared Cutomer Sector])",
+    "tags": []
   },
   {
     "qInfo": {
@@ -33948,7 +34068,7 @@
       "qnDec": 10,
       "qUseThou": 0
     },
-    "qDefinition": "3/30/2021",
+    "qDefinition": "4/15/2021",
     "qIsScriptCreated": true
   },
   {

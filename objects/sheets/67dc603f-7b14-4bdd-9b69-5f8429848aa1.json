@@ -5,13 +5,13 @@
       "qType": "sheet"
     },
     "qMetaDef": {
-      "title": "Expansion Details",
+      "title": "Expansion Analysis",
       "description": ""
     },
-    "rank": 144.25,
+    "rank": 169,
     "thumbnail": {
       "qStaticContentUrlDef": {
-        "qUrl": "/appcontent/b2efed29-9d63-459b-ad4f-19fd09702031/BLUE ICON.png"
+        "qUrl": "/appcontent/b2efed29-9d63-459b-ad4f-19fd09702031/Green_Light.PNG"
       }
     },
     "columns": 24,
@@ -1364,107 +1364,6 @@
         "qHyperCubeDef": {
           "qDimensions": [
             {
-              "qLibraryId": "5a18dc03-7f89-4244-ab53-a0a65d300f81",
-              "qDef": {
-                "qGrouping": "N",
-                "qFieldDefs": [],
-                "qFieldLabels": [],
-                "qSortCriterias": [
-                  {
-                    "qSortByNumeric": 1,
-                    "qSortByAscii": 1,
-                    "qSortByLoadOrder": 1,
-                    "qExpression": {}
-                  }
-                ],
-                "qNumberPresentations": [],
-                "qActiveField": 0,
-                "autoSort": true,
-                "cId": "yAESDcS",
-                "othersLabel": "Others"
-              },
-              "qOtherTotalSpec": {
-                "qOtherMode": "OTHER_OFF",
-                "qOtherCounted": {
-                  "qv": "10"
-                },
-                "qOtherLimit": {
-                  "qv": "0"
-                },
-                "qOtherLimitMode": "OTHER_GE_LIMIT",
-                "qForceBadValueKeeping": true,
-                "qApplyEvenWhenPossiblyWrongResult": true,
-                "qOtherSortMode": "OTHER_SORT_DESCENDING",
-                "qTotalMode": "TOTAL_OFF",
-                "qReferencedExpression": {}
-              },
-              "qOtherLabel": {
-                "qv": "Others"
-              },
-              "qTotalLabel": {
-                "qv": "Totals"
-              },
-              "qCalcCond": {},
-              "qAttributeExpressions": [],
-              "qAttributeDimensions": [],
-              "qCalcCondition": {
-                "qCond": {},
-                "qMsg": {}
-              }
-            },
-            {
-              "qDef": {
-                "qGrouping": "N",
-                "qFieldDefs": [
-                  "Business Unit"
-                ],
-                "qFieldLabels": [
-                  "BU"
-                ],
-                "qSortCriterias": [
-                  {
-                    "qSortByNumeric": 1,
-                    "qSortByAscii": 1,
-                    "qSortByLoadOrder": 1,
-                    "qExpression": {}
-                  }
-                ],
-                "qNumberPresentations": [],
-                "qActiveField": 0,
-                "autoSort": true,
-                "cId": "jFutdNh",
-                "othersLabel": "Others"
-              },
-              "qOtherTotalSpec": {
-                "qOtherMode": "OTHER_OFF",
-                "qOtherCounted": {
-                  "qv": "10"
-                },
-                "qOtherLimit": {
-                  "qv": "0"
-                },
-                "qOtherLimitMode": "OTHER_GE_LIMIT",
-                "qForceBadValueKeeping": true,
-                "qApplyEvenWhenPossiblyWrongResult": true,
-                "qOtherSortMode": "OTHER_SORT_DESCENDING",
-                "qTotalMode": "TOTAL_EXPR",
-                "qReferencedExpression": {}
-              },
-              "qOtherLabel": {
-                "qv": "Others"
-              },
-              "qTotalLabel": {
-                "qv": "Totals"
-              },
-              "qCalcCond": {},
-              "qAttributeExpressions": [],
-              "qAttributeDimensions": [],
-              "qCalcCondition": {
-                "qCond": {},
-                "qMsg": {}
-              }
-            },
-            {
               "qDef": {
                 "qGrouping": "N",
                 "qFieldDefs": [
@@ -1500,58 +1399,6 @@
                 "qApplyEvenWhenPossiblyWrongResult": true,
                 "qOtherSortMode": "OTHER_SORT_DESCENDING",
                 "qTotalMode": "TOTAL_EXPR",
-                "qReferencedExpression": {}
-              },
-              "qOtherLabel": {
-                "qv": "Others"
-              },
-              "qTotalLabel": {
-                "qv": "Totals"
-              },
-              "qCalcCond": {},
-              "qAttributeExpressions": [],
-              "qAttributeDimensions": [],
-              "qCalcCondition": {
-                "qCond": {},
-                "qMsg": {}
-              }
-            },
-            {
-              "qDef": {
-                "qGrouping": "N",
-                "qFieldDefs": [
-                  "Customer Country"
-                ],
-                "qFieldLabels": [
-                  "Country"
-                ],
-                "qSortCriterias": [
-                  {
-                    "qSortByNumeric": 1,
-                    "qSortByAscii": 1,
-                    "qSortByLoadOrder": 1,
-                    "qExpression": {}
-                  }
-                ],
-                "qNumberPresentations": [],
-                "qActiveField": 0,
-                "autoSort": true,
-                "cId": "zrxZv",
-                "othersLabel": "Others"
-              },
-              "qOtherTotalSpec": {
-                "qOtherMode": "OTHER_OFF",
-                "qOtherCounted": {
-                  "qv": "10"
-                },
-                "qOtherLimit": {
-                  "qv": "0"
-                },
-                "qOtherLimitMode": "OTHER_GE_LIMIT",
-                "qForceBadValueKeeping": true,
-                "qApplyEvenWhenPossiblyWrongResult": true,
-                "qOtherSortMode": "OTHER_SORT_DESCENDING",
-                "qTotalMode": "TOTAL_OFF",
                 "qReferencedExpression": {}
               },
               "qOtherLabel": {
@@ -1624,10 +1471,10 @@
               "qDef": {
                 "qGrouping": "N",
                 "qFieldDefs": [
-                  "Customer Area"
+                  "Customer Country"
                 ],
                 "qFieldLabels": [
-                  "Area"
+                  "Country"
                 ],
                 "qSortCriterias": [
                   {
@@ -1640,7 +1487,7 @@
                 "qNumberPresentations": [],
                 "qActiveField": 0,
                 "autoSort": true,
-                "cId": "jgCkDwZ",
+                "cId": "zrxZv",
                 "othersLabel": "Others"
               },
               "qOtherTotalSpec": {
@@ -1655,7 +1502,7 @@
                 "qForceBadValueKeeping": true,
                 "qApplyEvenWhenPossiblyWrongResult": true,
                 "qOtherSortMode": "OTHER_SORT_DESCENDING",
-                "qTotalMode": "TOTAL_EXPR",
+                "qTotalMode": "TOTAL_OFF",
                 "qReferencedExpression": {}
               },
               "qOtherLabel": {
@@ -2269,11 +2116,8 @@
             2,
             3,
             4,
-            5,
-            6,
-            7,
             -1,
-            8
+            5
           ],
           "qSuppressZero": true,
           "qSuppressMissing": true,
@@ -2288,7 +2132,7 @@
           "qReductionMode": "N",
           "qMode": "P",
           "qPseudoDimPos": -1,
-          "qNoOfLeftDims": 7,
+          "qNoOfLeftDims": 4,
           "qMaxStackedCells": 5000,
           "qShowTotalsAbove": true,
           "qIndentMode": true,
@@ -2305,9 +2149,6 @@
               496
             ],
             [
-              null,
-              null,
-              null,
               null,
               null,
               null,

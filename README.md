@@ -23,7 +23,7 @@ Main Menu|
 Growth Potential|
 Current Performance|
 Customer Scoring - By SLS Revenue|
-My new sheet (1)|
+VOC|
 Budget Overview|
 Prospects|
 Collections|
@@ -40,20 +40,23 @@ BU (Sales vs Contr%)|
 Customer Scoring|
 Aging Details|
 Key Account Performance|
+Competitor Profile|
 Sales by Source|
 Customer Profile Building|
+DR - Production|
 Doubtful Invoices|
 Sales Preview (EMC)|
 Budget Review v2.1|
 EMC Overview|
 Sales Units Matrix|
-Expansion Details|
+Expansion Analysis|
 Product Developement|
+Unmet Budget|
 Trends|Trends
 Product Development Table|
 OverDue Details|
 Expansion Report|
-My new sheet|
+VGA Steep|
 Hierarchies|
 Leads|
 Doubtful Customers|
@@ -64,11 +67,14 @@ ASP & COP Reference Line|
 OTIF|
 Returns|
 Sales and Invoices|Trends
+My new sheet|
 EYC Analysis|
 Consumer FollowUP|
+DR - Sales|
 Items Inventory|
 Capacity (EMC)|
 Quotations Lead Time|
+Customer Scoring|
 LCM Details|
 Prospects Report|
 Aging Details - Customer|
@@ -76,8 +82,8 @@ APOs|
 Pivot View (EMC)|
 YTD Review|
 Budget - Fcst  Accuracy|
+Leads & Prospects Concentration|
 CRI Dynamic Trends|
-Sales & Marketing Funnel NFP|
 Customer Service (EMC)|
 Unmet Budget|
 6 Months Preview (EMC) Detailed View|
@@ -88,6 +94,7 @@ Hierarchies  COP (EMC)|
 Quotations (EMC)|
 Customer Migration Mix - Scoring|
 CPB Table|
+Churn Rate|
 Receivables Statistics|
 CPB Progress|
 Activities|

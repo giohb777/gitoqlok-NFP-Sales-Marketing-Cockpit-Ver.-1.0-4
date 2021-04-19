@@ -43,7 +43,221 @@
             }
           }
         },
+        "qChildren": [
+          {
+            "qProperty": {
+              "qInfo": {
+                "qId": "mxqJadQ",
+                "qType": "slideitem"
+              },
+              "qMetaDef": {},
+              "qEmbeddedSnapshotDef": {},
+              "title": "",
+              "sheetId": "",
+              "ratio": true,
+              "position": {
+                "top": "7.40947%",
+                "left": "35.41899%",
+                "width": "39.57984%",
+                "height": "11.03671%",
+                "z-index": 4,
+                "right": "auto"
+              },
+              "visualization": "text",
+              "visualizationType": "title",
+              "style": {
+                "color": "#6E6E6E",
+                "text": "Lara Presentaion"
+              }
+            },
+            "qChildren": []
+          }
+        ]
+      },
+      {
+        "qProperty": {
+          "qInfo": {
+            "qId": "GJbJ",
+            "qType": "slide"
+          },
+          "qMetaDef": {},
+          "rank": 0,
+          "qChildListDef": {
+            "qData": {
+              "title": "/title",
+              "sheetId": "/sheetId",
+              "ratio": "/ratio",
+              "position": "/position",
+              "dataPath": "/dataPath",
+              "srcPath": "/srcPath",
+              "visualization": "/visualization",
+              "visualizationType": "/visualizationType",
+              "style": "/style"
+            }
+          }
+        },
         "qChildren": []
+      },
+      {
+        "qProperty": {
+          "qInfo": {
+            "qId": "gWqN",
+            "qType": "slide"
+          },
+          "qMetaDef": {},
+          "rank": 1,
+          "qChildListDef": {
+            "qData": {
+              "title": "/title",
+              "sheetId": "/sheetId",
+              "ratio": "/ratio",
+              "position": "/position",
+              "dataPath": "/dataPath",
+              "srcPath": "/srcPath",
+              "visualization": "/visualization",
+              "visualizationType": "/visualizationType",
+              "style": "/style"
+            }
+          }
+        },
+        "qChildren": []
+      },
+      {
+        "qProperty": {
+          "qInfo": {
+            "qId": "zjpLDTN",
+            "qType": "slide"
+          },
+          "qMetaDef": {},
+          "rank": -0.5,
+          "qChildListDef": {
+            "qData": {
+              "title": "/title",
+              "sheetId": "/sheetId",
+              "ratio": "/ratio",
+              "position": "/position",
+              "dataPath": "/dataPath",
+              "srcPath": "/srcPath",
+              "visualization": "/visualization",
+              "visualizationType": "/visualizationType",
+              "style": "/style"
+            }
+          }
+        },
+        "qChildren": [
+          {
+            "qProperty": {
+              "qInfo": {
+                "qId": "UeVL",
+                "qType": "slideitem"
+              },
+              "qMetaDef": {},
+              "qEmbeddedSnapshotDef": {},
+              "title": "",
+              "sheetId": "800e2e37-0551-4cea-8461-1b65f7daaac6",
+              "ratio": false,
+              "position": {
+                "width": "94%",
+                "height": "98%",
+                "left": "1.5%",
+                "right": "4,5%",
+                "top": "0%",
+                "z-index": 4
+              },
+              "visualization": "sheet"
+            },
+            "qChildren": [],
+            "qEmbeddedSnapshotRef": {
+              "qProperties": {
+                "qInfo": {
+                  "qId": "bc39ab6e-9b53-44f7-b818-b8cc309cb39a",
+                  "qType": "embeddedsnapshot"
+                },
+                "qMetaDef": {
+                  "title": "",
+                  "description": ""
+                },
+                "creationDate": "2021-04-06T11:24:28.458Z",
+                "title": "",
+                "sheetId": "800e2e37-0551-4cea-8461-1b65f7daaac6",
+                "selectionFields": [],
+                "selectionsInStates": [
+                  {
+                    "stateName": "$",
+                    "qSelectionObject": {
+                      "qBackCount": 0,
+                      "qForwardCount": 0,
+                      "qSelections": []
+                    }
+                  }
+                ]
+              },
+              "qBookmark": {
+                "qStateData": [
+                  {
+                    "qStateName": "$",
+                    "qFieldItems": []
+                  }
+                ],
+                "qUtcModifyTime": 44292.600324074076,
+                "qVariableItems": [
+                  {
+                    "qName": "ClimberCustomReporteDuDzm",
+                    "qValue": {
+                      "qText": "{\"options\":{\"fieldsAndSortbarVisible\":true,\"activeReportId\":\"68141c16-3528-4048-ab62-73a2ad943cbe\",\"cacheId\":1574070709010},\"states\":{\"68141c16-3528-4048-ab62-73a2ad943cbe\":{\"qId\":\"68141c16-3528-4048-ab62-73a2ad943cbe\",\"title\":\"Activity\",\"cIds\":[\"CAmsv\",\"NtmfLUH\",\"mfKym\",\"SPSWK\",\"pwQRnve\",\"TmCJKH\",\"kUjQkbu\",\"NmtCPp\",\"RFpnhV\",\"kNjTbJ\"],\"visualizationType\":\"table\",\"visualizationState\":{\"table\":{\"qInterColumnSortOrder\":[{\"cId\":\"CAmsv\",\"type\":\"dimension\",\"qReverseSort\":true},{\"cId\":\"NtmfLUH\",\"type\":\"dimension\"},{\"cId\":\"mfKym\",\"type\":\"dimension\"},{\"cId\":\"SPSWK\",\"type\":\"dimension\"},{\"cId\":\"pwQRnve\",\"type\":\"dimension\"},{\"cId\":\"TmCJKH\",\"type\":\"dimension\"},{\"cId\":\"kUjQkbu\",\"type\":\"dimension\"},{\"cId\":\"NmtCPp\",\"type\":\"dimension\"},{\"cId\":\"RFpnhV\",\"type\":\"dimension\"},{\"cId\":\"kNjTbJ\",\"type\":\"measure\",\"qSortBy\":{\"qSortByNumeric\":-1,\"qSortByLoadOrder\":1,\"qExpression\":{}}}],\"columnWidths\":[],\"qSuppressZero\":false,\"totals\":[],\"qColumnOrder\":[{\"cId\":\"CAmsv\",\"type\":\"dimension\"},{\"cId\":\"NtmfLUH\",\"type\":\"dimension\"},{\"cId\":\"mfKym\",\"type\":\"dimension\"},{\"cId\":\"SPSWK\",\"type\":\"dimension\"},{\"cId\":\"pwQRnve\",\"type\":\"dimension\"},{\"cId\":\"TmCJKH\",\"type\":\"dimension\"},{\"cId\":\"kUjQkbu\",\"type\":\"dimension\"},{\"cId\":\"NmtCPp\",\"type\":\"dimension\"},{\"cId\":\"RFpnhV\",\"type\":\"dimension\"},{\"cId\":\"kNjTbJ\",\"type\":\"measure\"}]}}}}}",
+                      "qNumber": "NaN"
+                    }
+                  },
+                  {
+                    "qName": "ClimberCustomReport6f5c3f9e6e44409c81d540e6fd080bb2",
+                    "qValue": {
+                      "qNumber": "NaN"
+                    }
+                  },
+                  {
+                    "qName": "ClimberCustomReportbhPsrrw",
+                    "qValue": {
+                      "qText": "{\"options\":{\"fieldsAndSortbarVisible\":true,\"activeReportId\":\"c0d2034b-f00e-47c5-aedd-e62474b20675\",\"cacheId\":1574069751417},\"states\":{\"c0d2034b-f00e-47c5-aedd-e62474b20675\":{\"qId\":\"c0d2034b-f00e-47c5-aedd-e62474b20675\",\"title\":\"Leads\",\"cIds\":[\"qrcBK\",\"dBczzEm\",\"DmpHJ\",\"xGgFvLm\",\"FHjtJ\",\"fpqUpU\",\"zFEsy\",\"pXVaFBu\",\"jmbwpv\",\"RXbQUX\",\"mySKLH\",\"jmSza\",\"ZcAsUt\",\"Xxf\",\"qmsPc\",\"cpphpCP\",\"LVWg\",\"QNJjB\"],\"visualizationType\":\"table\",\"visualizationState\":{\"table\":{\"qInterColumnSortOrder\":[{\"cId\":\"qrcBK\",\"type\":\"dimension\"},{\"cId\":\"fpqUpU\",\"type\":\"dimension\"},{\"cId\":\"zFEsy\",\"type\":\"dimension\"},{\"cId\":\"pXVaFBu\",\"type\":\"dimension\"},{\"cId\":\"mySKLH\",\"type\":\"dimension\"},{\"cId\":\"jmSza\",\"type\":\"dimension\"},{\"cId\":\"ZcAsUt\",\"type\":\"dimension\"},{\"cId\":\"Xxf\",\"type\":\"measure\",\"qSortBy\":{\"qSortByNumeric\":-1,\"qSortByLoadOrder\":1,\"qExpression\":{}}},{\"cId\":\"qmsPc\",\"type\":\"measure\",\"qSortBy\":{\"qSortByNumeric\":-1,\"qSortByLoadOrder\":1,\"qExpression\":{}}},{\"cId\":\"cpphpCP\",\"type\":\"measure\",\"qSortBy\":{\"qSortByNumeric\":-1,\"qSortByLoadOrder\":1,\"qExpression\":{}}},{\"cId\":\"LVWg\",\"type\":\"measure\",\"qSortBy\":{\"qSortByNumeric\":-1,\"qSortByLoadOrder\":1,\"qExpression\":{}}},{\"cId\":\"QNJjB\",\"type\":\"measure\",\"qSortBy\":{\"qSortByNumeric\":-1,\"qSortByLoadOrder\":1,\"qExpression\":{}}},{\"cId\":\"jmbwpv\",\"type\":\"dimension\"},{\"cId\":\"RXbQUX\",\"type\":\"dimension\"},{\"cId\":\"DmpHJ\",\"type\":\"dimension\"},{\"cId\":\"dBczzEm\",\"type\":\"dimension\"},{\"cId\":\"FHjtJ\",\"type\":\"dimension\"},{\"cId\":\"xGgFvLm\",\"type\":\"dimension\"}],\"columnWidths\":{\"qrcBK\":-1,\"dBczzEm\":-1,\"DmpHJ\":-1,\"xGgFvLm\":-1,\"FHjtJ\":-1,\"fpqUpU\":-1,\"zFEsy\":-1,\"pXVaFBu\":-1,\"jmbwpv\":-1,\"RXbQUX\":-1,\"mySKLH\":-1,\"jmSza\":-1,\"ZcAsUt\":-1,\"Xxf\":-1,\"qmsPc\":-1,\"cpphpCP\":-1,\"LVWg\":-1,\"QNJjB\":-1},\"qSuppressZero\":false,\"totals\":[],\"qColumnOrder\":[{\"cId\":\"qrcBK\",\"type\":\"dimension\"},{\"cId\":\"dBczzEm\",\"type\":\"dimension\"},{\"cId\":\"DmpHJ\",\"type\":\"dimension\"},{\"cId\":\"xGgFvLm\",\"type\":\"dimension\"},{\"cId\":\"FHjtJ\",\"type\":\"dimension\"},{\"cId\":\"fpqUpU\",\"type\":\"dimension\"},{\"cId\":\"zFEsy\",\"type\":\"dimension\"},{\"cId\":\"pXVaFBu\",\"type\":\"dimension\"},{\"cId\":\"jmbwpv\",\"type\":\"dimension\"},{\"cId\":\"RXbQUX\",\"type\":\"dimension\"},{\"cId\":\"mySKLH\",\"type\":\"dimension\"},{\"cId\":\"jmSza\",\"type\":\"dimension\"},{\"cId\":\"ZcAsUt\",\"type\":\"dimension\"},{\"cId\":\"Xxf\",\"type\":\"measure\"},{\"cId\":\"qmsPc\",\"type\":\"measure\"},{\"cId\":\"cpphpCP\",\"type\":\"measure\"},{\"cId\":\"LVWg\",\"type\":\"measure\"},{\"cId\":\"QNJjB\",\"type\":\"measure\"}]}}}}}",
+                      "qNumber": "NaN"
+                    }
+                  },
+                  {
+                    "qName": "ClimberCustomReportFcvrjF",
+                    "qValue": {
+                      "qText": "{\"options\":{\"fieldsAndSortbarVisible\":true,\"activeReportId\":\"0fd6901d-7555-4a1c-9321-d9f5b382ed71\",\"cacheId\":1574070224421},\"states\":{\"0fd6901d-7555-4a1c-9321-d9f5b382ed71\":{\"qId\":\"0fd6901d-7555-4a1c-9321-d9f5b382ed71\",\"title\":\"Prospects\",\"cIds\":[\"CAmsv\",\"Yxqpzm\",\"apDPc\",\"BfGLky\",\"ASdrX\",\"GXZJaTB\",\"rMfGA\",\"sGzvw\",\"kUjQkbu\",\"UsRmwY\",\"BPqBtd\",\"CNAPp\",\"SzSwxa\",\"gRAsry\",\"JReEpx\",\"VbUGAxN\"],\"visualizationType\":\"table\",\"visualizationState\":{\"table\":{\"qInterColumnSortOrder\":[{\"cId\":\"CAmsv\",\"type\":\"dimension\"},{\"cId\":\"GXZJaTB\",\"type\":\"dimension\"},{\"cId\":\"ASdrX\",\"type\":\"dimension\"},{\"cId\":\"BfGLky\",\"type\":\"dimension\"},{\"cId\":\"sGzvw\",\"type\":\"dimension\"},{\"cId\":\"kUjQkbu\",\"type\":\"dimension\"},{\"cId\":\"UsRmwY\",\"type\":\"dimension\"},{\"cId\":\"BPqBtd\",\"type\":\"dimension\"},{\"cId\":\"apDPc\",\"type\":\"dimension\"},{\"cId\":\"Yxqpzm\",\"type\":\"dimension\"},{\"cId\":\"rMfGA\",\"type\":\"dimension\"},{\"cId\":\"CNAPp\",\"type\":\"dimension\"},{\"cId\":\"SzSwxa\",\"type\":\"measure\",\"qSortBy\":{\"qSortByNumeric\":-1,\"qSortByLoadOrder\":1,\"qExpression\":{}}},{\"cId\":\"gRAsry\",\"type\":\"measure\",\"qSortBy\":{\"qSortByNumeric\":-1,\"qSortByLoadOrder\":1,\"qExpression\":{}}},{\"cId\":\"JReEpx\",\"type\":\"measure\",\"qSortBy\":{\"qSortByNumeric\":-1,\"qSortByLoadOrder\":1,\"qExpression\":{}}},{\"cId\":\"VbUGAxN\",\"type\":\"measure\",\"qSortBy\":{\"qSortByNumeric\":-1,\"qSortByLoadOrder\":1,\"qExpression\":{}}}],\"columnWidths\":[],\"qSuppressZero\":true,\"totals\":[],\"qColumnOrder\":[{\"cId\":\"CAmsv\",\"type\":\"dimension\"},{\"cId\":\"Yxqpzm\",\"type\":\"dimension\"},{\"cId\":\"apDPc\",\"type\":\"dimension\"},{\"cId\":\"BfGLky\",\"type\":\"dimension\"},{\"cId\":\"ASdrX\",\"type\":\"dimension\"},{\"cId\":\"GXZJaTB\",\"type\":\"dimension\"},{\"cId\":\"rMfGA\",\"type\":\"dimension\"},{\"cId\":\"sGzvw\",\"type\":\"dimension\"},{\"cId\":\"kUjQkbu\",\"type\":\"dimension\"},{\"cId\":\"UsRmwY\",\"type\":\"dimension\"},{\"cId\":\"BPqBtd\",\"type\":\"dimension\"},{\"cId\":\"CNAPp\",\"type\":\"dimension\"},{\"cId\":\"SzSwxa\",\"type\":\"measure\"},{\"cId\":\"gRAsry\",\"type\":\"measure\"},{\"cId\":\"JReEpx\",\"type\":\"measure\"},{\"cId\":\"VbUGAxN\",\"type\":\"measure\"}]}}}}}",
+                      "qNumber": "NaN"
+                    }
+                  },
+                  {
+                    "qName": "ClimberCustomReportAsnveh",
+                    "qValue": {
+                      "qNumber": "NaN"
+                    }
+                  }
+                ],
+                "qPatches": []
+              },
+              "qClassicBookmark": {
+                "qUtcModifyTime": 0,
+                "qUtcRecallTime": 0,
+                "qRecallCount": 0,
+                "qFieldItems": [],
+                "qVariableItems": [],
+                "qObjects": [],
+                "qGroups": [],
+                "qShow": {
+                  "qAlways": true,
+                  "qExpression": {}
+                },
+                "qApplyInputFieldValues": true,
+                "qInputFieldItems": [],
+                "qObjectsLayout": [],
+                "qIncludeSelectionState": true,
+                "qAlternateStateData": []
+              }
+            }
+          }
+        ]
       }
     ]
   }
